@@ -1,0 +1,35 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+ lane :tests do
+scan(devices: ["iPhone 7"],
+            destination: "platform=iOS,id=e3163cbd87eb68176cb246fb12cb089ce22f4560",
+                scheme: "WhiteLabelAppUITests",
+                output_types: "junit",
+                output_files: "report.xml",
+                clean: true)
+end
+
+lane :beta do
+  build_app(scheme: "WhiteLabelApp",
+            workspace: "WhiteLabelApp.xcworkspace",
+            include_bitcode: true)
+end
+
+end

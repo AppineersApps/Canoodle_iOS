@@ -1,0 +1,104 @@
+Instructions for Running test cases for white Label :-
+1. For Email login flow you need to test files related to email. Same for Phone Login flow.
+2. Command to generate test results :- fastlane tests
+
+
+
+TEST CASE PHONE
+
+Remove signUp user detail user from database
+Check login user phone(9876543300) pass.(Qwerty123) is registered in database check once before test start
+9876543300 not exist in database. Delete any user with the phone number.
+
+
+For test case 2,3,4,10 need to logout and for test 5,6,7,8,9  need to Login
+Keyboard must be open in simulator, to open keyboard use short key (command+shift+k)
+
+1. Remove user from admin panel
+Admin Pannel Url: http://whitelabel.projectspreview.net/admin
+Credentials: admin/3214789
+
+2.SignUp
+
+3.Skip Flow
+
+4.For Login user with following credentials should exist in system with no subscription.
+PhoneNumber: 9876123455
+Password: Qwerty123
+
+5.Edit Profile
+
+6.Change Password
+Old Password: Qwerty123
+New Password: Qwerty@123
+
+7.Change PhoneNumber
+PhoneNumber: 9876123445
+
+8.Send Feedback
+
+9.Ads
+
+10. Forgot Password
+PhoneNumber: 9876123445
+->Reset Password
+NewPassword: Qwerty123
+
+
+
+
+TEST CASE EMAIL
+
+Do following steps to run test cases successfully
+
+Check login user email(iphoneemail@grr.la) pass.(Qwerty123) is registered in datebase check once before test start without subscription
+
+For test case 2,3,4,9 need to logout and for test 5,6,7,8  need to Login
+Keyboard must be open in simulator, to open keyboard use short key (command+shift+k)
+
+1. Remove user from admin panel
+Admin Pannel Url: http://whitelabel.projectspreview.net/admin
+Credentials: admin/3214789
+User Name: Paulsmith
+Email: paulsmith@grr.la
+Phone: 0009990019 
+
+2.SignUp
+FirstName: Paul
+LastName: Smith
+Email : paulsmith@grr.la
+UserName: Paulsmith
+Phone: 0009990019
+Address: 1010 Massachusetts Avenue
+City:: Boston
+State: Abakan
+Zip: 12345
+Date of Birth:
+Password: Qwerty123
+
+
+3.Skip Flow
+
+4.Login
+Email: iphoneemail@grr.la
+Password: Qwerty123
+
+
+5.Edit Profile
+
+6.Change Password
+Old Password: Qwerty123
+New Password: Qwerty@123
+
+7.Send Feedback
+
+8.Ads
+
+9. Forgot Password
+Email: white@label.com
+
+
+
+
+
+

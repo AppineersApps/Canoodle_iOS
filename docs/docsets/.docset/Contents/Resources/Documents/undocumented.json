@@ -1,0 +1,3512 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/AppDelegate/AppDelegate.swift",
+      "line": 14,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/AppDelegate/AppDelegate.swift",
+      "line": 20,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/BaseViewControllerWithAd.swift",
+      "line": 90,
+      "symbol": "BaseViewControllerWithAd.interstitialDidDismissScreen(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/CustomFiles/CustomTextView.swift",
+      "line": 21,
+      "symbol": "CustomTextView.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/CustomFiles/CustomTextView.swift",
+      "line": 28,
+      "symbol": "CustomTextView.cornerRadius",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/CustomImagePicker.swift",
+      "line": 39,
+      "symbol": "CustomImagePicker.currentMediaType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 14,
+      "symbol": "AlertMessage.yes",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 15,
+      "symbol": "AlertMessage.no",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 16,
+      "symbol": "AlertMessage.cancel",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 17,
+      "symbol": "AlertMessage.ok",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 19,
+      "symbol": "AlertMessage.shareApp",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 21,
+      "symbol": "AlertMessage.NetworkError",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 22,
+      "symbol": "AlertMessage.InternetError",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 25,
+      "symbol": "AlertMessage.NetworkTimeOutError",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 26,
+      "symbol": "AlertMessage.otpSend",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 27,
+      "symbol": "AlertMessage.success",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 28,
+      "symbol": "AlertMessage.invalidProjectIdentifer",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 31,
+      "symbol": "AlertMessage.cameraAccess",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 32,
+      "symbol": "AlertMessage.photoLibraryAccess",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 36,
+      "symbol": "AlertMessage.loginTitle",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 37,
+      "symbol": "AlertMessage.requireEmail",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 38,
+      "symbol": "AlertMessage.invalidEmail",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 39,
+      "symbol": "AlertMessage.requireMobile",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 40,
+      "symbol": "AlertMessage.invalidMobile",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 41,
+      "symbol": "AlertMessage.requireUserId",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 42,
+      "symbol": "AlertMessage.invalidUserId",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 43,
+      "symbol": "AlertMessage.requirePassword",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 44,
+      "symbol": "AlertMessage.requireConfirmPassword",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 48,
+      "symbol": "AlertMessage.requirefirstName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 49,
+      "symbol": "AlertMessage.requirelastName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 50,
+      "symbol": "AlertMessage.signUpTitle",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 51,
+      "symbol": "AlertMessage.invalidPassword",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 52,
+      "symbol": "AlertMessage.enterUserName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 53,
+      "symbol": "AlertMessage.minValueUserName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 54,
+      "symbol": "AlertMessage.maxValueUserName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 55,
+      "symbol": "AlertMessage.invalidUserName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 57,
+      "symbol": "AlertMessage.minValueZip",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 58,
+      "symbol": "AlertMessage.maxValueZip",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 59,
+      "symbol": "AlertMessage.invalidZip",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 61,
+      "symbol": "AlertMessage.minValueFirstName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 62,
+      "symbol": "AlertMessage.maxValueFirstName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 63,
+      "symbol": "AlertMessage.invalidFirstName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 64,
+      "symbol": "AlertMessage.minValueLastName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 65,
+      "symbol": "AlertMessage.maxValueLastName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 66,
+      "symbol": "AlertMessage.invalidLastName",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 67,
+      "symbol": "AlertMessage.requiredateOfBirth",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 68,
+      "symbol": "AlertMessage.passwordConfirmPassword",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 69,
+      "symbol": "AlertMessage.requirestreetAddress",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 70,
+      "symbol": "AlertMessage.requirecity",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 71,
+      "symbol": "AlertMessage.requirestate",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 72,
+      "symbol": "AlertMessage.requirezip",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 73,
+      "symbol": "AlertMessage.acceptTermsCondition",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 74,
+      "symbol": "AlertMessage.addProfile",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 75,
+      "symbol": "AlertMessage.backToView",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 80,
+      "symbol": "AlertMessage.ForgotPasswordTitle",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 84,
+      "symbol": "AlertMessage.otpVerificationPasswordtitle",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 85,
+      "symbol": "AlertMessage.optNotMatch",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 86,
+      "symbol": "AlertMessage.verificationNumber",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 87,
+      "symbol": "AlertMessage.timeOut",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 90,
+      "symbol": "AlertMessage.resetPasswordTitle",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 93,
+      "symbol": "AlertMessage.SettingTitle",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 94,
+      "symbol": "AlertMessage.logOutAlert",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 95,
+      "symbol": "AlertMessage.deleteAccountAlert",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 98,
+      "symbol": "AlertMessage.myProfileTitle",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 101,
+      "symbol": "AlertMessage.changePasswordTitle",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 102,
+      "symbol": "AlertMessage.requireOldPassword",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 103,
+      "symbol": "AlertMessage.requireNewPassword",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 104,
+      "symbol": "AlertMessage.invalidNewPassword",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 105,
+      "symbol": "AlertMessage.newConfirmPassword",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 108,
+      "symbol": "AlertMessage.editProfileTitle",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 112,
+      "symbol": "AlertMessage.sendFeedbackTitle",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 113,
+      "symbol": "AlertMessage.sendFeedbackText",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 114,
+      "symbol": "AlertMessage.deleteMessage",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 115,
+      "symbol": "AlertMessage.enterFeedback",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 118,
+      "symbol": "AlertMessage.changePhoneTitle",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 121,
+      "symbol": "AlertMessage.purchaseItem",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 122,
+      "symbol": "AlertMessage.purchaseFail",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 123,
+      "symbol": "AlertMessage.subscriptionSuccess",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 124,
+      "symbol": "AlertMessage.restoreFail",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 125,
+      "symbol": "AlertMessage.purchaseAlert",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 128,
+      "symbol": "AlertMessage.notNow",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Utility/AlertMessages.swift",
+      "line": 129,
+      "symbol": "AlertMessage.update",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Validators.swift",
+      "line": 14,
+      "symbol": "ValidationError.message",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Validators.swift",
+      "line": 15,
+      "symbol": "ValidationError.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Validators.swift",
+      "line": 22,
+      "symbol": "ValidatorConvertible.validated(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Helper/Validators.swift",
+      "line": 333,
+      "symbol": "ConfirmPasswordCheck.init(_:_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ChangeMobileNumber/ChangeMobileNumberViewController.swift",
+      "line": 27,
+      "symbol": "ChangeMobileNumberViewController.btnSendLink",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ChangeMobileNumber/ChangeMobileNumberViewController.swift",
+      "line": 28,
+      "symbol": "ChangeMobileNumberViewController.txtFieldPhone",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ChangePassword/ChangePasswordViewController.swift",
+      "line": 28,
+      "symbol": "ChangePasswordViewController.txtFieldOldPassword",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ChangePassword/ChangePasswordViewController.swift",
+      "line": 29,
+      "symbol": "ChangePasswordViewController.txtFieldNewPassword",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ChangePassword/ChangePasswordViewController.swift",
+      "line": 30,
+      "symbol": "ChangePasswordViewController.txtFieldConfirmPassword",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ChangePassword/ChangePasswordViewController.swift",
+      "line": 31,
+      "symbol": "ChangePasswordViewController.btnupdatePassword",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileInteractor.swift",
+      "line": 19,
+      "symbol": "EditProfileDataStore",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileModels.swift",
+      "line": 9,
+      "symbol": "EditProfile",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfilePresenter.swift",
+      "line": 27,
+      "symbol": "EditProfilePresenter",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 32,
+      "symbol": "EditProfileViewController.imgProfile",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 33,
+      "symbol": "EditProfileViewController.txtFieldFirstName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 34,
+      "symbol": "EditProfileViewController.txtFieldLastName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 35,
+      "symbol": "EditProfileViewController.txtFieldUserName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 36,
+      "symbol": "EditProfileViewController.txtFieldMobile",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 37,
+      "symbol": "EditProfileViewController.txtFieldDateOfBirth",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 38,
+      "symbol": "EditProfileViewController.txtFieldStreet",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 39,
+      "symbol": "EditProfileViewController.txtFieldCity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 40,
+      "symbol": "EditProfileViewController.txtFieldState",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 41,
+      "symbol": "EditProfileViewController.txtFieldZip",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 42,
+      "symbol": "EditProfileViewController.lblEmail",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 43,
+      "symbol": "EditProfileViewController.lblPhoneNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 44,
+      "symbol": "EditProfileViewController.btnUpdate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 49,
+      "symbol": "EditProfileViewController.textFieldArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 50,
+      "symbol": "EditProfileViewController.textFieldVisibleStatus",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 51,
+      "symbol": "EditProfileViewController.textFieldOptionalStatus",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 52,
+      "symbol": "EditProfileViewController.signUpField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 53,
+      "symbol": "EditProfileViewController.stateId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 54,
+      "symbol": "EditProfileViewController.latitude",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 55,
+      "symbol": "EditProfileViewController.longitude",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 56,
+      "symbol": "EditProfileViewController.uploadedFile",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 57,
+      "symbol": "EditProfileViewController.pickedImageName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 58,
+      "symbol": "EditProfileViewController.fileType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 59,
+      "symbol": "EditProfileViewController.stateListData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 60,
+      "symbol": "EditProfileViewController.statePicker",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 61,
+      "symbol": "EditProfileViewController.datePicker",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 110,
+      "symbol": "EditProfileViewController.setUpLayout()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 338,
+      "symbol": "EditProfileViewController.btnUserProfileAction(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/EditProfile/EditProfileViewController.swift",
+      "line": 355,
+      "symbol": "EditProfileViewController.btnUpdateAction(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ForgotPassword/ForgotPasswordEmail/ForgotPasswordEmailModels.swift",
+      "line": 15,
+      "symbol": "ForgotPasswordEmail",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ForgotPassword/ForgotPasswordEmail/ForgotPasswordEmailViewController.swift",
+      "line": 30,
+      "symbol": "ForgotPasswordEmailViewController.btnSend",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ForgotPassword/ForgotPasswordEmail/ForgotPasswordEmailViewController.swift",
+      "line": 31,
+      "symbol": "ForgotPasswordEmailViewController.txtEmail",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ForgotPassword/ForgotPasswordEmail/ForgotPasswordEmailViewController.swift",
+      "line": 86,
+      "symbol": "ForgotPasswordEmailViewController.setUpLayout()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ForgotPassword/ForgotPasswordPhone/ForgotPasswordPhoneRouter.swift",
+      "line": 17,
+      "symbol": "ForgotPasswordPhoneRoutingLogic.navigateToOtp(response:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ForgotPassword/ForgotPasswordPhone/ForgotPasswordPhoneRouter.swift",
+      "line": 22,
+      "symbol": "ForgotPasswordPhoneDataPassing.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ForgotPassword/ForgotPasswordPhone/ForgotPasswordPhoneViewController.swift",
+      "line": 28,
+      "symbol": "ForgotPasswordPhoneViewController.txtFieldPhoneNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ForgotPassword/ForgotPasswordPhone/ForgotPasswordPhoneViewController.swift",
+      "line": 120,
+      "symbol": "ForgotPasswordPhoneViewController.btnSendAction(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Friends/FriendsRouter.swift",
+      "line": 22,
+      "symbol": "FriendsDataPassing.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Friends/FriendsViewController.swift",
+      "line": 27,
+      "symbol": "FriendsViewController.viewAd",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Friends/FriendsViewController.swift",
+      "line": 49,
+      "symbol": "FriendsViewController.instance()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Friends/FriendsViewController.swift",
+      "line": 91,
+      "symbol": "FriendsViewController.ShowAddAction(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 14,
+      "symbol": "GoogleSearch",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 16,
+      "symbol": "GoogleSearch.searchBar",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 17,
+      "symbol": "GoogleSearch.tblView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 19,
+      "symbol": "GoogleSearch.tableData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 20,
+      "symbol": "GoogleSearch.fetcher",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 21,
+      "symbol": "GoogleSearch.completion",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 45,
+      "symbol": "GoogleSearch.viewDidAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 51,
+      "symbol": "GoogleSearch.viewWillDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 55,
+      "symbol": "GoogleSearch.viewDidDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 60,
+      "symbol": "GoogleSearch.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 67,
+      "symbol": "GoogleSearch",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 68,
+      "symbol": "GoogleSearch.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 72,
+      "symbol": "GoogleSearch.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 81,
+      "symbol": "GoogleSearch.tableView(_:didSelectRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 88,
+      "symbol": "GoogleSearch",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 90,
+      "symbol": "GoogleSearch.searchBarTextDidBeginEditing(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 95,
+      "symbol": "GoogleSearch.searchBarTextDidEndEditing(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 99,
+      "symbol": "GoogleSearch.searchBar(_:textDidChange:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 108,
+      "symbol": "GoogleSearch.searchBarCancelButtonClicked(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 113,
+      "symbol": "GoogleSearch",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 114,
+      "symbol": "GoogleSearch.didAutocomplete(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/GoogleSearch.swift",
+      "line": 126,
+      "symbol": "GoogleSearch.didFailAutocompleteWithError(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/SearchResultCell.swift",
+      "line": 11,
+      "symbol": "SearchResultCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/SearchResultCell.swift",
+      "line": 12,
+      "symbol": "SearchResultCell.lblTitle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/SearchResultCell.swift",
+      "line": 13,
+      "symbol": "SearchResultCell.lblAddress",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/SearchResultCell.swift",
+      "line": 14,
+      "symbol": "SearchResultCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/GoogleSearch/SearchResultCell.swift",
+      "line": 19,
+      "symbol": "SearchResultCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Home/HomeInteractor.swift",
+      "line": 17,
+      "symbol": "HomeBusinessLogic.doSomething(request:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Home/HomeModels.swift",
+      "line": 19,
+      "symbol": "Home.Something",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Home/HomeRouter.swift",
+      "line": 17,
+      "symbol": "HomeDataPassing.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Home/HomeViewController.swift",
+      "line": 24,
+      "symbol": "HomeViewController.viewAd",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Home/HomeViewController.swift",
+      "line": 85,
+      "symbol": "HomeViewController.instance()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ImageDetails/ImageDetailsViewController.swift",
+      "line": 14,
+      "symbol": "ImageDetailsViewController.imgProfile",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ImageDetails/ImageDetailsViewController.swift",
+      "line": 15,
+      "symbol": "ImageDetailsViewController.imgStr",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmail/LoginEmailModel.swift",
+      "line": 11,
+      "symbol": "LoginEmailModel",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmail/LoginEmailModel.swift",
+      "line": 14,
+      "symbol": "LoginEmailModel.Request.email",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmail/LoginEmailModel.swift",
+      "line": 15,
+      "symbol": "LoginEmailModel.Request.password",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmail/LoginEmailRouter.swift",
+      "line": 17,
+      "symbol": "LoginEmailRoutingLogic.redirectToHome()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmail/LoginEmailRouter.swift",
+      "line": 22,
+      "symbol": "LoginEmailDataPassing.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmail/LoginEmailViewController.swift",
+      "line": 33,
+      "symbol": "LoginEmailViewController.txtFieldEmail",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmail/LoginEmailViewController.swift",
+      "line": 34,
+      "symbol": "LoginEmailViewController.btnLogin",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmail/LoginEmailViewController.swift",
+      "line": 35,
+      "symbol": "LoginEmailViewController.txtFieldPassword",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmail/LoginEmailViewController.swift",
+      "line": 88,
+      "symbol": "LoginEmailViewController.setUpLayout()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialModel.swift",
+      "line": 11,
+      "symbol": "LoginEmailAndSocialModel",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialModel.swift",
+      "line": 14,
+      "symbol": "LoginEmailAndSocialModel.Request.email",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialModel.swift",
+      "line": 15,
+      "symbol": "LoginEmailAndSocialModel.Request.password",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialModel.swift",
+      "line": 18,
+      "symbol": "LoginEmailAndSocialModel.SocialRequest",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialModel.swift",
+      "line": 19,
+      "symbol": "LoginEmailAndSocialModel.SocialRequest.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialModel.swift",
+      "line": 20,
+      "symbol": "LoginEmailAndSocialModel.SocialRequest.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialPresenter.swift",
+      "line": 35,
+      "symbol": "LoginEmailAndSocialPresenter.viewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialRouter.swift",
+      "line": 17,
+      "symbol": "LoginEmailAndSocialRoutingLogic.redirectToHome()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialRouter.swift",
+      "line": 18,
+      "symbol": "LoginEmailAndSocialRoutingLogic.navigateToSignup()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialRouter.swift",
+      "line": 23,
+      "symbol": "LoginEmailAndSocialDataPassing.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialViewController.swift",
+      "line": 43,
+      "symbol": "LoginEmailAndSocialViewController.socialLoginType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialViewController.swift",
+      "line": 44,
+      "symbol": "LoginEmailAndSocialViewController.facebookDict",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialViewController.swift",
+      "line": 45,
+      "symbol": "LoginEmailAndSocialViewController.googleDict",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialViewController.swift",
+      "line": 47,
+      "symbol": "LoginEmailAndSocialViewController.btnGoogle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialViewController.swift",
+      "line": 48,
+      "symbol": "LoginEmailAndSocialViewController.btnFacebook",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialViewController.swift",
+      "line": 49,
+      "symbol": "LoginEmailAndSocialViewController.btnLogin",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialViewController.swift",
+      "line": 50,
+      "symbol": "LoginEmailAndSocialViewController.txtFieldPassword",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialViewController.swift",
+      "line": 51,
+      "symbol": "LoginEmailAndSocialViewController.txtFieldEmail",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialViewController.swift",
+      "line": 104,
+      "symbol": "LoginEmailAndSocialViewController.setUpLayout()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialViewController.swift",
+      "line": 235,
+      "symbol": "LoginEmailAndSocialViewController.sign(_:didSignInFor:withError:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialViewController.swift",
+      "line": 248,
+      "symbol": "LoginEmailAndSocialViewController.sign(_:didDisconnectWith:withError:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialViewController.swift",
+      "line": 254,
+      "symbol": "LoginEmailAndSocialViewController.sign(inWillDispatch:error:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialViewController.swift",
+      "line": 258,
+      "symbol": "LoginEmailAndSocialViewController.sign(_:present:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginEmailAndSocial/LoginEmailAndSocialViewController.swift",
+      "line": 264,
+      "symbol": "LoginEmailAndSocialViewController.sign(_:dismiss:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 11,
+      "symbol": "Login",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 14,
+      "symbol": "Login.ViewModel.userId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 15,
+      "symbol": "Login.ViewModel.firstName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 16,
+      "symbol": "Login.ViewModel.lastName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 17,
+      "symbol": "Login.ViewModel.mobileNo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 18,
+      "symbol": "Login.ViewModel.email",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 19,
+      "symbol": "Login.ViewModel.userProfile",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 20,
+      "symbol": "Login.ViewModel.authToken",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 21,
+      "symbol": "Login.ViewModel.userType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 22,
+      "symbol": "Login.ViewModel.status",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 23,
+      "symbol": "Login.ViewModel.socialLoginType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 24,
+      "symbol": "Login.ViewModel.socialLoginId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 25,
+      "symbol": "Login.ViewModel.address",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 26,
+      "symbol": "Login.ViewModel.lat",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 27,
+      "symbol": "Login.ViewModel.long",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 28,
+      "symbol": "Login.ViewModel.userName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 29,
+      "symbol": "Login.ViewModel.dob",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 30,
+      "symbol": "Login.ViewModel.stateId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 31,
+      "symbol": "Login.ViewModel.city",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 32,
+      "symbol": "Login.ViewModel.zipCode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 33,
+      "symbol": "Login.ViewModel.emailVerified",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 34,
+      "symbol": "Login.ViewModel.deviceType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 35,
+      "symbol": "Login.ViewModel.deviceModel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 36,
+      "symbol": "Login.ViewModel.deviceOs",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 37,
+      "symbol": "Login.ViewModel.deviceToken",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 38,
+      "symbol": "Login.ViewModel.addedAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 39,
+      "symbol": "Login.ViewModel.updatedAt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 40,
+      "symbol": "Login.ViewModel.state",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 41,
+      "symbol": "Login.ViewModel.purchaseStatus",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 42,
+      "symbol": "Login.ViewModel.pushNotification",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 44,
+      "symbol": "Login.ViewModel.CodingKeys",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 45,
+      "symbol": "Login.ViewModel.CodingKeys.user_id",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 46,
+      "symbol": "Login.ViewModel.CodingKeys.first_name",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 47,
+      "symbol": "Login.ViewModel.CodingKeys.last_name",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 48,
+      "symbol": "Login.ViewModel.CodingKeys.mobile_no",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 49,
+      "symbol": "Login.ViewModel.CodingKeys.email",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 50,
+      "symbol": "Login.ViewModel.CodingKeys.profile_image",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 51,
+      "symbol": "Login.ViewModel.CodingKeys.access_token",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 52,
+      "symbol": "Login.ViewModel.CodingKeys.user_type",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 53,
+      "symbol": "Login.ViewModel.CodingKeys.status",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 54,
+      "symbol": "Login.ViewModel.CodingKeys.social_login_type",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 55,
+      "symbol": "Login.ViewModel.CodingKeys.social_login_id",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 56,
+      "symbol": "Login.ViewModel.CodingKeys.address",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 57,
+      "symbol": "Login.ViewModel.CodingKeys.latitude",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 58,
+      "symbol": "Login.ViewModel.CodingKeys.longitude",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 59,
+      "symbol": "Login.ViewModel.CodingKeys.user_name",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 60,
+      "symbol": "Login.ViewModel.CodingKeys.dob",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 61,
+      "symbol": "Login.ViewModel.CodingKeys.state_id",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 62,
+      "symbol": "Login.ViewModel.CodingKeys.city",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 63,
+      "symbol": "Login.ViewModel.CodingKeys.zip_code",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 64,
+      "symbol": "Login.ViewModel.CodingKeys.email_verified",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 65,
+      "symbol": "Login.ViewModel.CodingKeys.device_type",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 66,
+      "symbol": "Login.ViewModel.CodingKeys.device_model",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 67,
+      "symbol": "Login.ViewModel.CodingKeys.device_os",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 68,
+      "symbol": "Login.ViewModel.CodingKeys.device_token",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 69,
+      "symbol": "Login.ViewModel.CodingKeys.added_at",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 70,
+      "symbol": "Login.ViewModel.CodingKeys.updated_at",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 71,
+      "symbol": "Login.ViewModel.CodingKeys.state",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 72,
+      "symbol": "Login.ViewModel.CodingKeys.purchase_status",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginModel.swift",
+      "line": 73,
+      "symbol": "Login.ViewModel.CodingKeys.push_notify",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhone/LoginPhoneInteractor.swift",
+      "line": 17,
+      "symbol": "LoginPhoneBusinessLogic.loginWithPhone(request:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhone/LoginPhoneModel.swift",
+      "line": 11,
+      "symbol": "LoginPhoneModel",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhone/LoginPhoneModel.swift",
+      "line": 14,
+      "symbol": "LoginPhoneModel.Request.mobileNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhone/LoginPhoneModel.swift",
+      "line": 15,
+      "symbol": "LoginPhoneModel.Request.password",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhone/LoginPhoneRouter.swift",
+      "line": 17,
+      "symbol": "LoginPhoneRoutingLogic.redirectToHome()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhone/LoginPhoneRouter.swift",
+      "line": 22,
+      "symbol": "LoginPhoneDataPassing.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhone/LoginPhoneRouter.swift",
+      "line": 25,
+      "symbol": "LoginPhoneRouter",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhone/LoginPhoneViewController.swift",
+      "line": 30,
+      "symbol": "LoginPhoneViewController.txtFieldPhone",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhone/LoginPhoneViewController.swift",
+      "line": 31,
+      "symbol": "LoginPhoneViewController.txtFieldPassword",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhone/LoginPhoneViewController.swift",
+      "line": 32,
+      "symbol": "LoginPhoneViewController.btnLogin",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhone/LoginPhoneViewController.swift",
+      "line": 83,
+      "symbol": "LoginPhoneViewController.setUpLayout()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhone/LoginPhoneViewController.swift",
+      "line": 109,
+      "symbol": "LoginPhoneViewController.phoneTextDidChange()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialModel.swift",
+      "line": 11,
+      "symbol": "LoginPhoneAndSocialModel",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialModel.swift",
+      "line": 14,
+      "symbol": "LoginPhoneAndSocialModel.Request.phone",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialModel.swift",
+      "line": 15,
+      "symbol": "LoginPhoneAndSocialModel.Request.password",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialModel.swift",
+      "line": 18,
+      "symbol": "LoginPhoneAndSocialModel.SocialRequest",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialModel.swift",
+      "line": 19,
+      "symbol": "LoginPhoneAndSocialModel.SocialRequest.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialModel.swift",
+      "line": 20,
+      "symbol": "LoginPhoneAndSocialModel.SocialRequest.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialPresenter.swift",
+      "line": 35,
+      "symbol": "LoginPhoneAndSocialPresenter.viewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialRouter.swift",
+      "line": 17,
+      "symbol": "LoginPhoneAndSocialRoutingLogic.redirectToHome()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialRouter.swift",
+      "line": 18,
+      "symbol": "LoginPhoneAndSocialRoutingLogic.navigateToSignup()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialRouter.swift",
+      "line": 23,
+      "symbol": "LoginPhoneAndSocialDataPassing.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialViewController.swift",
+      "line": 43,
+      "symbol": "LoginPhoneAndSocialViewController.socialLoginType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialViewController.swift",
+      "line": 44,
+      "symbol": "LoginPhoneAndSocialViewController.facebookDict",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialViewController.swift",
+      "line": 45,
+      "symbol": "LoginPhoneAndSocialViewController.googleDict",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialViewController.swift",
+      "line": 47,
+      "symbol": "LoginPhoneAndSocialViewController.txtFieldPhone",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialViewController.swift",
+      "line": 48,
+      "symbol": "LoginPhoneAndSocialViewController.btnGoogle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialViewController.swift",
+      "line": 49,
+      "symbol": "LoginPhoneAndSocialViewController.btnFacebook",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialViewController.swift",
+      "line": 50,
+      "symbol": "LoginPhoneAndSocialViewController.btnLogin",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialViewController.swift",
+      "line": 51,
+      "symbol": "LoginPhoneAndSocialViewController.txtFieldPassword",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialViewController.swift",
+      "line": 105,
+      "symbol": "LoginPhoneAndSocialViewController.setUpLayout()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialViewController.swift",
+      "line": 250,
+      "symbol": "LoginPhoneAndSocialViewController.sign(_:didSignInFor:withError:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialViewController.swift",
+      "line": 263,
+      "symbol": "LoginPhoneAndSocialViewController.sign(_:didDisconnectWith:withError:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialViewController.swift",
+      "line": 269,
+      "symbol": "LoginPhoneAndSocialViewController.sign(inWillDispatch:error:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialViewController.swift",
+      "line": 273,
+      "symbol": "LoginPhoneAndSocialViewController.sign(_:present:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Login/LoginPhoneAndSocial/LoginPhoneAndSocialViewController.swift",
+      "line": 279,
+      "symbol": "LoginPhoneAndSocialViewController.sign(_:dismiss:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Messages/MessagesRouter.swift",
+      "line": 22,
+      "symbol": "MessagesDataPassing.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Messages/MessagesViewController.swift",
+      "line": 26,
+      "symbol": "MessagesViewController.viewAd",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Messages/MessagesViewController.swift",
+      "line": 48,
+      "symbol": "MessagesViewController.instance()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/MyProfile/MyProfileRouter.swift",
+      "line": 11,
+      "symbol": "MyProfileRoutingLogic.redirectToEditProfile()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/MyProfile/MyProfileRouter.swift",
+      "line": 16,
+      "symbol": "MyProfileDataPassing.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/MyProfile/MyProfileViewController.swift",
+      "line": 19,
+      "symbol": "MyProfileViewController.imgProfile",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/MyProfile/MyProfileViewController.swift",
+      "line": 20,
+      "symbol": "MyProfileViewController.lblFullName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/MyProfile/MyProfileViewController.swift",
+      "line": 21,
+      "symbol": "MyProfileViewController.lblUserName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/MyProfile/MyProfileViewController.swift",
+      "line": 23,
+      "symbol": "MyProfileViewController.viewAd",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/MyProfile/MyProfileViewController.swift",
+      "line": 29,
+      "symbol": "MyProfileViewController.signUpField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/MyProfile/MyProfileViewController.swift",
+      "line": 30,
+      "symbol": "MyProfileViewController.textFieldArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/MyProfile/MyProfileViewController.swift",
+      "line": 31,
+      "symbol": "MyProfileViewController.textFieldVisibleStatus",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/MyProfile/MyProfileViewController.swift",
+      "line": 32,
+      "symbol": "MyProfileViewController.textFieldOptionalStatus",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/MyProfile/MyProfileViewController.swift",
+      "line": 91,
+      "symbol": "MyProfileViewController.setUpLayout()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/MyProfile/MyProfileViewController.swift",
+      "line": 96,
+      "symbol": "MyProfileViewController.setUserData()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationPresenter.swift",
+      "line": 56,
+      "symbol": "OTPVerificationPresenter.viewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationRouter.swift",
+      "line": 11,
+      "symbol": "OTPVerificationRoutingLogic.redirectToHome()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationRouter.swift",
+      "line": 16,
+      "symbol": "OTPVerificationDataPassing.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationViewController.swift",
+      "line": 56,
+      "symbol": "OTPVerificationViewController.viewOtp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationViewController.swift",
+      "line": 57,
+      "symbol": "OTPVerificationViewController.btnSubmit",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationViewController.swift",
+      "line": 58,
+      "symbol": "OTPVerificationViewController.lblVerificationNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationViewController.swift",
+      "line": 59,
+      "symbol": "OTPVerificationViewController.lblTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationViewController.swift",
+      "line": 60,
+      "symbol": "OTPVerificationViewController.btnResend",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationViewController.swift",
+      "line": 61,
+      "symbol": "OTPVerificationViewController.otpDummyTxtField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationViewController.swift",
+      "line": 65,
+      "symbol": "OTPVerificationViewController.backgroundTaskIdentifier",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationViewController.swift",
+      "line": 66,
+      "symbol": "OTPVerificationViewController.otp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationViewController.swift",
+      "line": 67,
+      "symbol": "OTPVerificationViewController.phoneNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationViewController.swift",
+      "line": 68,
+      "symbol": "OTPVerificationViewController.signUpRequest",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationViewController.swift",
+      "line": 69,
+      "symbol": "OTPVerificationViewController.socialSignUpRequest",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationViewController.swift",
+      "line": 70,
+      "symbol": "OTPVerificationViewController.isFrom",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationViewController.swift",
+      "line": 71,
+      "symbol": "OTPVerificationViewController.socialLogin",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationViewController.swift",
+      "line": 72,
+      "symbol": "OTPVerificationViewController.forgotPasswrdResponse",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationViewController.swift",
+      "line": 122,
+      "symbol": "OTPVerificationViewController.viewWillDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationViewController.swift",
+      "line": 129,
+      "symbol": "OTPVerificationViewController.viewDidDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/OTPVerification/OTPVerificationViewController.swift",
+      "line": 136,
+      "symbol": "OTPVerificationViewController.instance()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ResetPassword/ResetPasswordViewController.swift",
+      "line": 30,
+      "symbol": "ResetPasswordViewController.txtFieldNewPassword",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ResetPassword/ResetPasswordViewController.swift",
+      "line": 31,
+      "symbol": "ResetPasswordViewController.txtFieldConfirmPassword",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ResetPassword/ResetPasswordViewController.swift",
+      "line": 32,
+      "symbol": "ResetPasswordViewController.btnUpdatePassword",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ResetPassword/ResetPasswordViewController.swift",
+      "line": 34,
+      "symbol": "ResetPasswordViewController.forgotPasswordData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/ResetPassword/ResetPasswordViewController.swift",
+      "line": 35,
+      "symbol": "ResetPasswordViewController.mobileNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SendFeedBack/SendFeedbackAddImageCollectionViewCell.swift",
+      "line": 11,
+      "symbol": "SendFeedbackAddImageCollectionViewCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SendFeedBack/SendFeedbackAddImageCollectionViewCell.swift",
+      "line": 12,
+      "symbol": "SendFeedbackAddImageCollectionViewCell.btnAddTappedClouser",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SendFeedBack/SendFeedbackAddImageCollectionViewCell.swift",
+      "line": 14,
+      "symbol": "SendFeedbackAddImageCollectionViewCell.viewBg",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SendFeedBack/SendFeedbackAddImageCollectionViewCell.swift",
+      "line": 15,
+      "symbol": "SendFeedbackAddImageCollectionViewCell.btnAddAction(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SendFeedBack/SendFeedbackAddImageCollectionViewCell.swift",
+      "line": 21,
+      "symbol": "SendFeedbackAddImageCollectionViewCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SendFeedBack/SendFeedbackImageCollectionViewCell.swift",
+      "line": 11,
+      "symbol": "SendFeedbackImageCollectionViewCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SendFeedBack/SendFeedbackImageCollectionViewCell.swift",
+      "line": 12,
+      "symbol": "SendFeedbackImageCollectionViewCell.btnRemoveTappedClouser",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SendFeedBack/SendFeedbackImageCollectionViewCell.swift",
+      "line": 13,
+      "symbol": "SendFeedbackImageCollectionViewCell.imgPicked",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SendFeedBack/SendFeedbackImageCollectionViewCell.swift",
+      "line": 14,
+      "symbol": "SendFeedbackImageCollectionViewCell.viewBg",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SendFeedBack/SendFeedbackImageCollectionViewCell.swift",
+      "line": 16,
+      "symbol": "SendFeedbackImageCollectionViewCell.btnRemoveImageAction(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SendFeedBack/SendFeedbackImageCollectionViewCell.swift",
+      "line": 22,
+      "symbol": "SendFeedbackImageCollectionViewCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SendFeedBack/SendFeedbackImageCollectionViewCell.swift",
+      "line": 30,
+      "symbol": "SendFeedbackImageCollectionViewCell.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SendFeedBack/SendFeedbackViewController.swift",
+      "line": 94,
+      "symbol": "SendFeedbackViewController.setUpLayout()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingPresenter.swift",
+      "line": 43,
+      "symbol": "SettingPresenter",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingRouter.swift",
+      "line": 17,
+      "symbol": "SettingRoutingLogic.redirectToLogin()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingRouter.swift",
+      "line": 22,
+      "symbol": "SettingDataPassing.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 56,
+      "symbol": "SettingViewController.viewblank",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 57,
+      "symbol": "SettingViewController.viewAccountSetting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 58,
+      "symbol": "SettingViewController.btnLogout",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 59,
+      "symbol": "SettingViewController.viewLogout",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 60,
+      "symbol": "SettingViewController.btnGoAdFree",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 61,
+      "symbol": "SettingViewController.btnEditProfile",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 62,
+      "symbol": "SettingViewController.viewEdit",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 63,
+      "symbol": "SettingViewController.lblVersionNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 64,
+      "symbol": "SettingViewController.btnSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 65,
+      "symbol": "SettingViewController.btnSendFeedback",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 66,
+      "symbol": "SettingViewController.btnChangePassword",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 67,
+      "symbol": "SettingViewController.btnChangeMobileNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 68,
+      "symbol": "SettingViewController.btnAboutUs",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 69,
+      "symbol": "SettingViewController.btnPrivacyPolicy",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 70,
+      "symbol": "SettingViewController.btnTermsCondition",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 71,
+      "symbol": "SettingViewController.btnShareApp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 72,
+      "symbol": "SettingViewController.btnDeleteAccount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 73,
+      "symbol": "SettingViewController.viewNotification",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 74,
+      "symbol": "SettingViewController.viewChangeMobileNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 75,
+      "symbol": "SettingViewController.viewDeleteAccount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 76,
+      "symbol": "SettingViewController.viewShareApp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 77,
+      "symbol": "SettingViewController.viewSendFeedback",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 78,
+      "symbol": "SettingViewController.viewTermsCondition",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 79,
+      "symbol": "SettingViewController.viewPrivacyPolicy",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 80,
+      "symbol": "SettingViewController.viewAboutUJs",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 81,
+      "symbol": "SettingViewController.viewAddFree",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 82,
+      "symbol": "SettingViewController.viewChangePassword",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 84,
+      "symbol": "SettingViewController.dtFormatter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 85,
+      "symbol": "SettingViewController.notificationOn",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Setting/SettingViewController.swift",
+      "line": 107,
+      "symbol": "SettingViewController.instance()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpFieldModels.swift",
+      "line": 14,
+      "symbol": "SignUpConfig.SignUptextField",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpModels.swift",
+      "line": 51,
+      "symbol": "SignUp.SignUpPhoneModel",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpModels.swift",
+      "line": 52,
+      "symbol": "SignUp.SignUpPhoneModel.Request",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpModels.swift",
+      "line": 173,
+      "symbol": "StateList",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpModels.swift",
+      "line": 175,
+      "symbol": "StateList.ViewModel",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpModels.swift",
+      "line": 176,
+      "symbol": "StateList.ViewModel.state",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpModels.swift",
+      "line": 177,
+      "symbol": "StateList.ViewModel.stateId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpModels.swift",
+      "line": 178,
+      "symbol": "StateList.ViewModel.stateCode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpModels.swift",
+      "line": 179,
+      "symbol": "StateList.ViewModel.status",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpModels.swift",
+      "line": 180,
+      "symbol": "StateList.ViewModel.countryCode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpPresenter.swift",
+      "line": 44,
+      "symbol": "SignUpPresenter.viewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpRouter.swift",
+      "line": 11,
+      "symbol": "SignUpRoutingLogic.redirectToOtpVarification(phoneNumber:otp:signUpRequest:socialSignUpRequest:socialLogin:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpRouter.swift",
+      "line": 12,
+      "symbol": "SignUpRoutingLogic.redirectToHome()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpRouter.swift",
+      "line": 17,
+      "symbol": "SignUpDataPassing.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 47,
+      "symbol": "SignUpViewController.imgProfile",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 48,
+      "symbol": "SignUpViewController.txtFieldFirstName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 49,
+      "symbol": "SignUpViewController.txtFieldLastName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 50,
+      "symbol": "SignUpViewController.txtFieldUserName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 51,
+      "symbol": "SignUpViewController.txtFieldEmail",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 52,
+      "symbol": "SignUpViewController.txtFieldMobile",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 53,
+      "symbol": "SignUpViewController.txtFieldDateOfBirth",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 54,
+      "symbol": "SignUpViewController.txtFieldStreet",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 55,
+      "symbol": "SignUpViewController.txtFieldCity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 56,
+      "symbol": "SignUpViewController.txtFieldState",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 57,
+      "symbol": "SignUpViewController.txtFieldZip",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 58,
+      "symbol": "SignUpViewController.txtFieldPassword",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 59,
+      "symbol": "SignUpViewController.txtFieldConfirmPassword",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 60,
+      "symbol": "SignUpViewController.btntermsConditions",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 61,
+      "symbol": "SignUpViewController.txtViewTerms",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 62,
+      "symbol": "SignUpViewController.btnCreate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 68,
+      "symbol": "SignUpViewController.textFieldArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 69,
+      "symbol": "SignUpViewController.textFieldVisibleStatus",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 70,
+      "symbol": "SignUpViewController.textFieldOptionalStatus",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 71,
+      "symbol": "SignUpViewController.signUpField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 72,
+      "symbol": "SignUpViewController.uploadedFile",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 73,
+      "symbol": "SignUpViewController.pickedImageName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 74,
+      "symbol": "SignUpViewController.fileType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 75,
+      "symbol": "SignUpViewController.datePicker",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 76,
+      "symbol": "SignUpViewController.latitude",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 77,
+      "symbol": "SignUpViewController.longitude",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 78,
+      "symbol": "SignUpViewController.addressArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 79,
+      "symbol": "SignUpViewController.signUpRequest",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 80,
+      "symbol": "SignUpViewController.socialSignUpRequest",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 81,
+      "symbol": "SignUpViewController.facbookUserData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 82,
+      "symbol": "SignUpViewController.googleDict",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 83,
+      "symbol": "SignUpViewController.isSocialType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 84,
+      "symbol": "SignUpViewController.socialLoginId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 85,
+      "symbol": "SignUpViewController.stateListData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 86,
+      "symbol": "SignUpViewController.statePicker",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 87,
+      "symbol": "SignUpViewController.stateId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 88,
+      "symbol": "SignUpViewController.addData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 142,
+      "symbol": "SignUpViewController.setUpLayout()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/SignUp/SignUpViewController.swift",
+      "line": 321,
+      "symbol": "SignUpViewController.btnUserProfileAction(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Splash/SplashModels.swift",
+      "line": 11,
+      "symbol": "Splash",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Splash/SplashModels.swift",
+      "line": 16,
+      "symbol": "Splash.ViewModel.versionUpdateCheck",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Splash/SplashModels.swift",
+      "line": 17,
+      "symbol": "Splash.ViewModel.androidVersion",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Splash/SplashModels.swift",
+      "line": 18,
+      "symbol": "Splash.ViewModel.iosVersion",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Splash/SplashModels.swift",
+      "line": 19,
+      "symbol": "Splash.ViewModel.versionUpdateOptional",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Splash/SplashModels.swift",
+      "line": 20,
+      "symbol": "Splash.ViewModel.alertMessage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Splash/SplashViewController.swift",
+      "line": 65,
+      "symbol": "SplashViewController.setViewController()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/Splash/SplashViewController.swift",
+      "line": 77,
+      "symbol": "SplashViewController.redirectToAppStore()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/StaticPage/StaticPageModels.swift",
+      "line": 29,
+      "symbol": "StaticPage.ViewModel.CodingKeys.page_title",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/StaticPage/StaticPageModels.swift",
+      "line": 30,
+      "symbol": "StaticPage.ViewModel.CodingKeys.page_content",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/StaticPage/StaticPageViewController.swift",
+      "line": 29,
+      "symbol": "StaticPageViewController.isFrom",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/StaticPage/StaticPageViewController.swift",
+      "line": 31,
+      "symbol": "StaticPageViewController.scrollView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/StaticPage/StaticPageViewController.swift",
+      "line": 32,
+      "symbol": "StaticPageViewController.txtView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/StaticPage/StaticPageViewController.swift",
+      "line": 35,
+      "symbol": "StaticPageViewController.instance()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/TabBar/TabbarController.swift",
+      "line": 11,
+      "symbol": "TabbarController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/TabBar/TabbarController.swift",
+      "line": 21,
+      "symbol": "TabbarController.instance()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/TabBar/TabbarController.swift",
+      "line": 26,
+      "symbol": "TabbarController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Scence/TabBar/TabbarController.swift",
+      "line": 27,
+      "symbol": "TabbarController.tabBarController(_:shouldSelect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/APIDataConverter.swift",
+      "line": 14,
+      "symbol": "WSResponseSetting.success",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/APIDataConverter.swift",
+      "line": 15,
+      "symbol": "WSResponseSetting.message",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/APIDataConverter.swift",
+      "line": 16,
+      "symbol": "WSResponseSetting.count",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/APIDataConverter.swift",
+      "line": 17,
+      "symbol": "WSResponseSetting.nextPage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/APIDataConverter.swift",
+      "line": 18,
+      "symbol": "WSResponseSetting.accessToken",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/APIDataConverter.swift",
+      "line": 20,
+      "symbol": "WSResponseSetting.isNextPage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/APIDataConverter.swift",
+      "line": 24,
+      "symbol": "WSResponseSetting.isSuccess",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/APIDataConverter.swift",
+      "line": 28,
+      "symbol": "WSResponseSetting.isValidToken",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/APIDataConverter.swift",
+      "line": 72,
+      "symbol": "WSResponse.setting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/APIDataConverter.swift",
+      "line": 73,
+      "symbol": "WSResponse.arrayData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/APIDataConverter.swift",
+      "line": 74,
+      "symbol": "WSResponse.dictData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/APIDataConverter.swift",
+      "line": 107,
+      "symbol": "WSResponseData.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Debug.swift",
+      "line": 11,
+      "symbol": "printDebug(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Debug.swift",
+      "line": 17,
+      "symbol": "printDebug(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Debug.swift",
+      "line": 23,
+      "symbol": "printDebug()",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Debug.swift",
+      "line": 29,
+      "symbol": "Debug",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Debug.swift",
+      "line": 31,
+      "symbol": "Debug.printRequest(_:response:responseString:error:cookies:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Debug.swift",
+      "line": 81,
+      "symbol": "Debug.printRequest(_:response:JSON:error:cookies:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/NetworkService/NetworkError.swift",
+      "line": 14,
+      "symbol": "NetworkError.clientError(statusCode:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/NetworkService/NetworkError.swift",
+      "line": 17,
+      "symbol": "NetworkError.serverError(statusCode:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/NetworkService/NetworkError.swift",
+      "line": 20,
+      "symbol": "NetworkError.parsingError(error:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/NetworkService/NetworkError.swift",
+      "line": 22,
+      "symbol": "NetworkError.requestError(errorMessage:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/NetworkService/NetworkError.swift",
+      "line": 25,
+      "symbol": "NetworkError.other(statusCode:error:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/NetworkService/NetworkError.swift",
+      "line": 28,
+      "symbol": "NetworkError.requestErrorMessageWithStatusCode(errorMessage:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/NetworkService/NetworkService.swift",
+      "line": 12,
+      "symbol": "NetworkProtocol",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/NetworkService/NetworkService.swift",
+      "line": 13,
+      "symbol": "NetworkProtocol.dataRequest(with:showHud:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/NetworkService/NetworkService.swift",
+      "line": 14,
+      "symbol": "NetworkProtocol.tokenCreationDataRequest(with:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/NetworkService/NetworkService.swift",
+      "line": 17,
+      "symbol": "NetworkService",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/NetworkService/NetworkService.swift",
+      "line": 20,
+      "symbol": "NetworkService.boundaryConstant",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/NetworkService/NetworkService.swift",
+      "line": 32,
+      "symbol": "NetworkService",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/NetworkService/NetworkService.swift",
+      "line": 104,
+      "symbol": "NetworkService.dataRequest(with:showHud:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/NetworkService/NetworkService.swift",
+      "line": 222,
+      "symbol": "NetworkService.generalSettingRequest(with:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/NetworkService/NetworkService.swift",
+      "line": 294,
+      "symbol": "NetworkService.tokenCreationDataRequest(with:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Router/ForgotPasswordRouter.swift",
+      "line": 12,
+      "symbol": "ForgotPasswordRouter",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Router/ForgotPasswordRouter.swift",
+      "line": 14,
+      "symbol": "ForgotPasswordRouter.baseUrlString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Router/ForgotPasswordRouter.swift",
+      "line": 25,
+      "symbol": "ForgotPasswordRouter.method",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Router/ForgotPasswordRouter.swift",
+      "line": 29,
+      "symbol": "ForgotPasswordRouter.path",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Router/ForgotPasswordRouter.swift",
+      "line": 40,
+      "symbol": "ForgotPasswordRouter.parameters",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Router/ForgotPasswordRouter.swift",
+      "line": 62,
+      "symbol": "ForgotPasswordRouter.parameterEncoding",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Router/ForgotPasswordRouter.swift",
+      "line": 66,
+      "symbol": "ForgotPasswordRouter.headers",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Router/ForgotPasswordRouter.swift",
+      "line": 70,
+      "symbol": "ForgotPasswordRouter.files",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Router/ForgotPasswordRouter.swift",
+      "line": 74,
+      "symbol": "ForgotPasswordRouter.deviceInfo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Router/GlobelRouter.swift",
+      "line": 19,
+      "symbol": "GlobelRouter.createToken",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Router/GlobelRouter.swift",
+      "line": 20,
+      "symbol": "GlobelRouter.countryList",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp/WhiteLabelApp/Service/Router/GlobelRouter.swift",
+      "line": 21,
+      "symbol": "GlobelRouter.stateList(countryId:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/hb/Desktop/Projects/GIT_PROJECTS/WhiteLabel/Code/white_label_mobile_004480/WhiteLabel/WhiteLabelApp"
+}

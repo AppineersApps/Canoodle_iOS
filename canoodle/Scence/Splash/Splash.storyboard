@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cQ3-VG-yaM">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="pud-rl-WfF">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" id="cQ3-VG-yaM" customClass="SplashViewController" customModule="Canoodle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PpR-aC-Xx5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="aDa-iI-ziV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="AppLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="D6o-Bd-j6a">
+                                <rect key="frame" x="0.0" y="308.5" width="375" height="50"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mOa-uZ-4QY"/>
+                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="mOa-uZ-4QY" firstAttribute="trailing" secondItem="aDa-iI-ziV" secondAttribute="trailing" id="GQX-QL-2XC"/>
+                            <constraint firstItem="D6o-Bd-j6a" firstAttribute="leading" secondItem="mOa-uZ-4QY" secondAttribute="leading" id="HY6-Fa-rGh"/>
+                            <constraint firstItem="mOa-uZ-4QY" firstAttribute="bottom" secondItem="aDa-iI-ziV" secondAttribute="bottom" id="IgH-jV-jXi"/>
+                            <constraint firstItem="aDa-iI-ziV" firstAttribute="top" secondItem="mOa-uZ-4QY" secondAttribute="top" id="LM4-xG-Hqc"/>
+                            <constraint firstItem="aDa-iI-ziV" firstAttribute="leading" secondItem="mOa-uZ-4QY" secondAttribute="leading" id="dwb-Ij-mXE"/>
+                            <constraint firstItem="mOa-uZ-4QY" firstAttribute="trailing" secondItem="D6o-Bd-j6a" secondAttribute="trailing" id="exL-Gi-7KD"/>
+                            <constraint firstItem="D6o-Bd-j6a" firstAttribute="centerY" secondItem="mOa-uZ-4QY" secondAttribute="centerY" id="ndf-Ko-uSt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xKZ-6v-P05" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="610" y="-88"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AppLogoWhite" width="300" height="50"/>
+        <image name="bg" width="800" height="1731"/>
+    </resources>
+</document>

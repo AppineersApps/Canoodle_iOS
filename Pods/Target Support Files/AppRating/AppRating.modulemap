@@ -1,0 +1,6 @@
+framework module AppRating {
+  umbrella header "AppRating-umbrella.h"
+
+  export *
+  module * { export * }
+}

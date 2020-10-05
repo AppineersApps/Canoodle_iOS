@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboarding View Controller-->
+        <scene sceneID="UfG-UI-maI">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingViewController" modalPresentationStyle="fullScreen" id="2VF-bH-S2c" customClass="OnboardingViewController" customModule="Canoodle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iDk-Bl-TRI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboardingbg" id="nWj-bA-iGA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Idp-pf-Xkk">
+                                <rect key="frame" x="126.5" y="592" width="122" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="Xnl-N0-xNN"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" red="0.54509803921568623" green="0.45882352941176469" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pageControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Onboarding feature description text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzi-7H-jBg">
+                                <rect key="frame" x="28.5" y="372" width="318" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="b7A-uL-vYg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nxp-xX-ZGg" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
+                                <rect key="frame" x="48.5" y="492" width="278" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RSO-hh-YKY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="3"/>
+                                <state key="normal" title="Let's Get Started">
+                                    <color key="titleColor" name="AppColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="2VF-bH-S2c" eventType="touchUpInside" id="1DT-eY-8FK"/>
+                                    <outletCollection property="gestureRecognizers" destination="ZXU-wp-Iu8" appends="YES" id="PUU-3w-m99"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqn-Ga-zAz">
+                                <rect key="frame" x="65.5" y="336" width="243" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UjT-Uo-XhP">
+                                <rect key="frame" x="278" y="35" width="81" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="XBl-il-7ce"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="skip">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="2VF-bH-S2c" eventType="touchUpInside" id="7oJ-8N-bHb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gXh-Pi-cJc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="cqn-Ga-zAz" firstAttribute="centerX" secondItem="tzi-7H-jBg" secondAttribute="centerX" id="0gP-JW-a7P"/>
+                            <constraint firstItem="Idp-pf-Xkk" firstAttribute="leading" secondItem="gXh-Pi-cJc" secondAttribute="leading" constant="126.5" id="2CC-AJ-61x"/>
+                            <constraint firstItem="Nxp-xX-ZGg" firstAttribute="centerX" secondItem="Idp-pf-Xkk" secondAttribute="centerX" id="7I2-nC-GhY"/>
+                            <constraint firstItem="tzi-7H-jBg" firstAttribute="centerX" secondItem="Nxp-xX-ZGg" secondAttribute="centerX" id="7QJ-ph-zs4"/>
+                            <constraint firstItem="UjT-Uo-XhP" firstAttribute="leading" secondItem="gXh-Pi-cJc" secondAttribute="leading" constant="278" id="AWL-vg-Tta"/>
+                            <constraint firstItem="Nxp-xX-ZGg" firstAttribute="top" secondItem="tzi-7H-jBg" secondAttribute="bottom" constant="20" id="D5j-sY-qRl"/>
+                            <constraint firstItem="UjT-Uo-XhP" firstAttribute="top" secondItem="gXh-Pi-cJc" secondAttribute="top" constant="35" id="Esp-j3-YNN"/>
+                            <constraint firstItem="Nxp-xX-ZGg" firstAttribute="leading" secondItem="gXh-Pi-cJc" secondAttribute="leading" constant="48.5" id="IMa-Y7-Enj"/>
+                            <constraint firstItem="cqn-Ga-zAz" firstAttribute="centerX" secondItem="nWj-bA-iGA" secondAttribute="centerX" id="JP2-Qg-cLS"/>
+                            <constraint firstItem="Idp-pf-Xkk" firstAttribute="top" secondItem="Nxp-xX-ZGg" secondAttribute="bottom" constant="50" id="Lr9-rL-oLm"/>
+                            <constraint firstItem="tzi-7H-jBg" firstAttribute="top" secondItem="cqn-Ga-zAz" secondAttribute="bottom" constant="15" id="Ona-Hh-Yva"/>
+                            <constraint firstItem="UjT-Uo-XhP" firstAttribute="trailing" secondItem="iDk-Bl-TRI" secondAttribute="trailingMargin" id="Xqd-hl-hmU"/>
+                            <constraint firstItem="gXh-Pi-cJc" firstAttribute="bottom" secondItem="Idp-pf-Xkk" secondAttribute="bottom" constant="38" id="ahU-X9-GzT"/>
+                            <constraint firstItem="tzi-7H-jBg" firstAttribute="leading" secondItem="gXh-Pi-cJc" secondAttribute="leading" constant="28.5" id="bRz-bh-Qce"/>
+                            <constraint firstItem="cqn-Ga-zAz" firstAttribute="leading" secondItem="gXh-Pi-cJc" secondAttribute="leading" constant="65.5" id="wLH-Rz-pJm"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ZXU-wp-Iu8" appends="YES" id="aCE-0d-veX"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="descLabel" destination="tzi-7H-jBg" id="58W-9K-NjD"/>
+                        <outlet property="pageControl" destination="Idp-pf-Xkk" id="uFf-Nt-b54"/>
+                        <outlet property="startButton" destination="Nxp-xX-ZGg" id="2ca-MF-Aku"/>
+                        <outlet property="titleLabel" destination="cqn-Ga-zAz" id="RbU-2Z-rZc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hu1-o8-Tc7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="ZXU-wp-Iu8"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="83.208395802098963"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="onboardingbg" width="375" height="812"/>
+        <namedColor name="AppColor">
+            <color red="0.40784313725490196" green="0.22745098039215686" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
