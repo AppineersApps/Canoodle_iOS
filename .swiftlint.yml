@@ -1,0 +1,39 @@
+included:
+- canoodle
+excluded:
+- canoodle/Extension/
+- canoodle/Helper/
+- Pods
+disabled_rules:
+- class_delegate_protocol
+- line_length
+- nesting
+- trailing_whitespace
+- identifier_name
+- multiple_closures_with_trailing_closure
+- colon
+- control_statement
+- for_where
+- discouraged_direct_init
+- cyclomatic_complexity
+- block_based_kvo
+
+# Disabled becuase swiftlint enforces this for any property with "delegate"
+# in the name.  We don't implement delegate pattern much, and the few places
+# where we have delegate properties actually shouldn't be weak.
+- weak_delegate
+
+# Remove and resolve warnings.
+- force_try
+opt_in_rules:
+- operator_usage_whitespace
+force_try: warning
+force_unwrapping: warning
+force_cast: warning
+type_name:
+max_length:
+warning: 50
+error: 60
+function_body_length: 100
+type_body_length: 700
+file_length: 500

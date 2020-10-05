@@ -220,7 +220,7 @@
 		27F8A3AF233107AE0089C804 /* LoginEmailAndSocialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8A3AE233107AE0089C804 /* LoginEmailAndSocialModel.swift */; };
 		27F8A3B1233107C20089C804 /* LoginEmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8A3B0233107C20089C804 /* LoginEmailModel.swift */; };
 		27F8A3B3233107CF0089C804 /* LoginPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8A3B2233107CF0089C804 /* LoginPhoneModel.swift */; };
-		AE5920112429E53D009C75E0 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AE5920102429E53D009C75E0 /* .swiftlint.yml */; };
+		90E8CF7C252B0C87005EEAAD /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 90E8CF7B252B0C86005EEAAD /* .swiftlint.yml */; };
 		AE838A6524C839C000F60EE6 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE838A6424C839C000F60EE6 /* GradientView.swift */; };
 		AE8467DB24DED3440042E0FE /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8467DA24DED3440042E0FE /* Array+Extension.swift */; };
 		AEED53BC24C446EA004B9AAE /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEED53BA24C446EA004B9AAE /* Onboarding.storyboard */; };
@@ -482,7 +482,7 @@
 		787FCF655A5FE8AEA0259917 /* Pods_canoodle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canoodle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A1F88FBF7A64FD0F4C717FF /* Pods-WhiteLabelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhiteLabelApp.debug.xcconfig"; path = "Target Support Files/Pods-WhiteLabelApp/Pods-WhiteLabelApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8AB7CEA4E69713413FC12FA8 /* Pods-canoodle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canoodle.release.xcconfig"; path = "Target Support Files/Pods-canoodle/Pods-canoodle.release.xcconfig"; sourceTree = "<group>"; };
-		AE5920102429E53D009C75E0 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		90E8CF7B252B0C86005EEAAD /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		AE838A6424C839C000F60EE6 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		AE8467DA24DED3440042E0FE /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		AEED53BA24C446EA004B9AAE /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
@@ -519,7 +519,7 @@
 		2709ABDE232F6050000708FF = {
 			isa = PBXGroup;
 			children = (
-				AE5920102429E53D009C75E0 /* .swiftlint.yml */,
+				90E8CF7B252B0C86005EEAAD /* .swiftlint.yml */,
 				2709ABE9232F6050000708FF /* canoodle */,
 				2709ABFE232F6052000708FF /* WhiteLabelAppTests */,
 				27E260FF2343640F00D74F5F /* WhiteLabelAppUITests */,
@@ -1271,7 +1271,7 @@
 				2709ACDC232F6092000708FF /* loading.json in Resources */,
 				27BFF7032332657E0056CA93 /* Home.storyboard in Resources */,
 				27AA5A432330D91F00632CBD /* Assets.xcassets in Resources */,
-				AE5920112429E53D009C75E0 /* .swiftlint.yml in Resources */,
+				90E8CF7C252B0C87005EEAAD /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
