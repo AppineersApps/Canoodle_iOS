@@ -70,7 +70,7 @@ class FriendsViewController: BaseViewControllerWithAd {
     /// Method is called when view loads
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Friends"
+        self.navigationItem.title = "Canoodle"
         self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false)
 
     }

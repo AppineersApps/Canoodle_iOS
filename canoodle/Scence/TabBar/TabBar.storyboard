@@ -60,20 +60,20 @@
             </objects>
             <point key="canvasLocation" x="368" y="-126"/>
         </scene>
-        <!--Messages-->
+        <!--Like-->
         <scene sceneID="Fxx-QP-K4B">
             <objects>
-                <viewControllerPlaceholder storyboardName="Messages" id="pzQ-oB-4Qy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Messages" id="vlX-2G-Zen"/>
+                <viewControllerPlaceholder storyboardName="Like" id="pzQ-oB-4Qy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Like" image="Like" id="vlX-2G-Zen"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K5b-nk-jk9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="366" y="-225"/>
         </scene>
-        <!--Setting-->
+        <!--Messages-->
         <scene sceneID="Ydp-OT-xoH">
             <objects>
-                <viewControllerPlaceholder storyboardName="Setting" id="Wrb-fm-mH3" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Messages" id="Wrb-fm-mH3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" id="0J8-73-VLC"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJO-tu-iOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -82,6 +82,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Like" width="26" height="24"/>
         <namedColor name="AppColor">
             <color red="0.40784313725490196" green="0.22745098039215686" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

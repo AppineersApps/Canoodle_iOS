@@ -220,9 +220,16 @@
 		27F8A3AF233107AE0089C804 /* LoginEmailAndSocialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8A3AE233107AE0089C804 /* LoginEmailAndSocialModel.swift */; };
 		27F8A3B1233107C20089C804 /* LoginEmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8A3B0233107C20089C804 /* LoginEmailModel.swift */; };
 		27F8A3B3233107CF0089C804 /* LoginPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8A3B2233107CF0089C804 /* LoginPhoneModel.swift */; };
-		AE5920112429E53D009C75E0 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AE5920102429E53D009C75E0 /* .swiftlint.yml */; };
+		AE7CCD3F252D825B001D9C88 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AE7CCD3E252D825B001D9C88 /* .swiftlint.yml */; };
 		AE838A6524C839C000F60EE6 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE838A6424C839C000F60EE6 /* GradientView.swift */; };
 		AE8467DB24DED3440042E0FE /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8467DA24DED3440042E0FE /* Array+Extension.swift */; };
+		AE8815222534A31D00B4B34C /* LikePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88151C2534A31D00B4B34C /* LikePresenter.swift */; };
+		AE8815232534A31D00B4B34C /* LikeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88151D2534A31D00B4B34C /* LikeWorker.swift */; };
+		AE8815242534A31D00B4B34C /* LikeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88151E2534A31D00B4B34C /* LikeRouter.swift */; };
+		AE8815252534A31D00B4B34C /* LikeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88151F2534A31D00B4B34C /* LikeModels.swift */; };
+		AE8815262534A31D00B4B34C /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8815202534A31D00B4B34C /* LikeViewController.swift */; };
+		AE8815272534A31D00B4B34C /* LikeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8815212534A31D00B4B34C /* LikeInteractor.swift */; };
+		AE88152B2534A35700B4B34C /* Like.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE88152A2534A35700B4B34C /* Like.storyboard */; };
 		AEED53BC24C446EA004B9AAE /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEED53BA24C446EA004B9AAE /* Onboarding.storyboard */; };
 		AEED53BD24C446EA004B9AAE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED53BB24C446EA004B9AAE /* OnboardingViewController.swift */; };
 		FECACB97C4A9DE569D66B73F /* Pods_canoodle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787FCF655A5FE8AEA0259917 /* Pods_canoodle.framework */; };
@@ -482,9 +489,16 @@
 		787FCF655A5FE8AEA0259917 /* Pods_canoodle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canoodle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A1F88FBF7A64FD0F4C717FF /* Pods-WhiteLabelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhiteLabelApp.debug.xcconfig"; path = "Target Support Files/Pods-WhiteLabelApp/Pods-WhiteLabelApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8AB7CEA4E69713413FC12FA8 /* Pods-canoodle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canoodle.release.xcconfig"; path = "Target Support Files/Pods-canoodle/Pods-canoodle.release.xcconfig"; sourceTree = "<group>"; };
-		AE5920102429E53D009C75E0 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		AE7CCD3E252D825B001D9C88 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		AE838A6424C839C000F60EE6 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		AE8467DA24DED3440042E0FE /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		AE88151C2534A31D00B4B34C /* LikePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikePresenter.swift; sourceTree = "<group>"; };
+		AE88151D2534A31D00B4B34C /* LikeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeWorker.swift; sourceTree = "<group>"; };
+		AE88151E2534A31D00B4B34C /* LikeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeRouter.swift; sourceTree = "<group>"; };
+		AE88151F2534A31D00B4B34C /* LikeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeModels.swift; sourceTree = "<group>"; };
+		AE8815202534A31D00B4B34C /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
+		AE8815212534A31D00B4B34C /* LikeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeInteractor.swift; sourceTree = "<group>"; };
+		AE88152A2534A35700B4B34C /* Like.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Like.storyboard; sourceTree = "<group>"; };
 		AEED53BA24C446EA004B9AAE /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		AEED53BB24C446EA004B9AAE /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		CBA8A70221B12E890E05AB25 /* Pods-canoodle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canoodle.debug.xcconfig"; path = "Target Support Files/Pods-canoodle/Pods-canoodle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -519,7 +533,7 @@
 		2709ABDE232F6050000708FF = {
 			isa = PBXGroup;
 			children = (
-				AE5920102429E53D009C75E0 /* .swiftlint.yml */,
+				AE7CCD3E252D825B001D9C88 /* .swiftlint.yml */,
 				2709ABE9232F6050000708FF /* canoodle */,
 				2709ABFE232F6052000708FF /* WhiteLabelAppTests */,
 				27E260FF2343640F00D74F5F /* WhiteLabelAppUITests */,
@@ -567,6 +581,7 @@
 		2709AC18232F6090000708FF /* Scence */ = {
 			isa = PBXGroup;
 			children = (
+				AE88151B2534A30200B4B34C /* Like */,
 				AEED53B924C446EA004B9AAE /* Onboarding */,
 				27AA9053233CE11A00A85134 /* ImageDetails */,
 				27F30B55233C9031008503EB /* SendFeedBack */,
@@ -1111,6 +1126,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AE88151B2534A30200B4B34C /* Like */ = {
+			isa = PBXGroup;
+			children = (
+				AE88151C2534A31D00B4B34C /* LikePresenter.swift */,
+				AE88151D2534A31D00B4B34C /* LikeWorker.swift */,
+				AE88151E2534A31D00B4B34C /* LikeRouter.swift */,
+				AE88151F2534A31D00B4B34C /* LikeModels.swift */,
+				AE8815202534A31D00B4B34C /* LikeViewController.swift */,
+				AE8815212534A31D00B4B34C /* LikeInteractor.swift */,
+				AE88152A2534A35700B4B34C /* Like.storyboard */,
+			);
+			path = Like;
+			sourceTree = "<group>";
+		};
 		AEED53B924C446EA004B9AAE /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -1255,6 +1284,7 @@
 				27F3482F233B359B0036558B /* Messages.storyboard in Resources */,
 				273D74C1233387BB003FBEF9 /* ForgotPasswordEmail.storyboard in Resources */,
 				2709ACE1232F6092000708FF /* Montserrat-Regular.ttf in Resources */,
+				AE7CCD3F252D825B001D9C88 /* .swiftlint.yml in Resources */,
 				2709AC9A232F6092000708FF /* SignUp.storyboard in Resources */,
 				2709ACD6232F6092000708FF /* LaunchScreen.storyboard in Resources */,
 				2709ACE0232F6092000708FF /* Montserrat-SemiBold.ttf in Resources */,
@@ -1263,6 +1293,7 @@
 				27B5C6082333A163001743B7 /* GoogleService-Info.plist in Resources */,
 				2709ACDF232F6092000708FF /* Montserrat-Bold.ttf in Resources */,
 				2709AC90232F6092000708FF /* ForgotPasswordPhone.storyboard in Resources */,
+				AE88152B2534A35700B4B34C /* Like.storyboard in Resources */,
 				27D8BF57233221830075DB6E /* GoogleSearch.storyboard in Resources */,
 				27F3488F233B853A0036558B /* ChangeMobileNumber.storyboard in Resources */,
 				2709ACDD232F6092000708FF /* Montserrat-Medium.ttf in Resources */,
@@ -1271,7 +1302,6 @@
 				2709ACDC232F6092000708FF /* loading.json in Resources */,
 				27BFF7032332657E0056CA93 /* Home.storyboard in Resources */,
 				27AA5A432330D91F00632CBD /* Assets.xcassets in Resources */,
-				AE5920112429E53D009C75E0 /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1431,7 +1461,9 @@
 				27D36FFE2334FA7F00C4E72D /* StaticPageWorker.swift in Sources */,
 				2709AC96232F6092000708FF /* SignUpModels.swift in Sources */,
 				27F3488C233B853A0036558B /* ChangeMobileNumberInteractor.swift in Sources */,
+				AE8815272534A31D00B4B34C /* LikeInteractor.swift in Sources */,
 				2709ACBA232F6092000708FF /* WhiteLabelSessionHandler.swift in Sources */,
+				AE8815232534A31D00B4B34C /* LikeWorker.swift in Sources */,
 				2709AC8B232F6092000708FF /* SplashViewController.swift in Sources */,
 				2709AC97232F6092000708FF /* SignUpRouter.swift in Sources */,
 				2709ACD8232F6092000708FF /* CustomTextView.swift in Sources */,
@@ -1487,6 +1519,7 @@
 				2709ACD1232F6092000708FF /* UIView+extension.swift in Sources */,
 				27F8A3AF233107AE0089C804 /* LoginEmailAndSocialModel.swift in Sources */,
 				27425E53233B66F6009F9E3E /* EditProfileModels.swift in Sources */,
+				AE8815222534A31D00B4B34C /* LikePresenter.swift in Sources */,
 				2709ACAB232F6092000708FF /* LoginEmailWorker.swift in Sources */,
 				2709ACB7232F6092000708FF /* LoginPhoneInteractor.swift in Sources */,
 				27D36FFF2334FA7F00C4E72D /* StaticPageModels.swift in Sources */,
@@ -1500,6 +1533,7 @@
 				27F30B5F233C906E008503EB /* SendFeedbackWorker.swift in Sources */,
 				27E604F92338BC6B00704130 /* SettingInteractor.swift in Sources */,
 				2709ACC8232F6092000708FF /* RouterProtocol.swift in Sources */,
+				AE8815252534A31D00B4B34C /* LikeModels.swift in Sources */,
 				27F8A3B1233107C20089C804 /* LoginEmailModel.swift in Sources */,
 				27F34856233B37E30036558B /* MyProfileInteractor.swift in Sources */,
 				2709ACC1232F6092000708FF /* AlertMessages.swift in Sources */,
@@ -1530,6 +1564,7 @@
 				27F34839233B37760036558B /* FriendsPresenter.swift in Sources */,
 				27425E55233B66F6009F9E3E /* EditProfileInteractor.swift in Sources */,
 				27CADCAE235095FC00F64171 /* SplashPresenter.swift in Sources */,
+				AE8815242534A31D00B4B34C /* LikeRouter.swift in Sources */,
 				27F3483C233B37760036558B /* FriendsModels.swift in Sources */,
 				2709AC8E232F6092000708FF /* ForgotPasswordPhoneInteractor.swift in Sources */,
 				278CC142232FB34A00F2CE32 /* LoginEmailAndSocialPresenter.swift in Sources */,
@@ -1537,6 +1572,7 @@
 				27E604F42338BC6B00704130 /* SettingPresenter.swift in Sources */,
 				27F8A3AD2331079E0089C804 /* LoginPhoneAndSocialModel.swift in Sources */,
 				27D8BF56233221830075DB6E /* SearchResultCell.swift in Sources */,
+				AE8815262534A31D00B4B34C /* LikeViewController.swift in Sources */,
 				27F30B68233C97DE008503EB /* SendFeedbackImageCollectionViewCell.swift in Sources */,
 				27F30B6A233C9841008503EB /* SendFeedbackAddImageCollectionViewCell.swift in Sources */,
 				278CC135232FB32000F2CE32 /* LoginPhoneAndSocialWorker.swift in Sources */,

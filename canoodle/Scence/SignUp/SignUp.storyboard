@@ -6,23 +6,22 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Sign Up View Controller-->
         <scene sceneID="QEq-sP-rCw">
             <objects>
-                <viewController storyboardIdentifier="SignUpViewController" id="YN9-rI-62c" customClass="SignUpViewController" customModule="Canoodle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" wantsFullScreenLayout="YES" extendedLayoutIncludesOpaqueBars="YES" id="YN9-rI-62c" customClass="SignUpViewController" customModule="Canoodle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pB1-LV-qmA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboardingbg" translatesAutoresizingMaskIntoConstraints="NO" id="gsN-H8-w04">
-                                <rect key="frame" x="0.0" y="44" width="375" height="956"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1041"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpQ-8Q-4Tu">
-                                <rect key="frame" x="0.0" y="44" width="375" height="956"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qm2-G5-4cw">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1064"/>
@@ -73,7 +72,7 @@
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7I0-DS-HLx" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="310" height="40"/>
-                                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="NRE-Gl-1SO"/>
                                                                 </constraints>
@@ -97,7 +96,7 @@
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b6e-Lb-O9P" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="50" width="310" height="40"/>
-                                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="nXQ-cU-0k8"/>
                                                                 </constraints>
@@ -121,6 +120,7 @@
                                                             </textField>
                                                             <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a7q-hc-TXc" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="95" width="310" height="40"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="e8a-KJ-Z4G"/>
                                                                 </constraints>
@@ -138,7 +138,7 @@
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A0K-zU-mMn" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="100" width="310" height="40"/>
-                                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="KCM-2y-VAW"/>
                                                                 </constraints>
@@ -162,7 +162,7 @@
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fVp-HW-1tH" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="150" width="310" height="40"/>
-                                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="SHt-vi-Qkd"/>
                                                                 </constraints>
@@ -189,6 +189,7 @@
                                                             </textField>
                                                             <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DOB" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mgv-aP-J9A" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="195" width="310" height="40"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="Lsh-c5-5ME"/>
                                                                 </constraints>
@@ -206,7 +207,7 @@
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2qw-xj-QgE" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="200" width="310" height="40"/>
-                                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="48l-c3-Vw2"/>
                                                                 </constraints>
@@ -230,7 +231,7 @@
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Edg-j1-KEQ" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="250" width="310" height="40"/>
-                                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="COo-He-aOj"/>
                                                                 </constraints>
@@ -254,7 +255,7 @@
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QT4-7d-7y2" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="300" width="310" height="40"/>
-                                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="1U7-kD-C83"/>
                                                                 </constraints>
@@ -278,7 +279,7 @@
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lry-aI-N3N" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="350" width="310" height="40"/>
-                                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="03w-7o-FJt"/>
                                                                 </constraints>
@@ -302,7 +303,7 @@
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k0q-nC-jZv" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="400" width="310" height="40"/>
-                                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="NBe-SV-bpe"/>
                                                                 </constraints>
@@ -326,7 +327,7 @@
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NlC-zG-MGf" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="450" width="310" height="40"/>
-                                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="ViD-GK-S3Z"/>
                                                                 </constraints>
@@ -351,7 +352,7 @@
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" red="0.40784313725490196" green="0.22745098039215686" blue="0.78431372549019607" alpha="0.22292380136986301" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="ksJ-0F-FCr" secondAttribute="trailing" constant="10" id="3Nq-Am-R4g"/>
                                                     <constraint firstItem="ksJ-0F-FCr" firstAttribute="top" secondItem="cml-0Q-Jo0" secondAttribute="top" constant="19" id="gIm-My-MFE"/>
@@ -366,7 +367,7 @@
                                                         <real key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
@@ -395,7 +396,7 @@
                                                     <constraint firstAttribute="width" constant="30" id="Hi1-6l-xcr"/>
                                                     <constraint firstAttribute="height" constant="30" id="nWF-Pl-D1H"/>
                                                 </constraints>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="signup_uncheck"/>
                                                 <state key="selected" image="signup_check"/>
                                                 <connections>
@@ -409,7 +410,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.40784313725490196" green="0.22745098039215686" blue="0.78431372549019607" alpha="0.13559503424657535" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="cml-0Q-Jo0" firstAttribute="leading" secondItem="Qm2-G5-4cw" secondAttribute="leading" constant="22" id="3Ka-V1-UdQ"/>
                                             <constraint firstAttribute="bottom" secondItem="mGM-hP-rh3" secondAttribute="bottom" constant="187" id="8aL-50-zN5"/>
@@ -453,11 +454,12 @@
                             <constraint firstItem="wpQ-8Q-4Tu" firstAttribute="leading" secondItem="Fo5-uw-uFP" secondAttribute="leading" id="d94-8K-Qy0"/>
                             <constraint firstItem="wpQ-8Q-4Tu" firstAttribute="top" secondItem="Fo5-uw-uFP" secondAttribute="top" id="hgb-Ha-uX2"/>
                             <constraint firstItem="Fo5-uw-uFP" firstAttribute="trailing" secondItem="wpQ-8Q-4Tu" secondAttribute="trailing" id="i9w-kn-5kS"/>
-                            <constraint firstItem="Fo5-uw-uFP" firstAttribute="bottom" secondItem="gsN-H8-w04" secondAttribute="bottom" id="nFS-0B-T58"/>
+                            <constraint firstItem="Fo5-uw-uFP" firstAttribute="bottom" secondItem="gsN-H8-w04" secondAttribute="bottom" constant="-41" id="nFS-0B-T58"/>
                             <constraint firstItem="Fo5-uw-uFP" firstAttribute="bottom" secondItem="wpQ-8Q-4Tu" secondAttribute="bottom" id="qdb-uT-uoc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UMH-et-Bkc"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="btnCreate" destination="mGM-hP-rh3" id="MBX-4E-Yru"/>
@@ -508,40 +510,40 @@
     </scenes>
     <designables>
         <designable name="2qw-xj-QgE">
-            <size key="intrinsicContentSize" width="93" height="18.5"/>
+            <size key="intrinsicContentSize" width="53" height="18.5"/>
         </designable>
         <designable name="7I0-DS-HLx">
-            <size key="intrinsicContentSize" width="110" height="18.5"/>
+            <size key="intrinsicContentSize" width="70" height="18.5"/>
         </designable>
         <designable name="A0K-zU-mMn">
-            <size key="intrinsicContentSize" width="74.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="34.5" height="18.5"/>
         </designable>
         <designable name="Edg-j1-KEQ">
-            <size key="intrinsicContentSize" width="66" height="18.5"/>
+            <size key="intrinsicContentSize" width="26" height="18.5"/>
         </designable>
         <designable name="NlC-zG-MGf">
-            <size key="intrinsicContentSize" width="157.5" height="17"/>
+            <size key="intrinsicContentSize" width="117.5" height="17"/>
         </designable>
         <designable name="QT4-7d-7y2">
-            <size key="intrinsicContentSize" width="74" height="18.5"/>
+            <size key="intrinsicContentSize" width="34" height="18.5"/>
         </designable>
         <designable name="a7q-hc-TXc">
-            <size key="intrinsicContentSize" width="124" height="34"/>
+            <size key="intrinsicContentSize" width="94" height="34"/>
         </designable>
         <designable name="b6e-Lb-O9P">
-            <size key="intrinsicContentSize" width="109" height="18.5"/>
+            <size key="intrinsicContentSize" width="69" height="18.5"/>
         </designable>
         <designable name="fVp-HW-1tH">
-            <size key="intrinsicContentSize" width="136.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="96.5" height="18.5"/>
         </designable>
         <designable name="k0q-nC-jZv">
-            <size key="intrinsicContentSize" width="102.5" height="17"/>
+            <size key="intrinsicContentSize" width="62.5" height="17"/>
         </designable>
         <designable name="lry-aI-N3N">
-            <size key="intrinsicContentSize" width="99" height="18.5"/>
+            <size key="intrinsicContentSize" width="59" height="18.5"/>
         </designable>
         <designable name="mgv-aP-J9A">
-            <size key="intrinsicContentSize" width="88" height="34"/>
+            <size key="intrinsicContentSize" width="58" height="34"/>
         </designable>
     </designables>
     <resources>
@@ -559,16 +561,10 @@
             <color red="0.40784313725490196" green="0.22745098039215686" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BackgroundColor">
-            <color red="0.92941176470588238" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ButtonBackground1">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

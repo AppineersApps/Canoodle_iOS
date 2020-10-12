@@ -791,7 +791,9 @@ EE5vdGlmaWNhdGlvbnM
         <scene sceneID="OM8-pl-chb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O5A-Rf-2ya" customClass="NavController" customModule="Canoodle" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chat" image="Chat" selectedImage="icon_settings" id="Fj1-oz-jBa"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="Chat" id="Fj1-oz-jBa">
+                        <color key="badgeColor" name="AppColor"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="tGp-ix-KXE">
@@ -815,7 +817,6 @@ EE5vdGlmaWNhdGlvbnM
         <image name="btnBack" width="30" height="30"/>
         <image name="dropdown_arrow_s_10" width="7.5" height="12"/>
         <image name="icon_logout" width="24.5" height="26.5"/>
-        <image name="icon_settings" width="20" height="20"/>
         <image name="icon_trash" width="22" height="28"/>
         <namedColor name="AppColor">
             <color red="0.40784313725490196" green="0.22745098039215686" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

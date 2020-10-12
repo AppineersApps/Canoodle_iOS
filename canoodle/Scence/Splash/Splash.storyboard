@@ -16,8 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="aDa-iI-ziV">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="aDa-iI-ziV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="AppLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="D6o-Bd-j6a">
                                 <rect key="frame" x="0.0" y="308.5" width="375" height="50"/>
@@ -26,11 +27,7 @@
                         <viewLayoutGuide key="safeArea" id="mOa-uZ-4QY"/>
                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="mOa-uZ-4QY" firstAttribute="trailing" secondItem="aDa-iI-ziV" secondAttribute="trailing" id="GQX-QL-2XC"/>
                             <constraint firstItem="D6o-Bd-j6a" firstAttribute="leading" secondItem="mOa-uZ-4QY" secondAttribute="leading" id="HY6-Fa-rGh"/>
-                            <constraint firstItem="mOa-uZ-4QY" firstAttribute="bottom" secondItem="aDa-iI-ziV" secondAttribute="bottom" id="IgH-jV-jXi"/>
-                            <constraint firstItem="aDa-iI-ziV" firstAttribute="top" secondItem="mOa-uZ-4QY" secondAttribute="top" id="LM4-xG-Hqc"/>
-                            <constraint firstItem="aDa-iI-ziV" firstAttribute="leading" secondItem="mOa-uZ-4QY" secondAttribute="leading" id="dwb-Ij-mXE"/>
                             <constraint firstItem="mOa-uZ-4QY" firstAttribute="trailing" secondItem="D6o-Bd-j6a" secondAttribute="trailing" id="exL-Gi-7KD"/>
                             <constraint firstItem="D6o-Bd-j6a" firstAttribute="centerY" secondItem="mOa-uZ-4QY" secondAttribute="centerY" id="ndf-Ko-uSt"/>
                         </constraints>

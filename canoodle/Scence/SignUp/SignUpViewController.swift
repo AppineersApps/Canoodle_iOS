@@ -150,6 +150,7 @@ class SignUpViewController: BaseViewController {
     // SetUpLayout initial setup UI and hide/show button base on json
     func setUpLayout() {
         self.title = AlertMessage.signUpTitle
+        self.navigationController?.navigationBar.barTintColor =  UIColor.clear
         textFieldArray = [txtFieldFirstName, txtFieldLastName, txtFieldUserName, txtFieldEmail, txtFieldMobile, txtFieldDateOfBirth, txtFieldStreet, txtFieldCity, txtFieldState, txtFieldZip, txtFieldPassword, txtFieldConfirmPassword]
         self.showDatePicker()
         self.accessConfigFile()
@@ -489,23 +490,23 @@ class SignUpViewController: BaseViewController {
         let range = (txtViewTerms.text! as NSString).range(of: txtViewTerms.text)
         let underlineAttriString = NSMutableAttributedString(string: txtViewTerms.text!, attributes: nil)
         underlineAttriString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 14.0), range: range)
-        underlineAttriString.addAttribute(NSAttributedString.Key.foregroundColor, value: AppConstants.placeholderColor, range: range)
+        underlineAttriString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white, range: range)
         
         let range1 = (txtViewTerms.text! as NSString).range(of: "Terms & Conditions")
         underlineAttriString.addAttribute(NSAttributedString.Key(rawValue: "idnum"), value: "1", range: range1)
-        underlineAttriString.addAttribute(NSAttributedString.Key.foregroundColor, value: AppConstants.appColor!, range: range1)
+        underlineAttriString.addAttribute(NSAttributedString.Key.foregroundColor, value:UIColor.white, range: range1)
         
         let range2 = (txtViewTerms.text! as NSString).range(of: "Privacy Policy")
         underlineAttriString.addAttribute(NSAttributedString.Key(rawValue: "idnum"), value: "2", range: range2)
-        underlineAttriString.addAttribute(NSAttributedString.Key.foregroundColor, value: AppConstants.appColor!, range: range2)
+        underlineAttriString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white, range: range2)
         
         let range3 = (txtViewTerms.text! as NSString).range(of: "Terms & Conditions")
-        underlineAttriString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black, range: range3)
-        underlineAttriString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 15.0), range: range3)
+        underlineAttriString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white, range: range3)
+        underlineAttriString.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: 15.0), range: range3)
         
         let range4 = (txtViewTerms.text! as NSString).range(of: "Privacy Policy")
-        underlineAttriString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black, range: range4)
-        underlineAttriString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 15.0), range: range4)
+        underlineAttriString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white, range: range4)
+        underlineAttriString.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: 15.0), range: range4)
         txtViewTerms.attributedText = underlineAttriString
     }
     

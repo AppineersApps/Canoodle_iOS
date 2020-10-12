@@ -104,6 +104,17 @@ class LoginEmailAndSocialViewController: BaseViewController {
         setUpLayout()
     }
     
+    /// Method is called when view will appears
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     /// Method is called when view did appears
     ///
     /// - Parameter animated: animated

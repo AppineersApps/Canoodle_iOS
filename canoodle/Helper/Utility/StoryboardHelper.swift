@@ -52,6 +52,8 @@ enum AppClass: String {
    case ImageDetailsVC = "ImageDetailsViewController"
     /// Storyboard instance for OnboardingVC
     case OnboardingVC = "OnboardingViewController"
+    /// Storyboard instance for LikeVC
+    case LikeVC = "LikeViewController"
 }
 
 /// Enum for Storyboard
@@ -96,6 +98,8 @@ enum StoryBoard: String {
     case ImageDetails
     /// Onboarding
     case Onboarding
+    /// Like
+    case Like
     
     /// Storyboard instance
     var board: UIStoryboard {
