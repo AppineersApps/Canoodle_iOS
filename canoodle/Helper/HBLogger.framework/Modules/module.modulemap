@@ -1,0 +1,11 @@
+framework module HBLogger {
+  umbrella header "HBLogger.h"
+
+  export *
+  module * { export * }
+}
+
+module HBLogger.Swift {
+    header "HBLogger-Swift.h"
+    requires objc
+}

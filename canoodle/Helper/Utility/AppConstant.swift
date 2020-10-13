@@ -14,6 +14,7 @@ struct AppConstants {
     
     /// App color
     static let appColor = UIColor(named: "AppColor")
+    static let appColor2 = UIColor(named: "AppColor2")
     /// App Name
     static let appName = "canoodle"
     /// App delegate object
@@ -65,6 +66,31 @@ struct AppConstants {
     static let subscriptionId = "goadfree"
     /// Is login skipped
     static var isLoginSkipped = false
+    
+    
+     static let NavHeight = (deviceName == "iPhoneX") ? 84:64
+     static let barHeight = (deviceName == "iPhoneX") ? 84:50
+    
+     static var deviceName : String {
+         get {
+             if UIDevice().userInterfaceIdiom == .phone {
+                 switch UIScreen.main.nativeBounds.height {
+                 case 1136:
+                     return "iPhone5"
+                 case 1334:
+                     return "iPhone6"
+                 case 1920, 2208:
+                     return "iPhone6+"
+                 case 2436,1792,2688:
+                     return "iPhoneX"
+                 default:
+                     return "unknown"
+                 }
+             } else {
+                 return "unknown"
+             }
+         }
+     }
 }
 
 /// Struct for the api
@@ -98,7 +124,7 @@ struct AppInfo {
     /// App Bundle identifier
     static let kBundleIdentifier = Bundle.main.bundleIdentifier
     /// App Store ID
-    static let kAppstoreID = "1480838689"
+    static let kAppstoreID = "1535434678"
     /// Play store bundle id
     static let kAndriodAppId = "com.app.whitelabel"
 }

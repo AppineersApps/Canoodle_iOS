@@ -222,6 +222,8 @@
 		27F8A3B3233107CF0089C804 /* LoginPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8A3B2233107CF0089C804 /* LoginPhoneModel.swift */; };
 		AE537EE22535378B0084A780 /* HomeCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE537EE02535378B0084A780 /* HomeCardView.xib */; };
 		AE537EE32535378B0084A780 /* HomeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE537EE12535378B0084A780 /* HomeCardView.swift */; };
+		AE6BA3E02535A8AD00601D1E /* HBLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6BA3DE2535A8A000601D1E /* HBLogger.framework */; };
+		AE6BA3E12535A8AD00601D1E /* HBLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE6BA3DE2535A8A000601D1E /* HBLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE7CCD3F252D825B001D9C88 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AE7CCD3E252D825B001D9C88 /* .swiftlint.yml */; };
 		AE838A6524C839C000F60EE6 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE838A6424C839C000F60EE6 /* GradientView.swift */; };
 		AE8467DB24DED3440042E0FE /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8467DA24DED3440042E0FE /* Array+Extension.swift */; };
@@ -261,6 +263,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				AE6BA3E12535A8AD00601D1E /* HBLogger.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,7 +432,7 @@
 		27D8BF53233221830075DB6E /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		27D8BF54233221830075DB6E /* GoogleSearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GoogleSearch.storyboard; sourceTree = "<group>"; };
 		27D8BF58233249B40075DB6E /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		27DF242823E03EBA00E878BF /* The Appineers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "The Appineers.entitlements"; sourceTree = "<group>"; };
+		27DF242823E03EBA00E878BF /* canoodle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = canoodle.entitlements; sourceTree = "<group>"; };
 		27DF242923E0660300E878BF /* KeychainItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
 		27E260FE2343640E00D74F5F /* canoodleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = canoodleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E261002343640F00D74F5F /* WhiteLabelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteLabelAppUITests.swift; sourceTree = "<group>"; };
@@ -493,6 +496,7 @@
 		8AB7CEA4E69713413FC12FA8 /* Pods-canoodle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canoodle.release.xcconfig"; path = "Target Support Files/Pods-canoodle/Pods-canoodle.release.xcconfig"; sourceTree = "<group>"; };
 		AE537EE02535378B0084A780 /* HomeCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCardView.xib; sourceTree = "<group>"; };
 		AE537EE12535378B0084A780 /* HomeCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCardView.swift; sourceTree = "<group>"; };
+		AE6BA3DE2535A8A000601D1E /* HBLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HBLogger.framework; sourceTree = "<group>"; };
 		AE7CCD3E252D825B001D9C88 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		AE838A6424C839C000F60EE6 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		AE8467DA24DED3440042E0FE /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -513,6 +517,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE6BA3E02535A8AD00601D1E /* HBLogger.framework in Frameworks */,
 				FECACB97C4A9DE569D66B73F /* Pods_canoodle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,7 +565,7 @@
 		2709ABE9232F6050000708FF /* canoodle */ = {
 			isa = PBXGroup;
 			children = (
-				27DF242823E03EBA00E878BF /* The Appineers.entitlements */,
+				27DF242823E03EBA00E878BF /* canoodle.entitlements */,
 				2709AC7C232F6091000708FF /* AppDelegate */,
 				2709AC6D232F6091000708FF /* Extension */,
 				2709AC52232F6090000708FF /* Helper */,
@@ -721,6 +726,7 @@
 		2709AC52232F6090000708FF /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				AE6BA3DE2535A8A000601D1E /* HBLogger.framework */,
 				277D7811233E38FD00A496FD /* Loader */,
 				27B5C6072333A163001743B7 /* GoogleService-Info.plist */,
 				2709AC79232F6091000708FF /* CustomFiles */,
@@ -1778,7 +1784,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = NPMQJ6P5X4;
 				ENABLE_BITCODE = YES;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/canoodle/Helper",
@@ -1811,7 +1817,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NPMQJ6P5X4;
 				ENABLE_BITCODE = YES;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/canoodle/Helper",

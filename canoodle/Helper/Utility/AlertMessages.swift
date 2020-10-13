@@ -16,7 +16,7 @@ struct AlertMessage {
     static let cancel = "Cancel"
     static let ok = "Ok"
     
-    static let shareApp = NSLocalizedString("Try \(AppInfo.kAppName) App on Appstore or Playstore:\nhttps://itunes.apple.com/us/app/apple-store/id" + AppInfo.kAppstoreID + " \nhttps://play.google.com/store/apps/details?id=\(AppInfo.kAndriodAppId)", comment: "")
+    static let shareApp = NSLocalizedString("Try \(AppInfo.kAppName) App on Appstore:\nhttps://itunes.apple.com/us/app/apple-store/id\(AppInfo.kAppstoreID)", comment: "")
     
     static let logoutMessage = NSLocalizedString("You are logged out now because you have logged in from some other device.", comment: "")
     

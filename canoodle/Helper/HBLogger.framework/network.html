@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <style>
+            .capitalize {
+        	    text-transform: uppercase;
+            }
+        </style>
+		<script type="text/javascript">
+			function createHeader(header) {
+				return '<h3 style="color:orange;">--- ' + header + ' ---</h3>';
+			}
+			function createHTMLFromObj(obj) {
+				var html = '';
+                for (var key in obj) {
+                    if (obj.hasOwnProperty(key)) {
+                        html += '<p><strong class="capitalize">[' + key + ']</strong><br/>' + obj[key] + '</p>';
+                    }
+                }
+                if (html.length == 0) {
+                    return 'N/A';
+                }
+				return html
+			}
+			function createHTMLFromCrashObj(obj) {
+				var html = '';
+				html += '<p><strong class="capitalize">[' + 'Name' + ']</strong><br/>' + obj['name'] + '</p>';
+				html += '<p><strong class="capitalize">[' + 'Reason' + ']</strong><br/>' + obj['reason'] + '</p>';
+				html += '<p><strong class="capitalize">[' + 'Date' + ']</strong><br/>' + obj['date'] + '</p>';
+				html += '<p><strong class="capitalize">[' + 'Stacktrash' + ']</strong><br/><pre>' + obj['stacktrace'] + '</pre></p>';
+				return html
+			}
+			function fillInfo(url, method, status, requestDate, responseDate, timeTaken) {
+                document.getElementById('container').innerHTML = '';
+				var html = createHeader('API Information');
+				html += '<p><strong>[URL]</strong><br/>' + url + '</p>';
+				html += '<p><strong>[METHOD]</strong><br/>' + method + '</p>';
+				html += '<p><strong>[REQUEST DATE]</strong><br/>' + requestDate + '</p>';
+				html += '<p><strong>[RESPONSE DATE]</strong><br/>' + responseDate + '</p>';
+                html += '<p><strong>[HTTP STATUS]</strong><br/>' + status + '</p>';
+				html += '<p><strong>[TIME]</strong><br/>' + timeTaken + '</p>';
+				document.getElementById('container').innerHTML = html;
+			}
+			function fillRequest(headers, parameters) {
+                document.getElementById('container').innerHTML = '';
+                var headerObj = headers;
+                var parameterObj = parameters;
+
+				var html = createHeader('Headers');
+				html += createHTMLFromObj(headerObj);
+
+				html += createHeader('Parameters');
+				if (headerObj['Content-Type'] == 'application/json') {
+					var strJSON = JSON.stringify(parameterObj, undefined, 4);
+					html += '<p><pre>' + strJSON + '</pre></p>';
+				} else {
+					html += createHTMLFromObj(parameterObj);
+				}
+
+				document.getElementById('container').innerHTML = html;
+			}
+			function fillResponse(response) {
+                document.getElementById('container').innerHTML = '';
+                var obj = response;
+				var strJSON = JSON.stringify(obj, undefined, 4);
+				var html = createHeader('Response');
+                if (strJSON) {
+                    html += '<p><pre>' + strJSON + '</pre></p>';
+                } else {
+                    html += '<p><pre>' + obj + '</pre></p>';
+                }
+				document.getElementById('container').innerHTML = html;
+			}
+			function fillCrashInfo(stacktrash) {
+                document.getElementById('container').innerHTML = '';
+				var html = createHeader('Crash Information');
+				html += createHTMLFromCrashObj(stacktrash);
+				document.getElementById('container').innerHTML = html;
+			}
+			function fillDeviceInfo(info) {
+                document.getElementById('container').innerHTML = '';
+                var obj = info;
+				var strJSON = JSON.stringify(obj, undefined, 4);
+				var html = createHeader('Device Information');
+				html += '<p><pre>' + strJSON + '</pre></p>';
+				document.getElementById('container').innerHTML = html;
+			}
+			function fillEventInfo(type, func, screen, name, info, user, date) {
+                document.getElementById('container').innerHTML = '';
+				var html = createHeader(type + ' Details');
+				if (screen) {
+					html += '<p><strong>[SCREEN]</strong><br/>' + screen + '</p>';
+				}
+				if (func) {
+					html += '<p><strong>[FUNCTION]</strong><br/>' + func + '</p>';
+				}
+				html += '<p><strong>[EVENT NAME]</strong><br/>' + name + '</p>';
+				html += '<p><strong>[INFORMATION]</strong><br/>' + info + '</p>';
+				html += '<p><strong>[USER]</strong><br/>' + user + '</p>';
+				html += '<p><strong>[DATE]</strong><br/>' + date + '</p>';
+				document.getElementById('container').innerHTML = html;
+			}
+		</script>
+	</head>
+	<body>
+		<div id='container'></div>
+	</body>
+</html>
