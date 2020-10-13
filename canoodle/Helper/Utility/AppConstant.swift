@@ -30,7 +30,7 @@ struct AppConstants {
     /// Enable checksum for the api
     static var enableChecksum = false
     /// Is debug mode on
-    static let isDebug = false
+    static let isDebug = true
     /// AES Encryption ket
     static let aesEncryptionKey = "CIT@WS!"
     /// Webservice checksum

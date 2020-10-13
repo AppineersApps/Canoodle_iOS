@@ -111,6 +111,10 @@ extension UIView {
         layer.shadowOpacity = 0.5
         layer.shadowPath = shadowPath.cgPath
         layer.shadowRadius = 1.0
-
+    }
+    
+    class func viewFromNibName(_ name: String) -> UIView? {
+      let views = Bundle.main.loadNibNamed(name, owner: nil, options: nil)
+      return views?.first as? UIView
     }
 }

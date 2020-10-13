@@ -25,8 +25,8 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
-      //  imageView.layer.cornerRadius = 12
-      //  imageView.setCornerRadiusAndShadow(cornerRe: 12)
+       // imageView.layer.cornerRadius = 12
+       // imageView.setCornerRadiusAndShadow(cornerRe: 12)
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
             

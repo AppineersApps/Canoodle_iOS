@@ -233,11 +233,12 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBs-fj-BWl" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBs-fj-BWl" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                 <rect key="frame" x="48.5" y="515" width="278" height="50"/>
                                                 <color key="backgroundColor" name="AppColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="56" id="wSj-bk-GeU"/>
+                                                    <constraint firstAttribute="width" constant="278" id="5mX-pf-sry"/>
+                                                    <constraint firstAttribute="height" constant="50" id="wSj-bk-GeU"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <state key="normal" title="Send">
@@ -245,7 +246,7 @@
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <integer key="value" value="28"/>
+                                                        <integer key="value" value="25"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -265,14 +266,13 @@
                                             <constraint firstAttribute="trailing" secondItem="uK0-jw-xUV" secondAttribute="trailing" constant="20" id="NpN-vR-iVP"/>
                                             <constraint firstItem="Mx0-lj-6B6" firstAttribute="top" secondItem="uK0-jw-xUV" secondAttribute="bottom" constant="5" id="PQg-50-Zfu"/>
                                             <constraint firstItem="DBS-uF-cbB" firstAttribute="leading" secondItem="il4-br-Oij" secondAttribute="leading" constant="20" id="Sma-sF-jYW"/>
-                                            <constraint firstItem="nBs-fj-BWl" firstAttribute="leading" secondItem="il4-br-Oij" secondAttribute="leading" constant="48.5" id="Ute-6s-LM2"/>
                                             <constraint firstItem="Mx0-lj-6B6" firstAttribute="leading" secondItem="il4-br-Oij" secondAttribute="leading" constant="20" id="VFf-MQ-jyG"/>
                                             <constraint firstItem="uK0-jw-xUV" firstAttribute="top" secondItem="Y2Z-nO-1ex" secondAttribute="bottom" constant="10" id="Yt6-Ye-b0Y"/>
                                             <constraint firstItem="nBs-fj-BWl" firstAttribute="centerX" secondItem="DBS-uF-cbB" secondAttribute="centerX" id="age-9c-ZdB"/>
                                             <constraint firstItem="Y2Z-nO-1ex" firstAttribute="top" secondItem="il4-br-Oij" secondAttribute="top" id="g44-yP-L2s"/>
                                             <constraint firstItem="uK0-jw-xUV" firstAttribute="leading" secondItem="il4-br-Oij" secondAttribute="leading" constant="20" id="gZN-Xb-hcv"/>
                                             <constraint firstAttribute="trailing" secondItem="Mx0-lj-6B6" secondAttribute="trailing" constant="20" id="h0m-uH-GXr"/>
-                                            <constraint firstAttribute="bottom" secondItem="nBs-fj-BWl" secondAttribute="bottom" constant="4" id="h6r-Wn-guT"/>
+                                            <constraint firstAttribute="bottom" secondItem="nBs-fj-BWl" secondAttribute="bottom" constant="10" id="h6r-Wn-guT"/>
                                             <constraint firstItem="djQ-rG-ebk" firstAttribute="leading" secondItem="il4-br-Oij" secondAttribute="leading" constant="24" id="jhb-wf-STi"/>
                                             <constraint firstAttribute="trailing" secondItem="Y2Z-nO-1ex" secondAttribute="trailing" id="k45-9O-b8V"/>
                                             <constraint firstAttribute="trailing" secondItem="DBS-uF-cbB" secondAttribute="trailing" constant="20" id="k6h-eX-BN7"/>
@@ -325,7 +325,7 @@
             <color red="0.40784313725490196" green="0.22745098039215686" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BackgroundColor">
-            <color red="0.92941176470588238" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

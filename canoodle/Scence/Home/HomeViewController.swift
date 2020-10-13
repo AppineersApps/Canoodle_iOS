@@ -22,6 +22,11 @@ class HomeViewController: BaseViewControllerWithAd {
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
     
     @IBOutlet weak var viewAd: UIView!
+    @IBOutlet weak var cardHolderView: UIView!
+
+    
+    var homeCardViews: [HomeCardView] = []
+
     // MARK: Object lifecycle
     
      /// Override method to initialize with nib
@@ -63,10 +68,51 @@ class HomeViewController: BaseViewControllerWithAd {
     /// Method is called when view loads
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Canoodle"
+        self.navigationItem.title = "Home"
         self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false)
         self.addAnayltics(analyticsParameterItemID: "id-homescreen", analyticsParameterItemName: "view_homescreen", analyticsParameterContentType: "view_homescreen")
+        setUpHomeCardViews()
         //addForceCrashButton()
+    }
+    
+    func setUpHomeCardViews() {
+        homeCardViews.removeAll()
+        cardHolderView.subviews.forEach({
+            if($0.tag == 100) {
+                $0.removeFromSuperview()
+            }
+        })
+
+        GlobalUtility.showHud()
+        print("initialising home cards")
+        for n in 0...4 {
+            let homeCardView:HomeCardView = (UIView.viewFromNibName("HomeCardView") as? HomeCardView)!
+            homeCardView.frame = CGRect(x: 0, y: cardHolderView.frame.size.height, width: cardHolderView.frame.size.width, height: cardHolderView.frame.size.height)
+            homeCardView.setCornerRadiusAndShadow(cornerRe: 24)
+            homeCardView.tag = 100
+            cardHolderView.addSubview(homeCardView)
+            homeCardView.frame = CGRect(x: 0, y: 0, width: self.cardHolderView.frame.size.width, height: self.cardHolderView.frame.size.height)
+            homeCardView.initCard(index: n)
+            //homeCardView.delegate = self
+                /* UIView.animate(withDuration: 0.3,
+                           delay: 0.0,
+                           options: [.curveEaseInOut, .allowUserInteraction],
+                           animations: {
+                            homeCardView.frame = CGRect(x: 16, y: 0, width: self.cardHolderView.frame.size.width - 32, height: self.cardHolderView.frame.size.height)
+            },
+                           completion: { finished in
+                            homeCardView.initCard(user: self.usersList[n])
+                            homeCardView.delegate = self
+            })*/
+            homeCardViews.append(homeCardView)
+        }
+        let secondsToDelay = 2.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
+           print("This message is delayed")
+           // Put any code you want to be delayed here
+            GlobalUtility.hideHud()
+        }
+
     }
     
     func addForceCrashButton() {
@@ -81,6 +127,9 @@ class HomeViewController: BaseViewControllerWithAd {
         fatalError()
     }
     
+    @IBAction func reloadButtonTapped(_ sender: AnyObject) {
+        setUpHomeCardViews()
+    }
     
     @IBAction func Settingsbtn(_ sender: Any) {
         
