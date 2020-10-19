@@ -99,7 +99,7 @@ struct ApiServer {
     static let local = ""
     /// URL for staging
 //    static let staging = "http://18.211.58.235/AppineersApp_V2/WS"
-    static let staging = "http://18.211.58.235/canoodle/WS"
+    static let staging = "http://18.211.58.235/mad_collab/WS"
     /// URL for production
     static let prodcution = ""
 }
@@ -241,6 +241,8 @@ enum StaticPageCode: String {
     case termsCondition = "termsconditions"
     /// - Code: About US
     case aboutUs = "aboutus"
+    /// - Code: Eula
+    case eula = "eula"
 }
 
 

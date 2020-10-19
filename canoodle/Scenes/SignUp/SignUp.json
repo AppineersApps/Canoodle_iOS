@@ -1,0 +1,44 @@
+{
+    "profilepictureoptional": "1",
+    "skip": "1",
+    "firstname": {
+        "visible": "1",
+        "optional": "1"
+    },
+    "lastname": {
+        "visible": "1",
+        "optional": "0"
+    },
+    "gender": {
+        "visible": "1",
+        "optional": "1"
+    },
+    "username": {
+        "visible": "0",
+        "optional": "1"
+    },
+    "phonenumber": {
+        "visible": "1",
+        "optional": "1"
+    },
+    "dateofbirth": {
+        "visible": "1",
+        "optional": "0"
+    },
+    "streetaddress": {
+        "visible": "1",
+        "optional": "1"
+    },
+    "city": {
+        "visible": "1",
+        "optional": "1"
+    },
+    "state": {
+        "visible": "1",
+        "optional": "1"
+    },
+    "zip": {
+        "visible": "1",
+        "optional": "1"
+    }
+}

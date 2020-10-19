@@ -57,6 +57,12 @@ target 'canoodle' do
   
   # In App rating prompt
    pod 'AppRating', '>= 0.0.1'
+   
+   # Slider with Min-Max thumbs
+   pod 'MultiSlider'
+   
+   pod 'ImageSlideshow', '~> 1.8.3'
+   pod "ImageSlideshow/Kingfisher"
  
 end
 

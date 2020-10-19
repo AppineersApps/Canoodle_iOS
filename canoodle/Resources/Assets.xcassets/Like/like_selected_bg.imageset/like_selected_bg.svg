@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="172.842" height="154.419" viewBox="0 0 172.842 154.419">
+    <defs>
+        <linearGradient id="ptdbam6xob" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#6538c5"/>
+            <stop offset="1" stop-color="#8445df"/>
+        </linearGradient>
+        <filter id="sbhdg6hqaa" width="172.842" height="154.419" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="10"/>
+            <feGaussianBlur result="blur" stdDeviation="10"/>
+            <feFlood flood-opacity=".149"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g filter="url(#sbhdg6hqaa)">
+        <g fill="url(#ptdbam6xob)" transform="translate(30 20)">
+            <path d="M104.842 93.419H8c-3.86 0-7-3.14-7-7V8c0-3.86 3.14-7 7-7h96.842c3.86 0 7 3.14 7 7v78.419c0 3.86-3.14 7-7 7z"/>
+            <path fill="#fff" d="M8 2C4.692 2 2 4.692 2 8v78.419c0 3.308 2.692 6 6 6h96.842c3.308 0 6-2.692 6-6V8c0-3.308-2.692-6-6-6H8m0-2h96.842c4.418 0 8 3.582 8 8v78.419c0 4.418-3.582 8-8 8H8c-4.418 0-8-3.582-8-8V8c0-4.418 3.582-8 8-8z"/>
+        </g>
+    </g>
+</svg>

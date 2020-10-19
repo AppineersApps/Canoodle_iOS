@@ -22,6 +22,8 @@ struct UserDefaultsManager {
     /// State list data
     static private var stateList: StateList.ViewModel?
     
+    static var filter: Filter?
+
     /// Get Device token for push
     static var deviceToken: String {
         get {
@@ -92,6 +94,50 @@ struct UserDefaultsManager {
             userDetails = decodedUser
         }
         return userDetails
+    }
+    
+    static func resetFilter() {
+        var dictionary: [String:String] = [:]
+       //  dictionary.updateValue("", forKey: "Interests")
+        if(userDetails?.city != nil && userDetails?.state != nil) {
+            dictionary.updateValue("\(userDetails!.city!), \(userDetails!.state!)", forKey: "Location")
+        } else {
+            dictionary.updateValue("", forKey: "Location")
+        }
+        dictionary.updateValue("18", forKey: "MinAge")
+        dictionary.updateValue("99", forKey: "MaxAge")
+        filter = Filter(dictionary: dictionary)
+        saveFilter(filter: filter!)
+    }
+    
+    static func setFilter(filter: Filter) {
+        UserDefaultsManager.self.filter = filter
+        saveFilter(filter: filter)
+    }
+    
+    static func getFilter() -> Filter {
+        loadFilter()
+        if(filter == nil) {
+            resetFilter()
+        }
+        return filter!
+    }
+    
+    static func saveFilter(filter: Filter) {
+       // applicationDefaults.setValue(filter.interests, forKey: "Interests")
+        applicationDefaults.setValue(filter.location, forKey: "Location")
+        applicationDefaults.setValue(filter.minAge, forKey: "MinAge")
+        applicationDefaults.setValue(filter.maxAge, forKey: "MaxAge")
+        applicationDefaults.synchronize()
+    }
+    
+    static func loadFilter() {
+            var dictionary: [String:String] = [:]
+          //  dictionary.updateValue(applicationDefaults.string(forKey: "Interests")!, forKey: "Interests")
+            dictionary.updateValue(applicationDefaults.string(forKey: "Location")!, forKey: "Location")
+            dictionary.updateValue(applicationDefaults.string(forKey: "MinAge")!, forKey: "MinAge")
+            dictionary.updateValue(applicationDefaults.string(forKey: "MaxAge")!, forKey: "MaxAge")
+            filter = Filter(dictionary: dictionary)
     }
     
     static var onboardingDone: String {

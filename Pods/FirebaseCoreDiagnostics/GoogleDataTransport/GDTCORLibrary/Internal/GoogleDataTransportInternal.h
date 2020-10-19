@@ -15,4 +15,8 @@
 // An umbrella header, for any other libraries in this repo to access Firebase Public and Private
 // headers. Any package manager complexity should be handled here.
 
+#if SWIFT_PACKAGE
+@import GoogleDataTransport;
+#else
 #import <GoogleDataTransport/GoogleDataTransport.h>
+#endif

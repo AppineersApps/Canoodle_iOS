@@ -84,7 +84,9 @@ static int64_t UptimeInNanoseconds() {
     _uptimeNanoseconds = UptimeInNanoseconds();
     _timeMillis =
         (int64_t)((CFAbsoluteTimeGetCurrent() + kCFAbsoluteTimeIntervalSince1970) * NSEC_PER_USEC);
-    _timezoneOffsetSeconds = [[NSTimeZone systemTimeZone] secondsFromGMT];
+    CFTimeZoneRef timeZoneRef = CFTimeZoneCopySystem();
+    _timezoneOffsetSeconds = CFTimeZoneGetSecondsFromGMT(timeZoneRef, 0);
+    CFRelease(timeZoneRef);
   }
   return self;
 }

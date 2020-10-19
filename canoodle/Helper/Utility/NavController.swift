@@ -53,10 +53,10 @@ final class NavController: UINavigationController {
         self.delegate = self
         self.isNavigationBarHidden = false
         self.navigationBar.isTranslucent = false
-        self.navigationBar.barTintColor =  AppConstants.appColor
+       // self.navigationBar.barTintColor =  AppConstants.appColor
         self.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor :  #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) ,NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 20.0)]
         //self.navigationItem.titleView?.backgroundColor = UIColor.red
-        self.navigationBar.setBackgroundImage(UIImage().gradientImageWithBounds(bounds: CGRect(x: 0, y: 0, width: Int(AppConstants.screenWidth), height: AppConstants.NavHeight), colors: [UIColor(named: "AppColor2")!.cgColor,UIColor(named: "AppColor")!.cgColor]), for: UIBarMetrics.default)
+        self.navigationBar.setBackgroundImage(UIImage().gradientImageWithBounds(bounds: CGRect(x: 0, y: 0, width: Int(AppConstants.screenWidth), height: AppConstants.NavHeight+5), colors: [UIColor(named: "AppColor")!.cgColor,UIColor(named: "AppColor2")!.cgColor]), for: UIBarMetrics.default)
         self.navigationBar.shadowImage = UIImage()
     }
     

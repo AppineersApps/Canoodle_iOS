@@ -51,7 +51,7 @@ enum  EditProfileAPIRouter: RouterProtocol {
                 "city": request.city,
                 "latitude": request.lat,
                 "longitude": request.long,
-                "state_id": request.stateId,
+                "state_name": request.stateName,
                 "zipcode": request.zipCode
             ]
             return params

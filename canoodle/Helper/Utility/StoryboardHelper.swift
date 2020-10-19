@@ -36,8 +36,8 @@ enum AppClass: String {
    case ForgotPasswordEmailVC = "ForgotPasswordEmailViewController"
     /// Storyboard instance for SettingVC
    case SettingVC = "SettingViewController"
-    /// Storyboard instance for FriendsVC
-    case FriendsVC = "FriendsViewController"
+    /// Storyboard instance for CanoodleVC
+    case CanoodleVC = "CanoodleViewController"
     /// Storyboard instance for MessagesVC
     case MessagesVC = "MessagesViewController"
     /// Storyboard instance for ChangePasswordVC
@@ -54,6 +54,14 @@ enum AppClass: String {
     case OnboardingVC = "OnboardingViewController"
     /// Storyboard instance for LikeVC
     case LikeVC = "LikeViewController"
+    /// Storyboard instance for UserProfileVC
+    case UserProfileVC = "UserProfileViewController"
+    /// Storyboard instance for SubscriptionVC
+    case SubscriptionVC = "SubscriptionViewController"
+    /// Storyboard instance for HomeFilterVC
+   case  HomeFilterVC = "HomeFilterViewController"
+    /// Storyboard instance for AboutMeVC
+   case  AboutMeVC = "AboutMeViewController"
 }
 
 /// Enum for Storyboard
@@ -82,8 +90,8 @@ enum StoryBoard: String {
     case ForgotPasswordEmail
     /// Setting
     case Setting
-    /// Friends
-    case Friends
+    /// Canoodle
+    case Canoodle
     /// Messages
     case Messages
     /// ChangePassword
@@ -100,6 +108,14 @@ enum StoryBoard: String {
     case Onboarding
     /// Like
     case Like
+    /// UserProfile
+    case UserProfile
+    /// HomeFilter
+    case HomeFilter
+    /// Subscription
+    case Subscription
+    /// AboutMe
+    case AboutMe
     
     /// Storyboard instance
     var board: UIStoryboard {
