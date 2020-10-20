@@ -29,6 +29,6 @@ class LikeViewCell: UITableViewCell {
     
     func setCellData(connection: Connection.ViewModel) {
         nameLabel.text = connection.userName
-        profileImageView.setImage(with: "\(connection.userImage!)", placeHolder: UIImage.init(named: "watermark"))
+        profileImageView.setImage(with: "\(connection.userImage!)", placeHolder: UIImage.init(named: "placeholder"))
     }
 }

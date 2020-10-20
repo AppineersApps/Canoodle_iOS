@@ -28,7 +28,6 @@ class HomeCardView: UIView {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var bgImageView: UIImageView!
     @IBOutlet weak var watermarkView: UIView!
-
     
     public weak var delegate: HomeCardViewProtocol?
 

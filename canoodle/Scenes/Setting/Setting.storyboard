@@ -739,14 +739,7 @@ EE5vdGlmaWNhdGlvbnM
                             <constraint firstItem="nn7-e1-sbx" firstAttribute="leading" secondItem="tbm-SL-Pa5" secondAttribute="leading" constant="20" id="xxa-UX-FGF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="C9o-I2-3wy">
-                        <barButtonItem key="leftBarButtonItem" title="MENU" image="btnBack" id="QHZ-v1-pfo">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="backbtn:" destination="Erm-cZ-zzI" id="3gR-AJ-3bK"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="C9o-I2-3wy"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
@@ -814,7 +807,6 @@ EE5vdGlmaWNhdGlvbnM
     </scenes>
     <resources>
         <image name="Chat" width="24" height="24"/>
-        <image name="btnBack" width="30" height="30"/>
         <image name="dropdown_arrow_s_10" width="7.5" height="12"/>
         <image name="icon_logout" width="24.5" height="26.5"/>
         <image name="icon_trash" width="22" height="28"/>

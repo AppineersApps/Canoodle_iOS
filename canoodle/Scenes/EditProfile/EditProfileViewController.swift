@@ -190,7 +190,7 @@ class EditProfileViewController: BaseViewController {
     ///   - addressArr: [String]
     ///   - textField: UITextField
     func setAddress(addressArr: [String], textField:UITextField) {
-        if signUpField.city.visible.booleanStatus() && signUpField.state.visible.booleanStatus() && signUpField.zip.visible.booleanStatus() {
+        if signUpField.city.visible.booleanStatus() && signUpField.state.visible.booleanStatus() {
             if addressArr.count > 0 {
                 if addressArr.count > 3 {
                     var string = ""

@@ -87,7 +87,7 @@ class MessagesListViewController: BaseViewControllerWithAd {
     /// Method is called when view loads
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.notificationReceived(notification:)), name: NSNotification.Name("UserNotification"), object: nil)
+      //  NotificationCenter.default.addObserver(self, selector: #selector(self.notificationReceived(notification:)), name: NSNotification.Name("UserNotification"), object: nil)
         self.navigationItem.title = "Messages"
        // UserDefaultsManager.msgCount = 0
         NotificationCenter.default.post(name: NSNotification.Name("ChatNotification"), object: nil, userInfo: nil)
@@ -124,9 +124,9 @@ class MessagesListViewController: BaseViewControllerWithAd {
         self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.premiumStatus?.booleanStatus() ?? false)
     }
     
-    @objc func notificationReceived(notification: Notification) {
+    /*@objc func notificationReceived(notification: Notification.ViewModel) {
        // updateNotificationBadge()
-    }
+    }*/
     
     @objc func loadChat() {
         let userData = UserDefaultsManager.getLoggedUserDetails()
@@ -175,7 +175,7 @@ class MessagesListViewController: BaseViewControllerWithAd {
                                 self.messages.removeAll()
                                     for message in threadQuery!.documents {
 
-                                        let msg = Message1(dictionary: message.data())
+                                        let msg = ChatMessage(dictionary: message.data())
                                         self.messages.append(msg!)
                                         print("Data: \(msg!.content ?? "No message found")")
                                     }
@@ -267,11 +267,17 @@ class MessagesListViewController: BaseViewControllerWithAd {
         }
     }
     
-   /* @IBAction func btnNotificationsAction(_ sender: UIBarButtonItem) {
-        if let notificationsVC = NotificationsViewController.instance() {
-            self.navigationController?.pushViewController(notificationsVC, animated: true)
+    @IBAction func btnNotificationsAction(_ sender: Any) {
+        if let notificationVC = NotificationsViewController.instance() {
+            self.navigationController?.pushViewController(notificationVC, animated: true)
         }
-    }*/
+    }
+    
+    @IBAction func btnSettingsAction(_ sender: Any) {
+        if let settingsVC = SettingViewController.instance() {
+            self.navigationController?.pushViewController(settingsVC, animated: true)
+        }
+    }
 }
 
 extension MessagesListViewController: MessagesDisplayLogic {

@@ -98,6 +98,20 @@ class CanoodleViewController: BaseViewControllerWithAd {
         }
     }
     
+    @IBAction func btnNotificationsAction(_ sender: Any) {
+        if let notificationVC = NotificationsViewController.instance() {
+            self.navigationController?.pushViewController(notificationVC, animated: true)
+        }
+    }
+    
+    @IBAction func btnSettingsAction(_ sender: Any) {
+        if let settingsVC = SettingViewController.instance() {
+            self.navigationController?.pushViewController(settingsVC, animated: true)
+        }
+    }
+    
+
+    
     func getConnections() {
         let request = Connection.Request(connectionType: "Match")
         interactor?.getConnections(request: request)
@@ -117,7 +131,7 @@ extension CanoodleViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.register(UINib(nibName: "CanoodleViewCell", bundle: nil), forCellReuseIdentifier: "CanoodleViewCell")
             cell = tableView.dequeueReusableCell(withIdentifier: "CanoodleViewCell") as? CanoodleViewCell
         }
-        //cell.delegate = self
+        cell.delegate = self
         cell.setCellData(connection: connectionsList[indexPath.row])
         return cell
     }
@@ -130,6 +144,15 @@ extension CanoodleViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 
+}
+
+extension CanoodleViewController: CanoodleViewCellProtocol {
+    func messageUser(user: Connection.ViewModel) {
+        if let chatVC = ChatViewController.instance() {
+            chatVC.setConnection(connection: user)
+            self.navigationController?.pushViewController(chatVC, animated: true)
+        }
+    }
 }
 
 

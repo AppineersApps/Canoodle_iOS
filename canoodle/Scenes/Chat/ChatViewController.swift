@@ -43,7 +43,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
     
     private var docReference: DocumentReference?
     
-    var messages: [Message1] = []
+    var messages: [ChatMessage] = []
     var connection: Connection.ViewModel!
     var connType: String = ""
     var firebaseId: String = ""
@@ -300,7 +300,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
                                 self.messages.removeAll()
                                     for message in threadQuery!.documents {
 
-                                        let msg = Message1(dictionary: message.data())
+                                        let msg = ChatMessage(dictionary: message.data())
                                         self.messages.append(msg!)
                                         print("Data: \(msg!.content ?? "No message found")")
                                     }
@@ -326,7 +326,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
         docReference?.collection("thread").getDocuments() { (threadQuery, error) in
              for message in threadQuery!.documents {
                 print("document iD = \(message.documentID)")
-                let msg = Message1(dictionary: message.data())
+                let msg = ChatMessage(dictionary: message.data())
                 if(msg?.id == msgId) {
                     self.docReference?.collection("thread").document(message.documentID).delete() { err in
                         if let err = err {
@@ -342,7 +342,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
         }
     }
     
-    private func save(_ message: Message1) {
+    private func save(_ message: ChatMessage) {
         
         let data: [String: Any] = [
             "content": message.content,
@@ -631,7 +631,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
                     }
                     let currentTime = Date().toMillis()
 
-        let message: Message1 = Message1(id: UUID().uuidString, content: text.trimmingCharacters(in: .whitespacesAndNewlines), created: Timestamp(date: Date()), senderID: user1UID, senderName: user1Name)
+        let message: ChatMessage = ChatMessage(id: UUID().uuidString, content: text.trimmingCharacters(in: .whitespacesAndNewlines), created: Timestamp(date: Date()), senderID: user1UID, senderName: user1Name)
                     
                       //messages.append(message)
                       insertNewMessage(message)
@@ -643,8 +643,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
     }
 
     
-    private func insertNewMessage(_ message: Message1) {
-        
+    private func insertNewMessage(_ message: ChatMessage) {
         messages.append(message)
         messagesCollectionView.reloadData()
         

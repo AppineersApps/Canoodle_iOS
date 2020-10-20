@@ -115,7 +115,7 @@
                                                                 <color key="textColor" name="AppColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="watermark" translatesAutoresizingMaskIntoConstraints="NO" id="UAI-FO-yZi">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="UAI-FO-yZi">
                                                                 <rect key="frame" x="8" y="3" width="55" height="55"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -188,12 +188,20 @@
                                 <action selector="btnNotificationsAction:" destination="ate-f4-Rei" id="SSE-LA-du6"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="icon_edit_white" width="50" style="plain" id="tSd-9u-Uhg">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="btnEditProfileAction:" destination="ate-f4-Rei" id="fbm-Jz-I7y"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="icon_edit_white" width="50" style="plain" id="tSd-9u-Uhg">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="btnEditProfileAction:" destination="ate-f4-Rei" id="fbm-Jz-I7y"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="icon_unblock" width="50" style="plain" id="iDp-UO-GCQ">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="blockedButtonTapped:" destination="ate-f4-Rei" id="uWe-mo-WOb"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="aboutTextView" destination="HmE-0k-bji" id="cIy-WX-sRm"/>
@@ -213,8 +221,9 @@
         <image name="icon_edit" width="27" height="27"/>
         <image name="icon_edit_white" width="20" height="20"/>
         <image name="icon_notification" width="16" height="20"/>
+        <image name="icon_unblock" width="27.5" height="24.5"/>
+        <image name="placeholder" width="1024" height="1024"/>
         <image name="profile_normal" width="23" height="23"/>
-        <image name="watermark" width="303" height="52"/>
         <namedColor name="AppColor">
             <color red="0.40784313725490196" green="0.22745098039215686" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

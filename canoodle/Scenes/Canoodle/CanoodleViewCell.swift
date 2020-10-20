@@ -8,12 +8,19 @@
 
 import UIKit
 
+protocol CanoodleViewCellProtocol: AnyObject {
+    func messageUser(user: Connection.ViewModel)
+}
+
 class CanoodleViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     
+    public weak var delegate: CanoodleViewCellProtocol?
+    
+    var user: Connection.ViewModel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,7 +37,12 @@ class CanoodleViewCell: UITableViewCell {
     }
     
     func setCellData(connection: Connection.ViewModel) {
+        self.user = connection
         nameLabel.text = connection.userName
-        profileImageView.setImage(with: "\(connection.userImage!)", placeHolder: UIImage.init(named: "watermark"))
+        profileImageView.setImage(with: "\(connection.userImage!)", placeHolder: UIImage.init(named: "placeholder"))
+    }
+    
+    @IBAction func btnChatAction(_ sender: Any) {
+        self.delegate?.messageUser(user: self.user)
     }
 }

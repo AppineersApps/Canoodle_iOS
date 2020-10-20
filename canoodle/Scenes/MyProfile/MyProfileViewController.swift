@@ -112,7 +112,7 @@ class MyProfileViewController: BaseViewControllerWithAd {
         nameLabel.text = user.userName
         locationLabel.text = "\(user.city!), \(user.state!)"
         aboutTextView.text = user.description
-        profileImageView.setImage(with: "\(user.userImage!)", placeHolder: UIImage.init(named: "watermark"))
+        profileImageView.setImage(with: "\(user.userImage!)", placeHolder: UIImage.init(named: "placeholder"))
         setUpSlideshow()
     }
     
@@ -168,11 +168,29 @@ class MyProfileViewController: BaseViewControllerWithAd {
         }
     }
     
+    @IBAction func btnNotificationsAction(_ sender: Any) {
+        if let notificationVC = NotificationsViewController.instance() {
+            self.navigationController?.pushViewController(notificationVC, animated: true)
+        }
+    }
+    
     @IBAction func btnEditAboutAction(_ sender: UIButton) {
         if let aboutMeVC = AboutMeViewController.instance() {
             aboutMeVC.onboarding = false
             aboutMeVC.aboutDescription = aboutTextView.text
             self.navigationController?.pushViewController(aboutMeVC, animated: true)
+        }
+    }
+    
+    @IBAction func blockedButtonTapped(_ sender: Any) {
+       if let blockedUserVC = BlockedUserViewController.instance() {
+           self.navigationController?.pushViewController(blockedUserVC, animated: true)
+       }
+   }
+    
+    @IBAction func btnEditProfileAction(_ sender: UIBarButtonItem) {
+        if let editProfileVC = EditProfileViewController.instance() {
+            self.navigationController?.pushViewController(editProfileVC, animated: true)
         }
     }
     

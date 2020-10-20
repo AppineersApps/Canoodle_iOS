@@ -69,7 +69,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="settings"/>
                                 <connections>
-                                    <action selector="Settingsbtn:" destination="jkg-Xp-qzT" eventType="touchUpInside" id="vGA-Ii-wPC"/>
+                                    <action selector="btnSettingsAction:" destination="jkg-Xp-qzT" eventType="touchUpInside" id="sFf-02-qsq"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -79,6 +79,9 @@
                                     <rect key="frame" x="324" y="11" width="35" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="icon_notification"/>
+                                    <connections>
+                                        <action selector="btnNotificationsAction:" destination="jkg-Xp-qzT" eventType="touchUpInside" id="PIS-Wm-rEK"/>
+                                    </connections>
                                 </button>
                                 <connections>
                                     <action selector="reloadButtonTapped:" destination="jkg-Xp-qzT" id="Bg5-mN-5ut"/>

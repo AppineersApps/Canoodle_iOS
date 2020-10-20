@@ -241,6 +241,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="YN9-rI-62c" id="hVT-m2-krV"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QT4-7d-7y2" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="400" width="345" height="40"/>

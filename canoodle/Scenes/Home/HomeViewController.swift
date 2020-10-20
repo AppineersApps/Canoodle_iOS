@@ -139,23 +139,15 @@ class HomeViewController: BaseViewControllerWithAd {
         }
     }
     
-    @IBAction func Settingsbtn(_ sender: Any) {
-        
-        if let settingsVC = SettingViewController.instance() {
-            let vc = NavController.init(rootViewController: settingsVC)
-            AppConstants.appDelegate.window?.rootViewController = vc
+    @IBAction func btnNotificationsAction(_ sender: UIButton) {
+        if let notificationVC = NotificationsViewController.instance() {
+            self.navigationController?.pushViewController(notificationVC, animated: true)
         }
-        
     }
     
-    @IBAction func btnSettings(_ sender: UIButton) {
-        
-//     let settingViewController = SettingViewController(nibName: "SettingViewController", bundle: nil)
-//      self.navigationController?.pushViewController(settingViewController, animated: true)
-        
+    @IBAction func btnSettingsAction(_ sender: Any) {
         if let settingsVC = SettingViewController.instance() {
-            let vc = NavController.init(rootViewController: settingsVC)
-            AppConstants.appDelegate.window?.rootViewController = vc
+            self.navigationController?.pushViewController(settingsVC, animated: true)
         }
     }
     

@@ -114,7 +114,7 @@ class UserProfileViewController: BaseViewControllerWithAd
         nameLabel.text = user.userName
         locationLabel.text = "\(user.city!), \(user.state!)"
         aboutTextView.text = user.description
-        profileImageView.setImage(with: "\(user.userImage!)", placeHolder: UIImage.init(named: "watermark"))
+        profileImageView.setImage(with: "\(user.userImage!)", placeHolder: UIImage.init(named: "placeholder"))
         setUpSlideshow()
     }
     

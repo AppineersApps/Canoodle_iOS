@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 import MessageKit
 
-struct Message1 {
+struct ChatMessage {
     
     var id: String
     var content: String
@@ -30,7 +30,7 @@ struct Message1 {
     }
 }
 
-extension Message1 {
+extension ChatMessage {
     init?(dictionary: [String: Any]) {
         
         guard let id = dictionary["id"] as? String,
@@ -45,7 +45,7 @@ extension Message1 {
     }
 }
 
-extension Message1: MessageType {
+extension ChatMessage: MessageType {
     
     var sender: SenderType {
         return Sender(id: senderID, displayName: senderName)

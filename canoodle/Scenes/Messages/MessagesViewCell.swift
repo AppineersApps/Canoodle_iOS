@@ -42,7 +42,7 @@ class MessagesViewCell: UITableViewCell {
         let date = dateFormatter1.date(from: message.updatedAt!)
         timeLabel.text = dateFormatter.string(from: date!)
         if(message.receiverImage != "") {
-            profileImageView.setImage(with: message.receiverImage, placeHolder: UIImage.init(named: "watermark"))
+            profileImageView.setImage(with: message.receiverImage, placeHolder: UIImage.init(named: "placeholder"))
         }
         else {
             profileImageView.image = UIImage.init(named: "watermark")
