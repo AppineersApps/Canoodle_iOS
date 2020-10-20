@@ -48,7 +48,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="qRF-mw-z6f">
-                                        <rect key="frame" x="48" y="567" width="278" height="60"/>
+                                        <rect key="frame" x="48" y="567" width="278" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <viewLayoutGuide key="safeArea" id="ubw-vN-3MW"/>
                                         <color key="backgroundColor" name="AppColor2"/>

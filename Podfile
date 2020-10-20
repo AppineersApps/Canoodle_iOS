@@ -42,6 +42,11 @@ target 'canoodle' do
   # Firebase Crashlytics &  Analytics
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'MessageKit'
+  pod 'Firebase/Firestore'
+  pod 'SDWebImage'
   
   # Google Ads
   pod 'Google-Mobile-Ads-SDK'
@@ -64,6 +69,8 @@ target 'canoodle' do
    pod 'ImageSlideshow', '~> 1.8.3'
    pod "ImageSlideshow/Kingfisher"
  
+   pod 'Firebase/Messaging'
+
 end
 
 

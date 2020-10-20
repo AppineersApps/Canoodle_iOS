@@ -14,5 +14,23 @@ import UIKit
 
 /// Class for messages worker
 class MessagesWorker {
-
+    func getMessages(completionHandler: @escaping ([Message.ViewModel]?, _ message: String?, _ successCode: String?) -> Void) {
+        GetNetworkService.dataRequest(with: GetMessageAPIRouter.getMessages, showHud: true) { (responce: WSResponse<Message.ViewModel>?, error: NetworkError?) in
+            if let detail = responce {
+                if let data = detail.arrayData, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
+                    completionHandler(data, msg, detail.setting?.success)
+                } else {
+                    completionHandler(nil, detail.setting?.message, detail.setting?.success)
+                }
+            } else {
+                completionHandler(nil, error?.erroMessage() ?? AlertMessage.defaultError, "0")
+            }
+        }
+    }
+    
+    func deleteMessage(messageId: String, completion: @escaping(Bool) -> Void) {
+       // ChatAPI.deleteMessage(messageId: messageId) {response in
+        //  completion(response)
+      //}
+    }
 }

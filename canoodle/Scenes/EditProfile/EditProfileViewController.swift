@@ -440,7 +440,7 @@ extension EditProfileViewController: UITextFieldDelegate {
     ///
     /// - Parameter textField: Textfield reference
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == txtFieldStreet {
+        if textField == txtFieldCity {
             if let googleApi = GoogleSearch.instance() {
                 googleApi.completion = {predictor, error in
                     guard error == nil else {return}

@@ -110,7 +110,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="watermark" translatesAutoresizingMaskIntoConstraints="NO" id="uwh-Kn-U9X">
-                                                                <rect key="frame" x="9" y="0.0" width="60" height="60"/>
+                                                                <rect key="frame" x="8" y="3" width="55" height="55"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </imageView>
@@ -166,6 +166,7 @@
                         <outlet property="nameLabel" destination="cYn-b6-yL7" id="wAE-93-1ek"/>
                         <outlet property="profileImageView" destination="uwh-Kn-U9X" id="tU2-pr-xS2"/>
                         <outlet property="slideshow" destination="R6L-F3-Gya" id="f2b-xQ-nD6"/>
+                        <outlet property="statusView" destination="zpH-rm-L5y" id="2xS-BH-ATL"/>
                         <outlet property="viewAd" destination="3FV-FH-neU" id="TNW-6T-jFM"/>
                     </connections>
                 </viewController>

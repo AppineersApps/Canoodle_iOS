@@ -195,7 +195,6 @@
 		27F34846233B37D00036558B /* MessagesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F34840233B37D00036558B /* MessagesWorker.swift */; };
 		27F34847233B37D00036558B /* MessagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F34841233B37D00036558B /* MessagesRouter.swift */; };
 		27F34848233B37D00036558B /* MessagesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F34842233B37D00036558B /* MessagesModels.swift */; };
-		27F34849233B37D00036558B /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F34843233B37D00036558B /* MessagesViewController.swift */; };
 		27F3484A233B37D00036558B /* MessagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F34844233B37D00036558B /* MessagesInteractor.swift */; };
 		27F34851233B37E30036558B /* MyProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F3484B233B37E30036558B /* MyProfilePresenter.swift */; };
 		27F34852233B37E30036558B /* MyProfileWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F3484C233B37E30036558B /* MyProfileWorker.swift */; };
@@ -244,6 +243,22 @@
 		AE55B7F9253DBA330056C64C /* AboutMeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B7F2253DBA320056C64C /* AboutMeRouter.swift */; };
 		AE55B7FA253DBA330056C64C /* AboutMeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B7F3253DBA320056C64C /* AboutMeWorker.swift */; };
 		AE55B7FB253DBA330056C64C /* AboutMeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B7F4253DBA320056C64C /* AboutMeModels.swift */; };
+		AE55B82A253DC1440056C64C /* MessagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B827253DC1440056C64C /* MessagesListViewController.swift */; };
+		AE55B82B253DC1440056C64C /* MessagesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B828253DC1440056C64C /* MessagesViewCell.swift */; };
+		AE55B82C253DC1440056C64C /* MessagesViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE55B829253DC1440056C64C /* MessagesViewCell.xib */; };
+		AE55B830253DC2120056C64C /* GetMessageAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B82F253DC2120056C64C /* GetMessageAPIRouter.swift */; };
+		AE55B8A2253DDD360056C64C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B899253DDD360056C64C /* ChatViewController.swift */; };
+		AE55B8A3253DDD360056C64C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B89A253DDD360056C64C /* CustomCell.swift */; };
+		AE55B8A4253DDD360056C64C /* ChatRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B89B253DDD360056C64C /* ChatRouter.swift */; };
+		AE55B8A5253DDD360056C64C /* ChatWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B89C253DDD360056C64C /* ChatWorker.swift */; };
+		AE55B8A6253DDD360056C64C /* ChatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B89D253DDD360056C64C /* ChatModels.swift */; };
+		AE55B8A7253DDD360056C64C /* ChatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B89E253DDD360056C64C /* ChatInteractor.swift */; };
+		AE55B8A8253DDD360056C64C /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE55B89F253DDD360056C64C /* Chat.storyboard */; };
+		AE55B8A9253DDD360056C64C /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B8A0253DDD360056C64C /* ChatPresenter.swift */; };
+		AE55B8AA253DDD360056C64C /* CustomMessageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B8A1253DDD360056C64C /* CustomMessageFlowLayout.swift */; };
+		AE55B8AE253DDDD40056C64C /* Message1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B8AD253DDDD40056C64C /* Message1.swift */; };
+		AE55B8B2253DE3400056C64C /* Chat1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B8B1253DE3400056C64C /* Chat1.swift */; };
+		AE55B8ED253DE60F0056C64C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B8EC253DE60F0056C64C /* Date+Extension.swift */; };
 		AE69E07A25398B38008185A0 /* UserAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E07925398B38008185A0 /* UserAPIRouter.swift */; };
 		AE69E08025398D64008185A0 /* GetRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E07F25398D64008185A0 /* GetRouterProtocol.swift */; };
 		AE69E08425398D6F008185A0 /* GetNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E08325398D6F008185A0 /* GetNetworkService.swift */; };
@@ -504,7 +519,6 @@
 		27F34840233B37D00036558B /* MessagesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesWorker.swift; sourceTree = "<group>"; };
 		27F34841233B37D00036558B /* MessagesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesRouter.swift; sourceTree = "<group>"; };
 		27F34842233B37D00036558B /* MessagesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesModels.swift; sourceTree = "<group>"; };
-		27F34843233B37D00036558B /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		27F34844233B37D00036558B /* MessagesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesInteractor.swift; sourceTree = "<group>"; };
 		27F3484B233B37E30036558B /* MyProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfilePresenter.swift; sourceTree = "<group>"; };
 		27F3484C233B37E30036558B /* MyProfileWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileWorker.swift; sourceTree = "<group>"; };
@@ -555,6 +569,22 @@
 		AE55B7F2253DBA320056C64C /* AboutMeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeRouter.swift; sourceTree = "<group>"; };
 		AE55B7F3253DBA320056C64C /* AboutMeWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeWorker.swift; sourceTree = "<group>"; };
 		AE55B7F4253DBA320056C64C /* AboutMeModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeModels.swift; sourceTree = "<group>"; };
+		AE55B827253DC1440056C64C /* MessagesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesListViewController.swift; sourceTree = "<group>"; };
+		AE55B828253DC1440056C64C /* MessagesViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewCell.swift; sourceTree = "<group>"; };
+		AE55B829253DC1440056C64C /* MessagesViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagesViewCell.xib; sourceTree = "<group>"; };
+		AE55B82F253DC2120056C64C /* GetMessageAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMessageAPIRouter.swift; sourceTree = "<group>"; };
+		AE55B899253DDD360056C64C /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		AE55B89A253DDD360056C64C /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		AE55B89B253DDD360056C64C /* ChatRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRouter.swift; sourceTree = "<group>"; };
+		AE55B89C253DDD360056C64C /* ChatWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatWorker.swift; sourceTree = "<group>"; };
+		AE55B89D253DDD360056C64C /* ChatModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModels.swift; sourceTree = "<group>"; };
+		AE55B89E253DDD360056C64C /* ChatInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInteractor.swift; sourceTree = "<group>"; };
+		AE55B89F253DDD360056C64C /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		AE55B8A0253DDD360056C64C /* ChatPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
+		AE55B8A1253DDD360056C64C /* CustomMessageFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMessageFlowLayout.swift; sourceTree = "<group>"; };
+		AE55B8AD253DDDD40056C64C /* Message1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message1.swift; sourceTree = "<group>"; };
+		AE55B8B1253DE3400056C64C /* Chat1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat1.swift; sourceTree = "<group>"; };
+		AE55B8EC253DE60F0056C64C /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		AE69E07925398B38008185A0 /* UserAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIRouter.swift; sourceTree = "<group>"; };
 		AE69E07F25398D64008185A0 /* GetRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRouterProtocol.swift; sourceTree = "<group>"; };
 		AE69E08325398D6F008185A0 /* GetNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNetworkService.swift; sourceTree = "<group>"; };
@@ -678,6 +708,7 @@
 				27F3487D233B853A0036558B /* ChangeMobileNumber */,
 				27F34875233B853A0036558B /* ChangePassword */,
 				27425E47233B66C0009F9E3E /* EditProfile */,
+				AE55B898253DDD360056C64C /* Chat */,
 				27F34830233B359F0036558B /* MyProfile */,
 				27F3482D233B358D0036558B /* Messages */,
 				27F3482A233B35650036558B /* Canoodle */,
@@ -874,6 +905,7 @@
 				27F30B6B233CB0A6008503EB /* SendFeedbackAPIRouter.swift */,
 				AE69E07925398B38008185A0 /* UserAPIRouter.swift */,
 				AE55B7BA253D7E0E0056C64C /* GetConnectionAPIRouter.swift */,
+				AE55B82F253DC2120056C64C /* GetMessageAPIRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -893,6 +925,7 @@
 				27AA5A402330D5FB00632CBD /* WLButton+Extension.swift */,
 				27D8BF58233249B40075DB6E /* UIImage+Extension.swift */,
 				AE8467DA24DED3440042E0FE /* Array+Extension.swift */,
+				AE55B8EC253DE60F0056C64C /* Date+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1159,10 +1192,13 @@
 				27F3482E233B359B0036558B /* Messages.storyboard */,
 				27F3483F233B37D00036558B /* MessagesPresenter.swift */,
 				27F34840233B37D00036558B /* MessagesWorker.swift */,
+				AE55B827253DC1440056C64C /* MessagesListViewController.swift */,
+				AE55B828253DC1440056C64C /* MessagesViewCell.swift */,
+				AE55B829253DC1440056C64C /* MessagesViewCell.xib */,
 				27F34841233B37D00036558B /* MessagesRouter.swift */,
 				27F34842233B37D00036558B /* MessagesModels.swift */,
-				27F34843233B37D00036558B /* MessagesViewController.swift */,
 				27F34844233B37D00036558B /* MessagesInteractor.swift */,
+				AE55B8AD253DDDD40056C64C /* Message1.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -1260,6 +1296,23 @@
 				AE55B7F4253DBA320056C64C /* AboutMeModels.swift */,
 			);
 			path = AboutMe;
+			sourceTree = "<group>";
+		};
+		AE55B898253DDD360056C64C /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				AE55B8B1253DE3400056C64C /* Chat1.swift */,
+				AE55B899253DDD360056C64C /* ChatViewController.swift */,
+				AE55B89A253DDD360056C64C /* CustomCell.swift */,
+				AE55B89B253DDD360056C64C /* ChatRouter.swift */,
+				AE55B89C253DDD360056C64C /* ChatWorker.swift */,
+				AE55B89D253DDD360056C64C /* ChatModels.swift */,
+				AE55B89E253DDD360056C64C /* ChatInteractor.swift */,
+				AE55B89F253DDD360056C64C /* Chat.storyboard */,
+				AE55B8A0253DDD360056C64C /* ChatPresenter.swift */,
+				AE55B8A1253DDD360056C64C /* CustomMessageFlowLayout.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		AE69E1462539EB7A008185A0 /* Subscription */ = {
@@ -1443,6 +1496,7 @@
 				27F34832233B35B30036558B /* MyProfile.storyboard in Resources */,
 				27F3482C233B35830036558B /* Canoodle.storyboard in Resources */,
 				27AA9056233CE11A00A85134 /* ImageDetails.storyboard in Resources */,
+				AE55B8A8253DDD360056C64C /* Chat.storyboard in Resources */,
 				27D36FFC2334FA7F00C4E72D /* StaticPage.storyboard in Resources */,
 				2709ACAF232F6092000708FF /* LoginEmail.storyboard in Resources */,
 				2709AC95232F6092000708FF /* SignUp.json in Resources */,
@@ -1463,6 +1517,7 @@
 				2709AC8C232F6092000708FF /* Splash.storyboard in Resources */,
 				2709AC9E232F6092000708FF /* OTPVerification.storyboard in Resources */,
 				27B5C6082333A163001743B7 /* GoogleService-Info.plist in Resources */,
+				AE55B82C253DC1440056C64C /* MessagesViewCell.xib in Resources */,
 				2709ACDF232F6092000708FF /* Montserrat-Bold.ttf in Resources */,
 				2709AC90232F6092000708FF /* ForgotPasswordPhone.storyboard in Resources */,
 				AE88152B2534A35700B4B34C /* Like.storyboard in Resources */,
@@ -1582,6 +1637,7 @@
 				273D74CC233387C8003FBEF9 /* ForgotPasswordEmailViewController.swift in Sources */,
 				27F3483B233B37760036558B /* CanoodleRouter.swift in Sources */,
 				2709AC99232F6092000708FF /* SignUpInteractor.swift in Sources */,
+				AE55B8B2253DE3400056C64C /* Chat1.swift in Sources */,
 				AE53DD9825386CC900824C8E /* LikeViewCell.swift in Sources */,
 				2709ACB2232F6092000708FF /* LoginPhoneRouter.swift in Sources */,
 				AE69E08025398D64008185A0 /* GetRouterProtocol.swift in Sources */,
@@ -1622,10 +1678,12 @@
 				27D370022334FAEE00C4E72D /* StaticPageAPIRouter.swift in Sources */,
 				AE55B7F9253DBA330056C64C /* AboutMeRouter.swift in Sources */,
 				2709ACB6232F6092000708FF /* LoginPhonePresenter.swift in Sources */,
+				AE55B8ED253DE60F0056C64C /* Date+Extension.swift in Sources */,
 				AE55B7F6253DBA330056C64C /* AboutMePresenter.swift in Sources */,
 				277D7815233E38FD00A496FD /* LoaderVC.swift in Sources */,
 				2709ACD3232F6092000708FF /* String+Extension.swift in Sources */,
 				2709ACDA232F6092000708FF /* AppDelegate.swift in Sources */,
+				AE55B8A4253DDD360056C64C /* ChatRouter.swift in Sources */,
 				AE8467DB24DED3440042E0FE /* Array+Extension.swift in Sources */,
 				276EF5CB2333D3B200D359A3 /* ResetPasswordModels.swift in Sources */,
 				2709ACA2232F6092000708FF /* OTPVerificationModels.swift in Sources */,
@@ -1662,6 +1720,7 @@
 				27CADCAD235095FC00F64171 /* SplashWorker.swift in Sources */,
 				27690CD923EC337B004AE5DC /* NetworkService.swift in Sources */,
 				27425E54233B66F6009F9E3E /* EditProfileViewController.swift in Sources */,
+				AE55B8A6253DDD360056C64C /* ChatModels.swift in Sources */,
 				27BFF70A2332658B0056CA93 /* HomePresenter.swift in Sources */,
 				273D74C9233387C8003FBEF9 /* ForgotPasswordEmailWorker.swift in Sources */,
 				27E604F62338BC6B00704130 /* SettingRouter.swift in Sources */,
@@ -1678,6 +1737,8 @@
 				2709AC8D232F6092000708FF /* ForgotPasswordPhonePresenter.swift in Sources */,
 				27F34894233B8D1A0036558B /* SettingAPIRouter.swift in Sources */,
 				27F34851233B37E30036558B /* MyProfilePresenter.swift in Sources */,
+				AE55B8A9253DDD360056C64C /* ChatPresenter.swift in Sources */,
+				AE55B82B253DC1440056C64C /* MessagesViewCell.swift in Sources */,
 				2709ACAA232F6092000708FF /* LoginEmailRouter.swift in Sources */,
 				2709AC9D232F6092000708FF /* OTPVerificationViewController.swift in Sources */,
 				AE69E1532539EB7B008185A0 /* SubscriptionWorker.swift in Sources */,
@@ -1707,9 +1768,11 @@
 				27F34854233B37E30036558B /* MyProfileModels.swift in Sources */,
 				2709ACA1232F6092000708FF /* OTPVerificationRouter.swift in Sources */,
 				27BFF700233263880056CA93 /* TabbarController.swift in Sources */,
+				AE55B8A7253DDD360056C64C /* ChatInteractor.swift in Sources */,
 				2709ACB8232F6092000708FF /* LoginPhoneViewController.swift in Sources */,
 				2709ACD1232F6092000708FF /* UIView+extension.swift in Sources */,
 				AE53DD3C25384B4500824C8E /* CanoodleViewCell.swift in Sources */,
+				AE55B8AE253DDDD40056C64C /* Message1.swift in Sources */,
 				27F8A3AF233107AE0089C804 /* LoginEmailAndSocialModel.swift in Sources */,
 				27425E53233B66F6009F9E3E /* EditProfileModels.swift in Sources */,
 				AE69E1C22539F21A008185A0 /* SubscriptionAPIRouter.swift in Sources */,
@@ -1718,6 +1781,7 @@
 				2709ACAB232F6092000708FF /* LoginEmailWorker.swift in Sources */,
 				2709ACB7232F6092000708FF /* LoginPhoneInteractor.swift in Sources */,
 				AE69E14F2539EB7B008185A0 /* SubscriptionInteractor.swift in Sources */,
+				AE55B830253DC2120056C64C /* GetMessageAPIRouter.swift in Sources */,
 				27D36FFF2334FA7F00C4E72D /* StaticPageModels.swift in Sources */,
 				27F30B6C233CB0A6008503EB /* SendFeedbackAPIRouter.swift in Sources */,
 				276EF5CD2333D3B200D359A3 /* ResetPasswordWorker.swift in Sources */,
@@ -1725,6 +1789,7 @@
 				AE53DDA825387A6B00824C8E /* UserProfileInteractor.swift in Sources */,
 				273D74D123339C42003FBEF9 /* ForgotPasswordRouter.swift in Sources */,
 				27F30B62233C906E008503EB /* SendFeedbackViewController.swift in Sources */,
+				AE55B8AA253DDD360056C64C /* CustomMessageFlowLayout.swift in Sources */,
 				2709ACBD232F6092000708FF /* NavController.swift in Sources */,
 				AE55B7FA253DBA330056C64C /* AboutMeWorker.swift in Sources */,
 				2709ACAE232F6092000708FF /* LoginEmailPresenter.swift in Sources */,
@@ -1754,6 +1819,7 @@
 				2709ACAD232F6092000708FF /* LoginEmailViewController.swift in Sources */,
 				27AA5A452330E4FB00632CBD /* CustomImagePicker.swift in Sources */,
 				27F34855233B37E30036558B /* MyProfileViewController.swift in Sources */,
+				AE55B8A2253DDD360056C64C /* ChatViewController.swift in Sources */,
 				27F3484A233B37D00036558B /* MessagesInteractor.swift in Sources */,
 				AE69E1522539EB7B008185A0 /* SubscriptionRouter.swift in Sources */,
 				AE69E1512539EB7B008185A0 /* SubscriptionModels.swift in Sources */,
@@ -1766,12 +1832,12 @@
 				278CC134232FB32000F2CE32 /* LoginPhoneAndSocialPresenter.swift in Sources */,
 				27F34839233B37760036558B /* CanoodlePresenter.swift in Sources */,
 				27425E55233B66F6009F9E3E /* EditProfileInteractor.swift in Sources */,
+				AE55B8A5253DDD360056C64C /* ChatWorker.swift in Sources */,
 				27CADCAE235095FC00F64171 /* SplashPresenter.swift in Sources */,
 				AE8815242534A31D00B4B34C /* LikeRouter.swift in Sources */,
 				27F3483C233B37760036558B /* CanoodleModels.swift in Sources */,
 				2709AC8E232F6092000708FF /* ForgotPasswordPhoneInteractor.swift in Sources */,
 				278CC142232FB34A00F2CE32 /* LoginEmailAndSocialPresenter.swift in Sources */,
-				27F34849233B37D00036558B /* MessagesViewController.swift in Sources */,
 				AE69E1652539EB8B008185A0 /* HomeFilterRouter.swift in Sources */,
 				27E604F42338BC6B00704130 /* SettingPresenter.swift in Sources */,
 				27F8A3AD2331079E0089C804 /* LoginPhoneAndSocialModel.swift in Sources */,
@@ -1782,6 +1848,8 @@
 				AE69E1642539EB8B008185A0 /* HomeFilterViewController.swift in Sources */,
 				AE53DDA725387A6B00824C8E /* UserProfileViewController.swift in Sources */,
 				27F30B6A233C9841008503EB /* SendFeedbackAddImageCollectionViewCell.swift in Sources */,
+				AE55B82A253DC1440056C64C /* MessagesListViewController.swift in Sources */,
+				AE55B8A3253DDD360056C64C /* CustomCell.swift in Sources */,
 				278CC135232FB32000F2CE32 /* LoginPhoneAndSocialWorker.swift in Sources */,
 				273D74CD233387C8003FBEF9 /* ForgotPasswordEmailInteractor.swift in Sources */,
 				27AA9057233CE11A00A85134 /* ImageDetailsViewController.swift in Sources */,

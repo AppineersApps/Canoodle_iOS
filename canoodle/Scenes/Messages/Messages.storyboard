@@ -9,16 +9,19 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Chat-->
+        <!--Messages-->
         <scene sceneID="Y6g-Vb-dp8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="laB-dW-D4e" customClass="NavController" customModule="Canoodle" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chat" image="Chat" id="WS9-k8-Irf"/>
+                    <tabBarItem key="tabBarItem" title="Messages" image="message_normal" id="WS9-k8-Irf">
+                        <color key="badgeColor" name="AppColor"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="gvw-pG-lWD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" name="AppColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -30,10 +33,10 @@
             </objects>
             <point key="canvasLocation" x="-1271" y="130"/>
         </scene>
-        <!--Messages View Controller-->
+        <!--Messages List View Controller-->
         <scene sceneID="BhK-9Z-TfY">
             <objects>
-                <viewController storyboardIdentifier="MessagesViewController" id="PAL-gs-mPM" customClass="MessagesViewController" customModule="Canoodle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessagesListViewController" id="PAL-gs-mPM" customClass="MessagesListViewController" customModule="Canoodle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RA8-aG-Bo4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,6 +53,33 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="70" estimatedRowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pp9-RS-jwx">
+                                <rect key="frame" x="-1" y="49" width="376" height="569"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="PAL-gs-mPM" id="oih-ot-qKr"/>
+                                    <outlet property="delegate" destination="PAL-gs-mPM" id="GhL-3V-Non"/>
+                                </connections>
+                            </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Zb-ms-e9w">
+                                <rect key="frame" x="29" y="143.5" width="314" height="319"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="watermark" translatesAutoresizingMaskIntoConstraints="NO" id="jYe-YJ-WTl">
+                                        <rect key="frame" x="32" y="71" width="238" height="199.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Messages to show" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZE-mI-ATQ">
+                                        <rect key="frame" x="11" y="40" width="290" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aPi-GD-lWq"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -59,18 +89,30 @@
                             <constraint firstItem="8Oq-AU-qHm" firstAttribute="leading" secondItem="RA8-aG-Bo4" secondAttribute="leading" id="yLi-gO-wIe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="PSX-cn-NQH"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="PSX-cn-NQH">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="icon_notification" width="50" style="plain" id="tNN-QU-yf1">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="btnNotificationsAction:" destination="PAL-gs-mPM" id="Xii-zK-C69"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="messagesTableView" destination="pp9-RS-jwx" id="WZp-wt-GUQ"/>
                         <outlet property="viewAd" destination="685-Hz-5on" id="N8Y-fY-Hlz"/>
+                        <outlet property="watermarkView" destination="2Zb-ms-e9w" id="v6F-nA-AMi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upS-L4-Nsx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-441" y="130"/>
+            <point key="canvasLocation" x="-442.39999999999998" y="129.98500749625188"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Chat" width="24" height="24"/>
+        <image name="icon_notification" width="16" height="20"/>
+        <image name="message_normal" width="23" height="23"/>
+        <image name="watermark" width="303" height="52"/>
         <namedColor name="AppColor">
             <color red="0.40784313725490196" green="0.22745098039215686" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

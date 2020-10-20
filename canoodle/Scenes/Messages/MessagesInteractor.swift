@@ -14,7 +14,8 @@ import UIKit
 
 /// Protocol Messages API
 protocol MessagesBusinessLogic {
-    
+    func getMessages()
+    func deleteMessage(messageId: String)
 }
 
 /// Messages Data Store
@@ -28,4 +29,18 @@ class MessagesInteractor: MessagesBusinessLogic, MessagesDataStore {
     var presenter: MessagesPresentationLogic?
     /// Worker instance
     var worker: MessagesWorker?
+    
+    func getMessages() {
+        worker = MessagesWorker()
+        worker?.getMessages(completionHandler: { (response, message, success) in
+            self.presenter?.presentGetMessagesResponse(response: response, message: message ?? "", successCode: success ?? "0")
+        })
+    }
+    
+    func deleteMessage(messageId: String) {
+        worker = MessagesWorker()
+        worker?.deleteMessage(messageId: messageId) { response in
+            self.presenter?.presentDeleteMessageResponse(response: response)
+        }
+      }
 }

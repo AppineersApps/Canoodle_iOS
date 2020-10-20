@@ -168,6 +168,14 @@ class MyProfileViewController: BaseViewControllerWithAd {
         }
     }
     
+    @IBAction func btnEditAboutAction(_ sender: UIButton) {
+        if let aboutMeVC = AboutMeViewController.instance() {
+            aboutMeVC.onboarding = false
+            aboutMeVC.aboutDescription = aboutTextView.text
+            self.navigationController?.pushViewController(aboutMeVC, animated: true)
+        }
+    }
+    
     func getUserProfile() {
         let logindata = UserDefaultsManager.getLoggedUserDetails()
         let request = UserProfile.Request(otherUserId: (logindata?.userId!)!)

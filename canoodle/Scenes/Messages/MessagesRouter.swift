@@ -25,7 +25,7 @@ protocol MessagesDataPassing {
 /// Class for messages router
 class MessagesRouter: NSObject, MessagesRoutingLogic, MessagesDataPassing {
     /// View controller instancs
-    weak var viewController: MessagesViewController?
+    weak var viewController: MessagesListViewController?
     /// Datastore instance
     var dataStore: MessagesDataStore?
 }

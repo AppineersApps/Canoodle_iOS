@@ -26,6 +26,7 @@ class UserProfileViewController: BaseViewControllerWithAd
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var aboutTextView: UITextView!
     @IBOutlet var slideshow: ImageSlideshow!
+    @IBOutlet weak var statusView: UIView!
 
 
   var interactor: UserProfileBusinessLogic?
@@ -143,6 +144,7 @@ class UserProfileViewController: BaseViewControllerWithAd
             let recognizer = UITapGestureRecognizer(target: self, action: #selector(ItemListTableViewCell.didTap))
             slideshow.addGestureRecognizer(recognizer)
         }*/
+        slideshow.bringSubviewToFront(statusView)
     }
     
     func filterMedia() {
@@ -151,7 +153,6 @@ class UserProfileViewController: BaseViewControllerWithAd
             if(media.mediaType == "image/png") {
                 medias.append(media)
             }
-            
         }
     }
   

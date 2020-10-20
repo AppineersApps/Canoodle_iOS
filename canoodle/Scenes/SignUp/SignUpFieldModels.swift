@@ -88,8 +88,8 @@ enum SignUpConfig {
         
         ///Set Phone Number Properties
         mutating func setPhoneNumberProperties() {
-            phonenumber.visible = "1"
-            phonenumber.optional = "1"
+            phonenumber.visible = "0"
+            phonenumber.optional = "0"
         }
         
         /// Set DOB Properties
@@ -100,8 +100,8 @@ enum SignUpConfig {
         
         /// Set Street Address Properties
         mutating func setStreetAddressProperties() {
-            streetaddress.visible = "1"
-            streetaddress.optional = "1"
+            streetaddress.visible = "0"
+            streetaddress.optional = "0"
         }
         /// Set state properties
         mutating func setStateProperties() {
@@ -115,8 +115,8 @@ enum SignUpConfig {
         }
         /// Set Zip Properties
         mutating func setZipProperties() {
-            zip.visible = "1"
-            zip.optional = "1"
+            zip.visible = "0"
+            zip.optional = "0"
         }
     }
     

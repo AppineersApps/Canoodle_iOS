@@ -240,6 +240,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="95k-lH-nZj" id="a7h-bL-1de"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rwl-U9-tVj" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="250" width="345" height="40"/>

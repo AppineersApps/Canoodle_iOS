@@ -13,6 +13,61 @@
 import UIKit
 
 /// Messages Request and Response
-enum Messages {
-
+/// Canoodle Request and Response
+enum Message {
+    struct Request {
+    }
+    
+    class ViewModel: WSResponseData {
+        var messageId : String?
+        var senderId : String?
+        var senderName : String?
+        var senderImage: String?
+        var receiverId : String?
+        var receiverName : String?
+        var receiverImage: String?
+        var message: String?
+        var updatedAt: String?
+        
+        private enum CodingKeys: String, CodingKey {
+            case message_id
+            case sender_id
+            case sender_name
+            case sender_image
+            case receiver_id
+            case receiver_name
+            case receiver_image
+            case message
+            case updated_at
+        }
+        
+        public override func encode(to encoder: Encoder) throws {
+            try super.encode(to: encoder)
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(messageId, forKey: .message_id)
+            try container.encode(senderId, forKey: .sender_id)
+            try container.encode(senderName, forKey: .sender_name)
+            try container.encode(senderImage, forKey: .sender_image)
+            try container.encode(receiverId, forKey: .receiver_id)
+            try container.encode(receiverName, forKey: .receiver_name)
+            try container.encode(receiverImage, forKey: .receiver_image)
+            try container.encode(message, forKey: .message)
+            try container.encode(updatedAt, forKey: .updated_at)
+        }
+        
+        required public init(from decoder: Decoder) throws {
+            try super.init(from: decoder)
+            let values = try decoder.container(keyedBy: CodingKeys.self)
+            messageId = try values.decodeIfPresent(String.self, forKey: .message_id)
+            senderId = try values.decodeIfPresent(String.self, forKey: .sender_id)
+            senderName = try values.decodeIfPresent(String.self, forKey: .sender_name)
+            senderImage = try values.decodeIfPresent(String.self, forKey: .sender_image)
+            receiverId = try values.decodeIfPresent(String.self, forKey: .receiver_id)
+            receiverName = try values.decodeIfPresent(String.self, forKey: .receiver_name)
+            receiverImage = try values.decodeIfPresent(String.self, forKey: .receiver_image)
+            message = try values.decodeIfPresent(String.self, forKey: .message)
+            updatedAt = try values.decodeIfPresent(String.self, forKey: .updated_at)
+        }
+    }
 }
+
