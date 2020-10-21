@@ -13,8 +13,8 @@ import FBSDKLoginKit
 import GoogleSignIn
 import Firebase
 import SwiftyStoreKit
-#if canImport(HBLogger)
-import HBLogger
+#if canImport(TALogger)
+import TALogger
 #endif
 import Alamofire
 import AppRating
@@ -41,11 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Notification Info :: ", userInfo)
         }
         
-        FirebaseApp.configure()
+        //FirebaseApp.configure()
         
-        #if canImport(HBLogger)
-        HBLogger.shared.enable()
-        HBLogger.shared.disableAutoNetworkLog()
+        #if canImport(TALogger)
+        TALogger.shared.enable()
+        TALogger.shared.disableAutoNetworkLog()
         #endif
         setupIAP()
         setupAppRating()

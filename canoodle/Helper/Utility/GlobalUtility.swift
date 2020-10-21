@@ -7,8 +7,8 @@
 
 import UIKit
 import Lottie
-#if canImport(HBLogger)
-import HBLogger
+#if canImport(TALogger)
+import TALogger
 #endif
 /// Utility class commonly used in the app
 @objc class GlobalUtility: NSObject {
@@ -159,8 +159,8 @@ import HBLogger
     /// - Parameter name: Name of event
     class func logButtonEvent(functionName : String,file:String,name:String)
     {
-        #if canImport(HBLogger)
-        HBLogger.shared.LogEvent(function:functionName,file:file , name: name, description: "Button Event")
+        #if canImport(TALogger)
+        TALogger.shared.LogEvent(function:functionName,file:file , name: name, description: "Button Event")
         #endif
     }
     
@@ -170,8 +170,8 @@ import HBLogger
     /// - Parameter description: Description of event
     class func logScreenEvent(file:String,name:String,description:String)
     {
-        #if canImport(HBLogger)
-        HBLogger.shared.LogEvent(function:name ,file:file, name: name, description: description)
+        #if canImport(TALogger)
+        TALogger.shared.LogEvent(function:name ,file:file, name: name, description: description)
         #endif
     }
     
@@ -179,8 +179,8 @@ import HBLogger
     /// - Parameter user: User name
     class func setUser(user:String)
     {
-        #if canImport(HBLogger)
-        HBLogger.shared.setUser(user)
+        #if canImport(TALogger)
+        TALogger.shared.setUser(user)
         #endif
     }
 }

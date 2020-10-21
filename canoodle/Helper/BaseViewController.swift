@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-//import HBLogger
+//import TALogger
 /// Base View controller for all classes
 class BaseViewController: UIViewController {
     

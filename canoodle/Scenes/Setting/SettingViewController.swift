@@ -13,8 +13,8 @@
 import UIKit
 import SwiftyStoreKit
 import StoreKit
-#if canImport(HBLogger)
-import HBLogger
+#if canImport(TALogger)
+import TALogger
 #endif
 /// Protocol for presenting response
 protocol SettingDisplayLogic: class {
@@ -384,8 +384,8 @@ class SettingViewController: BaseViewControllerWithAd {
                     }
                     self.addAnayltics(analyticsParameterItemID: "id-rateus", analyticsParameterItemName: "Rate Us", analyticsParameterContentType: "button_click")
         case btnLogs:
-            #if canImport(HBLogger)
-            HBLogger.shared.ShowLogs()
+            #if canImport(TALogger)
+            TALogger.shared.ShowLogs()
             #endif
             
         default:

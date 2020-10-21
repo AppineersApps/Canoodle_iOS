@@ -8,8 +8,8 @@
 
 import Foundation
 import UIKit
-#if canImport(HBLogger)
-import HBLogger
+#if canImport(TALogger)
+import TALogger
 #endif
 
 /// Sturct for user defaults manager
@@ -60,14 +60,14 @@ struct UserDefaultsManager {
     ///
     /// - Parameter userDetail: Get user details
     static func setLoggedUserDetails(userDetail: Login.ViewModel) {
-        #if canImport(HBLogger)
+        #if canImport(TALogger)
         if(userDetail.logStatus == "Active") {
-            HBLogger.shared.enable()
-            HBLogger.shared.disableAutoNetworkLog()
+            TALogger.shared.enable()
+            TALogger.shared.disableAutoNetworkLog()
         }
         else if(AppConstants.isDebug == false){
-            HBLogger.shared.clearLogs()
-            HBLogger.shared.disable()
+            TALogger.shared.clearLogs()
+            TALogger.shared.disable()
         }
         #endif
 

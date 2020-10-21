@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 import Alamofire
-//import HBLogger
+//import TALogger
 
 /// Base View controller with ads
 class BaseViewControllerWithAd: UIViewController {

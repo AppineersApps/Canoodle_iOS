@@ -8,8 +8,8 @@
 
 import Foundation
 import Alamofire
-#if canImport(HBLogger)
-import HBLogger
+#if canImport(TALogger)
+import TALogger
 #endif
 
 public protocol GetNetworkProtocol {
@@ -178,19 +178,19 @@ extension GetNetworkService: GetNetworkProtocol {
                     // let aCode  : String = "\(resp?.statusCode ?? 200)"
                     let pathString = inputRequest.path.replacingOccurrences(of: AppConstants.baseUrl, with: "")
 
-                    #if canImport(HBLogger)
+                    #if canImport(TALogger)
                     if responseString?.count ?? 0 > 0 {
                         if resp?.statusCode ?? 0 >= 200 && resp?.statusCode ?? 0 <= 299 {
-                            HBLogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: responseString, requestDate: aRequestDate, responseDate: Date())
+                            TALogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: responseString, requestDate: aRequestDate, responseDate: Date())
                         } else {
                             let aDict = ["Error":NetworkService.errorMessageBasedOnStatusCode(resp?.statusCode ?? error?.code ?? 0)]
                             let aJson = GlobalUtility.shared.json(from: aDict)
-                            HBLogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: aJson, requestDate: aRequestDate, responseDate: Date())
+                            TALogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: aJson, requestDate: aRequestDate, responseDate: Date())
                         }
                     } else {
                         let aDict = ["Error":NetworkService.errorMessageBasedOnStatusCode(resp?.statusCode ?? error?.code ?? 0)]
                         let aJson = GlobalUtility.shared.json(from: aDict)
-                        HBLogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: aJson, requestDate: aRequestDate, responseDate: Date())
+                        TALogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: aJson, requestDate: aRequestDate, responseDate: Date())
                     }
                     #endif
                     
@@ -303,19 +303,19 @@ extension GetNetworkService: GetNetworkProtocol {
             
                 if let data = finalResponseData {
                     // let aCode  : String = "\(resp?.statusCode ?? 200)"
-                    #if canImport(HBLogger)
+                    #if canImport(TALogger)
                     if responseString?.count ?? 0 > 0 {
                         if resp?.statusCode ?? 0 >= 200 && resp?.statusCode ?? 0 <= 299 {
-                            HBLogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: responseString, requestDate: aRequestDate, responseDate: Date())
+                            TALogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: responseString, requestDate: aRequestDate, responseDate: Date())
                         } else {
                             let aDict = ["Error":NetworkService.errorMessageBasedOnStatusCode(resp?.statusCode ?? error?.code ?? 0)]
                             let aJson = GlobalUtility.shared.json(from: aDict)
-                            HBLogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: aJson, requestDate: aRequestDate, responseDate: Date())
+                            TALogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: aJson, requestDate: aRequestDate, responseDate: Date())
                         }
                     } else {
                         let aDict = ["Error":NetworkService.errorMessageBasedOnStatusCode(resp?.statusCode ?? error?.code ?? 0)]
                         let aJson = GlobalUtility.shared.json(from: aDict)
-                        HBLogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: aJson, requestDate: aRequestDate, responseDate: Date())
+                        TALogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: aJson, requestDate: aRequestDate, responseDate: Date())
                     }
                     #endif
                     

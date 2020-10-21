@@ -1,0 +1,11 @@
+framework module TALogger {
+  umbrella header "TALogger.h"
+
+  export *
+  module * { export * }
+}
+
+module TALogger.Swift {
+    header "TALogger-Swift.h"
+    requires objc
+}

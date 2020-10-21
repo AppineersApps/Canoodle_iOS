@@ -13,8 +13,8 @@ import Photos
 import MessageUI
 import SwiftMessages
 import FirebaseAnalytics
-#if canImport(HBLogger)
-import HBLogger
+#if canImport(TALogger)
+import TALogger
 #endif
 extension UIViewController  {
     
@@ -156,9 +156,9 @@ extension UIViewController  {
     ///   - type: Type of Message
     func showTopMessage(message : String?, type : NotificationType, displayDuration: Double = 2) {
        
-        #if canImport(HBLogger)
+        #if canImport(TALogger)
         let aStrType = type.rawValue == "Error" ? "Debug" :  type.rawValue
-        HBLogger.shared.LogEvent(name: aStrType, description: message ?? "")
+        TALogger.shared.LogEvent(name: aStrType, description: message ?? "")
         #endif
         
         if let _ = message {
