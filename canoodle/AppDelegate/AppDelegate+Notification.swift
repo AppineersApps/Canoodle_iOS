@@ -31,9 +31,11 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                     application.registerForRemoteNotifications()
                 }
                 UNUserNotificationCenter.current().delegate = self
+                UserDefaultsManager.notificationEnable = "Yes"
                 onCompletion?(true)
             } else {
                 //Handle user denying permissions..
+                UserDefaultsManager.notificationEnable = "No"
                 onCompletion?(false)
             }
         }

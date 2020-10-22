@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Notification Info :: ", userInfo)
         }
         
-        //FirebaseApp.configure()
+        FirebaseApp.configure()
         
         #if canImport(TALogger)
         TALogger.shared.enable()

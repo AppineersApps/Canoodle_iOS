@@ -18,6 +18,7 @@ protocol HomePresentationLogic {
   ///
   /// - Parameter response: API Response
     func presentGetUsersResponse(response: [User.ViewModel]?, message: String, successCode: String)
+    func presentSetConnectionResponse(message: String, successCode: String)
 }
 
 /// Home Presentor Class
@@ -32,5 +33,9 @@ class HomePresenter: HomePresentationLogic {
     /// - Parameter response: API Response
     func presentGetUsersResponse(response: [User.ViewModel]?, message: String, successCode: String) {
       viewController?.didReceiveGetUsersResponse(response: response, message: message, successCode: successCode)
+    }
+    
+    func presentSetConnectionResponse(message: String, successCode: String) {
+        viewController?.didReceiveSetConnectionResponse(message: message, successCode: successCode)
     }
 }

@@ -12,6 +12,7 @@ protocol HomeDisplayLogic: class {
     ///
     /// - Parameter viewModel: Request
     func didReceiveGetUsersResponse(response: [User.ViewModel]?, message: String, successCode: String)
+    func didReceiveSetConnectionResponse(message: String, successCode: String)
 }
 
 /// This class is used to display home screen of the app.
@@ -95,7 +96,7 @@ class HomeViewController: BaseViewControllerWithAd {
             cardHolderView.addSubview(homeCardView)
             homeCardView.frame = CGRect(x: 0, y: 0, width: self.cardHolderView.frame.size.width, height: self.cardHolderView.frame.size.height)
             homeCardView.initCard(index: n, user: usersList[n])
-            //homeCardView.delegate = self
+            homeCardView.delegate = self
                 /* UIView.animate(withDuration: 0.3,
                            delay: 0.0,
                            options: [.curveEaseInOut, .allowUserInteraction],
@@ -173,6 +174,25 @@ class HomeViewController: BaseViewControllerWithAd {
         let request = User.Request()
         interactor?.getUsers(request: request)
     }
+    
+    func setConnection(userId: String, type: String) {
+        let request = SetConnection.Request(connectionUserId: userId, connectionType: type)
+        interactor?.setConnection(request: request)
+    }
+}
+
+
+extension HomeViewController: HomeCardViewProtocol {
+    func swipedCard(user: User.ViewModel, type: SwipeType) {
+        if(type == SwipeType.Right) {
+           //showCollabView()
+            self.addAnayltics(analyticsParameterItemID: "id-profilelike", analyticsParameterItemName: "Profile Like", analyticsParameterContentType: "event_profile")
+            setConnection(userId: user.userId!, type: "Like")
+        } else {
+            self.addAnayltics(analyticsParameterItemID: "id-profileunlike", analyticsParameterItemName: "Profile Unlike", analyticsParameterContentType: "event_profile")
+           // setConnection(userId: user.userId!, type: "Unlike")
+        }
+    }
 }
 
 extension HomeViewController: HomeDisplayLogic {
@@ -190,6 +210,14 @@ extension HomeViewController: HomeDisplayLogic {
         } else {
             //self.showTopMessage(message: message, type: .Error)
             usersList.removeAll()
+        }
+    }
+    
+    func didReceiveSetConnectionResponse(message: String, successCode: String) {
+        if successCode == "1" {
+            self.showTopMessage(message: message, type: .Success)
+        } else {
+            self.showTopMessage(message: message, type: .Error)
         }
     }
 }

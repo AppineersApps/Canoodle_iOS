@@ -99,7 +99,7 @@ struct ApiServer {
     static let local = ""
     /// URL for staging
 //    static let staging = "http://18.211.58.235/AppineersApp_V2/WS"
-    static let staging = "http://18.211.58.235/mad_collab/WS"
+    static let staging = "http://18.211.58.235/canoodle/WS"
     /// URL for production
     static let prodcution = ""
 }

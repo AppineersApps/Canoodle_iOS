@@ -33,10 +33,10 @@ enum UserAPIRouter: GetRouterProtocol {
         switch self {
             case .getUsers:
                 var components = URLComponents(string: AppConstants.baseUrl + "/mad_collab_user")!
-               components.queryItems = [
+               /*components.queryItems = [
                   URLQueryItem(name: "min_age", value: "0"),
                   URLQueryItem(name: "max_age", value: "80")
-               ]
+               ]*/
                return components.url!.absoluteString
             case .getUserProfile(let request):
                 var components = URLComponents(string: AppConstants.baseUrl + "/mad_collab_user")!

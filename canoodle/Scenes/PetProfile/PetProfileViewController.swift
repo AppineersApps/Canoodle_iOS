@@ -17,10 +17,20 @@ protocol PetProfileDisplayLogic: class
   func displaySomething(viewModel: PetProfile.Something.ViewModel)
 }
 
-class PetProfileViewController: UIViewController, PetProfileDisplayLogic
+class PetProfileViewController: BaseViewController, PetProfileDisplayLogic
 {
+    @IBOutlet weak var clctnView: UICollectionView!
+
   var interactor: PetProfileBusinessLogic?
   var router: (NSObjectProtocol & PetProfileRoutingLogic & PetProfileDataPassing)?
+    
+    /// Image Array to display images in scroll
+    var imageArray = [UIImage]() {
+        didSet {
+            clctnView.reloadData()
+            self.scrollToBottom()
+        }
+    }
 
   // MARK: Object lifecycle
   
@@ -63,14 +73,44 @@ class PetProfileViewController: UIViewController, PetProfileDisplayLogic
       }
     }
   }
+    
+    // MARK: Class Instance
+    class func instance() -> PetProfileViewController? {
+        return StoryBoard.PetProfile.board.instantiateViewController(withIdentifier: AppClass.PetProfileVC.rawValue) as? PetProfileViewController
+    }
   
   // MARK: View lifecycle
   
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    self.title = "Edit Pet Profile"
     doSomething()
   }
+    
+    /// Scroll colllecttionview to last index while add image
+    func scrollToBottom() {
+        DispatchQueue.main.async {
+            if self.imageArray.count == 5 {
+                let indexPath = IndexPath(row: self.imageArray.count - 1, section: 0)
+                self.clctnView.scrollToItem(at: indexPath, at: .right, animated: false)
+            } else {
+                let indexPath = IndexPath(row: self.imageArray.count, section: 0)
+                self.clctnView.scrollToItem(at: indexPath, at: .right, animated: false)
+            }
+        }
+    }
+    
+    /// Open camera/gallery
+    func addPhoto() {
+        CustomImagePicker.shared.openImagePickerWith(mediaType: .MediaTypeImage, allowsEditing: false, actionSheetTitle: AppInfo.kAppName, message: "", cancelButtonTitle: "Cancel", cameraButtonTitle: "Camera", galleryButtonTitle: "Gallery") { (_, success, dict) in
+            if success {
+                if let img = (dict!["image"] as? UIImage) {
+                    self.imageArray.append(img)
+                }
+            }
+        }
+    }
   
   // MARK: Do something
   
@@ -86,4 +126,48 @@ class PetProfileViewController: UIViewController, PetProfileDisplayLogic
   {
     //nameTextField.text = viewModel.name
   }
+}
+
+//UIcollectionview Methods
+extension PetProfileViewController:  UICollectionViewDelegate, UICollectionViewDataSource {
+    /// Method is called to get number of items to be displayed in collectionview
+    ///
+    /// - Parameters:
+    ///   - collectionView: CollectionView
+    ///   - section: Section
+    /// - Returns: Return number of rows
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if imageArray.count == 5 {
+            return imageArray.count
+        } else {
+            return imageArray.count + 1
+        }
+    }
+    
+    /// Method is called to get cell for row at particular index
+    ///
+    /// - Parameters:
+    ///   - collectionView: Collectionview
+    ///   - indexPath: Indexpath
+    /// - Returns: Return cell for indexpath
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.row == imageArray.count {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addImage", for: indexPath) as? SendFeedbackAddImageCollectionViewCell
+            cell?.btnAddTappedClouser = {
+                self.addPhoto()
+            }
+            return cell!
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as? SendFeedbackImageCollectionViewCell
+            cell?.imgPicked.image = imageArray[indexPath.row]
+            cell?.btnRemoveTappedClouser = {
+                self.displayAlert(msg: AlertMessage.deleteMessage, ok: "Yes", cancel: "No", okAction: {
+                    self.imageArray.remove(at: indexPath.row)
+                }, cancelAction: nil)
+                
+            }
+            return cell!
+        }
+    }
 }

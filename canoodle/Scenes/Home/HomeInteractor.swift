@@ -15,6 +15,7 @@ import UIKit
 /// Protocol for Home API Call
 protocol HomeBusinessLogic {
     func getUsers(request: User.Request)
+    func setConnection(request: SetConnection.Request)
 }
 
 /// Protocol home Data datastore
@@ -37,5 +38,13 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
         worker?.getUsers(request: request, completionHandler: { (response, message, success) in
             self.presenter?.presentGetUsersResponse(response: response, message: message ?? "", successCode: success ?? "0")
         })
+    }
+    
+    func setConnection(request: SetConnection.Request)
+    {
+      worker = HomeWorker()
+      worker?.setConnection(request: request, completionHandler: { (message, success) in
+          self.presenter?.presentSetConnectionResponse(message: message ?? "", successCode: success ?? "0")
+      })
     }
 }

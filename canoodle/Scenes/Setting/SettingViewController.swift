@@ -194,7 +194,7 @@ class SettingViewController: BaseViewControllerWithAd {
             self.viewLogs.isHidden = true
         }
         viewblank.isHidden = AppConstants.isLoginSkipped
-        if UserDefaultsManager.getLoggedUserDetails()?.pushNotification == "Yes" {
+        if notificationOn == "Yes" {
             btnSwitch.isOn = true
         } else {
             btnSwitch.isOn = false
@@ -319,9 +319,21 @@ class SettingViewController: BaseViewControllerWithAd {
     ///
     /// - Parameter sender: UISwitch
     @IBAction func notificationTapAction(_ sender: UISwitch) {
-        UserDefaultsManager.notificationEnable = (btnSwitch.isOn ? "Yes" : "No")
+       /* UserDefaultsManager.notificationEnable = (btnSwitch.isOn ? "Yes" : "No")
         let req = UpdatePushNotificationSetting.Request(notification: UserDefaultsManager.notificationEnable)
-        self.interactor?.updatePushNotification(request: req)
+        self.interactor?.updatePushNotification(request: req)*/
+       //  UserDefaultsManager.notificationEnable = (btnSwitch.isOn ? "Yes" : "No")
+        //redirect to settings
+        self.addAnayltics(analyticsParameterItemID: "id-notification", analyticsParameterItemName: "click_notification", analyticsParameterContentType: "click_notification")
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+            return
+        }
+        
+        if UIApplication.shared.canOpenURL(settingsUrl) {
+            UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                print("Settings opened: \(success)") // Prints true
+            })
+        }
     }
     
     /// Setting Option tap Actions

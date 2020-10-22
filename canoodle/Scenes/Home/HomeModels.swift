@@ -99,3 +99,31 @@ enum Media {
         }
     }
 }
+
+
+enum SetConnection {
+    struct Request {
+        var connectionUserId: String
+        var connectionType: String
+    }
+    
+    /// Response Class
+    class Response: WSResponseData {
+     
+        /// Default Init Methods
+        ///
+        /// - Parameter decoder: Decoder
+        /// - Throws: throws exception if found error
+        required init(from decoder: Decoder) throws {
+            try super.init(from: decoder)
+        }
+       
+        /// Default encode method
+        ///
+        /// - Parameter encoder: Encoder
+        /// - Throws:throws exception if found error
+        public override func encode(to encoder: Encoder) throws {
+            try super.encode(to: encoder)
+        }
+    }
+}

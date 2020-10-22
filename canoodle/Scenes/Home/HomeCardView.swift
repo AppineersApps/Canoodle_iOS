@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HomeCardViewProtocol: AnyObject {
-
+    func swipedCard(user: User.ViewModel, type: SwipeType)
 }
 
 enum SwipeType : String {
@@ -181,7 +181,8 @@ class HomeCardView: UIView {
                         self.frame = CGRect(x: -self.frame.size.width, y: 120, width: self.frame.size.width, height: self.frame.size.height)
         },
          completion: { _ in
-                self.removeFromSuperview()
+            self.removeFromSuperview()
+            self.delegate?.swipedCard(user: self.user, type: SwipeType.Left)
         })
     }
     
@@ -198,7 +199,8 @@ class HomeCardView: UIView {
                         self.frame = CGRect(x: self.frame.size.width, y: 120, width: self.frame.size.width, height: self.frame.size.height)
         },
          completion: { _ in
-                self.removeFromSuperview()
+            self.removeFromSuperview()
+            self.delegate?.swipedCard(user: self.user, type: SwipeType.Right)
         })
     }
     

@@ -56,6 +56,8 @@ enum AppClass: String {
     case LikeVC = "LikeViewController"
     /// Storyboard instance for UserProfileVC
     case UserProfileVC = "UserProfileViewController"
+    /// Storyboard instance for PetProfileVC
+    case PetProfileVC = "PetProfileViewController"
     /// Storyboard instance for SubscriptionVC
     case SubscriptionVC = "SubscriptionViewController"
     /// Storyboard instance for HomeFilterVC
@@ -128,6 +130,9 @@ enum StoryBoard: String {
     case Notifications
     /// BlockedUser
     case BlockedUser
+    /// PetProfile
+    case PetProfile
+
     
     /// Storyboard instance
     var board: UIStoryboard {

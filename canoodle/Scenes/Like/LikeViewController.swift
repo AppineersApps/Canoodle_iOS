@@ -86,6 +86,14 @@ class LikeViewController: BaseViewControllerWithAd
     super.viewDidLoad()
     self.navigationItem.title = "Like"
     self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false)
+    likedButton.setShadow()
+    likedButton.layer.borderColor = UIColor.white.cgColor
+    likedButton.layer.borderWidth = 2.0
+    likedButton.layer.cornerRadius = 5.0
+    likedMeButton.setShadow()
+    likedMeButton.layer.borderColor = UIColor.white.cgColor
+    likedMeButton.layer.borderWidth = 2.0
+    likedMeButton.layer.cornerRadius = 5.0
   }
     
     /// Method is called when view did appear
@@ -104,7 +112,7 @@ class LikeViewController: BaseViewControllerWithAd
     }
     
     @IBAction func likedMeButtonTapped(_ sender: Any) {
-        overlayView.frame = CGRect(x: 0, y: self.view.frame.height - overlayView.frame.height, width: overlayView.frame.width, height: overlayView.frame.height)
+        overlayView.frame = CGRect(x: 0, y: self.view.frame.height - overlayView.frame.height, width: self.view.frame.width, height: overlayView.frame.height)
         self.view.addSubview(overlayView)
         likedButton.setBackgroundImage(UIImage.init(named: "greyRectBg"), for: UIControl.State.normal)
         likedMeButton.setBackgroundImage(UIImage.init(named: "purpleRectBg"), for: UIControl.State.normal)
@@ -134,7 +142,7 @@ extension LikeViewController: UITableViewDelegate, UITableViewDataSource {
             cell = tableView.dequeueReusableCell(withIdentifier: "LikeViewCell") as? LikeViewCell
         }
         //cell.delegate = self
-        cell.setCellData(connection: connectionsList[indexPath.row])
+        cell.setCellData(connection: connectionsList[indexPath.row], index: selectedSegmentIndex)
         return cell
     }
     

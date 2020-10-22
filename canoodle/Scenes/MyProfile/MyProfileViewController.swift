@@ -76,6 +76,8 @@ class MyProfileViewController: BaseViewControllerWithAd {
         router.dataStore = interactor
     }
     
+
+    
     // MARK: View lifecycle
     /// Method is called when view loads
     override func viewDidLoad() {
@@ -179,6 +181,12 @@ class MyProfileViewController: BaseViewControllerWithAd {
             aboutMeVC.onboarding = false
             aboutMeVC.aboutDescription = aboutTextView.text
             self.navigationController?.pushViewController(aboutMeVC, animated: true)
+        }
+    }
+    
+    @IBAction func btnEditPetProfileAction(_ sender: UIButton) {
+        if let petProfileVC = PetProfileViewController.instance() {
+            self.navigationController?.pushViewController(petProfileVC, animated: true)
         }
     }
     

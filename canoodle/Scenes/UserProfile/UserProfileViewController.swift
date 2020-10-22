@@ -16,6 +16,7 @@ import ImageSlideshow
 protocol UserProfileDisplayLogic: class
 {
     func didReceiveGetUserProfileResponse(response: [User.ViewModel]?, message: String, successCode: String)
+    func didReceiveReportUserResponse(message: String, successCode: String)
 }
 
 class UserProfileViewController: BaseViewControllerWithAd
@@ -155,6 +156,45 @@ class UserProfileViewController: BaseViewControllerWithAd
             }
         }
     }
+    
+    @IBAction func optionsButtonTapped(_ sender: Any) {
+       let optionMenu = UIAlertController(title: "Select Option", message: nil, preferredStyle: .actionSheet)
+       let blockAction = UIAlertAction(title: "Block User", style: .default) { handler in
+          // self.blockUser(otherUserId: self.userId!)
+       }
+
+       let reportAction = UIAlertAction(title: "Report User", style: .destructive) { handler in
+           self.reportUserProfile()
+       }
+       let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+
+       optionMenu.addAction(blockAction)
+       optionMenu.addAction(reportAction)
+       optionMenu.addAction(cancelAction)
+           
+       GlobalUtility.shared.currentTopViewController().present(optionMenu, animated: true, completion: nil)
+   }
+    
+    func reportUserProfile() {
+        let optionMenu = UIAlertController(title: "Please select reason for reporting", message: nil, preferredStyle: .alert)
+
+        let viewAllAction = UIAlertAction(title: "Abusive User", style: .default) { _ in
+            self.addAnayltics(analyticsParameterItemID: "id-reportuser", analyticsParameterItemName: "Report User", analyticsParameterContentType: "app_event")
+
+            self.reportUser(otherUserId: self.userId, message: "Abusive User")
+        }
+        let type1Action = UIAlertAction(title: "Spam User", style: .default) { _ in
+            self.addAnayltics(analyticsParameterItemID: "id-reportuser", analyticsParameterItemName: "Report User", analyticsParameterContentType: "app_event")
+            self.reportUser(otherUserId: self.userId, message: "Spam User")
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+
+        optionMenu.addAction(viewAllAction)
+        optionMenu.addAction(type1Action)
+        optionMenu.addAction(cancelAction)
+            
+        AppConstants.appDelegate.window?.rootViewController!.present(optionMenu, animated: true, completion: nil)
+    }
   
   // MARK: Do something
     
@@ -165,6 +205,12 @@ class UserProfileViewController: BaseViewControllerWithAd
     func getUserProfile() {
         let request = UserProfile.Request(otherUserId: self.userId)
         interactor?.getUserProfile(request: request)
+    }
+    
+    func reportUser(otherUserId: String, message: String) {
+        self.addAnayltics(analyticsParameterItemID: "id-reportuserclick", analyticsParameterItemName: "click_reportuser", analyticsParameterContentType: "click_reportuser")
+        let request = ReportUser.Request(reportOn: otherUserId, message: message)
+        interactor?.reportUser(request: request)
     }
 }
 
@@ -184,6 +230,14 @@ extension UserProfileViewController: UserProfileDisplayLogic {
         } else {
             //self.showTopMessage(message: message, type: .Error)
             //usersList.removeAll()
+        }
+    }
+    
+    func didReceiveReportUserResponse(message: String, successCode: String) {
+        if successCode == "1" {
+            self.showTopMessage(message: message, type: .Success)
+        } else {
+            self.showTopMessage(message: message, type: .Error)
         }
     }
 }

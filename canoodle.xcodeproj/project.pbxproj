@@ -219,6 +219,9 @@
 		27F8A3AF233107AE0089C804 /* LoginEmailAndSocialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8A3AE233107AE0089C804 /* LoginEmailAndSocialModel.swift */; };
 		27F8A3B1233107C20089C804 /* LoginEmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8A3B0233107C20089C804 /* LoginEmailModel.swift */; };
 		27F8A3B3233107CF0089C804 /* LoginPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8A3B2233107CF0089C804 /* LoginPhoneModel.swift */; };
+		AE522DC5254032440046335A /* Pods_canoodle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787FCF655A5FE8AEA0259917 /* Pods_canoodle.framework */; };
+		AE52317225404FF40046335A /* TALogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE52317025404FF10046335A /* TALogger.framework */; };
+		AE52317325404FF40046335A /* TALogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE52317025404FF10046335A /* TALogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE537EE22535378B0084A780 /* HomeCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE537EE02535378B0084A780 /* HomeCardView.xib */; };
 		AE537EE32535378B0084A780 /* HomeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE537EE12535378B0084A780 /* HomeCardView.swift */; };
 		AE53DD3C25384B4500824C8E /* CanoodleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE53DD3A25384B4500824C8E /* CanoodleViewCell.swift */; };
@@ -311,11 +314,11 @@
 		AE88A184253EFB9600EF981D /* PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88A17E253EFB9600EF981D /* PetProfileViewController.swift */; };
 		AE88A185253EFB9600EF981D /* PetProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88A17F253EFB9600EF981D /* PetProfileInteractor.swift */; };
 		AE88A18B253EFBA700EF981D /* PetProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE88A18A253EFBA700EF981D /* PetProfile.storyboard */; };
-		AE9D3C23253FC6320002A2C2 /* TALogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9D3C21253FC62C0002A2C2 /* TALogger.framework */; };
-		AE9D3C24253FC6320002A2C2 /* TALogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE9D3C21253FC62C0002A2C2 /* TALogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AECB563E254158D900A73C2A /* ReportUserAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB563D254158D900A73C2A /* ReportUserAPIRouter.swift */; };
+		AECB5642254162DC00A73C2A /* SetConnectionAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB5641254162DC00A73C2A /* SetConnectionAPIRouter.swift */; };
+		AECB564625416BE300A73C2A /* UploadMediaAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB564525416BE300A73C2A /* UploadMediaAPIRouter.swift */; };
 		AEED53BC24C446EA004B9AAE /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEED53BA24C446EA004B9AAE /* Onboarding.storyboard */; };
 		AEED53BD24C446EA004B9AAE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED53BB24C446EA004B9AAE /* OnboardingViewController.swift */; };
-		FECACB97C4A9DE569D66B73F /* Pods_canoodle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787FCF655A5FE8AEA0259917 /* Pods_canoodle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -336,13 +339,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		27404BBA23608B4100CFA3B8 /* Embed Frameworks */ = {
+		AE522DC9254032470046335A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AE9D3C24253FC6320002A2C2 /* TALogger.framework in Embed Frameworks */,
+				AE52317325404FF40046335A /* TALogger.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -572,6 +575,7 @@
 		787FCF655A5FE8AEA0259917 /* Pods_canoodle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canoodle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A1F88FBF7A64FD0F4C717FF /* Pods-WhiteLabelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhiteLabelApp.debug.xcconfig"; path = "Target Support Files/Pods-WhiteLabelApp/Pods-WhiteLabelApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8AB7CEA4E69713413FC12FA8 /* Pods-canoodle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canoodle.release.xcconfig"; path = "Target Support Files/Pods-canoodle/Pods-canoodle.release.xcconfig"; sourceTree = "<group>"; };
+		AE52317025404FF10046335A /* TALogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TALogger.framework; sourceTree = "<group>"; };
 		AE537EE02535378B0084A780 /* HomeCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCardView.xib; sourceTree = "<group>"; };
 		AE537EE12535378B0084A780 /* HomeCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCardView.swift; sourceTree = "<group>"; };
 		AE53DD3A25384B4500824C8E /* CanoodleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanoodleViewCell.swift; sourceTree = "<group>"; };
@@ -664,7 +668,9 @@
 		AE88A17E253EFB9600EF981D /* PetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileViewController.swift; sourceTree = "<group>"; };
 		AE88A17F253EFB9600EF981D /* PetProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileInteractor.swift; sourceTree = "<group>"; };
 		AE88A18A253EFBA700EF981D /* PetProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetProfile.storyboard; sourceTree = "<group>"; };
-		AE9D3C21253FC62C0002A2C2 /* TALogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TALogger.framework; sourceTree = "<group>"; };
+		AECB563D254158D900A73C2A /* ReportUserAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserAPIRouter.swift; sourceTree = "<group>"; };
+		AECB5641254162DC00A73C2A /* SetConnectionAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetConnectionAPIRouter.swift; sourceTree = "<group>"; };
+		AECB564525416BE300A73C2A /* UploadMediaAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadMediaAPIRouter.swift; sourceTree = "<group>"; };
 		AEED53BA24C446EA004B9AAE /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		AEED53BB24C446EA004B9AAE /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		CBA8A70221B12E890E05AB25 /* Pods-canoodle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canoodle.debug.xcconfig"; path = "Target Support Files/Pods-canoodle/Pods-canoodle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -675,8 +681,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FECACB97C4A9DE569D66B73F /* Pods_canoodle.framework in Frameworks */,
-				AE9D3C23253FC6320002A2C2 /* TALogger.framework in Frameworks */,
+				AE522DC5254032440046335A /* Pods_canoodle.framework in Frameworks */,
+				AE52317225404FF40046335A /* TALogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -893,7 +899,7 @@
 		2709AC52232F6090000708FF /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				AE9D3C21253FC62C0002A2C2 /* TALogger.framework */,
+				AE52317025404FF10046335A /* TALogger.framework */,
 				277D7811233E38FD00A496FD /* Loader */,
 				27B5C6072333A163001743B7 /* GoogleService-Info.plist */,
 				2709AC79232F6091000708FF /* CustomFiles */,
@@ -950,6 +956,7 @@
 		2709AC6A232F6090000708FF /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				AECB564525416BE300A73C2A /* UploadMediaAPIRouter.swift */,
 				AE69E1C12539F21A008185A0 /* SubscriptionAPIRouter.swift */,
 				2709AC6B232F6090000708FF /* GlobelRouter.swift */,
 				2709AC6C232F6090000708FF /* AuthRouter.swift */,
@@ -962,6 +969,8 @@
 				AE55B7BA253D7E0E0056C64C /* GetConnectionAPIRouter.swift */,
 				AE55B82F253DC2120056C64C /* GetMessageAPIRouter.swift */,
 				AE88A149253EB0EC00EF981D /* NotificationsAPIRouter.swift */,
+				AECB563D254158D900A73C2A /* ReportUserAPIRouter.swift */,
+				AECB5641254162DC00A73C2A /* SetConnectionAPIRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -1482,9 +1491,9 @@
 				2709ABE4232F6050000708FF /* Frameworks */,
 				2709ABE5232F6050000708FF /* Resources */,
 				270170FE2341E06C0016B092 /* ShellScript */,
-				27404BBA23608B4100CFA3B8 /* Embed Frameworks */,
 				593D52FB4E0E28DD07BCB03D /* [CP] Embed Pods Frameworks */,
 				4957C18AC21644A90A730A53 /* [CP] Copy Pods Resources */,
+				AE522DC9254032470046335A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1908,6 +1917,7 @@
 				AE88A140253EA2A600EF981D /* NotificationsWorker.swift in Sources */,
 				27D36FFF2334FA7F00C4E72D /* StaticPageModels.swift in Sources */,
 				27F30B6C233CB0A6008503EB /* SendFeedbackAPIRouter.swift in Sources */,
+				AECB564625416BE300A73C2A /* UploadMediaAPIRouter.swift in Sources */,
 				276EF5CD2333D3B200D359A3 /* ResetPasswordWorker.swift in Sources */,
 				276EF5C92333D3B200D359A3 /* ResetPasswordPresenter.swift in Sources */,
 				AE53DDA825387A6B00824C8E /* UserProfileInteractor.swift in Sources */,
@@ -1966,6 +1976,7 @@
 				2709AC8E232F6092000708FF /* ForgotPasswordPhoneInteractor.swift in Sources */,
 				278CC142232FB34A00F2CE32 /* LoginEmailAndSocialPresenter.swift in Sources */,
 				AE69E1652539EB8B008185A0 /* HomeFilterRouter.swift in Sources */,
+				AECB563E254158D900A73C2A /* ReportUserAPIRouter.swift in Sources */,
 				27E604F42338BC6B00704130 /* SettingPresenter.swift in Sources */,
 				AE88A184253EFB9600EF981D /* PetProfileViewController.swift in Sources */,
 				27F8A3AD2331079E0089C804 /* LoginPhoneAndSocialModel.swift in Sources */,
@@ -1978,6 +1989,7 @@
 				27F30B6A233C9841008503EB /* SendFeedbackAddImageCollectionViewCell.swift in Sources */,
 				AE55B82A253DC1440056C64C /* MessagesListViewController.swift in Sources */,
 				AE55B8A3253DDD360056C64C /* CustomCell.swift in Sources */,
+				AECB5642254162DC00A73C2A /* SetConnectionAPIRouter.swift in Sources */,
 				278CC135232FB32000F2CE32 /* LoginPhoneAndSocialWorker.swift in Sources */,
 				273D74CD233387C8003FBEF9 /* ForgotPasswordEmailInteractor.swift in Sources */,
 				27AA9057233CE11A00A85134 /* ImageDetailsViewController.swift in Sources */,
@@ -2173,7 +2185,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = NPMQJ6P5X4;
 				ENABLE_BITCODE = YES;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/canoodle/Helper",
@@ -2206,7 +2218,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = NPMQJ6P5X4;
 				ENABLE_BITCODE = YES;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/canoodle/Helper",

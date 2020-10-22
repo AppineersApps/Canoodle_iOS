@@ -12,6 +12,7 @@ class LikeViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var statusView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,8 +28,13 @@ class LikeViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCellData(connection: Connection.ViewModel) {
+    func setCellData(connection: Connection.ViewModel, index: Int) {
         nameLabel.text = connection.userName
         profileImageView.setImage(with: "\(connection.userImage!)", placeHolder: UIImage.init(named: "placeholder"))
+        if(index == 0) {
+            statusView.isHidden = true
+        } else {
+            statusView.isHidden = false
+        }
     }
 }

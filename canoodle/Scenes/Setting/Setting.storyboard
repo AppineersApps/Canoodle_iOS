@@ -3,7 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,16 +13,16 @@
         <!--Setting View Controller-->
         <scene sceneID="bOb-2G-mmF">
             <objects>
-                <viewController storyboardIdentifier="SettingViewController" id="Erm-cZ-zzI" customClass="SettingViewController" customModule="Canoodle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingViewController" hidesBottomBarWhenPushed="YES" id="Erm-cZ-zzI" customClass="SettingViewController" customModule="Canoodle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zos-Jt-wRQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="r6d-aV-tXW">
-                                <rect key="frame" x="0.0" y="44" width="375" height="869"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="918"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITj-Uw-INb">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="869"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="918"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xvF-ZL-bkJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="825"/>
@@ -719,7 +719,7 @@ EE5vdGlmaWNhdGlvbnM
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nn7-e1-sbx">
-                                <rect key="frame" x="20" y="923" width="335" height="18"/>
+                                <rect key="frame" x="20" y="972" width="335" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="8oY-0Z-c7w"/>
                                 </constraints>
@@ -741,6 +741,7 @@ EE5vdGlmaWNhdGlvbnM
                     </view>
                     <navigationItem key="navigationItem" id="C9o-I2-3wy"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="btnAboutUs" destination="Os6-KW-EK0" id="3VO-rt-Iva"/>

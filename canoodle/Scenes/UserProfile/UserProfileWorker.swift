@@ -27,4 +27,18 @@ class UserProfileWorker
             }
         }
     }
+    
+    func reportUser(request: ReportUser.Request, completionHandler: @escaping ( _ message: String?, _ successCode: String?) -> Void) {
+        NetworkService.dataRequest(with: ReportUserAPIRouter.reportUser(request: request)) { (responce: WSResponse<ReportUser.Response>?, error: NetworkError?) in
+            if let detail = responce {
+                if  detail.arrayData != nil, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
+                    completionHandler( msg, detail.setting?.success)
+                } else {
+                    completionHandler(detail.setting?.message, detail.setting?.success)
+                }
+            } else {
+                completionHandler(error?.erroMessage(), "0")
+            }
+        }
+    }
 }

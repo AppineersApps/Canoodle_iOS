@@ -29,3 +29,33 @@ enum PetProfile
     }
   }
 }
+
+enum UploadMedia {
+    /// Struct for API Request
+    struct Request {
+        var description: String
+        var mediaCount: String
+        var mediaUrl: String
+        var mediaName: String
+        var mediaArray: [Media.ViewModel]
+    }
+    
+    /// Reponse Class
+    class Response: WSResponseData {
+        /// Default encode method
+        ///
+        /// - Parameter encoder: Encoder
+        /// - Throws:throws exception if found error
+        public override func encode(to encoder: Encoder) throws {
+            try super.encode(to: encoder)
+        }
+        
+        /// Default Init Method
+        ///
+        /// - Parameter decoder: Decoder
+        /// - Throws: throws exception if found error
+        required public init(from decoder: Decoder) throws {
+            try super.init(from: decoder)
+        }
+    }
+}

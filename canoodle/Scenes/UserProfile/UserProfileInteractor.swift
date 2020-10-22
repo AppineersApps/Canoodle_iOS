@@ -15,6 +15,7 @@ import UIKit
 protocol UserProfileBusinessLogic
 {
     func getUserProfile(request: UserProfile.Request)
+    func reportUser(request: ReportUser.Request)
 }
 
 protocol UserProfileDataStore
@@ -34,5 +35,13 @@ class UserProfileInteractor: UserProfileBusinessLogic, UserProfileDataStore
         worker?.getUserProfile(request: request, completionHandler: { (response, message, success) in
             self.presenter?.presentGetUserProfileResponse(response: response, message: message ?? "", successCode: success ?? "0")
         })
+    }
+    
+    func reportUser(request: ReportUser.Request)
+    {
+      worker = UserProfileWorker()
+      worker?.reportUser(request: request, completionHandler: { (message, success) in
+          self.presenter?.presentReportUserResponse(message: message ?? "", successCode: success ?? "0")
+      })
     }
 }
