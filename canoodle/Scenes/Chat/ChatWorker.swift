@@ -14,33 +14,31 @@ import UIKit
 
 class ChatWorker
 {
-  func getChats(userId: String, completion: @escaping([Chat]) -> Void) {
-   /* ChatAPI.getChats(userId: userId) {chats in
-        completion(chats)
-    }*/
-  }
-    
-    func sendMessage(userId: String, firebaseId: String, message: String, completion: @escaping(Bool) -> Void) {
-        /*ChatAPI.sendMessage(userId: userId, firebaseId: firebaseId, message: message) { response in
-          completion(response)
-        }*/
+    func sendMessage(request: SendMessage.Request, completionHandler: @escaping ( _ message: String?, _ successCode: String?) -> Void) {
+        NetworkService.dataRequest(with: MessageAPIRouter.sendMessage(request: request)) { (responce: WSResponse<SendMessage.Response>?, error: NetworkError?) in
+            if let detail = responce {
+                if  detail.arrayData != nil, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
+                    completionHandler( msg, detail.setting?.success)
+                } else {
+                    completionHandler(detail.setting?.message, detail.setting?.success)
+                }
+            } else {
+                completionHandler(error?.erroMessage(), "0")
+            }
+        }
     }
     
-    func setConnection(userId: String, type: String, completion: @escaping(Bool) -> Void) {
-        /*ConnectionsAPI.setConnection(userId: userId, type: type) { response in
-          completion(response)
-        }*/
-    }
-    
-    func reportUser(userId: String, message: String, completion: @escaping(Bool) -> Void) {
-      /*ReportAPI.reportUser(userId: userId, message: message) { response in
-          completion(response)
-      }*/
-    }
-    
-    func deleteMessage(chat: Chat, completion: @escaping(Bool) -> Void) {
-        /*ChatAPI.deleteMessage(messageId: "0") {response in
-          completion(response)
-      }*/
+    func deleteMessage(request: DeleteMessage.Request, completionHandler: @escaping ( _ message: String?, _ successCode: String?) -> Void) {
+      GetNetworkService.updateDataRequest(with: GetMessageAPIRouter.deleteMessage(request: request)) { (responce: WSResponse<DeleteMessage.Response>?, error: NetworkError?) in
+          if let detail = responce {
+              if  detail.arrayData != nil, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
+                  completionHandler( msg, detail.setting?.success)
+              } else {
+                  completionHandler(detail.setting?.message, detail.setting?.success)
+              }
+          } else {
+              completionHandler(error?.erroMessage(), "0")
+          }
+      }
     }
 }

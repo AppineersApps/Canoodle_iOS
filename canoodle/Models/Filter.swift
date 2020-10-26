@@ -9,15 +9,15 @@
 import UIKit
 
 class Filter: NSObject {
-    public var interests: String?
-    public var location: String?
+    public var gender: String?
+    public var distance: String?
     public var minAge: String?
     public var maxAge: String?
     
     init(dictionary: [String: Any]) {
-        self.interests = dictionary["Interests"] as? String
-        self.location = dictionary["Location"] as? String
-        self.minAge = dictionary["MinAge"] as? String
-        self.maxAge = dictionary["MaxAge"] as? String
+        self.gender = dictionary["Gender"] as? String
+        self.distance = dictionary["Distance"] as? String
+       // self.minAge = dictionary["MinAge"] as? String
+       // self.maxAge = dictionary["MaxAge"] as? String
     }
 }

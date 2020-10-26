@@ -49,6 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #endif
         setupIAP()
         setupAppRating()
+        self.registerRemoteNotification()
+
         return true
     }
     

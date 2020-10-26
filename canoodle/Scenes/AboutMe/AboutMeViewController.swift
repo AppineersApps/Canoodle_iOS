@@ -14,6 +14,7 @@ import UIKit
 
 protocol AboutMeDisplayLogic: class
 {
+    func didReceiveUpdateProfileResponse(message: String, success: String)
 }
 
 class AboutMeViewController: UIViewController
@@ -97,7 +98,7 @@ class AboutMeViewController: UIViewController
   // MARK: Do something
   
    @IBAction func btnSaveAction(_ sender: Any) {
-
+        updateProfile()
     }
     
     @objc func doneButtonClicked(_ sender: Any) {
@@ -110,6 +111,12 @@ class AboutMeViewController: UIViewController
         self.displayAlert(msg: "Are you sure you want to Cancel? You will lose all changes", ok: "YES", cancel: "NO", okAction: {
             self.navigationController?.popViewController(animated: true)
         }, cancelAction: nil)
+    }
+    
+    func updateProfile()
+    {
+        let request = UpdateProfile.Request(description: descTextView.text)
+      interactor?.updateProfile(request: request)
     }
 }
 
@@ -145,5 +152,12 @@ extension AboutMeViewController: UITextViewDelegate {
 
 /// Protocol for presenting response
 extension AboutMeViewController : AboutMeDisplayLogic {
-
+    func didReceiveUpdateProfileResponse(message: String, success: String) {
+        if success == "1" {
+            self.showTopMessage(message: "Media added successfully", type: .Success)
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            self.showTopMessage(message: message, type: .Error)
+        }
+    }
 }

@@ -16,7 +16,9 @@ import ImageSlideshow
 protocol UserProfileDisplayLogic: class
 {
     func didReceiveGetUserProfileResponse(response: [User.ViewModel]?, message: String, successCode: String)
+    func didReceiveSetConnectionResponse(message: String, successCode: String)
     func didReceiveReportUserResponse(message: String, successCode: String)
+    func didReceiveBlockUserResponse(message: String, successCode: String)
 }
 
 class UserProfileViewController: BaseViewControllerWithAd
@@ -28,6 +30,7 @@ class UserProfileViewController: BaseViewControllerWithAd
     @IBOutlet weak var aboutTextView: UITextView!
     @IBOutlet var slideshow: ImageSlideshow!
     @IBOutlet weak var statusView: UIView!
+    @IBOutlet weak var detailView: UIView!
 
 
   var interactor: UserProfileBusinessLogic?
@@ -102,6 +105,9 @@ class UserProfileViewController: BaseViewControllerWithAd
         super.viewWillAppear(animated)
         self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false)
         self.addAnayltics(analyticsParameterItemID: "id-userprofilescreen", analyticsParameterItemName: "view_userprofilescreen", analyticsParameterContentType: "view_userprofilescreen")
+        if(viewAd.isHidden) {
+            detailView.frame = CGRect(x: detailView.frame.origin.x, y: self.viewAd.frame.origin.y, width: detailView.frame.width, height: self.view.frame.height - viewAd.frame.height)
+        }
     }
     
     /// Method is called when view did appear
@@ -116,6 +122,9 @@ class UserProfileViewController: BaseViewControllerWithAd
         locationLabel.text = "\(user.city!), \(user.state!)"
         aboutTextView.text = user.description
         profileImageView.setImage(with: "\(user.userImage!)", placeHolder: UIImage.init(named: "placeholder"))
+        if(user.connectionStatus != "Like" && user.connectionStatus != "Match") {
+            statusView.isHidden = false
+        }
         setUpSlideshow()
     }
     
@@ -160,7 +169,7 @@ class UserProfileViewController: BaseViewControllerWithAd
     @IBAction func optionsButtonTapped(_ sender: Any) {
        let optionMenu = UIAlertController(title: "Select Option", message: nil, preferredStyle: .actionSheet)
        let blockAction = UIAlertAction(title: "Block User", style: .default) { handler in
-          // self.blockUser(otherUserId: self.userId!)
+          self.blockUser()
        }
 
        let reportAction = UIAlertAction(title: "Report User", style: .destructive) { handler in
@@ -195,6 +204,12 @@ class UserProfileViewController: BaseViewControllerWithAd
             
         AppConstants.appDelegate.window?.rootViewController!.present(optionMenu, animated: true, completion: nil)
     }
+    
+    
+    @IBAction func likeButtonTapped(_ sender: Any) {
+        self.addAnayltics(analyticsParameterItemID: "id-profilelike", analyticsParameterItemName: "Profile Like", analyticsParameterContentType: "event_profile")
+        setConnection(userId: user.userId!, type: "Like")
+    }
   
   // MARK: Do something
     
@@ -207,10 +222,21 @@ class UserProfileViewController: BaseViewControllerWithAd
         interactor?.getUserProfile(request: request)
     }
     
+    func setConnection(userId: String, type: String) {
+        let request = SetConnection.Request(connectionUserId: userId, connectionType: type)
+        interactor?.setConnection(request: request)
+    }
+    
     func reportUser(otherUserId: String, message: String) {
         self.addAnayltics(analyticsParameterItemID: "id-reportuserclick", analyticsParameterItemName: "click_reportuser", analyticsParameterContentType: "click_reportuser")
         let request = ReportUser.Request(reportOn: otherUserId, message: message)
         interactor?.reportUser(request: request)
+    }
+    
+    func blockUser() {
+        self.addAnayltics(analyticsParameterItemID: "id-blockuserclick", analyticsParameterItemName: "click_blockuser", analyticsParameterContentType: "click_blockuser")
+        let request = BlockUser.Request(connectionUserId: self.userId, connectionType: "Block")
+        interactor?.blockUser(request: request)
     }
 }
 
@@ -233,7 +259,23 @@ extension UserProfileViewController: UserProfileDisplayLogic {
         }
     }
     
+    func didReceiveSetConnectionResponse(message: String, successCode: String) {
+        if successCode == "1" {
+            self.showTopMessage(message: message, type: .Success)
+        } else {
+            self.showTopMessage(message: message, type: .Error)
+        }
+    }
+    
     func didReceiveReportUserResponse(message: String, successCode: String) {
+        if successCode == "1" {
+            self.showTopMessage(message: message, type: .Success)
+        } else {
+            self.showTopMessage(message: message, type: .Error)
+        }
+    }
+    
+    func didReceiveBlockUserResponse(message: String, successCode: String) {
         if successCode == "1" {
             self.showTopMessage(message: message, type: .Success)
         } else {

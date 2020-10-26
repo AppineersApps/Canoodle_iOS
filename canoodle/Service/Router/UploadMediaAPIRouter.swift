@@ -38,10 +38,9 @@ enum UploadMediaAPIRouter: RouterProtocol {
         switch self {
         case .uploadMedia(let request):
             return [
-                "description": request.description,
-                "media_file_count": request.mediaCount,
-                "media_url": request.mediaUrl,
-                "media_name": request.mediaName,
+                "media_file_count": "\(request.imageArray.count)",
+                "media_url": "",
+                "media_name": "",
             ]
         }
     }
@@ -68,12 +67,13 @@ enum UploadMediaAPIRouter: RouterProtocol {
                 imageData.append(data!)
             }*/
             var index: Int = 0
-            if request.mediaArray.count > 0 {
-                for count in 0...request.mediaArray.count-1 {
-                    let media: Media.ViewModel = request.mediaArray[count]
-                   // let data = media.m!.jpegData(compressionQuality: 0.5)
-
-                   // arrMultiPart.append(MultiPartData(fileName: "media_\(index).png", data: data, paramKey: "media_file_\(index)", mimeType: "image/png", fileKey: "media_file_\(index)"))
+            if request.imageArray.count > 0 {
+                for count in 0...request.imageArray.count-1 {
+                   // let media: Media.ViewModel = request.mediaArray[count]
+                    let image = request.imageArray[count]
+                    let data = image.pngData()
+                    index += 1
+                    arrMultiPart.append(MultiPartData(fileName: "media_\(index).png", data: data, paramKey: "media_file_\(index)", mimeType: "image/png", fileKey: "media_file_\(index)"))
                 }
             }
             return arrMultiPart

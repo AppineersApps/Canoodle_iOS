@@ -14,6 +14,7 @@ import UIKit
 
 protocol AboutMeBusinessLogic
 {
+    func updateProfile(request: UpdateProfile.Request)
 }
 
 protocol AboutMeDataStore
@@ -28,5 +29,10 @@ class AboutMeInteractor: AboutMeBusinessLogic, AboutMeDataStore
   //var name: String = ""
   
   // MARK: Do something
-
+    func updateProfile(request: UpdateProfile.Request) {
+        worker = AboutMeWorker()
+        worker?.updateProfile(request: request, completionHandler: { (message, success) in
+            self.presenter?.presentUpdateProfileResponse(message: message ?? "", success: success ?? "")
+        })
+    }
 }

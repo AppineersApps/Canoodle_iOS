@@ -28,6 +28,9 @@ class MessagesListViewController: BaseViewControllerWithAd {
     
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var watermarkView: UIView!
+    @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var searchBar: UISearchBar!
+
 
     /// Interactor for API Call
     var interactor: MessagesBusinessLogic?
@@ -35,6 +38,7 @@ class MessagesListViewController: BaseViewControllerWithAd {
     var router: (NSObjectProtocol & MessagesRoutingLogic & MessagesDataPassing)?
     
     var messagesList:[Message.ViewModel] = []
+    var filteredList:[Message.ViewModel] = []
     
     private var docReference: DocumentReference?
     var selectedRowIndex: Int = 0
@@ -122,6 +126,9 @@ class MessagesListViewController: BaseViewControllerWithAd {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.premiumStatus?.booleanStatus() ?? false)
+        if(viewAd.isHidden) {
+            detailView.frame = CGRect(x: detailView.frame.origin.x, y: self.viewAd.frame.origin.y, width: detailView.frame.width, height: self.view.frame.height - viewAd.frame.height)
+        }
     }
     
     /*@objc func notificationReceived(notification: Notification.ViewModel) {
@@ -289,11 +296,13 @@ extension MessagesListViewController: MessagesDisplayLogic {
             if let data = response {
                 messagesList.removeAll()
                 self.messagesList.append(contentsOf: data)
+                filteredList = messagesList
                 messagesTableView.reloadData()
             }
         } else {
             //self.showTopMessage(message: message, type: .Error)
             messagesList.removeAll()
+            filteredList = messagesList
             messagesTableView.reloadData()
         }
     }
@@ -315,7 +324,7 @@ extension MessagesListViewController: MessagesDisplayLogic {
 // UITableView Delegate methods
 extension MessagesListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messagesList.count
+        return filteredList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -326,12 +335,12 @@ extension MessagesListViewController: UITableViewDelegate, UITableViewDataSource
             cell = tableView.dequeueReusableCell(withIdentifier: "MessagesViewCell") as? MessagesViewCell
         }
         //cell.delegate = self
-        cell.setCellData(message: messagesList[indexPath.row])
+        cell.setCellData(message: filteredList[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let message: Message.ViewModel = messagesList[indexPath.row]
+        let message: Message.ViewModel = filteredList[indexPath.row]
         if let chatVC = ChatViewController.instance() {
             let connection = Connection.ViewModel.init(dictionary: ["user_id": message.receiverId!, "user_name": message.receiverName!, "user_image": message.receiverImage!])
             chatVC.setConnection(connection: connection!)
@@ -340,12 +349,74 @@ extension MessagesListViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        let message: Message.ViewModel = messagesList[indexPath.row]
+        let message: Message.ViewModel = filteredList[indexPath.row]
         if editingStyle == .delete {
             self.displayAlert(msg: "Are you sure you want to delete chat with this user?", ok: "Yes", cancel: "No", okAction: {
                 self.selectedRowIndex = indexPath.row
                 self.deleteMessage(messageId: message.messageId!)
             }, cancelAction: nil)
         }
+    }
+}
+
+// Search
+extension MessagesListViewController : UISearchBarDelegate {
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        //self.searchBar.showsCancelButton = true
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+       // self.searchBar.showsCancelButton = false
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if(searchBar.text == "") {
+            searchBar.resignFirstResponder()
+            filteredList = messagesList
+            messagesTableView.reloadData()
+        }
+        else {
+            filterSearchResults()
+        }
+        
+        if searchText.isEmpty {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                searchBar.resignFirstResponder()
+            }
+        }
+        
+    }// called when text changes (including clear)
+    
+    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool{
+        if(text == "\n") {
+            searchBar.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.placeholder = "Enter name"
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarResultsListButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func filterSearchResults() {
+        var filteredArray:[Message.ViewModel] = []
+        messagesList.forEach {
+            let message:Message.ViewModel = $0
+            let name:String = message.receiverName!
+            let searchText:String = self.searchBar.text!
+            if(name.lowercased().contains(searchText.lowercased())) {
+                filteredArray.append(message)
+            }
+        }
+        filteredList = filteredArray
+        messagesTableView.reloadData()
     }
 }

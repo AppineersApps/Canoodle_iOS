@@ -68,8 +68,8 @@ class HomeCardView: UIView {
     func initCard(index: Int, user: User.ViewModel) {
         self.user = user
         self.setCornerRadiusAndShadow(cornerRe: 16)
-        nameLabel.text = user.userName
-        ageLabel.text = "\(breedArray[index]), \(user.age!) years"
+        nameLabel.text = "\(user.userName!), \(user.age!) years"
+        ageLabel.text = "\(breedArray[index])"
         locationLabel.text = "\(user.city!), \(user.state!)"
 
         filterMedia()

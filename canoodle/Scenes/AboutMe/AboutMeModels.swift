@@ -12,20 +12,28 @@
 
 import UIKit
 
-enum AboutMe
-{
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
-    {
+enum UpdateProfile {
+    /// Struct for API Request
+    struct Request {
+        var description: String
     }
-    struct Response
-    {
+    
+    /// Reponse Class
+    class Response: WSResponseData {
+        /// Default encode method
+        ///
+        /// - Parameter encoder: Encoder
+        /// - Throws:throws exception if found error
+        public override func encode(to encoder: Encoder) throws {
+            try super.encode(to: encoder)
+        }
+        
+        /// Default Init Method
+        ///
+        /// - Parameter decoder: Decoder
+        /// - Throws: throws exception if found error
+        required public init(from decoder: Decoder) throws {
+            try super.init(from: decoder)
+        }
     }
-    struct ViewModel
-    {
-    }
-  }
 }

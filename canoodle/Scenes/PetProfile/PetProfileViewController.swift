@@ -14,12 +14,14 @@ import UIKit
 
 protocol PetProfileDisplayLogic: class
 {
-  func displaySomething(viewModel: PetProfile.Something.ViewModel)
+    func didReceiveUploadMediaResponse(message: String, success: String)
+    func didReceiveUpdatePetProfileResponse(message: String, success: String)
 }
 
-class PetProfileViewController: BaseViewController, PetProfileDisplayLogic
+class PetProfileViewController: BaseViewController
 {
     @IBOutlet weak var clctnView: UICollectionView!
+    @IBOutlet weak var breedTextField: UITextField!
 
   var interactor: PetProfileBusinessLogic?
   var router: (NSObjectProtocol & PetProfileRoutingLogic & PetProfileDataPassing)?
@@ -31,6 +33,8 @@ class PetProfileViewController: BaseViewController, PetProfileDisplayLogic
             self.scrollToBottom()
         }
     }
+    
+    var breed: String = ""
 
   // MARK: Object lifecycle
   
@@ -85,8 +89,11 @@ class PetProfileViewController: BaseViewController, PetProfileDisplayLogic
   {
     super.viewDidLoad()
     self.title = "Edit Pet Profile"
-    doSomething()
   }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        breedTextField.text = breed
+    }
     
     /// Scroll colllecttionview to last index while add image
     func scrollToBottom() {
@@ -103,28 +110,32 @@ class PetProfileViewController: BaseViewController, PetProfileDisplayLogic
     
     /// Open camera/gallery
     func addPhoto() {
-        CustomImagePicker.shared.openImagePickerWith(mediaType: .MediaTypeImage, allowsEditing: false, actionSheetTitle: AppInfo.kAppName, message: "", cancelButtonTitle: "Cancel", cameraButtonTitle: "Camera", galleryButtonTitle: "Gallery") { (_, success, dict) in
+        CustomImagePicker.shared.openImagePickerWith(mediaType: .MediaTypeImage, allowsEditing: true, actionSheetTitle: AppInfo.kAppName, message: "", cancelButtonTitle: "Cancel", cameraButtonTitle: "Camera", galleryButtonTitle: "Gallery") { (_, success, dict) in
             if success {
-                if let img = (dict!["image"] as? UIImage) {
+                if let img = (dict!["edited_image"] as? UIImage) {
                     self.imageArray.append(img)
                 }
             }
         }
     }
+    
+    @IBAction func btnSaveAction(_ sender: Any) {
+        saveProfile()
+     }
+
+     @IBAction func btnCancelAction(_ sender: Any) {
+         self.displayAlert(msg: "Are you sure you want to Cancel? You will lose all changes", ok: "YES", cancel: "NO", okAction: {
+             self.navigationController?.popViewController(animated: true)
+         }, cancelAction: nil)
+     }
   
   // MARK: Do something
   
-  //@IBOutlet weak var nameTextField: UITextField!
   
-  func doSomething()
+  func saveProfile()
   {
-    let request = PetProfile.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: PetProfile.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
+    let request = UploadMedia.Request(imageArray: imageArray)
+    interactor?.uploadMedia(request: request)
   }
 }
 
@@ -168,6 +179,43 @@ extension PetProfileViewController:  UICollectionViewDelegate, UICollectionViewD
                 
             }
             return cell!
+        }
+    }
+}
+
+//UITextfield Delegate
+extension PetProfileViewController: UITextFieldDelegate {
+    
+    /// Method is called when textfield begins editing
+    ///
+    /// - Parameter textField: Textfield reference
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == breedTextField {
+            textField.resignFirstResponder()
+            if let breedsVC = BreedsViewController.instance() {
+                self.navigationController?.pushViewController(breedsVC, animated: true)
+            }
+        }
+    }
+}
+
+extension PetProfileViewController: PetProfileDisplayLogic {
+    
+    func didReceiveUploadMediaResponse(message: String, success: String) {
+        if success == "1" {
+            self.showTopMessage(message: "Media added successfully", type: .Success)
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            self.showTopMessage(message: message, type: .Error)
+        }
+    }
+    
+    func didReceiveUpdatePetProfileResponse(message: String, success: String) {
+        if success == "1" {
+            self.showTopMessage(message: "Media added successfully", type: .Success)
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            self.showTopMessage(message: message, type: .Error)
         }
     }
 }

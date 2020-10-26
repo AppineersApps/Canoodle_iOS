@@ -15,6 +15,7 @@ import UIKit
 protocol NotificationsPresentationLogic
 {
     func presentNotificationsResponse(response: [Notification.ViewModel]?, message: String, successCode: String)
+    func presentDeleteNotificationResponse(message: String, successCode: String)
 }
 
 class NotificationsPresenter: NotificationsPresentationLogic
@@ -24,5 +25,9 @@ class NotificationsPresenter: NotificationsPresentationLogic
   // MARK: Do something
     func presentNotificationsResponse(response: [Notification.ViewModel]?, message: String, successCode: String) {
           viewController?.didReceiveNotificationsResponse(response: response, message: message, successCode: successCode)
+    }
+    
+    func presentDeleteNotificationResponse(message: String, successCode: String) {
+          viewController?.didReceiveDeleteNotificationResponse(message: message, successCode: successCode)
     }
 }

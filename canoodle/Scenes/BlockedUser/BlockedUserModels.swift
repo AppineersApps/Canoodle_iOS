@@ -12,7 +12,7 @@
 
 import UIKit
 
-enum BlockUser {
+enum BlockedUser {
     struct Request {
         var otherUserId: String
     }

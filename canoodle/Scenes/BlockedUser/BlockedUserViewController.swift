@@ -15,7 +15,7 @@ import UIKit
 protocol BlockedUserDisplayLogic: class
 {
    func didReceiveBlockedUsersResponse(response: [Connection.ViewModel]?, message: String, successCode: String)
-    func didReceiveBlockUserResponse(message: String, successCode: String)
+    func didReceiveUnblockUserResponse(message: String, successCode: String)
 }
 
 class BlockedUserViewController: UIViewController
@@ -130,8 +130,8 @@ extension BlockedUserViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension BlockedUserViewController: BlockedUserViewCellProtocol {
     func unblockUser(otherUserId: String) {
-        let request = BlockUser.Request(otherUserId: otherUserId)
-       // interactor?.blockUser(request: request)
+        let request = BlockUser.Request(connectionUserId: otherUserId, connectionType: "Unblock")
+        interactor?.unblockUser(request: request)
     }
 }
 
@@ -153,7 +153,7 @@ extension BlockedUserViewController: BlockedUserDisplayLogic {
         }
     }
     
-    func didReceiveBlockUserResponse(message: String, successCode: String) {
+    func didReceiveUnblockUserResponse(message: String, successCode: String) {
         if successCode == "1" {
             self.showTopMessage(message: message, type: .Success)
             getBlockedUsers()

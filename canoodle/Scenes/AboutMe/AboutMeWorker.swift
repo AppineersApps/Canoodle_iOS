@@ -14,4 +14,17 @@ import UIKit
 
 class AboutMeWorker
 {
+    func updateProfile(request: UpdateProfile.Request, completionHandler: @escaping ( _ message: String?, _ successCode: String?) -> Void) {
+        NetworkService.dataRequest(with: UpdateProfileAPIRouter.updateProfile(request: request)) { (responce: WSResponse<UpdateProfile.Response>?, error: NetworkError?) in
+            if let detail = responce {
+                if  detail.arrayData != nil, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
+                    completionHandler( msg, detail.setting?.success)
+                } else {
+                    completionHandler(detail.setting?.message, detail.setting?.success)
+                }
+            } else {
+                completionHandler(error?.erroMessage() ?? AlertMessage.defaultError, "0")
+            }
+        }
+    }
 }

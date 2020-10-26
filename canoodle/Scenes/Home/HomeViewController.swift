@@ -24,6 +24,7 @@ class HomeViewController: BaseViewControllerWithAd {
     
     @IBOutlet weak var viewAd: UIView!
     @IBOutlet weak var cardHolderView: UIView!
+    @IBOutlet weak var detailView: UIView!
 
     
     var homeCardViews: [HomeCardView] = []
@@ -88,13 +89,18 @@ class HomeViewController: BaseViewControllerWithAd {
 
         GlobalUtility.showHud()
         print("initialising home cards")
+        if(usersList.count == 0) {
+            GlobalUtility.hideHud()
+            self.showSimpleAlert(message: "No users to show")
+            return
+        }
         for n in 0...usersList.count - 1 {
             let homeCardView:HomeCardView = (UIView.viewFromNibName("HomeCardView") as? HomeCardView)!
             homeCardView.frame = CGRect(x: 0, y: cardHolderView.frame.size.height, width: cardHolderView.frame.size.width, height: cardHolderView.frame.size.height)
             homeCardView.setCornerRadiusAndShadow(cornerRe: 24)
             homeCardView.tag = 100
             cardHolderView.addSubview(homeCardView)
-            homeCardView.frame = CGRect(x: 0, y: 0, width: self.cardHolderView.frame.size.width, height: self.cardHolderView.frame.size.height)
+            homeCardView.frame = CGRect(x: 0, y: 5, width: homeCardView.frame.size.width, height: self.detailView.frame.size.height - 60)
             homeCardView.initCard(index: n, user: usersList[n])
             homeCardView.delegate = self
                 /* UIView.animate(withDuration: 0.3,
@@ -162,7 +168,9 @@ class HomeViewController: BaseViewControllerWithAd {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false)
-
+        if(viewAd.isHidden) {
+            detailView.frame = CGRect(x: detailView.frame.origin.x, y: self.viewAd.frame.origin.y, width: detailView.frame.width, height: self.view.frame.height - viewAd.frame.height)
+        }
     }
     
     // MARK: Class Instance
@@ -171,7 +179,8 @@ class HomeViewController: BaseViewControllerWithAd {
     }
     
     func getUsers() {
-        let request = User.Request()
+        let filter = UserDefaultsManager.getFilter()
+        let request = User.Request(gender: filter.gender!)
         interactor?.getUsers(request: request)
     }
     

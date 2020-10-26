@@ -14,6 +14,7 @@ import UIKit
 
 protocol AboutMePresentationLogic
 {
+    func presentUpdateProfileResponse(message: String, success: String)
 }
 
 class AboutMePresenter: AboutMePresentationLogic
@@ -21,5 +22,7 @@ class AboutMePresenter: AboutMePresentationLogic
   weak var viewController: AboutMeDisplayLogic?
   
   // MARK: Do something
-
+    func presentUpdateProfileResponse(message: String, success: String) {
+        viewController?.didReceiveUpdateProfileResponse(message: message, success: success)
+    }
 }

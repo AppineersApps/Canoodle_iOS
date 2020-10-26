@@ -18,10 +18,8 @@ import Foundation
 
 protocol ChatDisplayLogic: class
 {
-    func displaySendMessageResponse(response: Bool)
-    func displaySetConnectionResponse(response: Bool)
-    func displayReportUserResponse(response: Bool)
-    func displayDeleteMessageResponse(response: Bool)
+    func didReceiveSendMessageResponse(message: String, successCode: String)
+    func didReceiveDeleteMessageResponse(message: String, successCode: String)
 }
 
 class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDisplayDelegate {
@@ -512,14 +510,11 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
     
     func sendMessage(msg: String) {
         if(connection != nil) {
-           // self.interactor?.sendMessage(userId: connection.id!, firebaseId: self.firebaseId, message: msg)
+            let request = SendMessage.Request(receiverId: connection.userId!, firebaseId: firebaseId, message: msg)
+            interactor?.sendMessage(request: request)
         }
     }
-    
-    func deleteMessage(chat: Chat)
-    {
-        interactor?.deleteMessage(chat: chat)
-    }
+
 }
 
 
@@ -547,54 +542,6 @@ extension ChatViewController {
     }
 }
 
-/// Protocol for presenting response
-extension ChatViewController : ChatDisplayLogic {
-    func displaySendMessageResponse(response: Bool) {
-        if(response == true) {
-            //self.showTopMessage(message: "Message sent successfully", type: .Success)
-        } else {
-            self.showTopMessage(message: "Error sending message. Please try again", type: .Error)
-        }
-    }
-    
-    func displaySetConnectionResponse(response: Bool) {
-        if(response == true) {
-            if(connection != nil) {
-               // connection.type = connType
-            } else {
-               // user.connectionType = connType
-            }
-            if(connType == "Block") {
-                self.showTopMessage(message: "Blocked user successfully", type: .Success)
-            } else if(connType == "Like") {
-                self.showTopMessage(message: "Liked user successfully", type: .Success)
-            } else {
-                self.showTopMessage(message: "Unblocked user successfully", type: .Success)
-            }
-        } else {
-            self.showTopMessage(message: "Error connecting. Please try again", type: .Error)
-        }
-    }
-    
-    func displayReportUserResponse(response: Bool) {
-        if(response == true) {
-            self.showTopMessage(message: "User reported successfully", type: .Success)
-        } else {
-            self.showTopMessage(message: "Error reporting user. Please try again", type: .Error)
-        }
-       // self.navigationController?.popViewController(animated: true)
-    }
-    
-    func displayDeleteMessageResponse(response: Bool)
-    {
-        if(response == true) {
-            self.showTopMessage(message: "Message deleted successfully", type: .Success)
-         }
-        else {
-            self.showTopMessage(message: "Error deleting message. Please try again", type: .Error)
-        }
-    }
-}
 
 // MARK: - MessageInputBarDelegate
 
@@ -650,7 +597,6 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
         DispatchQueue.main.async {
             //self.messagesCollectionView.scrollToBottom(animated: true)
         }
-        
     }
 }
 
@@ -703,4 +649,22 @@ extension ChatViewController: MessagesLayoutDelegate {
         return 1
     }
     
+}
+
+extension ChatViewController: ChatDisplayLogic {
+    func didReceiveSendMessageResponse(message: String, successCode: String) {
+        if successCode == "1" {
+            self.showTopMessage(message: message, type: .Success)
+        } else {
+            self.showTopMessage(message: message, type: .Error)
+        }
+    }
+    
+    func didReceiveDeleteMessageResponse(message: String, successCode: String) {
+        if successCode == "1" {
+            self.showTopMessage(message: message, type: .Success)
+        } else {
+            self.showTopMessage(message: message, type: .Error)
+        }
+    }
 }

@@ -26,6 +26,8 @@ class CanoodleViewController: BaseViewControllerWithAd {
     
     @IBOutlet weak var viewAd: UIView!
     @IBOutlet weak var connectionsTableView: UITableView!
+    @IBOutlet weak var detailView: UIView!
+
     
     var connectionsList = [Connection.ViewModel]()
 
@@ -76,20 +78,22 @@ class CanoodleViewController: BaseViewControllerWithAd {
         super.viewDidLoad()
         self.navigationItem.title = "Canoodle"
         self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false)
-        getConnections()
     }
     
      /// Method is called when view did appear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.setAddMobView(viewAdd: self.viewAd)
+        getConnections()
     }
     
     /// Method is called when view will appears
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false)
-
+        if(viewAd.isHidden) {
+            detailView.frame = CGRect(x: detailView.frame.origin.x, y: self.viewAd.frame.origin.y, width: detailView.frame.width, height: self.view.frame.height - viewAd.frame.height)
+        }
     }
     
     @IBAction func ShowAddAction(_ sender: UIBarButtonItem) {

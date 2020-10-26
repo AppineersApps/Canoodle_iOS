@@ -24,6 +24,7 @@ class LikeViewController: BaseViewControllerWithAd
     @IBOutlet weak var likedButton: UIButton!
     @IBOutlet weak var likedMeButton: UIButton!
     @IBOutlet weak var connectionsTableView: UITableView!
+    @IBOutlet weak var detailView: UIView!
 
 
    var interactor: LikeBusinessLogic?
@@ -102,6 +103,14 @@ class LikeViewController: BaseViewControllerWithAd
        self.setAddMobView(viewAdd: self.viewAd)
        getConnections()
    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.premiumStatus?.booleanStatus() ?? false)
+        if(viewAd.isHidden) {
+            detailView.frame = CGRect(x: detailView.frame.origin.x, y: self.viewAd.frame.origin.y, width: detailView.frame.width, height: self.view.frame.height - viewAd.frame.height)
+        }
+    }
   
     
     @IBAction func likedButtonTapped(_ sender: Any) {

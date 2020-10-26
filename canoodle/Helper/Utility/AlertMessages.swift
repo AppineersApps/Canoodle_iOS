@@ -127,6 +127,8 @@ struct AlertMessage {
     static let subscriptionSuccess = "You have subscribed successfully."
     static let restoreFail = "Please purchase the item as it cannot be restored. Do you want to purchase this subscription?"
     static let purchaseAlert = "Do you want to purchase Go Ad Free to remove ads throughout this app? Tap on Buy. If you've already purchased then tap on Restore option."
+    static let subscriptionPurchaseAlert = "Do you want to purchase Premium Subscription to acess full app features? Tap on Buy. If you've already purchased then tap on Restore option."
+
     
     //Splash
     static let notNow = NSLocalizedString("Not Now", comment: "")

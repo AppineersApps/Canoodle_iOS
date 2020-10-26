@@ -52,7 +52,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         UserDefaultsManager.deviceToken = deviceTokenString
         
-        print(deviceTokenString)
+        print("devicetoken = \(deviceTokenString)")
     }
     
     /// Method is called when push notification is received

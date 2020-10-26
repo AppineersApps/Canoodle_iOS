@@ -23,9 +23,9 @@ protocol HomeFilterDisplayLogic: class
 class HomeFilterViewController: BaseViewController, HomeFilterDisplayLogic
 {
     @IBOutlet weak var txtFieldLocation: CustomTextField!
-    //@IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var multiSlider: MultiSlider!
-    @IBOutlet weak var ageRangeLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var interestsView: UIView!
 
   var interactor: HomeFilterBusinessLogic?
@@ -100,11 +100,11 @@ class HomeFilterViewController: BaseViewController, HomeFilterDisplayLogic
         self.title = "Filter"
 
         //setup segmented control
-        /*segmentedControl.layer.borderColor = AppConstants.appColor?.cgColor
+        segmentedControl.layer.borderColor = AppConstants.appColor?.cgColor
         segmentedControl.layer.borderWidth = 1.0
         segmentedControl.backgroundColor = UIColor.white
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor :  UIColor.white ,NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12.0)], for: UIControl.State.selected)
-        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor :  AppConstants.appColor, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12.0)], for: UIControl.State.normal)*/
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor :  AppConstants.appColor, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12.0)], for: UIControl.State.normal)
         self.setUpSlider()
         // setup slider
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -140,13 +140,13 @@ class HomeFilterViewController: BaseViewController, HomeFilterDisplayLogic
     
     func setUpFilters () {
         filter = UserDefaultsManager.getFilter()
-        //segmentedControl.selectedSegmentIndex = getSelectedIndex(str: filter!.gender!)
+        segmentedControl.selectedSegmentIndex = getSelectedIndex(str: filter!.gender!)
 
-        multiSlider.value[0] = CGFloat(Float(Int(filter!.minAge!)!))
-        multiSlider.value[1] = CGFloat(Float(Int(filter!.maxAge!)!))
+        multiSlider.value[0] = CGFloat(Float(Int(filter!.distance!)!))
+      //  multiSlider.value[1] = CGFloat(Float(Int(filter!.maxAge!)!))
         sliderChanged(multiSlider)
-        txtFieldLocation.text = filter?.location
-        filterLocation = txtFieldLocation.text!
+        //txtFieldLocation.text = filter?.location
+       // filterLocation = txtFieldLocation.text!
     }
     
     func setUpSlider() {
@@ -154,7 +154,7 @@ class HomeFilterViewController: BaseViewController, HomeFilterDisplayLogic
         //multiSlider.disabledThumbIndices = [3]
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.multiSlider.thumbCount = 2
+            self.multiSlider.thumbCount = 1
             self.multiSlider.valueLabelPosition = .bottom
             self.multiSlider.valueLabelPosition = .bottomMargin
             self.multiSlider.isValueLabelRelative = false
@@ -165,7 +165,7 @@ class HomeFilterViewController: BaseViewController, HomeFilterDisplayLogic
     @objc func sliderChanged(_ slider: MultiSlider) {
         print("thumb \(slider.draggedThumbIndex) moved")
         print("now thumbs are at \(slider.value)") // e.g., [1.0, 4.5, 5.0]
-        ageRangeLabel.text = "\(Int(slider.value[0])) - \(Int(slider.value[1])) years"
+        distanceLabel.text = "\(Int(slider.value[0])) miles"
     }
     
     func getSelectedInterestsString() -> String {
@@ -194,12 +194,12 @@ class HomeFilterViewController: BaseViewController, HomeFilterDisplayLogic
     
     @IBAction func doneButtonPressed(sender: UIBarButtonItem!) {
         var dictionary: [String:String] = [:]
-        dictionary.updateValue(self.getSelectedInterestsString(), forKey: "Interests")
-        dictionary.updateValue(txtFieldLocation.text!, forKey: "Location")
-        dictionary.updateValue("\(Int(multiSlider.value[0]))", forKey: "MinAge")
-        dictionary.updateValue("\(Int(multiSlider.value[1]))", forKey: "MaxAge")
+        dictionary.updateValue(self.segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex)!, forKey: "Gender")
+        dictionary.updateValue("\(Int(multiSlider.value[0]))", forKey: "Distance")
+        //dictionary.updateValue("\(Int(multiSlider.value[0]))", forKey: "MinAge")
+        //dictionary.updateValue("\(Int(multiSlider.value[1]))", forKey: "MaxAge")
         filter = Filter(dictionary: dictionary)
-        print("filter min = \(filter?.minAge!) , max = \(filter?.maxAge!)") // e.g., [1.0, 4.5, 5.0]
+       // print("filter min = \(filter?.minAge!) , max = \(filter?.maxAge!)") // e.g., [1.0, 4.5, 5.0]
 
         UserDefaultsManager.setFilter(filter: filter!)
         
@@ -322,7 +322,7 @@ extension HomeFilterViewController: UITextFieldDelegate {
                 self.addAnayltics(analyticsParameterItemID: "id-premiumsubscription", analyticsParameterItemName: "click_premiumsubscription", analyticsParameterContentType: "click_premiumsubscription")
             }, cancelAction: {
                 self.filter = UserDefaultsManager.getFilter()
-                print("filter location  =\(self.filter?.location!)")
+               // print("filter location  =\(self.filter?.location!)")
                 //self.txtFieldLocation.text = self.filterLocation
             })
             //self.txtFieldLocation.text = self.filterLocation

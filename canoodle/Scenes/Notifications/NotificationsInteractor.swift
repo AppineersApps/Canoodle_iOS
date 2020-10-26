@@ -15,6 +15,7 @@ import UIKit
 protocol NotificationsBusinessLogic
 {
     func getNotifications()
+    func deleteNotification(request: Notification.Request)
 }
 
 protocol NotificationsDataStore
@@ -34,6 +35,14 @@ class NotificationsInteractor: NotificationsBusinessLogic, NotificationsDataStor
         worker?.getNotifications(completionHandler: { (response, message, success) in
             self.presenter?.presentNotificationsResponse(response: response, message: message ?? "", successCode: success ?? "0")
         })
+    }
+    
+    func deleteNotification(request: Notification.Request)
+    {
+      worker = NotificationsWorker()
+      worker?.deleteNotification(request: request, completionHandler: { (message, success) in
+          self.presenter?.presentDeleteNotificationResponse(message: message ?? "", successCode: success ?? "0")
+      })
     }
 
 }

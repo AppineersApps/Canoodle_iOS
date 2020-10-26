@@ -30,14 +30,40 @@ enum PetProfile
   }
 }
 
+enum UpdatePetProfile {
+    /// Struct for API Request
+    struct Request {
+        var petName: String
+        var breed: String
+        var petAge: String
+        var akcRegistered: String
+        var description: String
+    }
+    
+    /// Reponse Class
+    class Response: WSResponseData {
+        /// Default encode method
+        ///
+        /// - Parameter encoder: Encoder
+        /// - Throws:throws exception if found error
+        public override func encode(to encoder: Encoder) throws {
+            try super.encode(to: encoder)
+        }
+        
+        /// Default Init Method
+        ///
+        /// - Parameter decoder: Decoder
+        /// - Throws: throws exception if found error
+        required public init(from decoder: Decoder) throws {
+            try super.init(from: decoder)
+        }
+    }
+}
+
 enum UploadMedia {
     /// Struct for API Request
     struct Request {
-        var description: String
-        var mediaCount: String
-        var mediaUrl: String
-        var mediaName: String
-        var mediaArray: [Media.ViewModel]
+        var imageArray: [UIImage]
     }
     
     /// Reponse Class

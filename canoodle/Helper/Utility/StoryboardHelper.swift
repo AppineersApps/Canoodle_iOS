@@ -70,6 +70,8 @@ enum AppClass: String {
     case NotificationsVC = "NotificationsViewController"
     /// Storyboard instance for BlockedUserVC
     case BlockedUserVC = "BlockedUserViewController"
+    /// Storyboard instance for BreedsVC
+    case BreedsVC = "BreedsViewController"
 }
 
 /// Enum for Storyboard
@@ -132,6 +134,7 @@ enum StoryBoard: String {
     case BlockedUser
     /// PetProfile
     case PetProfile
+    case Breeds
 
     
     /// Storyboard instance

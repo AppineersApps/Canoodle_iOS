@@ -43,10 +43,12 @@ enum  EditProfileAPIRouter: RouterProtocol {
             params = [
                 "first_name": request.firstName,
                 "last_name": request.lastName,
+                "gender": request.gender,
                 "user_name": request.userName,
                 "mobile_number": request.mobileNo,
                 "user_profile": request.userProfile,
                 "dob": request.dob,
+                "age": request.age,
                 "address": request.address,
                 "city": request.city,
                 "latitude": request.lat,

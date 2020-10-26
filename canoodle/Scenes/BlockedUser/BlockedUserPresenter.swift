@@ -15,7 +15,7 @@ import UIKit
 protocol BlockedUserPresentationLogic
 {
   func presentBlockedUsersResponse(response: [Connection.ViewModel]?, message: String, successCode: String)
-    func presentBlockUserResponse(message: String, successCode: String)
+    func presentUnblockUserResponse(message: String, successCode: String)
 }
 
 class BlockedUserPresenter: BlockedUserPresentationLogic
@@ -28,7 +28,7 @@ class BlockedUserPresenter: BlockedUserPresentationLogic
     viewController?.didReceiveBlockedUsersResponse(response: response, message: message, successCode: successCode)
   }
 
-    func presentBlockUserResponse(message: String, successCode: String) {
-        viewController?.didReceiveBlockUserResponse(message: message, successCode: successCode)
+    func presentUnblockUserResponse(message: String, successCode: String) {
+        viewController?.didReceiveUnblockUserResponse(message: message, successCode: successCode)
     }
 }

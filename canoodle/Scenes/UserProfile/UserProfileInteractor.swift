@@ -15,7 +15,9 @@ import UIKit
 protocol UserProfileBusinessLogic
 {
     func getUserProfile(request: UserProfile.Request)
+    func setConnection(request: SetConnection.Request)
     func reportUser(request: ReportUser.Request)
+    func blockUser(request: BlockUser.Request)
 }
 
 protocol UserProfileDataStore
@@ -37,11 +39,27 @@ class UserProfileInteractor: UserProfileBusinessLogic, UserProfileDataStore
         })
     }
     
+    func setConnection(request: SetConnection.Request)
+    {
+      worker = UserProfileWorker()
+      worker?.setConnection(request: request, completionHandler: { (message, success) in
+          self.presenter?.presentSetConnectionResponse(message: message ?? "", successCode: success ?? "0")
+      })
+    }
+    
     func reportUser(request: ReportUser.Request)
     {
       worker = UserProfileWorker()
       worker?.reportUser(request: request, completionHandler: { (message, success) in
           self.presenter?.presentReportUserResponse(message: message ?? "", successCode: success ?? "0")
+      })
+    }
+    
+    func blockUser(request: BlockUser.Request)
+    {
+      worker = UserProfileWorker()
+      worker?.blockUser(request: request, completionHandler: { (message, success) in
+          self.presenter?.presentBlockUserResponse(message: message ?? "", successCode: success ?? "0")
       })
     }
 }

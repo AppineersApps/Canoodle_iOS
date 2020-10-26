@@ -15,7 +15,7 @@ import UIKit
 protocol BlockedUserBusinessLogic
 {
     func getBlockedUsers(request: Connection.Request)
-    func blockUser(request: BlockUser.Request)
+    func unblockUser(request: BlockUser.Request)
 }
 
 protocol BlockedUserDataStore
@@ -38,11 +38,11 @@ class BlockedUserInteractor: BlockedUserBusinessLogic, BlockedUserDataStore
       })
   }
     
-    func blockUser(request: BlockUser.Request)
+    func unblockUser(request: BlockUser.Request)
     {
       worker = BlockedUserWorker()
-      worker?.blockUser(request: request, completionHandler: { (message, success) in
-          self.presenter?.presentBlockUserResponse(message: message ?? "", successCode: success ?? "0")
+      worker?.unblockUser(request: request, completionHandler: { (message, success) in
+          self.presenter?.presentUnblockUserResponse(message: message ?? "", successCode: success ?? "0")
       })
     }
 }

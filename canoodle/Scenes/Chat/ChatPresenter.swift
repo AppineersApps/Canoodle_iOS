@@ -14,11 +14,8 @@ import UIKit
 
 protocol ChatPresentationLogic
 {
-    //func presentChats(response: [Chat])
-    func presentSendMessageResponse(response: Bool)
-    func presentSetConnectionResponse(response: Bool)
-    func presentReportUserResponse(response: Bool)
-    func presentDeleteMessageResponse(response: Bool)
+    func presentSendMessageResponse(message: String, successCode: String)
+    func presentDeleteMessageResponse(message: String, successCode: String)
 }
 
 class ChatPresenter: ChatPresentationLogic
@@ -26,24 +23,11 @@ class ChatPresenter: ChatPresentationLogic
   weak var viewController: ChatDisplayLogic?
   
   // MARK: Do something
- /* func presentChats(response: [Chat])
-  {
-      viewController?.displayChats(response: response)
-  }*/
-    
-    func presentSendMessageResponse(response: Bool) {
-        viewController?.displaySendMessageResponse(response: response)
+    func presentSendMessageResponse(message: String, successCode: String) {
+        viewController?.didReceiveSendMessageResponse(message: message, successCode: successCode)
     }
     
-    func presentSetConnectionResponse(response: Bool) {
-        viewController?.displaySetConnectionResponse(response: response)
-    }
-
-    func presentReportUserResponse(response: Bool) {
-          viewController?.displayReportUserResponse(response: response)
-    }
-    
-    func presentDeleteMessageResponse(response: Bool) {
-      viewController?.displayDeleteMessageResponse(response: response)
+    func presentDeleteMessageResponse(message: String, successCode: String) {
+          viewController?.didReceiveDeleteMessageResponse(message: message, successCode: successCode)
     }
 }

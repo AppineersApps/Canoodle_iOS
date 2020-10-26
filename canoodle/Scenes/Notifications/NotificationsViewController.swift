@@ -17,13 +17,12 @@ import CRRefresh
 protocol NotificationsDisplayLogic: class
 {
     func didReceiveNotificationsResponse(response: [Notification.ViewModel]?, message: String, successCode: String)
+    func didReceiveDeleteNotificationResponse(message: String, successCode: String)
 }
 
 class NotificationsViewController: UIViewController
 {
     @IBOutlet weak var notificationsTableView: UITableView!
-    @IBOutlet weak var deleteView: UIView!
-    @IBOutlet weak var deleteHolderView: UIView!
     @IBOutlet weak var watermarkView: UIView!
 
     
@@ -113,13 +112,15 @@ class NotificationsViewController: UIViewController
     
     func clearAllNotifications() {
         notificationsList.forEach { notification in
-           // deleteNotification(notification: notification)
+            let request = Notification.Request(notificationId: notification.notificationId)
+            interactor?.deleteNotification(request: request)
         }
     }
     
-    func deleteNotification(notification: Notification)
+    func deleteNotification(notification: Notification.ViewModel)
     {
-        //interactor?.deleteNotification(notification: notification)
+        let request = Notification.Request(notificationId: notification.notificationId)
+        interactor?.deleteNotification(request: request)
     }
 
     
@@ -138,21 +139,6 @@ class NotificationsViewController: UIViewController
         else {
             self.showTopMessage(message: "Error deleting notification. Please try again", type: .Error)
         }
-    }
-    
-    func showConfirmationView() {
-        deleteView.layer.cornerRadius = 20.0
-        deleteHolderView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        self.view.addSubview(deleteHolderView)
-    }
-    
-    @IBAction func btnYesAction(_ sender: UIButton) {
-        deleteHolderView.removeFromSuperview()
-       // deleteNotification(notification: notificationsList[selectedRowIndex])
-    }
-    
-    @IBAction func btnNoAction(_ sender: UIButton) {
-        deleteHolderView.removeFromSuperview()
     }
     
     @IBAction func btnClearAction(_ sender: UIBarButtonItem) {
@@ -183,16 +169,29 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let notification: Notification.ViewModel = notificationsList[indexPath.row]
-        if let userProfileVC = UserProfileViewController.instance() {
-            userProfileVC.userId = notification.notificationUserId!
-            self.navigationController?.pushViewController(userProfileVC, animated: true)
+        switch notification.notificationType {
+        case "Like", "Match":
+            if let userProfileVC = UserProfileViewController.instance() {
+                userProfileVC.userId = notification.notificationUserId!
+                self.navigationController?.pushViewController(userProfileVC, animated: true)
+            }
+        case "Message":
+            if let chatVC = ChatViewController.instance() {
+                let connection = Connection.ViewModel.init(dictionary: ["user_id": notification.notificationUserId!, "user_name": notification.userName!, "user_image": notification.userImage!])
+                chatVC.setConnection(connection: connection!)
+                self.navigationController?.pushViewController(chatVC, animated: true)
+            }
+        default:
+            if let userProfileVC = UserProfileViewController.instance() {
+                userProfileVC.userId = notification.notificationUserId!
+                self.navigationController?.pushViewController(userProfileVC, animated: true)
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            selectedRowIndex = indexPath.row
-            showConfirmationView()
+            deleteNotification(notification: notificationsList[indexPath.row])
         }
     }
 }
@@ -230,6 +229,14 @@ extension NotificationsViewController: NotificationsDisplayLogic {
             //self.showTopMessage(message: message, type: .Error)
             notificationsList.removeAll()
             notificationsTableView.reloadData()
+        }
+    }
+    
+    func didReceiveDeleteNotificationResponse(message: String, successCode: String) {
+        if successCode == "1" {
+            self.showTopMessage(message: message, type: .Success)
+        } else {
+            self.showTopMessage(message: message, type: .Error)
         }
     }
 }

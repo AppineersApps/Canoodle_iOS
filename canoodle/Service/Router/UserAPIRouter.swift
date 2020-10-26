@@ -31,12 +31,11 @@ enum UserAPIRouter: GetRouterProtocol {
     /// Path for API
     var path: String {
         switch self {
-            case .getUsers:
+            case .getUsers(let request):
                 var components = URLComponents(string: AppConstants.baseUrl + "/mad_collab_user")!
-               /*components.queryItems = [
-                  URLQueryItem(name: "min_age", value: "0"),
-                  URLQueryItem(name: "max_age", value: "80")
-               ]*/
+               components.queryItems = [
+                URLQueryItem(name: "gender_type", value: request.gender)
+               ]
                return components.url!.absoluteString
             case .getUserProfile(let request):
                 var components = URLComponents(string: AppConstants.baseUrl + "/mad_collab_user")!

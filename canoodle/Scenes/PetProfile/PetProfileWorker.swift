@@ -14,7 +14,31 @@ import UIKit
 
 class PetProfileWorker
 {
-  func doSomeWork()
-  {
-  }
+    func uploadMedia(request: UploadMedia.Request, completionHandler: @escaping ( _ message: String?, _ successCode: String?) -> Void) {
+        NetworkService.dataRequest(with: UploadMediaAPIRouter.uploadMedia(request: request)) { (responce: WSResponse<UploadMedia.Response>?, error: NetworkError?) in
+            if let detail = responce {
+                if  detail.arrayData != nil, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
+                    completionHandler( msg, detail.setting?.success)
+                } else {
+                    completionHandler(detail.setting?.message, detail.setting?.success)
+                }
+            } else {
+                completionHandler(error?.erroMessage() ?? AlertMessage.defaultError, "0")
+            }
+        }
+    }
+    
+    func updatePetProfile(request: UpdatePetProfile.Request, completionHandler: @escaping ( _ message: String?, _ successCode: String?) -> Void) {
+        NetworkService.dataRequest(with: UpdateProfileAPIRouter.updatePetProfile(request: request)) { (responce: WSResponse<UpdatePetProfile.Response>?, error: NetworkError?) in
+            if let detail = responce {
+                if  detail.arrayData != nil, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
+                    completionHandler( msg, detail.setting?.success)
+                } else {
+                    completionHandler(detail.setting?.message, detail.setting?.success)
+                }
+            } else {
+                completionHandler(error?.erroMessage() ?? AlertMessage.defaultError, "0")
+            }
+        }
+    }
 }

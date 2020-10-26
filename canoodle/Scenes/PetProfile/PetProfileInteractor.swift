@@ -14,7 +14,8 @@ import UIKit
 
 protocol PetProfileBusinessLogic
 {
-  func doSomething(request: PetProfile.Something.Request)
+    func uploadMedia(request: UploadMedia.Request)
+    func updatePetProfile(request: UpdatePetProfile.Request)
 }
 
 protocol PetProfileDataStore
@@ -30,12 +31,17 @@ class PetProfileInteractor: PetProfileBusinessLogic, PetProfileDataStore
   
   // MARK: Do something
   
-  func doSomething(request: PetProfile.Something.Request)
-  {
-    worker = PetProfileWorker()
-    worker?.doSomeWork()
+    func uploadMedia(request: UploadMedia.Request) {
+        worker = PetProfileWorker()
+        worker?.uploadMedia(request: request, completionHandler: { (message, success) in
+            self.presenter?.presentUploadMediaResponse(message: message ?? "", success: success ?? "")
+        })
+    }
     
-    let response = PetProfile.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    func updatePetProfile(request: UpdatePetProfile.Request) {
+        worker = PetProfileWorker()
+        worker?.updatePetProfile(request: request, completionHandler: { (message, success) in
+            self.presenter?.presentUpdatePetProfileResponse(message: message ?? "", success: success ?? "")
+        })
+    }
 }

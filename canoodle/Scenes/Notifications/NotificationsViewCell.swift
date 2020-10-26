@@ -60,11 +60,11 @@ class NotificationsViewCell: UITableViewCell {
         
         switch notification.notificationType {
         case "Like":
-            messageLabel.text = "wants to collab with you"
+            messageLabel.text = "Liked your Profile"
         case "Message":
             messageLabel.text = "has sent you a message"
         case "Match":
-            messageLabel.text = "has accepted your collab request"
+            messageLabel.text = "Matched with your Profile"
         default:
             messageLabel.text = notification.message
         }

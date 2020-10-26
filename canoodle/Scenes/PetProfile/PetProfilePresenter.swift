@@ -14,7 +14,8 @@ import UIKit
 
 protocol PetProfilePresentationLogic
 {
-  func presentSomething(response: PetProfile.Something.Response)
+    func presentUploadMediaResponse(message: String, success: String)
+    func presentUpdatePetProfileResponse(message: String, success: String)
 }
 
 class PetProfilePresenter: PetProfilePresentationLogic
@@ -23,9 +24,11 @@ class PetProfilePresenter: PetProfilePresentationLogic
   
   // MARK: Do something
   
-  func presentSomething(response: PetProfile.Something.Response)
-  {
-    let viewModel = PetProfile.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    func presentUploadMediaResponse(message: String, success: String) {
+        viewController?.didReceiveUploadMediaResponse(message: message, success: success)
+    }
+    
+    func presentUpdatePetProfileResponse(message: String, success: String) {
+        viewController?.didReceiveUpdatePetProfileResponse(message: message, success: success)
+    }
 }

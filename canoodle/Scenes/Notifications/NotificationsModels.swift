@@ -14,6 +14,7 @@ import UIKit
 
 enum Notification {
     struct Request {
+        var notificationId : String?
     }
     
     class ViewModel: WSResponseData {

@@ -28,8 +28,8 @@ class BlockedUserWorker
     }
   }
     
-    func blockUser(request: BlockUser.Request, completionHandler: @escaping ( _ message: String?, _ successCode: String?) -> Void) {
-       /* NetworkService.dataRequest(with: FriendRequestAPIRouter.blockUser(request: request)) { (responce: WSResponse<BlockUser.Response>?, error: NetworkError?) in
+    func unblockUser(request: BlockUser.Request, completionHandler: @escaping ( _ message: String?, _ successCode: String?) -> Void) {
+        NetworkService.dataRequest(with: BlockUserAPIRouter.blockUser(request: request)) { (responce: WSResponse<BlockUser.Response>?, error: NetworkError?) in
             if let detail = responce {
                 if  detail.arrayData != nil, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
                     completionHandler( msg, detail.setting?.success)
@@ -39,6 +39,6 @@ class BlockedUserWorker
             } else {
                 completionHandler(error?.erroMessage(), "0")
             }
-        }*/
+        }
     }
 }

@@ -15,6 +15,7 @@ import UIKit
 ///Home Request and Reponse
 enum User {
     struct Request {
+        var gender : String?
     }
     
     class ViewModel: WSResponseData {
@@ -25,6 +26,7 @@ enum User {
         var age : String?
         var city : String?
         var state : String?
+        var connectionStatus: String?
         var media : [Media.ViewModel]?
 
         
@@ -36,6 +38,7 @@ enum User {
             case age
             case city
             case state
+            case connection_type_by_logged_user
             case media
         }
         
@@ -49,6 +52,7 @@ enum User {
             try container.encode(age, forKey: .age)
             try container.encode(city, forKey: .city)
             try container.encode(state, forKey: .state)
+            try container.encode(connectionStatus, forKey: .connection_type_by_logged_user)
             try container.encode(media, forKey: .media)
         }
         
@@ -62,6 +66,7 @@ enum User {
             age = try values.decodeIfPresent(String.self, forKey: .age)
             city = try values.decodeIfPresent(String.self, forKey: .city)
             state = try values.decodeIfPresent(String.self, forKey: .state)
+            connectionStatus = try values.decodeIfPresent(String.self, forKey: .connection_type_by_logged_user)
             media = try values.decodeIfPresent([Media.ViewModel].self, forKey: .media)
         }
     }

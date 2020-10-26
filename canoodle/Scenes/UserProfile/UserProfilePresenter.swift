@@ -15,7 +15,9 @@ import UIKit
 protocol UserProfilePresentationLogic
 {
     func presentGetUserProfileResponse(response: [User.ViewModel]?, message: String, successCode: String)
+    func presentSetConnectionResponse(message: String, successCode: String)
     func presentReportUserResponse(message: String, successCode: String)
+    func presentBlockUserResponse(message: String, successCode: String)
 }
 
 class UserProfilePresenter: UserProfilePresentationLogic
@@ -28,7 +30,15 @@ class UserProfilePresenter: UserProfilePresentationLogic
       viewController?.didReceiveGetUserProfileResponse(response: response, message: message, successCode: successCode)
     }
     
+    func presentSetConnectionResponse(message: String, successCode: String) {
+        viewController?.didReceiveSetConnectionResponse(message: message, successCode: successCode)
+    }
+    
     func presentReportUserResponse(message: String, successCode: String) {
         viewController?.didReceiveReportUserResponse(message: message, successCode: successCode)
+    }
+    
+    func presentBlockUserResponse(message: String, successCode: String) {
+        viewController?.didReceiveBlockUserResponse(message: message, successCode: successCode)
     }
 }

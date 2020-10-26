@@ -28,8 +28,36 @@ class UserProfileWorker
         }
     }
     
+    func setConnection(request: SetConnection.Request, completionHandler: @escaping ( _ message: String?, _ successCode: String?) -> Void) {
+        NetworkService.dataRequest(with: SetConnectionAPIRouter.setConnection(request: request)) { (responce: WSResponse<SetConnection.Response>?, error: NetworkError?) in
+            if let detail = responce {
+                if  detail.arrayData != nil, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
+                    completionHandler( msg, detail.setting?.success)
+                } else {
+                    completionHandler(detail.setting?.message, detail.setting?.success)
+                }
+            } else {
+                completionHandler(error?.erroMessage(), "0")
+            }
+        }
+    }
+    
     func reportUser(request: ReportUser.Request, completionHandler: @escaping ( _ message: String?, _ successCode: String?) -> Void) {
         NetworkService.dataRequest(with: ReportUserAPIRouter.reportUser(request: request)) { (responce: WSResponse<ReportUser.Response>?, error: NetworkError?) in
+            if let detail = responce {
+                if  detail.arrayData != nil, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
+                    completionHandler( msg, detail.setting?.success)
+                } else {
+                    completionHandler(detail.setting?.message, detail.setting?.success)
+                }
+            } else {
+                completionHandler(error?.erroMessage(), "0")
+            }
+        }
+    }
+    
+    func blockUser(request: BlockUser.Request, completionHandler: @escaping ( _ message: String?, _ successCode: String?) -> Void) {
+        NetworkService.dataRequest(with: BlockUserAPIRouter.blockUser(request: request)) { (responce: WSResponse<BlockUser.Response>?, error: NetworkError?) in
             if let detail = responce {
                 if  detail.arrayData != nil, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
                     completionHandler( msg, detail.setting?.success)

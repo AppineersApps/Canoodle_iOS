@@ -23,6 +23,8 @@ class MyProfileViewController: BaseViewControllerWithAd {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var aboutTextView: UITextView!
     @IBOutlet var slideshow: ImageSlideshow!
+    @IBOutlet weak var detailView: UIView!
+
     
     @IBOutlet weak var viewAd: UIView!
     /// Interactor for API Call
@@ -90,6 +92,9 @@ class MyProfileViewController: BaseViewControllerWithAd {
         super.viewWillAppear(animated)
         self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false)
         self.addAnayltics(analyticsParameterItemID: "id-myprofilescreen", analyticsParameterItemName: "view_myprofilescreen", analyticsParameterContentType: "view_myprofilescreen")
+        if(viewAd.isHidden) {
+            detailView.frame = CGRect(x: detailView.frame.origin.x, y: self.viewAd.frame.origin.y, width: detailView.frame.width, height: self.view.frame.height - viewAd.frame.height)
+        }
     }
     
      /// Method is called when view did appear

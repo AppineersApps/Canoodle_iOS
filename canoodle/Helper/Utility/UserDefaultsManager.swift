@@ -98,14 +98,9 @@ struct UserDefaultsManager {
     
     static func resetFilter() {
         var dictionary: [String:String] = [:]
-       //  dictionary.updateValue("", forKey: "Interests")
-        if(userDetails?.city != nil && userDetails?.state != nil) {
-            dictionary.updateValue("\(userDetails!.city!), \(userDetails!.state!)", forKey: "Location")
-        } else {
-            dictionary.updateValue("", forKey: "Location")
-        }
-        dictionary.updateValue("18", forKey: "MinAge")
-        dictionary.updateValue("99", forKey: "MaxAge")
+         dictionary.updateValue("All", forKey: "Gender")
+        dictionary.updateValue("5", forKey: "Distance")
+       // dictionary.updateValue("99", forKey: "MaxAge")
         filter = Filter(dictionary: dictionary)
         saveFilter(filter: filter!)
     }
@@ -124,19 +119,22 @@ struct UserDefaultsManager {
     }
     
     static func saveFilter(filter: Filter) {
-       // applicationDefaults.setValue(filter.interests, forKey: "Interests")
-        applicationDefaults.setValue(filter.location, forKey: "Location")
-        applicationDefaults.setValue(filter.minAge, forKey: "MinAge")
-        applicationDefaults.setValue(filter.maxAge, forKey: "MaxAge")
+        applicationDefaults.setValue(filter.gender, forKey: "Gender")
+        applicationDefaults.setValue(filter.distance, forKey: "Distance")
+       // applicationDefaults.setValue(filter.minAge, forKey: "MinAge")
+       // applicationDefaults.setValue(filter.maxAge, forKey: "MaxAge")
         applicationDefaults.synchronize()
     }
     
     static func loadFilter() {
+        if(applicationDefaults.string(forKey: "Gender") == nil) {
+            resetFilter()
+        }
             var dictionary: [String:String] = [:]
-          //  dictionary.updateValue(applicationDefaults.string(forKey: "Interests")!, forKey: "Interests")
-            dictionary.updateValue(applicationDefaults.string(forKey: "Location")!, forKey: "Location")
-            dictionary.updateValue(applicationDefaults.string(forKey: "MinAge")!, forKey: "MinAge")
-            dictionary.updateValue(applicationDefaults.string(forKey: "MaxAge")!, forKey: "MaxAge")
+            dictionary.updateValue(applicationDefaults.string(forKey: "Gender")!, forKey: "Gender")
+            dictionary.updateValue(applicationDefaults.string(forKey: "Distance")!, forKey: "Distance")
+           // dictionary.updateValue(applicationDefaults.string(forKey: "MinAge")!, forKey: "MinAge")
+           // dictionary.updateValue(applicationDefaults.string(forKey: "MaxAge")!, forKey: "MaxAge")
             filter = Filter(dictionary: dictionary)
     }
     

@@ -16,9 +16,9 @@ enum NotificationsAPIRouter: GetRouterProtocol {
         return AppConstants.baseUrl
     }
     
-    /// Search Friends Case
+    /// get Notifications Case
     case getNotifications
-    case clearNotifications
+    case deleteNotification(request: Notification.Request)
 
 
     /// HTTP Method
@@ -26,7 +26,7 @@ enum NotificationsAPIRouter: GetRouterProtocol {
         switch self {
             case .getNotifications:
                 return .get
-            case .clearNotifications:
+            case .deleteNotification:
                 return .delete
         }
     }
@@ -36,7 +36,7 @@ enum NotificationsAPIRouter: GetRouterProtocol {
         switch self {
             case .getNotifications:
                 return AppConstants.baseUrl + "/notification"
-            case .clearNotifications:
+            case .deleteNotification:
                 return AppConstants.baseUrl + "/notification"
         }
     }
@@ -47,8 +47,11 @@ enum NotificationsAPIRouter: GetRouterProtocol {
         switch self {
             case .getNotifications:
                  return nil
-            case .clearNotifications:
-                return nil
+            case .deleteNotification(let request):
+                params = [
+                    "notification_id" : request.notificationId
+                ]
+                return params
         }
         return params
     }
@@ -63,7 +66,7 @@ enum NotificationsAPIRouter: GetRouterProtocol {
         switch self {
             case .getNotifications:
                 return ["Content-Type": "application/x-www-form-urlencoded", "AUTHTOKEN": UserDefaultsManager.getLoggedUserDetails()?.authToken ?? ""]
-            case .clearNotifications:
+            case .deleteNotification:
                 return ["Content-Type": "application/json", "AUTHTOKEN": UserDefaultsManager.getLoggedUserDetails()?.authToken ?? ""]
         }
         

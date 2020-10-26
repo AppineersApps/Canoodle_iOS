@@ -18,12 +18,16 @@ enum GetMessageAPIRouter: GetRouterProtocol {
     
     /// getUsers Case
     case getMessages
+    case deleteMessage(request: DeleteMessage.Request)
+
 
     /// HTTP Method
     var method: HTTPMethod {
         switch self {
             case .getMessages:
                 return .get
+            case .deleteMessage:
+                return .delete
         }
     }
     
@@ -33,6 +37,8 @@ enum GetMessageAPIRouter: GetRouterProtocol {
             case .getMessages:
                 var components = URLComponents(string: AppConstants.baseUrl + "/get_message_list")!
                return components.url!.absoluteString
+            case .deleteMessage:
+                return AppConstants.baseUrl + "/get_message_list"
         }
     }
     
@@ -42,6 +48,11 @@ enum GetMessageAPIRouter: GetRouterProtocol {
         switch self {
             case .getMessages:
                 return nil
+            case .deleteMessage(let request):
+                params = [
+                    "message_id" : request.message_id
+                ]
+                return params
         }
         return params
     }

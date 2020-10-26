@@ -14,11 +14,8 @@ import UIKit
 
 protocol ChatBusinessLogic
 {
-    func getChats(userId: String)
-    func sendMessage(userId: String, firebaseId: String, message: String)
-    func setConnection(userId: String, type: String)
-    func reportUser(userId: String, message: String)
-    func deleteMessage(chat: Chat)
+    func sendMessage(request: SendMessage.Request)
+    func deleteMessage(request: DeleteMessage.Request)
 }
 
 protocol ChatDataStore
@@ -33,38 +30,19 @@ class ChatInteractor: ChatBusinessLogic, ChatDataStore
   //var name: String = ""
   
   // MARK: Do something
-  func getChats(userId: String) {
+    func sendMessage(request: SendMessage.Request)
+    {
       worker = ChatWorker()
-    worker?.getChats(userId: userId) { response in
-          //self.presenter?.presentChats(response: response)
-      }
+      worker?.sendMessage(request: request, completionHandler: { (message, success) in
+          self.presenter?.presentSendMessageResponse(message: message ?? "", successCode: success ?? "0")
+      })
     }
     
-    func sendMessage(userId: String, firebaseId: String, message: String) {
-        worker = ChatWorker()
-        worker?.sendMessage(userId: userId, firebaseId: firebaseId, message: message) { response in
-            self.presenter?.presentSendMessageResponse(response: response)
-        }
+    func deleteMessage(request: DeleteMessage.Request)
+    {
+      worker = ChatWorker()
+      worker?.deleteMessage(request: request, completionHandler: { (message, success) in
+          self.presenter?.presentDeleteMessageResponse(message: message ?? "", successCode: success ?? "0")
+      })
     }
-    
-    func setConnection(userId: String, type: String) {
-          worker = ChatWorker()
-        worker?.setConnection(userId: userId, type: type) { response in
-              self.presenter?.presentSetConnectionResponse(response: response)
-          }
-    }
-    
-    func reportUser(userId: String, message: String) {
-        worker = ChatWorker()
-        worker?.reportUser(userId: userId, message: message) { response in
-              self.presenter?.presentReportUserResponse(response: response)
-          }
-    }
-    
-    func deleteMessage(chat: Chat) {
-        worker = ChatWorker()
-        worker?.deleteMessage(chat: chat) { response in
-            self.presenter?.presentDeleteMessageResponse(response: response)
-        }
-      }
 }

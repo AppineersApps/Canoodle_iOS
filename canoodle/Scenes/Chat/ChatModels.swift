@@ -12,21 +12,56 @@
 
 import UIKit
 
-enum Chat
-{
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
-    {
+enum SendMessage {
+    struct Request {
+        var receiverId: String
+        var firebaseId: String
+        var message: String
     }
-    struct Response
-    {
+    
+    /// Response Class
+    class Response: WSResponseData {
+     
+        /// Default Init Methods
+        ///
+        /// - Parameter decoder: Decoder
+        /// - Throws: throws exception if found error
+        required init(from decoder: Decoder) throws {
+            try super.init(from: decoder)
+        }
+       
+        /// Default encode method
+        ///
+        /// - Parameter encoder: Encoder
+        /// - Throws:throws exception if found error
+        public override func encode(to encoder: Encoder) throws {
+            try super.encode(to: encoder)
+        }
     }
-    struct ViewModel
-    {
-        
+}
+
+enum DeleteMessage {
+    struct Request {
+        var message_id: String
     }
-  }
+    
+    /// Response Class
+    class Response: WSResponseData {
+     
+        /// Default Init Methods
+        ///
+        /// - Parameter decoder: Decoder
+        /// - Throws: throws exception if found error
+        required init(from decoder: Decoder) throws {
+            try super.init(from: decoder)
+        }
+       
+        /// Default encode method
+        ///
+        /// - Parameter encoder: Encoder
+        /// - Throws:throws exception if found error
+        public override func encode(to encoder: Encoder) throws {
+            try super.encode(to: encoder)
+        }
+    }
 }
