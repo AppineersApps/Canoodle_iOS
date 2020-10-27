@@ -22,11 +22,13 @@ enum Connection {
         var userId : String?
         var userName : String?
         var userImage : String?
+        var connectionStatus : String?
         
         private enum CodingKeys: String, CodingKey {
             case user_id
             case user_name
             case user_image
+            case connection_status
         }
         
         public override func encode(to encoder: Encoder) throws {
@@ -35,6 +37,7 @@ enum Connection {
             try container.encode(userId, forKey: .user_id)
             try container.encode(userName, forKey: .user_name)
             try container.encode(userImage, forKey: .user_image)
+            try container.encode(connectionStatus, forKey: .connection_status)
         }
         
         required public init(from decoder: Decoder) throws {
@@ -43,6 +46,7 @@ enum Connection {
             userId = try values.decodeIfPresent(String.self, forKey: .user_id)
             userName = try values.decodeIfPresent(String.self, forKey: .user_name)
             userImage = try values.decodeIfPresent(String.self, forKey: .user_image)
+            connectionStatus = try values.decodeIfPresent(String.self, forKey: .connection_status)
         }
     }
 }

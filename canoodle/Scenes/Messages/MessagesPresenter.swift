@@ -15,7 +15,7 @@ import UIKit
 /// Presentor for Messages
 protocol MessagesPresentationLogic {
     func presentGetMessagesResponse(response: [Message.ViewModel]?, message: String, successCode: String)
-    func presentDeleteMessageResponse(response: Bool)
+    func presentDeleteMessageResponse(message: String, successCode: String)
 }
 
 /// Message Presnetor
@@ -28,7 +28,7 @@ class MessagesPresenter: MessagesPresentationLogic {
       viewController?.didReceiveGetMessagesResponse(response: response, message: message, successCode: successCode)
     }
     
-    func presentDeleteMessageResponse(response: Bool) {
-      viewController?.displayDeleteMessageResponse(response: response)
+    func presentDeleteMessageResponse(message: String, successCode: String) {
+          viewController?.didReceiveDeleteMessageResponse(message: message, successCode: successCode)
     }
 }

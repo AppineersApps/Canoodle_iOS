@@ -16,6 +16,7 @@ protocol ChatBusinessLogic
 {
     func sendMessage(request: SendMessage.Request)
     func deleteMessage(request: DeleteMessage.Request)
+    func blockUser(request: BlockUser.Request)
 }
 
 protocol ChatDataStore
@@ -43,6 +44,14 @@ class ChatInteractor: ChatBusinessLogic, ChatDataStore
       worker = ChatWorker()
       worker?.deleteMessage(request: request, completionHandler: { (message, success) in
           self.presenter?.presentDeleteMessageResponse(message: message ?? "", successCode: success ?? "0")
+      })
+    }
+    
+    func blockUser(request: BlockUser.Request)
+    {
+      worker = ChatWorker()
+      worker?.blockUser(request: request, completionHandler: { (message, success) in
+          self.presenter?.presentBlockUserResponse(message: message ?? "", successCode: success ?? "0")
       })
     }
 }

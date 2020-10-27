@@ -43,8 +43,8 @@ class NotificationsViewCell: UITableViewCell {
         nameLabel.text = notification.userName
         messageLabel.text = notification.message
         if(notification.userImage != "") {
-            profileImageView.setImage(with: notification.userImage, placeHolder: UIImage.init(named: "watermark"))
-            profileImageView.setImage(with: "\(notification.userImage!)", placeHolder: UIImage.init(named: "watermark"))
+            profileImageView.setImage(with: notification.userImage, placeHolder: UIImage.init(named: "placeholder"))
+            profileImageView.setImage(with: "\(notification.userImage!)", placeHolder: UIImage.init(named: "placeholder"))
         }
         else {
             profileImageView.image = UIImage.init(named: "placeholder")

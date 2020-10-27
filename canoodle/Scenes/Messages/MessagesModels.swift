@@ -28,6 +28,7 @@ enum Message {
         var receiverImage: String?
         var message: String?
         var updatedAt: String?
+        var connectionStatus: String?
         
         private enum CodingKeys: String, CodingKey {
             case message_id
@@ -39,6 +40,7 @@ enum Message {
             case receiver_image
             case message
             case updated_at
+            case connection_type_by_logged_user
         }
         
         public override func encode(to encoder: Encoder) throws {
@@ -53,6 +55,7 @@ enum Message {
             try container.encode(receiverImage, forKey: .receiver_image)
             try container.encode(message, forKey: .message)
             try container.encode(updatedAt, forKey: .updated_at)
+            try container.encode(connectionStatus, forKey: .connection_type_by_logged_user)
         }
         
         required public init(from decoder: Decoder) throws {
@@ -67,6 +70,7 @@ enum Message {
             receiverImage = try values.decodeIfPresent(String.self, forKey: .receiver_image)
             message = try values.decodeIfPresent(String.self, forKey: .message)
             updatedAt = try values.decodeIfPresent(String.self, forKey: .updated_at)
+            connectionStatus = try values.decodeIfPresent(String.self, forKey: .connection_type_by_logged_user)
         }
     }
 }

@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class MessagesViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var readCountLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
 
     override func awakeFromNib() {
@@ -26,12 +28,18 @@ class MessagesViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCellData(message: Message.ViewModel) {
+    func setCellData(message: Message.ViewModel, unread: Int) {
         profileImageView.layer.cornerRadius = profileImageView.frame.width/2
         profileImageView.layer.borderColor = UIColor.white.cgColor
         profileImageView.layer.borderWidth = 2
 
-        nameLabel.text = message.receiverName
+        readCountLabel.layer.cornerRadius = 10.0
+        readCountLabel.text = "\(unread)"
+        if(unread == 0) {
+            readCountLabel.isHidden = true
+        } else {
+            readCountLabel.isHidden = false
+        }
         messageLabel.text = message.message
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h:mm a, MMM dd yyyy"
@@ -41,12 +49,27 @@ class MessagesViewCell: UITableViewCell {
         
         let date = dateFormatter1.date(from: message.updatedAt!)
         timeLabel.text = dateFormatter.string(from: date!)
-        if(message.receiverImage != "") {
-            profileImageView.setImage(with: message.receiverImage, placeHolder: UIImage.init(named: "placeholder"))
+        
+        let loginData = UserDefaultsManager.getLoggedUserDetails()
+        if(loginData?.userId == message.receiverId!) {
+            nameLabel.text = message.senderName
+            if(message.receiverImage != "") {
+                profileImageView.setImage(with: message.senderImage, placeHolder: UIImage.init(named: "placeholder"))
+            }
+            else {
+                profileImageView.image = UIImage.init(named: "watermark")
+            }
+        } else {
+            nameLabel.text = message.receiverName
+            if(message.receiverImage != "") {
+                profileImageView.setImage(with: message.receiverImage, placeHolder: UIImage.init(named: "placeholder"))
+            }
+            else {
+                profileImageView.image = UIImage.init(named: "watermark")
+            }
         }
-        else {
-            profileImageView.image = UIImage.init(named: "watermark")
-        }
+
     }
     
 }
+

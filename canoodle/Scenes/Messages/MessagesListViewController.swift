@@ -20,7 +20,7 @@ import FirebaseFirestore
 /// Protocol for presenting response
 protocol MessagesDisplayLogic: class {
     func didReceiveGetMessagesResponse(response: [Message.ViewModel]?, message: String, successCode: String)
-    func displayDeleteMessageResponse(response: Bool)
+    func didReceiveDeleteMessageResponse(message: String, successCode: String)
 }
 
 /// This class is used for displaying all recent conversations happened between logged in user and other app users.
@@ -39,6 +39,8 @@ class MessagesListViewController: BaseViewControllerWithAd {
     
     var messagesList:[Message.ViewModel] = []
     var filteredList:[Message.ViewModel] = []
+    
+    var chatMessages: [ChatMessage] = []
     
     private var docReference: DocumentReference?
     var selectedRowIndex: Int = 0
@@ -135,7 +137,7 @@ class MessagesListViewController: BaseViewControllerWithAd {
        // updateNotificationBadge()
     }*/
     
-    @objc func loadChat() {
+    @objc func loadChat(user2UID: String, index: Int) {
         let userData = UserDefaultsManager.getLoggedUserDetails()
         let user1UID = userData?.userId as! String
         //Fetch all the chats which has current user in it
@@ -164,11 +166,11 @@ class MessagesListViewController: BaseViewControllerWithAd {
                     //Chat(s) found for currentUser
                     for doc in chatQuerySnap!.documents {
                         
-                       // let chat = Chat1(dictionary: doc.data())
+                        let chat = Chat1(dictionary: doc.data())
                         print("chat thread: \(doc.documentID)")
 
                         //Get the chat which has user2 id
-                        /*if (chat?.users.contains(self.user2UID))! {
+                        if (chat?.users.contains(user2UID))! {
                             
                             self.docReference = doc.reference
                             //fetch it's thread collection
@@ -179,20 +181,25 @@ class MessagesListViewController: BaseViewControllerWithAd {
                                 print("Error: \(error)")
                                 return
                             } else {
-                                self.messages.removeAll()
+                                self.chatMessages.removeAll()
                                     for message in threadQuery!.documents {
 
                                         let msg = ChatMessage(dictionary: message.data())
-                                        self.messages.append(msg!)
+                                        self.chatMessages.append(msg!)
                                         print("Data: \(msg!.content ?? "No message found")")
                                     }
-                                self.messagesCollectionView.reloadData()
-                                self.messagesCollectionView.scrollToBottom(animated: true)
-                                self.refreshControl.endRefreshing()
+                                var count: Int = 0
+                                self.chatMessages.forEach { chatMessage in
+                                    if(chatMessage.senderID == user2UID && !chatMessage.readStatus) {
+                                        count += 1
+                                    }
+                                }
+                                let cell: MessagesViewCell = self.messagesTableView.cellForRow(at: IndexPath.init(row: index, section: 0))! as! MessagesViewCell
+                                cell.setCellData(message: self.messagesList[index], unread: count)
                             }
                             })
                             return
-                        } //end of if*/
+                        } //end of if
                     } //end of for
                 } else {
                     print("Let's hope this error never prints!")
@@ -207,9 +214,23 @@ class MessagesListViewController: BaseViewControllerWithAd {
     
     func deleteMessage(messageId: String)
     {
-        interactor?.deleteMessage(messageId: messageId)
+        let request = DeleteMessage.Request(message_id: messageId)
+        interactor?.deleteMessage(request: request)
     }
     
+    func getUnreadMessagesCount(index: Int) -> Int {
+        var count: Int = 0
+        let message: Message.ViewModel = messagesList[index]
+        let loginData = UserDefaultsManager.getLoggedUserDetails()
+        if(loginData?.userId == message.receiverId!) {
+            loadChat(user2UID: message.senderId!, index: index)
+
+        } else {
+            loadChat(user2UID: message.receiverId!, index: index)
+        }
+
+        return count
+    }
     
     /*func getFirebaseId(user2Id: String) -> String {
         let userData = UserDefaultsManager.getLoggedUserDetails()
@@ -274,6 +295,17 @@ class MessagesListViewController: BaseViewControllerWithAd {
         }
     }
     
+    func filterBlockedUsers() {
+        var filteredArray:[Message.ViewModel] = []
+        messagesList.forEach {
+            let message:Message.ViewModel = $0
+            if(message.connectionStatus == "Like") {
+                filteredArray.append(message)
+            }
+        }
+        messagesList = filteredArray
+    }
+    
     @IBAction func btnNotificationsAction(_ sender: Any) {
         if let notificationVC = NotificationsViewController.instance() {
             self.navigationController?.pushViewController(notificationVC, animated: true)
@@ -296,6 +328,7 @@ extension MessagesListViewController: MessagesDisplayLogic {
             if let data = response {
                 messagesList.removeAll()
                 self.messagesList.append(contentsOf: data)
+                filterBlockedUsers()
                 filteredList = messagesList
                 messagesTableView.reloadData()
             }
@@ -307,16 +340,12 @@ extension MessagesListViewController: MessagesDisplayLogic {
         }
     }
     
-    func displayDeleteMessageResponse(response: Bool)
-    {
-        if(response == true) {
-            self.showTopMessage(message: "Chat deleted successfully", type: .Success)
-            deleteThread(threadId: messagesList[selectedRowIndex].messageId!)
-            messagesList.remove(at: selectedRowIndex)
-            messagesTableView.deleteRows(at: [IndexPath.init(row: selectedRowIndex, section: 0)], with: .fade)
-        }
-        else {
-            self.showTopMessage(message: "Error deleting chat. Please try again", type: .Error)
+    func didReceiveDeleteMessageResponse(message: String, successCode: String) {
+        if successCode == "1" {
+            self.showTopMessage(message: message, type: .Success)
+            getMessages()
+        } else {
+            self.showTopMessage(message: message, type: .Error)
         }
     }
 }
@@ -335,14 +364,21 @@ extension MessagesListViewController: UITableViewDelegate, UITableViewDataSource
             cell = tableView.dequeueReusableCell(withIdentifier: "MessagesViewCell") as? MessagesViewCell
         }
         //cell.delegate = self
-        cell.setCellData(message: filteredList[indexPath.row])
+        cell.setCellData(message: filteredList[indexPath.row], unread: getUnreadMessagesCount(index: indexPath.row))
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let loginData = UserDefaultsManager.getLoggedUserDetails()
         let message: Message.ViewModel = filteredList[indexPath.row]
+        var connection: Connection.ViewModel!
         if let chatVC = ChatViewController.instance() {
-            let connection = Connection.ViewModel.init(dictionary: ["user_id": message.receiverId!, "user_name": message.receiverName!, "user_image": message.receiverImage!])
+            if(loginData?.userId == message.receiverId!) {
+                connection = Connection.ViewModel.init(dictionary: ["user_id": message.senderId!, "user_name": message.senderName!, "user_image": message.senderImage!, "connection_status": message.connectionStatus!])
+
+            } else {
+                connection = Connection.ViewModel.init(dictionary: ["user_id": message.receiverId!, "user_name": message.receiverName!, "user_image": message.receiverImage!, "connection_status": message.connectionStatus!])
+            }
             chatVC.setConnection(connection: connection!)
             self.navigationController?.pushViewController(chatVC, animated: true)
         }

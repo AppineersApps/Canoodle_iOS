@@ -16,6 +16,7 @@ protocol PetProfileBusinessLogic
 {
     func uploadMedia(request: UploadMedia.Request)
     func updatePetProfile(request: UpdatePetProfile.Request)
+    func deleteMedia(request: DeleteMedia.Request)
 }
 
 protocol PetProfileDataStore
@@ -43,5 +44,13 @@ class PetProfileInteractor: PetProfileBusinessLogic, PetProfileDataStore
         worker?.updatePetProfile(request: request, completionHandler: { (message, success) in
             self.presenter?.presentUpdatePetProfileResponse(message: message ?? "", success: success ?? "")
         })
+    }
+    
+    func deleteMedia(request: DeleteMedia.Request)
+    {
+      worker = PetProfileWorker()
+      worker?.deleteMedia(request: request, completionHandler: { (message, success) in
+          self.presenter?.presentDeleteMediaResponse(message: message ?? "", successCode: success ?? "0")
+      })
     }
 }

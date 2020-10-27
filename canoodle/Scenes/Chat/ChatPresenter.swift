@@ -16,6 +16,7 @@ protocol ChatPresentationLogic
 {
     func presentSendMessageResponse(message: String, successCode: String)
     func presentDeleteMessageResponse(message: String, successCode: String)
+    func presentBlockUserResponse(message: String, successCode: String)
 }
 
 class ChatPresenter: ChatPresentationLogic
@@ -29,5 +30,9 @@ class ChatPresenter: ChatPresentationLogic
     
     func presentDeleteMessageResponse(message: String, successCode: String) {
           viewController?.didReceiveDeleteMessageResponse(message: message, successCode: successCode)
+    }
+    
+    func presentBlockUserResponse(message: String, successCode: String) {
+        viewController?.didReceiveBlockUserResponse(message: message, successCode: successCode)
     }
 }

@@ -18,6 +18,7 @@ import TALogger
 #endif
 import Alamofire
 import AppRating
+import FirebaseCore
 
 @UIApplicationMain
 

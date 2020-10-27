@@ -191,6 +191,7 @@ class MyProfileViewController: BaseViewControllerWithAd {
     
     @IBAction func btnEditPetProfileAction(_ sender: UIButton) {
         if let petProfileVC = PetProfileViewController.instance() {
+            petProfileVC.setMedias(medias: user.media!)
             self.navigationController?.pushViewController(petProfileVC, animated: true)
         }
     }

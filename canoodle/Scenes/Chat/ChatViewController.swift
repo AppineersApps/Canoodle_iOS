@@ -20,6 +20,7 @@ protocol ChatDisplayLogic: class
 {
     func didReceiveSendMessageResponse(message: String, successCode: String)
     func didReceiveDeleteMessageResponse(message: String, successCode: String)
+    func didReceiveBlockUserResponse(message: String, successCode: String)
 }
 
 class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDisplayDelegate {
@@ -98,7 +99,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
         user2Name = connection.userName!
         user2ImgUrl = connection.userImage!
         self.title = user2Name ?? "Chat"
-        self.view.backgroundColor = UIColor.white
+        super.view.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.isHidden = false
         
         configureMessageCollectionView()
@@ -117,6 +118,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
         
         scrollsToBottomOnKeyboardBeginsEditing = false // default false
         maintainPositionOnKeyboardFrameChanged = false // default false
+        scrollsToLastItemOnKeyboardBeginsEditing = false
         
         messagesCollectionView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: #selector(loadChat), for: .valueChanged)
@@ -298,9 +300,28 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
                                 self.messages.removeAll()
                                     for message in threadQuery!.documents {
 
-                                        let msg = ChatMessage(dictionary: message.data())
+                                        var msg = ChatMessage(dictionary: message.data())
                                         self.messages.append(msg!)
                                         print("Data: \(msg!.content ?? "No message found")")
+                                        if(msg?.senderID == self.user2UID) {
+                                            msg?.readStatus = true
+                                            let data: [String: Any] = [
+                                                "content": msg!.content,
+                                                "created": msg!.created,
+                                                "id": msg!.id,
+                                                "senderID": msg!.senderID,
+                                                "senderName": msg!.senderName,
+                                                "readStatus": msg!.readStatus
+                                            ]
+                                            self.docReference?.collection("thread").document(message.documentID).setData(data) { err in
+                                                if let err = err {
+                                                    print("Error updating document: \(err)")
+                                                } else {
+                                                    print("Document updated removed!")
+                                                    //self.loadChat()
+                                                }
+                                            }
+                                        }
                                     }
                                 self.messagesCollectionView.reloadData()
                                 self.messagesCollectionView.scrollToBottom(animated: true)
@@ -347,7 +368,8 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
             "created": message.created,
             "id": message.id,
             "senderID": message.senderID,
-            "senderName": message.senderName
+            "senderName": message.senderName,
+            "readStatus": message.readStatus
         ]
         docReference?.collection("thread").addDocument(data: data, completion: { (error) in
             
@@ -468,15 +490,15 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
         return NSAttributedString(string: dateString, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)])
     }*/
     @IBAction func actionButtonPressed(sender: UIBarButtonItem!) {
-      /*  var type: String = "Block"
-        if(connection.type == "Block") {
+        var type: String = "Block"
+        if(connection.connectionStatus == "Block") {
             type = "Unblock"
         }
         let optionMenu = UIAlertController(title: "Select Option", message: nil, preferredStyle: .actionSheet)
-        let blockAction = UIAlertAction(title: "\(type) User", style: .default) { _ in
+        let blockAction = UIAlertAction(title: "\(type) User", style: .destructive) { _ in
             self.addAnayltics(analyticsParameterItemID: "id-profileblock", analyticsParameterItemName: "Profile Block", analyticsParameterContentType: "event_profile")
             self.displayAlert(msg: "Are you sure you want to \(type) this user. You will no longer be a Match", ok: "Yes", cancel: "No", okAction: {
-                if(self.connection.type == "Block") {
+                if(self.connection.connectionStatus == "Block") {
                     self.connType = ""
                     self.setConnectionStatus(type: "Unblock")
                 } else {
@@ -487,24 +509,23 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
                 
             })
         }
-        let reportAction = UIAlertAction(title: "Report User", style: .default) { _ in
-            self.reportUser()
+        let clearAction = UIAlertAction(title: "Clear All", style: .default) { _ in
+            self.clearAllMessages()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         
-        if((connection.type == "Block") || (connection.type == "Like" && connection.reverseType == "Like")) {
-            optionMenu.addAction(blockAction)
-        }
-        optionMenu.addAction(reportAction)
+        optionMenu.addAction(clearAction)
+        optionMenu.addAction(blockAction)
         optionMenu.addAction(cancelAction)
             
-        AppConstants.appDelegate.window?.rootViewController!.present(optionMenu, animated: true, completion: nil)*/
+        AppConstants.appDelegate.window?.rootViewController!.present(optionMenu, animated: true, completion: nil)
     }
     
     func setConnectionStatus(type: String) {
         //connType = type
         if(connection != nil) {
-           // self.interactor?.setConnection(userId: connection.id!, type: type)
+            let request = BlockUser.Request(connectionUserId: connection.userId!, connectionType: "Block")
+            self.interactor?.blockUser(request: request)
         }
     }
     
@@ -512,6 +533,23 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
         if(connection != nil) {
             let request = SendMessage.Request(receiverId: connection.userId!, firebaseId: firebaseId, message: msg)
             interactor?.sendMessage(request: request)
+        }
+    }
+    
+    func clearAllMessages() {
+        docReference?.collection("thread").getDocuments() { (threadQuery, error) in
+             for message in threadQuery!.documents {
+                print("document iD = \(message.documentID)")
+                    self.docReference?.collection("thread").document(message.documentID).delete() { err in
+                        if let err = err {
+                            print("Error removing document: \(err)")
+                        } else {
+                            print("Document successfully removed!")
+                        }
+                    }
+            }
+            self.loadChat()
+            self.sendMessage(msg: "")
         }
     }
 
@@ -549,36 +587,9 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
 
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
                     inputBar.inputTextView.resignFirstResponder()
-                    if(connection != nil) {
-                       /* if(connection.type == "Block") {
-                            GlobalUtility.shared.currentTopViewController().displayAlert(msg: "Please Unblock user to send message", ok: "Unblock", cancel: "Cancel", okAction: {
-                                self.connType = ""
-                                self.setConnectionStatus(type: "Unblock")
-                            }, cancelAction: nil)
-                            return
-                        }
-                        
-                        if(connection.reverseType == "Block") {
-                            self.showSimpleAlert(message: "Failed to send message. You are blocked by this user")
-                            return
-                        }
-                        
-                        if(connection.type == "" || connection.type == "Unlike") {
-                            GlobalUtility.shared.currentTopViewController().displayAlert(msg: "Please collab with user to send message", ok: "Collab", cancel: "Cancel", okAction: {
-                                self.connType = "Like"
-                                self.setConnectionStatus(type: "Like")
-                            }, cancelAction: nil)
-                            return
-                        }
-                        
-                        if(connection.reverseType == "" || connection.reverseType == "Unlike") {
-                            GlobalUtility.shared.currentTopViewController().showSimpleAlert(message: "Other user needs to accept your collab request to message")
-                            return
-                        }*/
-                    }
                     let currentTime = Date().toMillis()
 
-        let message: ChatMessage = ChatMessage(id: UUID().uuidString, content: text.trimmingCharacters(in: .whitespacesAndNewlines), created: Timestamp(date: Date()), senderID: user1UID, senderName: user1Name)
+        let message: ChatMessage = ChatMessage(id: UUID().uuidString, content: text.trimmingCharacters(in: .whitespacesAndNewlines), created: Timestamp(date: Date()), senderID: user1UID, senderName: user1Name, readStatus: false)
                     
                       //messages.append(message)
                       insertNewMessage(message)
@@ -663,6 +674,15 @@ extension ChatViewController: ChatDisplayLogic {
     func didReceiveDeleteMessageResponse(message: String, successCode: String) {
         if successCode == "1" {
             self.showTopMessage(message: message, type: .Success)
+        } else {
+            self.showTopMessage(message: message, type: .Error)
+        }
+    }
+    
+    func didReceiveBlockUserResponse(message: String, successCode: String) {
+        if successCode == "1" {
+            self.showTopMessage(message: message, type: .Success)
+            self.navigationController?.popViewController(animated: false)
         } else {
             self.showTopMessage(message: message, type: .Error)
         }

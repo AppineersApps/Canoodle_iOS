@@ -41,4 +41,18 @@ class PetProfileWorker
             }
         }
     }
+    
+    func deleteMedia(request: DeleteMedia.Request, completionHandler: @escaping ( _ message: String?, _ successCode: String?) -> Void) {
+      GetNetworkService.updateDataRequest(with: DeleteMediaAPIRouter.deleteMedia(request: request)) { (responce: WSResponse<DeleteMedia.Response>?, error: NetworkError?) in
+          if let detail = responce {
+              if  detail.arrayData != nil, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
+                  completionHandler( msg, detail.setting?.success)
+              } else {
+                  completionHandler(detail.setting?.message, detail.setting?.success)
+              }
+          } else {
+              completionHandler(error?.erroMessage(), "0")
+          }
+      }
+    }
 }

@@ -16,6 +16,7 @@ protocol PetProfilePresentationLogic
 {
     func presentUploadMediaResponse(message: String, success: String)
     func presentUpdatePetProfileResponse(message: String, success: String)
+    func presentDeleteMediaResponse(message: String, successCode: String)
 }
 
 class PetProfilePresenter: PetProfilePresentationLogic
@@ -30,5 +31,9 @@ class PetProfilePresenter: PetProfilePresentationLogic
     
     func presentUpdatePetProfileResponse(message: String, success: String) {
         viewController?.didReceiveUpdatePetProfileResponse(message: message, success: success)
+    }
+    
+    func presentDeleteMediaResponse(message: String, successCode: String) {
+          viewController?.didReceiveDeleteMediaResponse(message: message, successCode: successCode)
     }
 }

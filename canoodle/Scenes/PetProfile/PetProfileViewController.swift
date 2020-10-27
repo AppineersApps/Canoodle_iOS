@@ -16,6 +16,7 @@ protocol PetProfileDisplayLogic: class
 {
     func didReceiveUploadMediaResponse(message: String, success: String)
     func didReceiveUpdatePetProfileResponse(message: String, success: String)
+    func didReceiveDeleteMediaResponse(message: String, successCode: String)
 }
 
 class PetProfileViewController: BaseViewController
@@ -27,6 +28,7 @@ class PetProfileViewController: BaseViewController
   var router: (NSObjectProtocol & PetProfileRoutingLogic & PetProfileDataPassing)?
     
     /// Image Array to display images in scroll
+    var medias: [Media.ViewModel] = []
     var imageArray = [UIImage]() {
         didSet {
             clctnView.reloadData()
@@ -131,12 +133,21 @@ class PetProfileViewController: BaseViewController
   
   // MARK: Do something
   
+    func setMedias(medias: [Media.ViewModel]) {
+        self.medias = medias
+    }
   
   func saveProfile()
   {
     let request = UploadMedia.Request(imageArray: imageArray)
     interactor?.uploadMedia(request: request)
   }
+    
+    func deleteMedia(mediaId: String)
+    {
+        let request = DeleteMedia.Request(media_id: mediaId)
+        interactor?.deleteMedia(request: request)
+    }
 }
 
 //UIcollectionview Methods
@@ -151,7 +162,7 @@ extension PetProfileViewController:  UICollectionViewDelegate, UICollectionViewD
         if imageArray.count == 5 {
             return imageArray.count
         } else {
-            return imageArray.count + 1
+            return imageArray.count + medias.count + 1
         }
     }
     
@@ -163,7 +174,7 @@ extension PetProfileViewController:  UICollectionViewDelegate, UICollectionViewD
     /// - Returns: Return cell for indexpath
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if indexPath.row == imageArray.count {
+        if indexPath.row == (imageArray.count + medias.count) {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addImage", for: indexPath) as? SendFeedbackAddImageCollectionViewCell
             cell?.btnAddTappedClouser = {
                 self.addPhoto()
@@ -171,10 +182,23 @@ extension PetProfileViewController:  UICollectionViewDelegate, UICollectionViewD
             return cell!
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as? SendFeedbackImageCollectionViewCell
-            cell?.imgPicked.image = imageArray[indexPath.row]
+            if(indexPath.row >= medias.count) {
+                cell?.imgPicked.image = imageArray[indexPath.row - medias.count]
+            } else {
+                let media = medias[indexPath.row]
+                cell?.imgPicked.setImage(with: media.mediaImages, placeHolder: UIImage.init(named: "placeholder"))
+            }
             cell?.btnRemoveTappedClouser = {
                 self.displayAlert(msg: AlertMessage.deleteMessage, ok: "Yes", cancel: "No", okAction: {
-                    self.imageArray.remove(at: indexPath.row)
+                    if(indexPath.row >= self.medias.count) {
+                        self.imageArray.remove(at: (indexPath.row - self.medias.count))
+                        self.clctnView.reloadData()
+                    } else {
+                        let media = self.medias[indexPath.row]
+                        self.deleteMedia(mediaId: media.mediaId!)
+                        self.medias.remove(at: indexPath.row)
+                        self.clctnView.reloadData()
+                    }
                 }, cancelAction: nil)
                 
             }
@@ -214,6 +238,14 @@ extension PetProfileViewController: PetProfileDisplayLogic {
         if success == "1" {
             self.showTopMessage(message: "Media added successfully", type: .Success)
             self.navigationController?.popViewController(animated: true)
+        } else {
+            self.showTopMessage(message: message, type: .Error)
+        }
+    }
+    
+    func didReceiveDeleteMediaResponse(message: String, successCode: String) {
+        if successCode == "1" {
+            self.showTopMessage(message: message, type: .Success)
         } else {
             self.showTopMessage(message: message, type: .Error)
         }

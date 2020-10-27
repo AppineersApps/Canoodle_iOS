@@ -9,6 +9,8 @@ import UIKit
 import Foundation
 import Firebase
 import MessageKit
+import FirebaseCore
+import FirebaseFirestore
 
 struct ChatMessage {
     
@@ -17,6 +19,7 @@ struct ChatMessage {
     var created: Timestamp
     var senderID: String
     var senderName: String
+    var readStatus: Bool
     
     var dictionary: [String: Any] {
         
@@ -25,23 +28,22 @@ struct ChatMessage {
             "content": content,
             "created": created,
             "senderID": senderID,
-            "senderName":senderName]
-        
+            "senderName": senderName,
+            "readStatus": readStatus]
     }
 }
 
 extension ChatMessage {
     init?(dictionary: [String: Any]) {
-        
         guard let id = dictionary["id"] as? String,
             let content = dictionary["content"] as? String,
             let created = dictionary["created"] as? Timestamp,
             let senderID = dictionary["senderID"] as? String,
-            let senderName = dictionary["senderName"] as? String
+            let senderName = dictionary["senderName"] as? String,
+            let readStatus = dictionary["readStatus"] as? Bool
             else {return nil}
         
-        self.init(id: id, content: content, created: created, senderID: senderID, senderName:senderName)
-        
+        self.init(id: id, content: content, created: created, senderID: senderID, senderName:senderName, readStatus: readStatus)
     }
 }
 
@@ -62,5 +64,9 @@ extension ChatMessage: MessageType {
     
     var kind: MessageKind {
         return .text(content)
+    }
+    
+    var isRead: Bool {
+        return readStatus
     }
 }
