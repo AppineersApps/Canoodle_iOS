@@ -45,8 +45,8 @@
 	<string>398147691208199</string>
 	<key>FacebookDisplayName</key>
 	<string>Canoodle</string>
-	<key>GADIsAdManagerApp</key>
-	<true/>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-2398780340068440~2101010032</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSApplicationQueriesSchemes</key>
@@ -64,16 +64,6 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>yourdomain.com</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
-				<false/>
-			</dict>
-		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Allow app to capture photos for updating profile picture</string>

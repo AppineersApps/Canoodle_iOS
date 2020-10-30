@@ -2,8 +2,8 @@
 //  SplashInteractor.swift
 //  Test
 //
-//  Created by hb on 11/10/19.
-//  Copyright (c) 2019 hb. All rights reserved.
+//  Created by The Appineers on 11/10/19.
+//  Copyright (c) 2019 The Appineers. All rights reserved.
 //
 
 import UIKit

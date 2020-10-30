@@ -42,7 +42,8 @@ enum DeleteMediaAPIRouter: GetRouterProtocol {
         switch self {
             case .deleteMedia(let request):
                 params = [
-                    "media_id" : request.media_id
+                    "media_id" : "\(request.media_id)"
+                    
                 ]
                 return params
         }

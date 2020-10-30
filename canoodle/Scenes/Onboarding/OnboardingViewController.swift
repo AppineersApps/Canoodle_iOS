@@ -17,7 +17,7 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     
     var titlesArray = ["Title 1", "Title 2", "Title 3"]
-    var descriptionArray = ["1. Onboarding feature description text", "2. Onboarding feature description text", "3. Onboarding feature description text"]
+    var descriptionArray = ["Create your profile with your pet.", "Find people with love for pets near you.", "View who likes your profile with our Premium Membership.", "Match and Meet."]
 
     var currPageIndex:Int = 0
 

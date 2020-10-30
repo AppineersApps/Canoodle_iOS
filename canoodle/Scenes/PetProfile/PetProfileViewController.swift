@@ -22,7 +22,10 @@ protocol PetProfileDisplayLogic: class
 class PetProfileViewController: BaseViewController
 {
     @IBOutlet weak var clctnView: UICollectionView!
+    @IBOutlet weak var petNameTextField: UITextField!
+    @IBOutlet weak var petAgeTextField: UITextField!
     @IBOutlet weak var breedTextField: UITextField!
+    @IBOutlet weak var descTextView: UITextView!
 
   var interactor: PetProfileBusinessLogic?
   var router: (NSObjectProtocol & PetProfileRoutingLogic & PetProfileDataPassing)?
@@ -122,6 +125,7 @@ class PetProfileViewController: BaseViewController
     }
     
     @IBAction func btnSaveAction(_ sender: Any) {
+        updatePetProfile()
         saveProfile()
      }
 
@@ -137,6 +141,13 @@ class PetProfileViewController: BaseViewController
         self.medias = medias
     }
   
+    func updatePetProfile()
+    {
+        let request = UpdatePetProfile.Request(petName: petNameTextField.text!, breed: breedTextField.text!, petAge: petAgeTextField.text!, akcRegistered: "No", description: descTextView.text)
+        interactor?.updatePetProfile(request: request)
+    }
+      
+    
   func saveProfile()
   {
     let request = UploadMedia.Request(imageArray: imageArray)

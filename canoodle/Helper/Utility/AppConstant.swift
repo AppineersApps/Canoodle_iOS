@@ -31,7 +31,7 @@ struct AppConstants {
     /// Enable checksum for the api
     static var enableChecksum = false
     /// Is debug mode on
-    static let isDebug = true
+    static var isDebug = true
     /// AES Encryption ket
     static let aesEncryptionKey = "CIT@WS!"
     /// Webservice checksum
@@ -102,6 +102,24 @@ struct ApiServer {
     static let staging = "http://18.211.58.235/canoodle/WS"
     /// URL for production
     static let prodcution = ""
+}
+
+/// Ad Mob Test details
+struct AdMobTest {
+    // Mark : Test Ids
+    /// Banner AD Unit id
+    static let bannerAdUnitID = "ca-app-pub-3940256099942544/2934735716"
+    /// Interstitial AD Mob ID
+    static let interstitialAdUnitId = "ca-app-pub-3940256099942544/4411468910"
+}
+
+/// Ad Mob Live details
+struct AdMobLive {
+    // Mark : Live Ids
+    /// Banner AD Unit id
+    static var bannerAdUnitID = "ca-app-pub-5439252228586946/7142817250"
+    /// Interstitial AD Mob ID
+    static var interstitialAdUnitId = "ca-app-pub-5439252228586946/4325082228"
 }
 
 /// Ad Mob details

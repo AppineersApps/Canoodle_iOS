@@ -51,7 +51,8 @@ enum UpdateProfileAPIRouter: RouterProtocol {
                 "pet_name": request.petName,
                 "breed": request.breed,
                 "pet_age": request.petAge,
-                "description": request.description
+                "pet_description": request.description,
+                "akc_registered": request.akcRegistered
             ]
         }
     }

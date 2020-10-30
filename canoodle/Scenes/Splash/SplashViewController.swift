@@ -157,7 +157,7 @@ class SplashViewController: BaseViewController {
     
     /// Redirect app to app store
     func redirectToAppStore() {
-        if let url = URL(string: "itms-apps://itunes.apple.com/app/"), UIApplication.shared.canOpenURL(url) {
+        if let url = URL(string: "itms-apps://itunes.apple.com/app//apple-store/id" + AppInfo.kAppstoreID + "?mt=8"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
@@ -176,6 +176,13 @@ extension SplashViewController: SplashDisplayLogic {
         if successCode == "1" {
             if let data = viewModel {
                 self.configModel = data
+                AdMobLive.bannerAdUnitID = (self.configModel?.bannerAdUnitId)!
+                AdMobLive.interstitialAdUnitId = (self.configModel?.interstitialAdUnitId)!
+                if(self.configModel?.projectDebugLevel == "development") {
+                    AppConstants.isDebug = true
+                } else {
+                    AppConstants.isDebug = false
+                }
                 let aVersion = AppInfo.kAppVersion
                 let aIOSVersion = data.iosVersion ?? "1.0"
                 if (UserDefaultsManager.getLoggedUserDetails() != nil) {

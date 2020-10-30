@@ -2,8 +2,8 @@
 //  SplashModels.swift
 //  Test
 //
-//  Created by hb on 11/10/19.
-//  Copyright (c) 2019 hb. All rights reserved.
+//  Created by The Appineers on 11/10/19.
+//  Copyright (c) 2019 The Appineers. All rights reserved.
 //
 
 import UIKit
@@ -21,6 +21,9 @@ struct Splash {
         var termsConditionsUpdated : String?
         var privacyPolicyUpdated : String?
         var logStatusUpdated : String?
+        var bannerAdUnitId: String?
+        var interstitialAdUnitId: String?
+        var projectDebugLevel: String?
         
         /// Enum for response
         ///
@@ -46,6 +49,12 @@ struct Splash {
             case terms_conditions_updated
             /// - log_status_updated: Log Status Updated
             case log_status_updated
+            /// - ios_banner_id
+            case ios_banner_id
+            /// - ios_interstitial_id
+            case ios_interstitial_id
+            /// - project_debug_level
+            case project_debug_level
         }
         
         /// Init default method
@@ -63,6 +72,9 @@ struct Splash {
             termsConditionsUpdated = try values.decodeIfPresent(String.self, forKey: .terms_conditions_updated)
             privacyPolicyUpdated = try values.decodeIfPresent(String.self, forKey: .privacy_policy_updated)
             logStatusUpdated = try values.decodeIfPresent(String.self, forKey: .log_status_updated)
+            bannerAdUnitId = try values.decodeIfPresent(String.self, forKey: .ios_banner_id)
+            interstitialAdUnitId = try values.decodeIfPresent(String.self, forKey: .ios_interstitial_id)
+            projectDebugLevel = try values.decodeIfPresent(String.self, forKey: .project_debug_level)
         }
         
         /// Default encode method
@@ -80,6 +92,9 @@ struct Splash {
             try container.encode(termsConditionsUpdated, forKey: .terms_conditions_updated)
             try container.encode(privacyPolicyUpdated, forKey: .privacy_policy_updated)
             try container.encode(logStatusUpdated, forKey: .log_status_updated)
+            try container.encode(bannerAdUnitId, forKey: .ios_banner_id)
+            try container.encode(interstitialAdUnitId, forKey: .ios_interstitial_id)
+            try container.encode(projectDebugLevel, forKey: .project_debug_level)
         }
     }
 }

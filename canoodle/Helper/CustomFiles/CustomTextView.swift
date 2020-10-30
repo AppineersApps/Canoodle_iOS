@@ -81,7 +81,7 @@ extension CustomTextView : UITextViewDelegate {
     ///
     /// - Parameter textView: Textview
     func textViewDidChange(_ textView: UITextView) {
-        placeholderLabel.isHidden = !self.text.isEmpty
+       // placeholderLabel.isHidden = !textView.text.isEmpty
     }
     
     /// Method is called when textview text changes

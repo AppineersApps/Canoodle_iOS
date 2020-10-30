@@ -36,6 +36,9 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="tGz-2a-i3c" id="SQj-dM-chp"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Breed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LRc-pk-8Vm" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                 <rect key="frame" x="16" y="249" width="344" height="40"/>
@@ -77,6 +80,9 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="tGz-2a-i3c" id="VXk-ok-wS6"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AKC Registered" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiE-57-6Zk">
                                 <rect key="frame" x="16" y="352" width="222" height="21"/>
@@ -101,6 +107,9 @@
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="tGz-2a-i3c" id="DzX-AQ-O4l"/>
+                                </connections>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhn-9Q-nhP">
                                 <rect key="frame" x="16" y="386" width="173" height="20"/>
@@ -234,6 +243,9 @@
                     <connections>
                         <outlet property="breedTextField" destination="LRc-pk-8Vm" id="aED-9K-H0b"/>
                         <outlet property="clctnView" destination="tOh-ds-wnL" id="Xap-mv-DAs"/>
+                        <outlet property="descTextView" destination="8V9-We-LON" id="HbP-aC-sgI"/>
+                        <outlet property="petAgeTextField" destination="8O6-Qo-mwM" id="Etb-zc-OIX"/>
+                        <outlet property="petNameTextField" destination="YdI-7v-i2i" id="dUM-Kx-gXm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DBq-2A-eOy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -243,13 +255,13 @@
     </scenes>
     <designables>
         <designable name="8O6-Qo-mwM">
-            <size key="intrinsicContentSize" width="55.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="25.5" height="18.5"/>
         </designable>
         <designable name="LRc-pk-8Vm">
-            <size key="intrinsicContentSize" width="68.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="38.5" height="18.5"/>
         </designable>
         <designable name="YdI-7v-i2i">
-            <size key="intrinsicContentSize" width="93" height="18.5"/>
+            <size key="intrinsicContentSize" width="63" height="18.5"/>
         </designable>
     </designables>
     <resources>

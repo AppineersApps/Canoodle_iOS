@@ -58,22 +58,48 @@ class BaseViewControllerWithAd: UIViewController {
     ///
     /// - Parameter viewAdd: view for ad
     func setAddMobView(viewAdd: UIView) {
-        
-        if !(UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false) {
-            let adSize = GADAdSizeFromCGSize(CGSize(width: viewAdd.frame.width, height: 50))
-            bannerView = GADBannerView(adSize: adSize)
-            addBannerViewToView(bannerView, viewAdd: viewAdd)
-            bannerView.adUnitID = ADMobDetail.admodId
-            bannerView.center = viewAdd.center
-            bannerView.delegate = self
-            bannerView.frame = viewAdd.frame
-            bannerView.rootViewController = self
-            bannerView.load(GADRequest())
+         if !(UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false){
+            if !checkIFBannerIsAdded(viewAdd)
+            {
+                if bannerView == nil {
+                    let adSize = GADAdSizeFromCGSize(CGSize(width: viewAdd.frame.width, height: 50))
+                    bannerView = GADBannerView(adSize: adSize)
+                    if(AppConstants.isDebug) {
+                        bannerView.adUnitID = AdMobTest.bannerAdUnitID
+                    } else {
+                        bannerView.adUnitID = AdMobLive.bannerAdUnitID
+                    }
+                    bannerView.delegate = self
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) {
+                        self.bannerView.load(GADRequest())
+                    }
+                }
+                addBannerViewToView(bannerView, viewAdd: viewAdd)
+                bannerView.center = viewAdd.center
+                bannerView.frame = viewAdd.frame
+                bannerView.rootViewController = self
+            }
         }
-        
-        
-        
+        else
+        {
+            for vw in viewAdd.subviews {
+                if vw is GADBannerView {
+                    vw.removeFromSuperview()
+                }
+            }
+        }
     }
+    
+    func checkIFBannerIsAdded(_ bannerView:UIView) -> Bool
+      {
+          var alreadyAdded = false
+          for vw in bannerView.subviews {
+              if vw is GADBannerView {
+                  alreadyAdded = true
+              }
+          }
+          return alreadyAdded
+      }
     
     /// Add Banner Ad to view
     ///
@@ -90,7 +116,11 @@ class BaseViewControllerWithAd: UIViewController {
     ///
     /// - Returns: Return Interstitial ad
     func reloadInterstitialAd() -> GADInterstitial {
-        interstitialView = GADInterstitial(adUnitID: ADMobDetail.adUnitID)
+        if(AppConstants.isDebug) {
+            interstitialView = GADInterstitial(adUnitID: AdMobTest.interstitialAdUnitId)
+        } else {
+            interstitialView = GADInterstitial(adUnitID: AdMobLive.interstitialAdUnitId)
+        }
         interstitialView.delegate = self
         let request = GADRequest()
         interstitialView.load(request)
