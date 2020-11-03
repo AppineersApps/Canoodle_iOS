@@ -63,7 +63,8 @@ struct AppConstants {
     static let backgroundColor = UIColor(named: "BackgroundColor")
     
     /// Subscription id for IAP
-    static let subscriptionId = "goadfree"
+    static let goadfreeId = "goadfree"
+    static let subscriptionId = "subscription"
     /// Is login skipped
     static var isLoginSkipped = false
     

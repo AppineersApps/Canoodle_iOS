@@ -23,8 +23,11 @@ class LikeViewController: BaseViewControllerWithAd
     @IBOutlet weak var overlayView: UIView!
     @IBOutlet weak var likedButton: UIButton!
     @IBOutlet weak var likedMeButton: UIButton!
+    @IBOutlet weak var likeCountLabel: UILabel!
+    @IBOutlet weak var likedMeCountLabel: UILabel!
     @IBOutlet weak var connectionsTableView: UITableView!
     @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var watermarkView: UIView!
 
 
    var interactor: LikeBusinessLogic?
@@ -95,13 +98,14 @@ class LikeViewController: BaseViewControllerWithAd
     likedMeButton.layer.borderColor = UIColor.white.cgColor
     likedMeButton.layer.borderWidth = 2.0
     likedMeButton.layer.cornerRadius = 5.0
+    self.addAnayltics(analyticsParameterItemID: "id-likescreen", analyticsParameterItemName: "view_likescreen", analyticsParameterContentType: "view_likescreen")
   }
     
     /// Method is called when view did appear
    override func viewDidAppear(_ animated: Bool) {
        super.viewDidAppear(animated)
        self.setAddMobView(viewAdd: self.viewAd)
-       getConnections()
+       getConnections(type: "Like")
    }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -114,25 +118,37 @@ class LikeViewController: BaseViewControllerWithAd
   
     
     @IBAction func likedButtonTapped(_ sender: Any) {
-        overlayView.removeFromSuperview()
+       // overlayView.removeFromSuperview()
         likedButton.setBackgroundImage(UIImage.init(named: "purpleRectBg"), for: UIControl.State.normal)
         likedMeButton.setBackgroundImage(UIImage.init(named: "greyRectBg"), for: UIControl.State.normal)
         selectedSegmentIndex = 0
+        getConnections(type: "Like")
     }
     
     @IBAction func likedMeButtonTapped(_ sender: Any) {
-        overlayView.frame = CGRect(x: 0, y: self.view.frame.height - overlayView.frame.height, width: self.view.frame.width, height: overlayView.frame.height)
-        self.view.addSubview(overlayView)
+       // overlayView.frame = CGRect(x: 0, y: self.view.frame.height - overlayView.frame.height, width: self.view.frame.width, height: overlayView.frame.height)
+       // self.view.addSubview(overlayView)
         likedButton.setBackgroundImage(UIImage.init(named: "greyRectBg"), for: UIControl.State.normal)
         likedMeButton.setBackgroundImage(UIImage.init(named: "purpleRectBg"), for: UIControl.State.normal)
         selectedSegmentIndex = 1
+        getConnections(type: "Likeme")
     }
     
   // MARK: Do something
+    @IBAction func btnNotificationsAction(_ sender: Any) {
+        if let notificationVC = NotificationsViewController.instance() {
+            self.navigationController?.pushViewController(notificationVC, animated: true)
+        }
+    }
+    
+    @IBAction func btnSettingsAction(_ sender: Any) {
+        if let settingsVC = SettingViewController.instance() {
+            self.navigationController?.pushViewController(settingsVC, animated: true)
+        }
+    }
   
-  
-    func getConnections() {
-        let request = Connection.Request(connectionType: "Like")
+    func getConnections(type: String) {
+        let request = Connection.Request(connectionType: type)
         interactor?.getConnections(request: request)
     }
 }
@@ -140,6 +156,13 @@ class LikeViewController: BaseViewControllerWithAd
 // UITableView Delegate methods
 extension LikeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(connectionsList.count == 0) {
+            watermarkView.isHidden = false
+            connectionsTableView.isHidden = true
+        } else {
+            watermarkView.isHidden = true
+            connectionsTableView.isHidden = false
+        }
         return connectionsList.count
     }
     
@@ -171,6 +194,11 @@ extension LikeViewController: LikeDisplayLogic {
             if let data = response {
                 connectionsList.removeAll()
                 self.connectionsList.append(contentsOf: data)
+                if(selectedSegmentIndex == 0) {
+                    likeCountLabel.text = "\(connectionsList.count)"
+                } else {
+                    likedMeCountLabel.text = "\(connectionsList.count)"
+                }
                 connectionsTableView.reloadData()
             }
         } else {

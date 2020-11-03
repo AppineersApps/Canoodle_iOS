@@ -146,4 +146,13 @@ struct UserDefaultsManager {
                applicationDefaults.setValue(newValue, forKey: UserDefaultsKey.onboarding)
            }
     }
+    
+    static var likeCount: Int {
+           get {
+               return applicationDefaults.integer(forKey: "Likes") ?? 0
+           }
+           set {
+               applicationDefaults.setValue(newValue, forKey: "Likes")
+           }
+    }
 }

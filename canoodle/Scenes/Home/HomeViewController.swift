@@ -195,10 +195,10 @@ extension HomeViewController: HomeCardViewProtocol {
     func swipedCard(user: User.ViewModel, type: SwipeType) {
         if(type == SwipeType.Right) {
            //showCollabView()
-            self.addAnayltics(analyticsParameterItemID: "id-profilelike", analyticsParameterItemName: "Profile Like", analyticsParameterContentType: "event_profile")
+            self.addAnayltics(analyticsParameterItemID: "id-likeprofile", analyticsParameterItemName: "click_likeprofile", analyticsParameterContentType: "click_likeprofile")
             setConnection(userId: user.userId!, type: "Like")
         } else {
-            self.addAnayltics(analyticsParameterItemID: "id-profileunlike", analyticsParameterItemName: "Profile Unlike", analyticsParameterContentType: "event_profile")
+            self.addAnayltics(analyticsParameterItemID: "id-unlikeprofile", analyticsParameterItemName: "click_unlikeprofile", analyticsParameterContentType: "click_unlikeprofile")
            // setConnection(userId: user.userId!, type: "Unlike")
         }
     }

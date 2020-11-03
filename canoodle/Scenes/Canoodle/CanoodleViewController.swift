@@ -27,6 +27,7 @@ class CanoodleViewController: BaseViewControllerWithAd {
     @IBOutlet weak var viewAd: UIView!
     @IBOutlet weak var connectionsTableView: UITableView!
     @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var watermarkView: UIView!
 
     
     var connectionsList = [Connection.ViewModel]()
@@ -77,6 +78,7 @@ class CanoodleViewController: BaseViewControllerWithAd {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Canoodle"
+        self.addAnayltics(analyticsParameterItemID: "id-canoodlescreen", analyticsParameterItemName: "view_canoodlescreen", analyticsParameterContentType: "view_canoodlescreen")
         self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false)
     }
     
@@ -125,6 +127,13 @@ class CanoodleViewController: BaseViewControllerWithAd {
 // UITableView Delegate methods
 extension CanoodleViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(connectionsList.count == 0) {
+            watermarkView.isHidden = false
+            connectionsTableView.isHidden = true
+        } else {
+            watermarkView.isHidden = true
+            connectionsTableView.isHidden = false
+        }
         return connectionsList.count
     }
     

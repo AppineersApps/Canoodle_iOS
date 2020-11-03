@@ -37,7 +37,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3G-JU-AMY" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
-                        <rect key="frame" x="303" y="20" width="102" height="35"/>
+                        <rect key="frame" x="304" y="33" width="102" height="35"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" name="AppColor2"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -53,11 +53,19 @@
                             <action selector="showButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="peh-p6-8Hv"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmb-aI-TFt">
+                        <rect key="frame" x="223" y="10" width="183" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="connectButton" destination="C3G-JU-AMY" id="JXz-1l-pmn"/>
+                <outlet property="dateLabel" destination="hmb-aI-TFt" id="0sT-h3-mYq"/>
                 <outlet property="messageLabel" destination="vGn-DS-15l" id="vQL-VT-W1o"/>
                 <outlet property="nameLabel" destination="bkJ-If-YVo" id="IYZ-qo-hxJ"/>
                 <outlet property="profileImageView" destination="QFo-wq-sl6" id="1j2-fp-hnX"/>

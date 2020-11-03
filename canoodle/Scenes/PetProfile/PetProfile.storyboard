@@ -241,6 +241,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="akcSwitch" destination="BPq-th-BPb" id="XJ2-og-iUI"/>
                         <outlet property="breedTextField" destination="LRc-pk-8Vm" id="aED-9K-H0b"/>
                         <outlet property="clctnView" destination="tOh-ds-wnL" id="Xap-mv-DAs"/>
                         <outlet property="descTextView" destination="8V9-We-LON" id="HbP-aC-sgI"/>

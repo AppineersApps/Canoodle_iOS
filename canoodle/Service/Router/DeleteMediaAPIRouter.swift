@@ -57,7 +57,7 @@ enum DeleteMediaAPIRouter: GetRouterProtocol {
     
     /// Headers for the url request
     var headers: [String: String]? {
-        return ["Content-Type": "application/x-www-form-urlencoded", "AUTHTOKEN": UserDefaultsManager.getLoggedUserDetails()?.authToken ?? ""]
+        return ["Content-Type": "application/json", "AUTHTOKEN": UserDefaultsManager.getLoggedUserDetails()?.authToken ?? ""]
     }
 
     /// Get Device Info

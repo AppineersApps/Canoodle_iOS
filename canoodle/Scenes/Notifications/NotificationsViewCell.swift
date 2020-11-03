@@ -17,6 +17,7 @@ class NotificationsViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var profileImageView: UIImageView!
 
@@ -42,6 +43,7 @@ class NotificationsViewCell: UITableViewCell {
         self.notification = notification
         nameLabel.text = notification.userName
         messageLabel.text = notification.message
+        dateLabel.text = notification.notificationDate
         if(notification.userImage != "") {
             profileImageView.setImage(with: notification.userImage, placeHolder: UIImage.init(named: "placeholder"))
             profileImageView.setImage(with: "\(notification.userImage!)", placeHolder: UIImage.init(named: "placeholder"))

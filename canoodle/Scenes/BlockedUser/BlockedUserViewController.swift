@@ -83,6 +83,7 @@ class BlockedUserViewController: UIViewController
   {
     super.viewDidLoad()
     self.title = "Blocked Users"
+    self.addAnayltics(analyticsParameterItemID: "id-blockeduserscreen", analyticsParameterItemName: "view_blockeduserscreen", analyticsParameterContentType: "view_blockeduserscreen")
     getBlockedUsers()
   }
   

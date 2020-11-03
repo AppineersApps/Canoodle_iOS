@@ -31,10 +31,10 @@ class LikeViewCell: UITableViewCell {
     func setCellData(connection: Connection.ViewModel, index: Int) {
         nameLabel.text = connection.userName
         profileImageView.setImage(with: "\(connection.userImage!)", placeHolder: UIImage.init(named: "placeholder"))
-        if(index == 0) {
+        /*if(index == 0) {
             statusView.isHidden = true
         } else {
             statusView.isHidden = false
-        }
+        }*/
     }
 }

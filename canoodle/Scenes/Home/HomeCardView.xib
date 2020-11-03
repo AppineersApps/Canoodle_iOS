@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,7 +56,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Los Angeles, California" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTi-HV-nqg">
-                                            <rect key="frame" x="18" y="149" width="223" height="20"/>
+                                            <rect key="frame" x="18" y="149" width="222" height="20"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -66,7 +66,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tim-Du-74C">
-                                    <rect key="frame" x="19" y="105" width="307" height="372"/>
+                                    <rect key="frame" x="18" y="105" width="307" height="372"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="watermark" translatesAutoresizingMaskIntoConstraints="NO" id="n8s-JZ-rhX">
@@ -96,12 +96,12 @@
             <gestureRecognizers/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="ageLabel" destination="2fF-Fi-37J" id="tF2-MS-V5O"/>
                 <outlet property="bgImageView" destination="Yki-Lk-TGL" id="dsC-tz-EXQ"/>
                 <outlet property="locationLabel" destination="PTi-HV-nqg" id="g0k-53-JD0"/>
                 <outlet property="mediaHolderView" destination="aXy-3V-cJo" id="1Gy-JE-7h9"/>
                 <outlet property="nameLabel" destination="3oS-xz-WyC" id="Y2T-4E-UKL"/>
                 <outlet property="pageControl" destination="DJP-GC-8Ws" id="hHR-Fd-wnn"/>
+                <outlet property="petNameLabel" destination="2fF-Fi-37J" id="Ici-AM-n4X"/>
                 <outlet property="watermarkView" destination="tim-Du-74C" id="FAt-4J-caJ"/>
                 <outletCollection property="gestureRecognizers" destination="eLB-iR-Gex" appends="YES" id="zvk-ft-s0U"/>
             </connections>

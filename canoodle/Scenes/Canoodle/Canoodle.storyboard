@@ -64,6 +64,24 @@
                                             <outlet property="delegate" destination="Whp-o0-3b9" id="Nbd-OR-fTg"/>
                                         </connections>
                                     </tableView>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GZI-kg-MDA">
+                                        <rect key="frame" x="20" y="118" width="333" height="323.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Matches to show" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMv-R1-p6O">
+                                                <rect key="frame" x="11" y="40" width="306" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="watermark" translatesAutoresizingMaskIntoConstraints="NO" id="xgi-Vy-Ukl">
+                                                <rect key="frame" x="44" y="74.5" width="243" height="149"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -94,6 +112,7 @@
                         <outlet property="connectionsTableView" destination="6wX-gj-JIm" id="f0B-SV-peN"/>
                         <outlet property="detailView" destination="sk8-Zt-cXP" id="fil-0Y-Rno"/>
                         <outlet property="viewAd" destination="rKu-cM-ygn" id="LF6-Hn-n2x"/>
+                        <outlet property="watermarkView" destination="GZI-kg-MDA" id="xys-U8-nNQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHp-le-s9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -105,6 +124,7 @@
         <image name="canoodle" width="22" height="24"/>
         <image name="icon_notification" width="16" height="20"/>
         <image name="settings" width="24" height="24"/>
+        <image name="watermark" width="303" height="52"/>
         <namedColor name="AppColor">
             <color red="0.40784313725490196" green="0.22745098039215686" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

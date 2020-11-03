@@ -423,13 +423,13 @@ class SettingViewController: BaseViewControllerWithAd {
                 self.viewAddFree.isHidden = true
                 self.showTopMessage(message: "Ads are removed successfully.", type: .Success)
             } else {
-                self.buyProduct(withIdentifier: AppConstants.subscriptionId)
+                self.buyProduct(withIdentifier: AppConstants.goadfreeId)
             }
         }
         alertController.addAction(OKAction)
         
         let RestoreAction = UIAlertAction(title: "Restore your Purchase", style: .default) { (_) in
-            self.restoreProduct(withIdentifier: AppConstants.subscriptionId)
+            self.restoreProduct(withIdentifier: AppConstants.goadfreeId)
         }
         
         alertController.addAction(RestoreAction)
@@ -493,6 +493,7 @@ extension SettingViewController: SettingDisplayLogic {
     ///   - message: API Message
     ///   - successCode: API Success
     func logout(message: String, Success: String) {
+        self.addAnayltics(analyticsParameterItemID: "id-logout", analyticsParameterItemName: "click_logout", analyticsParameterContentType: "click_logout")
         if Success == "1" {
             self.router?.redirectToLogin()
         } else {

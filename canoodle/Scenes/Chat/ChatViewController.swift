@@ -104,7 +104,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
         
         configureMessageCollectionView()
         configureMessageInputBar()
-        
+        self.addAnayltics(analyticsParameterItemID: "id-chatscreen", analyticsParameterItemName: "view_chatscreen", analyticsParameterContentType: "view_chatscreen")
         loadChat()
     }
     

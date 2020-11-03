@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         #if canImport(TALogger)
         TALogger.shared.enable()
-        TALogger.shared.disableAutoNetworkLog()
+        //TALogger.shared.disableAutoNetworkLog()
         #endif
         setupIAP()
         setupAppRating()

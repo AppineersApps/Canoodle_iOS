@@ -22,8 +22,14 @@ class MyProfileViewController: BaseViewControllerWithAd {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var aboutTextView: UITextView!
+    @IBOutlet weak var petAboutTextView: UITextView!
+    @IBOutlet weak var petNameLabel: UILabel!
+    @IBOutlet weak var petAgeLabel: UILabel!
+    @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet var slideshow: ImageSlideshow!
     @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var aboutPetView: UIView!
 
     
     @IBOutlet weak var viewAd: UIView!
@@ -85,6 +91,7 @@ class MyProfileViewController: BaseViewControllerWithAd {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayout()
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 1000)
     }
 
     /// Method is called when view will appears
@@ -120,7 +127,28 @@ class MyProfileViewController: BaseViewControllerWithAd {
         locationLabel.text = "\(user.city!), \(user.state!)"
         aboutTextView.text = user.description
         profileImageView.setImage(with: "\(user.userImage!)", placeHolder: UIImage.init(named: "placeholder"))
+        if(user.petName != "") {
+            petNameLabel.text = user.petName
+        }
+        if(user.petAge != "") {
+            petAgeLabel.text = "\(user.petAge!) years"
+        }
+        breedLabel.text = user.breed
+        petAboutTextView.text = user.petDescription
+        adjustUITextViewHeight(arg: aboutTextView)
+        adjustUITextViewHeight(arg: petAboutTextView)
+        aboutPetView.frame = CGRect(x: aboutPetView.frame.origin.x, y: aboutTextView.frame.origin.y + aboutTextView.frame.height + 30, width: aboutPetView.frame.width, height: aboutTextView.frame.height + 50)
         setUpSlideshow()
+    }
+    
+    func adjustUITextViewHeight(arg : UITextView)
+    {
+        //arg.translatesAutoresizingMaskIntoConstraints = true
+       // arg.sizeToFit()
+        let fixedWidth = arg.frame.size.width
+        let newSize = arg.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        arg.frame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+        arg.isScrollEnabled = false
     }
     
     func setUpSlideshow() {
@@ -191,9 +219,7 @@ class MyProfileViewController: BaseViewControllerWithAd {
     
     @IBAction func btnEditPetProfileAction(_ sender: UIButton) {
         if let petProfileVC = PetProfileViewController.instance() {
-            if(user.media != nil) {
-                petProfileVC.setMedias(medias: user.media!)
-            }
+            petProfileVC.setUser(user: self.user)
             self.navigationController?.pushViewController(petProfileVC, animated: true)
         }
     }

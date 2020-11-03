@@ -252,10 +252,11 @@ class SubscriptionViewController: BaseViewController {
                     let request = ManageSubscription.Request(oneTimeTransactionData: SwiftyStoreKit.localReceiptData!.base64EncodedData(), fileName: "Receipt")
                     self.interactor?.manageSubscription(request: request)
                 }catch {
-                    print("Error")
+                    self.showTopMessage(message: "Error verifying receipt", type: .Error)
                 }
                 
             case .error:
+                self.showTopMessage(message: "Error verifying receipt", type: .Error)
                 break
             }
         }
@@ -292,7 +293,7 @@ class SubscriptionViewController: BaseViewController {
     }*/
     
     func verifyReceipt(completion: @escaping (VerifyReceiptResult) -> Void) {
-        let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: "e3806ffdd1ae458a92169ab07464e40b")
+        let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: "4e75827063f24320b3d8ff9b0fbb9f8c")
         SwiftyStoreKit.verifyReceipt(using: appleValidator, completion: completion)
     }
     

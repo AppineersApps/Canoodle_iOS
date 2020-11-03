@@ -33,6 +33,7 @@ enum PetProfile
 enum UpdatePetProfile {
     /// Struct for API Request
     struct Request {
+        var petId: String
         var petName: String
         var breed: String
         var petAge: String

@@ -24,13 +24,15 @@ class NotificationsViewController: UIViewController
 {
     @IBOutlet weak var notificationsTableView: UITableView!
     @IBOutlet weak var watermarkView: UIView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
 
     
   var interactor: NotificationsBusinessLogic?
   var router: (NSObjectProtocol & NotificationsRoutingLogic & NotificationsDataPassing)?
 
     var notificationsList:[Notification.ViewModel] = []
-    
+    var filteredList:[Notification.ViewModel] = []
+
     var selectedRowIndex: Int = 0
 
   // MARK: Object lifecycle
@@ -87,10 +89,16 @@ class NotificationsViewController: UIViewController
   {
     super.viewDidLoad()
     self.title = "Notifications"
+    segmentedControl.layer.borderColor = AppConstants.appColor?.cgColor
+    segmentedControl.layer.borderWidth = 1.0
+    segmentedControl.backgroundColor = UIColor.white
+    segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor :  UIColor.white ,NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12.0)], for: UIControl.State.selected)
+    segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor :  AppConstants.appColor, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12.0)], for: UIControl.State.normal)
   }
     
     override func viewDidAppear(_ animated: Bool) {
         //UserDefaultsManager.notificationCount = 0
+        self.addAnayltics(analyticsParameterItemID: "id-notificationsscreen", analyticsParameterItemName: "view_notificationsscreen", analyticsParameterContentType: "view_notificationsscreen")
         notificationsTableView.cr.addHeadRefresh(animator: FastAnimator()) { [weak self] in
             /// start refresh
             self!.getNotifications()
@@ -115,6 +123,42 @@ class NotificationsViewController: UIViewController
             let request = Notification.Request(notificationId: notification.notificationId)
             interactor?.deleteNotification(request: request)
         }
+    }
+    
+    func filterList() {
+        var filteredArray:[Notification.ViewModel] = []
+        notificationsList.forEach {
+            let notification:Notification.ViewModel = $0
+            switch segmentedControl.selectedSegmentIndex {
+            case 0:
+                if(notification.notificationType == "Match") {
+                    filteredArray.append(notification)
+                }
+            case 1:
+                if(notification.notificationType == "Message") {
+                    filteredArray.append(notification)
+                }
+            default:
+                print("")
+            }
+        }
+        filteredList = filteredArray
+        notificationsTableView.reloadData()
+    }
+    
+    func filterBlockedUsers() {
+        var filteredArray:[Notification.ViewModel] = []
+        notificationsList.forEach {
+            let notification:Notification.ViewModel = $0
+            if(notification.connectionStatus != "Block") {
+                filteredArray.append(notification)
+            }
+        }
+        notificationsList = filteredArray
+    }
+    
+    @IBAction func segmentChanged() {
+        filterList()
     }
     
     func deleteNotification(notification: Notification.ViewModel)
@@ -152,7 +196,14 @@ class NotificationsViewController: UIViewController
 // UITableView Delegate methods
 extension NotificationsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notificationsList.count
+        if(filteredList.count == 0) {
+            notificationsTableView.isHidden = true
+            watermarkView.isHidden = false
+        } else {
+            notificationsTableView.isHidden = false
+            watermarkView.isHidden = true
+        }
+        return filteredList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -163,7 +214,7 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
             cell = tableView.dequeueReusableCell(withIdentifier: "NotificationsViewCell") as? NotificationsViewCell
         }
         cell.delegate = self
-        cell.setCellData(notification: notificationsList[indexPath.row])
+        cell.setCellData(notification: filteredList[indexPath.row])
         return cell
     }
     
@@ -191,7 +242,7 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            deleteNotification(notification: notificationsList[indexPath.row])
+            deleteNotification(notification: filteredList[indexPath.row])
         }
     }
 }
@@ -223,12 +274,21 @@ extension NotificationsViewController: NotificationsDisplayLogic {
             if let data = response {
                 notificationsList.removeAll()
                 self.notificationsList.append(contentsOf: data)
-                notificationsTableView.reloadData()
+                filterBlockedUsers()
+                filterList()
+                if(notificationsList.count == 0) {
+                    self.navigationItem.rightBarButtonItem = nil
+                } else {
+                    let clearButton = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(btnClearAction))
+                    clearButton.tintColor = UIColor.white
+                    self.navigationItem.rightBarButtonItem = clearButton
+                }
             }
         } else {
             //self.showTopMessage(message: message, type: .Error)
             notificationsList.removeAll()
             notificationsTableView.reloadData()
+            self.navigationItem.rightBarButtonItem = nil
         }
     }
     

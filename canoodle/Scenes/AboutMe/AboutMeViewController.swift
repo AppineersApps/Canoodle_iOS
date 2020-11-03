@@ -93,6 +93,7 @@ class AboutMeViewController: UIViewController
     if(onboarding) {
         self.navigationItem.leftBarButtonItem = nil
     }
+    self.addAnayltics(analyticsParameterItemID: "id-aboutmescreen", analyticsParameterItemName: "view_editpetprofilescreen", analyticsParameterContentType: "view_aboutmescreen")
   }
   
   // MARK: Do something

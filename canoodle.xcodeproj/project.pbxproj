@@ -258,8 +258,6 @@
 		AE55B8B2253DE3400056C64C /* Chat1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B8B1253DE3400056C64C /* Chat1.swift */; };
 		AE55B8ED253DE60F0056C64C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B8EC253DE60F0056C64C /* Date+Extension.swift */; };
 		AE55CA1D254811C700CC32B5 /* DeleteMediaAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55CA1C254811C700CC32B5 /* DeleteMediaAPIRouter.swift */; };
-		AE55CA222548208300CC32B5 /* TALogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE55CA202548207B00CC32B5 /* TALogger.framework */; };
-		AE55CA232548208300CC32B5 /* TALogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE55CA202548207B00CC32B5 /* TALogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE69E07A25398B38008185A0 /* UserAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E07925398B38008185A0 /* UserAPIRouter.swift */; };
 		AE69E08025398D64008185A0 /* GetRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E07F25398D64008185A0 /* GetRouterProtocol.swift */; };
 		AE69E08425398D6F008185A0 /* GetNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E08325398D6F008185A0 /* GetNetworkService.swift */; };
@@ -281,6 +279,8 @@
 		AE6A3B542542C1BE003C9547 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE6A3B532542C1BE003C9547 /* GoogleService-Info.plist */; };
 		AE6A3B932542C55B003C9547 /* MessageAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A3B922542C55B003C9547 /* MessageAPIRouter.swift */; };
 		AE6A3B9A2542E130003C9547 /* UpdateProfileAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A3B992542E130003C9547 /* UpdateProfileAPIRouter.swift */; };
+		AE6F6F2525517BE00006D36A /* TALogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6F6F2325517BD50006D36A /* TALogger.framework */; };
+		AE6F6F2625517BE00006D36A /* TALogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE6F6F2325517BD50006D36A /* TALogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE7CCD3F252D825B001D9C88 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AE7CCD3E252D825B001D9C88 /* .swiftlint.yml */; };
 		AE838A6524C839C000F60EE6 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE838A6424C839C000F60EE6 /* GradientView.swift */; };
 		AE8467DB24DED3440042E0FE /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8467DA24DED3440042E0FE /* Array+Extension.swift */; };
@@ -359,7 +359,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AE55CA232548208300CC32B5 /* TALogger.framework in Embed Frameworks */,
+				AE6F6F2625517BE00006D36A /* TALogger.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -627,7 +627,6 @@
 		AE55B8B1253DE3400056C64C /* Chat1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat1.swift; sourceTree = "<group>"; };
 		AE55B8EC253DE60F0056C64C /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		AE55CA1C254811C700CC32B5 /* DeleteMediaAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMediaAPIRouter.swift; sourceTree = "<group>"; };
-		AE55CA202548207B00CC32B5 /* TALogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TALogger.framework; sourceTree = "<group>"; };
 		AE69E07925398B38008185A0 /* UserAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIRouter.swift; sourceTree = "<group>"; };
 		AE69E07F25398D64008185A0 /* GetRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRouterProtocol.swift; sourceTree = "<group>"; };
 		AE69E08325398D6F008185A0 /* GetNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNetworkService.swift; sourceTree = "<group>"; };
@@ -650,6 +649,7 @@
 		AE6A3B922542C55B003C9547 /* MessageAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAPIRouter.swift; sourceTree = "<group>"; };
 		AE6A3B962542DE7D003C9547 /* CanoodleRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CanoodleRelease.entitlements; sourceTree = "<group>"; };
 		AE6A3B992542E130003C9547 /* UpdateProfileAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileAPIRouter.swift; sourceTree = "<group>"; };
+		AE6F6F2325517BD50006D36A /* TALogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TALogger.framework; sourceTree = "<group>"; };
 		AE7CCD3E252D825B001D9C88 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		AE838A6424C839C000F60EE6 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		AE8467DA24DED3440042E0FE /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -711,7 +711,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE522DC5254032440046335A /* Pods_canoodle.framework in Frameworks */,
-				AE55CA222548208300CC32B5 /* TALogger.framework in Frameworks */,
+				AE6F6F2525517BE00006D36A /* TALogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,7 +785,7 @@
 		2709AC18232F6090000708FF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				AECB56512541965F00A73C2A /* Interests */,
+				AECB56512541965F00A73C2A /* Breeds */,
 				AE88A179253EFB5F00EF981D /* PetProfile */,
 				AE88A164253EC8E000EF981D /* BlockedUser */,
 				AE88A134253EA2A600EF981D /* Notifications */,
@@ -930,7 +930,7 @@
 		2709AC52232F6090000708FF /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				AE55CA202548207B00CC32B5 /* TALogger.framework */,
+				AE6F6F2325517BD50006D36A /* TALogger.framework */,
 				AE6A3B532542C1BE003C9547 /* GoogleService-Info.plist */,
 				277D7811233E38FD00A496FD /* Loader */,
 				2709AC79232F6091000708FF /* CustomFiles */,
@@ -1506,7 +1506,7 @@
 			path = PetProfile;
 			sourceTree = "<group>";
 		};
-		AECB56512541965F00A73C2A /* Interests */ = {
+		AECB56512541965F00A73C2A /* Breeds */ = {
 			isa = PBXGroup;
 			children = (
 				AECB56522541965F00A73C2A /* BreedsWorker.swift */,
@@ -1519,7 +1519,7 @@
 				AECB56592541965F00A73C2A /* BreedsViewCell.swift */,
 				AECB565A2541965F00A73C2A /* BreedsInteractor.swift */,
 			);
-			path = Interests;
+			path = Breeds;
 			sourceTree = "<group>";
 		};
 		AEED53B924C446EA004B9AAE /* Onboarding */ = {
@@ -2247,7 +2247,7 @@
 				CODE_SIGN_ENTITLEMENTS = canoodle/canoodle.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = NPMQJ6P5X4;
 				ENABLE_BITCODE = YES;
@@ -2281,7 +2281,7 @@
 				CODE_SIGN_ENTITLEMENTS = canoodle/CanoodleRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = NPMQJ6P5X4;
 				ENABLE_BITCODE = YES;
 				EXCLUDED_ARCHS = "";

@@ -100,6 +100,7 @@ class EditProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayout()
+        self.addAnayltics(analyticsParameterItemID: "id-editprofilescreen", analyticsParameterItemName: "view_editprofilescreen", analyticsParameterContentType: "view_editprofilescreen")
         self.datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
     }
     

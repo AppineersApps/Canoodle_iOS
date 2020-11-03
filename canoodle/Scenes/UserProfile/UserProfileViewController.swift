@@ -28,9 +28,15 @@ class UserProfileViewController: BaseViewControllerWithAd
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var aboutTextView: UITextView!
+    @IBOutlet weak var petAboutTextView: UITextView!
+    @IBOutlet weak var petNameLabel: UILabel!
+    @IBOutlet weak var petAgeLabel: UILabel!
+    @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet var slideshow: ImageSlideshow!
     @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var aboutPetView: UIView!
 
 
   var interactor: UserProfileBusinessLogic?
@@ -98,6 +104,7 @@ class UserProfileViewController: BaseViewControllerWithAd
     profileImageView.layer.cornerRadius = profileImageView.frame.width / 2
     profileImageView.layer.borderColor = AppConstants.appColor2!.cgColor
     profileImageView.layer.borderWidth = 2.0
+    scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 1000)
   }
     
     /// Method is called when view will appears
@@ -125,7 +132,26 @@ class UserProfileViewController: BaseViewControllerWithAd
         if(user.connectionStatus != "Like" && user.connectionStatus != "Match") {
             statusView.isHidden = false
         }
+        petNameLabel.text = user.petName
+        if(user.petAge != "") {
+            petAgeLabel.text = "\(user.petAge!) years"
+        }
+        breedLabel.text = user.breed
+        petAboutTextView.text = user.petDescription
+        adjustUITextViewHeight(arg: aboutTextView)
+        adjustUITextViewHeight(arg: petAboutTextView)
+        aboutPetView.frame = CGRect(x: aboutPetView.frame.origin.x, y: aboutTextView.frame.origin.y + aboutTextView.frame.height + 30, width: aboutPetView.frame.width, height: aboutTextView.frame.height + 50)
         setUpSlideshow()
+    }
+    
+    func adjustUITextViewHeight(arg : UITextView)
+    {
+        //arg.translatesAutoresizingMaskIntoConstraints = true
+       // arg.sizeToFit()
+        let fixedWidth = arg.frame.size.width
+        let newSize = arg.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        arg.frame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+        arg.isScrollEnabled = false
     }
     
     func setUpSlideshow() {
@@ -169,10 +195,12 @@ class UserProfileViewController: BaseViewControllerWithAd
     @IBAction func optionsButtonTapped(_ sender: Any) {
        let optionMenu = UIAlertController(title: "Select Option", message: nil, preferredStyle: .actionSheet)
        let blockAction = UIAlertAction(title: "Block User", style: .default) { handler in
+        self.addAnayltics(analyticsParameterItemID: "id-blockprofile", analyticsParameterItemName: "click_blockprofile", analyticsParameterContentType: "click_blockprofile")
           self.blockUser()
        }
 
        let reportAction = UIAlertAction(title: "Report User", style: .destructive) { handler in
+        self.addAnayltics(analyticsParameterItemID: "id-reportuser", analyticsParameterItemName: "click_reportuser", analyticsParameterContentType: "click_reportuser")
            self.reportUserProfile()
        }
        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
@@ -207,8 +235,13 @@ class UserProfileViewController: BaseViewControllerWithAd
     
     
     @IBAction func likeButtonTapped(_ sender: Any) {
-        self.addAnayltics(analyticsParameterItemID: "id-profilelike", analyticsParameterItemName: "Profile Like", analyticsParameterContentType: "event_profile")
+        self.addAnayltics(analyticsParameterItemID: "id-likeprofile", analyticsParameterItemName: "click_likeprofile", analyticsParameterContentType: "click_likeprofile")
         setConnection(userId: user.userId!, type: "Like")
+    }
+    
+    @IBAction func unlikeButtonTapped(_ sender: Any) {
+        self.addAnayltics(analyticsParameterItemID: "id-unlikeprofile", analyticsParameterItemName: "click_unlikeprofile", analyticsParameterContentType: "click_unlikeprofile")
+       // setConnection(userId: user.userId!, type: "Unlike")
     }
   
   // MARK: Do something

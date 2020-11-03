@@ -26,11 +26,13 @@ class PetProfileViewController: BaseViewController
     @IBOutlet weak var petAgeTextField: UITextField!
     @IBOutlet weak var breedTextField: UITextField!
     @IBOutlet weak var descTextView: UITextView!
+    @IBOutlet weak var akcSwitch: UISwitch!
 
   var interactor: PetProfileBusinessLogic?
   var router: (NSObjectProtocol & PetProfileRoutingLogic & PetProfileDataPassing)?
     
     /// Image Array to display images in scroll
+    var user: User.ViewModel!
     var medias: [Media.ViewModel] = []
     var imageArray = [UIImage]() {
         didSet {
@@ -93,8 +95,25 @@ class PetProfileViewController: BaseViewController
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    self.title = "Edit Pet Profile"
+    self.title = "Add Pet Profile"
+    self.addAnayltics(analyticsParameterItemID: "id-editpetprofilescreen", analyticsParameterItemName: "view_editpetprofilescreen", analyticsParameterContentType: "view_editpetprofilescreen")
+    if(user != nil && user.petId != "") {
+        breed = user.breed!
+        setPetData()
+    }
   }
+    
+    func setPetData() {
+        petNameTextField.text = user.petName
+        petAgeTextField.text = user.petAge
+        breedTextField.text = user.breed
+        descTextView.text = user.petDescription
+        if(user.akcRegistered == "yes") {
+            akcSwitch.isOn = true
+        } else {
+            akcSwitch.isOn = false
+        }
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         breedTextField.text = breed
@@ -140,22 +159,47 @@ class PetProfileViewController: BaseViewController
     func setMedias(medias: [Media.ViewModel]) {
         self.medias = medias
     }
+    
+    func setUser(user: User.ViewModel) {
+        self.user = user
+        if(user.media != nil) {
+            self.medias = user.media!
+        }
+        if(user.petId != "") {
+            self.title = "Edit Pet Profile"
+        }
+    }
   
     func updatePetProfile()
     {
-        let request = UpdatePetProfile.Request(petName: petNameTextField.text!, breed: breedTextField.text!, petAge: petAgeTextField.text!, akcRegistered: "No", description: descTextView.text)
+        var akc: String = "no"
+        if(akcSwitch.isOn) {
+            akc = "yes"
+        }
+        
+        var petId: String = ""
+        if(self.user != nil) {
+            petId = self.user.petId!
+        }
+        
+        let request = UpdatePetProfile.Request(petId: petId, petName: petNameTextField.text!, breed: breedTextField.text!, petAge: petAgeTextField.text!, akcRegistered: akc, description: descTextView.text)
         interactor?.updatePetProfile(request: request)
     }
       
     
   func saveProfile()
   {
+    if(imageArray.count == 0) {
+        return
+    }
+    self.addAnayltics(analyticsParameterItemID: "id-imageupload", analyticsParameterItemName: "click_imageupload", analyticsParameterContentType: "click_imageupload")
     let request = UploadMedia.Request(imageArray: imageArray)
     interactor?.uploadMedia(request: request)
   }
     
     func deleteMedia(mediaId: String)
     {
+        self.addAnayltics(analyticsParameterItemID: "id-imagedelete", analyticsParameterItemName: "click_imagedelete", analyticsParameterContentType: "click_imagedelete")
         let request = DeleteMedia.Request(media_id: mediaId)
         interactor?.deleteMedia(request: request)
     }

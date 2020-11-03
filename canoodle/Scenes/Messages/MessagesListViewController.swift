@@ -98,6 +98,7 @@ class MessagesListViewController: BaseViewControllerWithAd {
        // UserDefaultsManager.msgCount = 0
         NotificationCenter.default.post(name: NSNotification.Name("ChatNotification"), object: nil, userInfo: nil)
         self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.premiumStatus?.booleanStatus() ?? false)
+        self.addAnayltics(analyticsParameterItemID: "id-messagelistscreen", analyticsParameterItemName: "view_messagelistscreen", analyticsParameterContentType: "view_messagelistscreen")
     }
     
      /// Method is called when view did appear
@@ -353,6 +354,13 @@ extension MessagesListViewController: MessagesDisplayLogic {
 // UITableView Delegate methods
 extension MessagesListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(filteredList.count == 0) {
+            watermarkView.isHidden = false
+            messagesTableView.isHidden = true
+        } else {
+            watermarkView.isHidden = true
+            messagesTableView.isHidden = false
+        }
         return filteredList.count
     }
     

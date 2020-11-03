@@ -27,7 +27,14 @@ enum User {
         var city : String?
         var state : String?
         var connectionStatus: String?
+        var petId: String?
+        var petName: String?
+        var petAge: String?
+        var breed: String?
+        var petDescription: String?
+        var akcRegistered: String?
         var media : [Media.ViewModel]?
+        
 
         
         private enum CodingKeys: String, CodingKey {
@@ -39,6 +46,12 @@ enum User {
             case city
             case state
             case connection_type_by_logged_user
+            case pet_id
+            case pet_name
+            case pet_age
+            case breed
+            case pet_description
+            case akc_registered
             case media
         }
         
@@ -53,6 +66,12 @@ enum User {
             try container.encode(city, forKey: .city)
             try container.encode(state, forKey: .state)
             try container.encode(connectionStatus, forKey: .connection_type_by_logged_user)
+            try container.encode(petId, forKey: .pet_id)
+            try container.encode(petName, forKey: .pet_name)
+            try container.encode(petAge, forKey: .pet_age)
+            try container.encode(breed, forKey: .breed)
+            try container.encode(petDescription, forKey: .pet_description)
+            try container.encode(akcRegistered, forKey: .akc_registered)
             try container.encode(media, forKey: .media)
         }
         
@@ -67,6 +86,12 @@ enum User {
             city = try values.decodeIfPresent(String.self, forKey: .city)
             state = try values.decodeIfPresent(String.self, forKey: .state)
             connectionStatus = try values.decodeIfPresent(String.self, forKey: .connection_type_by_logged_user)
+            petId = try values.decodeIfPresent(String.self, forKey: .pet_id)
+            petName = try values.decodeIfPresent(String.self, forKey: .pet_name)
+            petAge = try values.decodeIfPresent(String.self, forKey: .pet_age)
+            breed = try values.decodeIfPresent(String.self, forKey: .breed)
+            petDescription = try values.decodeIfPresent(String.self, forKey: .pet_description)
+            akcRegistered = try values.decodeIfPresent(String.self, forKey: .akc_registered)
             media = try values.decodeIfPresent([Media.ViewModel].self, forKey: .media)
         }
     }

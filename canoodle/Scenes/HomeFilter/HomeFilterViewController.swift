@@ -94,6 +94,7 @@ class HomeFilterViewController: BaseViewController, HomeFilterDisplayLogic
   {
         super.viewDidLoad()
         setUpLayout()
+    self.addAnayltics(analyticsParameterItemID: "id-homefilterscreen", analyticsParameterItemName: "view_homefilterscreen", analyticsParameterContentType: "view_homefilterscreen")
   }
     
     func setUpLayout() {

@@ -21,17 +21,21 @@ enum Notification {
         var notificationId : String?
         var notificationType: String?
         var notificationUserId: String?
+        var notificationDate: String?
         var userName : String?
         var userImage : String?
         var message: String?
+        var connectionStatus: String?
         
         private enum CodingKeys: String, CodingKey {
             case notification_id
             case notification_type
             case notification_user_id
+            case notification_date
             case user_name
             case user_image
             case message
+            case connection_type_by_logged_user
         }
         
         public override func encode(to encoder: Encoder) throws {
@@ -40,9 +44,11 @@ enum Notification {
             try container.encode(notificationId, forKey: .notification_id)
             try container.encode(notificationType, forKey: .notification_type)
             try container.encode(notificationUserId, forKey: .notification_user_id)
+            try container.encode(notificationDate, forKey: .notification_date)
             try container.encode(userName, forKey: .user_name)
             try container.encode(userImage, forKey: .user_image)
             try container.encode(message, forKey: .message)
+            try container.encode(connectionStatus, forKey: .connection_type_by_logged_user)
         }
         
         required public init(from decoder: Decoder) throws {
@@ -51,9 +57,11 @@ enum Notification {
             notificationId = try values.decodeIfPresent(String.self, forKey: .notification_id)
             notificationType = try values.decodeIfPresent(String.self, forKey: .notification_type)
             notificationUserId = try values.decodeIfPresent(String.self, forKey: .notification_user_id)
+            notificationDate = try values.decodeIfPresent(String.self, forKey: .notification_date)
             userName = try values.decodeIfPresent(String.self, forKey: .user_name)
             userImage = try values.decodeIfPresent(String.self, forKey: .user_image)
             message = try values.decodeIfPresent(String.self, forKey: .message)
+            connectionStatus = try values.decodeIfPresent(String.self, forKey: .connection_type_by_logged_user)
         }
     }
 }

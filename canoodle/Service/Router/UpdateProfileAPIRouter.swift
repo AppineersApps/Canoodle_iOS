@@ -32,7 +32,7 @@ enum UpdateProfileAPIRouter: RouterProtocol {
         case .updateProfile:
             return "/mad_collab_user"
         case .updatePetProfile:
-            return "/mad_collab_user"
+            return "/pets"
         }
     }
     
@@ -47,6 +47,16 @@ enum UpdateProfileAPIRouter: RouterProtocol {
                 "description": request.description
             ]
         case .updatePetProfile(let request):
+            if(request.petId != "") {
+                return [
+                "pet_id": request.petId,
+                "pet_name": request.petName,
+                "breed": request.breed,
+                "pet_age": request.petAge,
+                "pet_description": request.description,
+                "akc_registered": request.akcRegistered
+                ]
+            } else {
             return [
                 "pet_name": request.petName,
                 "breed": request.breed,
@@ -54,6 +64,7 @@ enum UpdateProfileAPIRouter: RouterProtocol {
                 "pet_description": request.description,
                 "akc_registered": request.akcRegistered
             ]
+            }
         }
     }
     

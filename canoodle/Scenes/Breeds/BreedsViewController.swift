@@ -86,6 +86,7 @@ class BreedsViewController: UIViewController
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    self.addAnayltics(analyticsParameterItemID: "id-breedsscreen", analyticsParameterItemName: "view_breedsscreen", analyticsParameterContentType: "view_breedsscreen")
     setUpLayout()
     breedCollectionView.cr.addHeadRefresh(animator: FastAnimator()) { [weak self] in
         /// start refresh

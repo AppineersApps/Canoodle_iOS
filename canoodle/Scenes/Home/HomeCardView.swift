@@ -26,6 +26,9 @@ class HomeCardView: UIView {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var petNameLabel: UILabel!
+    @IBOutlet weak var petAgeLabel: UILabel!
+    @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var bgImageView: UIImageView!
     @IBOutlet weak var watermarkView: UIView!
     
@@ -69,9 +72,15 @@ class HomeCardView: UIView {
         self.user = user
         self.setCornerRadiusAndShadow(cornerRe: 16)
         nameLabel.text = "\(user.userName!), \(user.age!) years"
-        ageLabel.text = "\(breedArray[index])"
         locationLabel.text = "\(user.city!), \(user.state!)"
-
+        if(user.breed != "" && user.petAge != "") {
+            petNameLabel.text = "\(user.breed!), \(user.petAge!) years"
+        } else if(user.breed != "") {
+            petNameLabel.text = "\(user.breed!)"
+        } else  {
+            petNameLabel.text = "--"
+        }
+        
         filterMedia()
         if(medias.count == 0) {
             watermarkView.isHidden = false

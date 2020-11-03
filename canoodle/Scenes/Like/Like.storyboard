@@ -56,14 +56,14 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rN-dg-g4c">
-                                                <rect key="frame" x="100" y="60" width="42" height="21"/>
+                                                <rect key="frame" x="93" y="60" width="57" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U09-x1-UDu">
-                                                <rect key="frame" x="236" y="60" width="42" height="21"/>
+                                                <rect key="frame" x="226" y="60" width="62" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,6 +81,24 @@
                                             <outlet property="delegate" destination="Qdd-2C-vwD" id="6bD-dM-FvZ"/>
                                         </connections>
                                     </tableView>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qaw-bI-ND1">
+                                        <rect key="frame" x="10" y="136.5" width="357" height="323.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="watermark" translatesAutoresizingMaskIntoConstraints="NO" id="HI4-kH-JBY">
+                                                <rect key="frame" x="49" y="76" width="259" height="146.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No likes to show" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fS-2w-bP6">
+                                                <rect key="frame" x="25" y="40" width="306" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -88,14 +106,30 @@
                         <viewLayoutGuide key="safeArea" id="PgL-hy-a18"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0oz-xm-jbY"/>
+                    <navigationItem key="navigationItem" id="oon-MP-JjL">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="settings" width="50" style="plain" id="vcA-Uc-DzB">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="btnSettingsAction:" destination="Qdd-2C-vwD" id="7Sr-gt-8FF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icon_notification" width="50" style="plain" id="ZUz-7k-1ka">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="btnNotificationsAction:" destination="Qdd-2C-vwD" id="ywL-Sv-Y8e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="connectionsTableView" destination="MZG-Om-tOQ" id="3lX-35-Zej"/>
                         <outlet property="detailView" destination="DIt-LO-uBN" id="1k0-07-qmd"/>
+                        <outlet property="likeCountLabel" destination="1rN-dg-g4c" id="bKN-Pj-9Kq"/>
                         <outlet property="likedButton" destination="fc5-no-gne" id="Lg2-Pd-uCt"/>
                         <outlet property="likedMeButton" destination="5fg-7B-lDi" id="OYH-Dd-5YX"/>
+                        <outlet property="likedMeCountLabel" destination="U09-x1-UDu" id="OnI-W5-Bhc"/>
                         <outlet property="overlayView" destination="T9M-hC-QWH" id="QDp-tN-zlw"/>
                         <outlet property="viewAd" destination="Cfv-dw-Rl0" id="rqQ-3c-oMI"/>
+                        <outlet property="watermarkView" destination="Qaw-bI-ND1" id="X5z-fH-Jhk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIf-at-tnP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -104,7 +138,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please Subscribe to see who liked your profile" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3l-iP-QNT">
-                            <rect key="frame" x="49" y="214" width="270" height="72"/>
+                            <rect key="frame" x="48" y="214" width="270" height="72"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                             <color key="textColor" name="AppColor"/>
@@ -156,7 +190,10 @@
     <resources>
         <image name="Like" width="26" height="24"/>
         <image name="greyRectBg" width="113" height="94.5"/>
+        <image name="icon_notification" width="16" height="20"/>
         <image name="purpleRectBg" width="113" height="94.5"/>
+        <image name="settings" width="24" height="24"/>
+        <image name="watermark" width="303" height="52"/>
         <namedColor name="AppColor">
             <color red="0.40784313725490196" green="0.22745098039215686" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
