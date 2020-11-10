@@ -38,6 +38,18 @@ protocol SettingPresentationLogic {
     ///   - message: API Response
     ///   - Success: API Success
     func presentGoAddFree(message: String, success: String)
+    /// Present Send log file response
+    ///
+    /// - Parameters:
+    ///   - message: API Response
+    ///   - Success: API Success
+    func presentSendLogFile(message: String, success: String)
+    /// Present Send database log file response
+    ///
+    /// - Parameters:
+    ///   - message: API Response
+    ///   - Success: API Success
+    func presentSendDatabaseLogFile(message: String, success: String)
 }
 
 class SettingPresenter: SettingPresentationLogic {
@@ -75,5 +87,22 @@ class SettingPresenter: SettingPresentationLogic {
     ///   - Success: API Success
     func presentGoAddFree(message: String, success: String) {
         self.viewController?.didReceiveGoAddFree(message: message, success: success)
+    }
+    /// Present Send log file response
+    ///
+    /// - Parameters:
+    ///   - message: API Response
+    ///   - Success: API Success
+    func presentSendLogFile(message: String, success: String) {
+        self.viewController?.didReceiveSendLogFile(message: message, Success: success)
+    }
+    
+    /// Present Send log file response
+    ///
+    /// - Parameters:
+    ///   - message: API Response
+    ///   - Success: API Success
+    func presentSendDatabaseLogFile(message: String, success: String) {
+        self.viewController?.didReceiveSendDatabaseLogFile(message: message, Success: success)
     }
 }

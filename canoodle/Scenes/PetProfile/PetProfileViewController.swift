@@ -40,7 +40,8 @@ class PetProfileViewController: BaseViewController
             self.scrollToBottom()
         }
     }
-    
+    var onboarding: Bool = false
+
     var breed: String = ""
 
   // MARK: Object lifecycle
@@ -101,9 +102,13 @@ class PetProfileViewController: BaseViewController
         breed = user.breed!
         setPetData()
     }
+    if(onboarding) {
+        self.navigationItem.leftBarButtonItem = nil
+    }
   }
     
     func setPetData() {
+        self.title = "Edit Pet Profile"
         petNameTextField.text = user.petName
         petAgeTextField.text = user.petAge
         breedTextField.text = user.breed
@@ -182,6 +187,20 @@ class PetProfileViewController: BaseViewController
             petId = self.user.petId!
         }
         
+        if(petNameTextField.text == "") {
+            self.showSimpleAlert(message: "Please enter Pet name")
+            return
+        }
+        
+        if(breedTextField.text == "") {
+            self.showSimpleAlert(message: "Please select Breed")
+            return
+        }
+        
+        if(petId == "" && imageArray.count == 0) {
+            self.showSimpleAlert(message: "Please add atleast one media")
+            return
+        }
         let request = UpdatePetProfile.Request(petId: petId, petName: petNameTextField.text!, breed: breedTextField.text!, petAge: petAgeTextField.text!, akcRegistered: akc, description: descTextView.text)
         interactor?.updatePetProfile(request: request)
     }
@@ -271,6 +290,8 @@ extension PetProfileViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == breedTextField {
             textField.resignFirstResponder()
+            petNameTextField.resignFirstResponder()
+            petAgeTextField.resignFirstResponder()
             if let breedsVC = BreedsViewController.instance() {
                 self.navigationController?.pushViewController(breedsVC, animated: true)
             }
@@ -282,8 +303,8 @@ extension PetProfileViewController: PetProfileDisplayLogic {
     
     func didReceiveUploadMediaResponse(message: String, success: String) {
         if success == "1" {
-            self.showTopMessage(message: "Media added successfully", type: .Success)
-            self.navigationController?.popViewController(animated: true)
+           // self.showTopMessage(message: "Media added successfully", type: .Success)
+            //self.navigationController?.popViewController(animated: true)
         } else {
             self.showTopMessage(message: message, type: .Error)
         }
@@ -292,7 +313,17 @@ extension PetProfileViewController: PetProfileDisplayLogic {
     func didReceiveUpdatePetProfileResponse(message: String, success: String) {
         if success == "1" {
             self.showTopMessage(message: "Media added successfully", type: .Success)
-            self.navigationController?.popViewController(animated: true)
+            if(onboarding) {
+                 UserDefaultsManager.profileSetUpDone = "Yes"
+                if let aboutMeVC = AboutMeViewController.instance() {
+                    aboutMeVC.onboarding = true
+                    aboutMeVC.aboutDescription = ""
+                    self.navigationController?.pushViewController(aboutMeVC, animated: true)
+                }
+            }
+            else {
+                self.navigationController?.popViewController(animated: true)
+            }
         } else {
             self.showTopMessage(message: message, type: .Error)
         }
@@ -300,7 +331,7 @@ extension PetProfileViewController: PetProfileDisplayLogic {
     
     func didReceiveDeleteMediaResponse(message: String, successCode: String) {
         if successCode == "1" {
-            self.showTopMessage(message: message, type: .Success)
+            self.showTopMessage(message: "Media deleted successfully", type: .Success)
         } else {
             self.showTopMessage(message: message, type: .Error)
         }

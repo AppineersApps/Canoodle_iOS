@@ -14,16 +14,16 @@ import UIKit
 
 class LikeWorker
 {
-    func getConnections(request: Connection.Request, completionHandler: @escaping ([Connection.ViewModel]?, _ message: String?, _ successCode: String?) -> Void) {
+    func getConnections(request: Connection.Request, completionHandler: @escaping ([Connection.ViewModel]?, _ settings: WSResponseSetting?, _ message: String?, _ successCode: String?) -> Void) {
         GetNetworkService.dataRequest(with: GetConnectionAPIRouter.getConnections(request: request), showHud: true) { (responce: WSResponse<Connection.ViewModel>?, error: NetworkError?) in
             if let detail = responce {
-                if let data = detail.arrayData, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
-                    completionHandler(data, msg, detail.setting?.success)
+                if let data = detail.arrayData, let success = detail.setting?.isSuccess, let settings = detail.setting, let msg = detail.setting?.message, success {
+                    completionHandler(data, settings, msg, detail.setting?.success)
                 } else {
-                    completionHandler(nil, detail.setting?.message, detail.setting?.success)
+                    completionHandler(nil, detail.setting ,detail.setting?.message, detail.setting?.success)
                 }
             } else {
-                completionHandler(nil, error?.erroMessage() ?? AlertMessage.defaultError, "0")
+                completionHandler(nil, nil, error?.erroMessage() ?? AlertMessage.defaultError, "0")
             }
         }
     }

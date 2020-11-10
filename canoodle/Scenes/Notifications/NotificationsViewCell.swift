@@ -43,7 +43,7 @@ class NotificationsViewCell: UITableViewCell {
         self.notification = notification
         nameLabel.text = notification.userName
         messageLabel.text = notification.message
-        dateLabel.text = notification.notificationDate
+        dateLabel.text = notification.notificationDate?.convertDateTimeFormatterForAPP()
         if(notification.userImage != "") {
             profileImageView.setImage(with: notification.userImage, placeHolder: UIImage.init(named: "placeholder"))
             profileImageView.setImage(with: "\(notification.userImage!)", placeHolder: UIImage.init(named: "placeholder"))

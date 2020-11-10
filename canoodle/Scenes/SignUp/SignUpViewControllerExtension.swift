@@ -98,8 +98,12 @@ extension SignUpViewController: SignUpDisplayLogic {
                 AppConstants.isLoginSkipped = false
                 UserDefaultsManager.setLoggedUserDetails(userDetail: data[0])
                 self.showTopMessage(message: message, type: .Success)
-                router?.redirectToHome()
+                //router?.redirectToHome()
                 UserDefaultsManager.resetFilter()
+                if let petProfileVC = PetProfileViewController.instance() {
+                    petProfileVC.onboarding = true
+                    self.navigationController?.pushViewController(petProfileVC, animated: true)
+                }
             }
         } else {
             self.showTopMessage(message: message, type: .Error)
@@ -119,8 +123,8 @@ extension SignUpViewController: SignUpDisplayLogic {
             UserDefaultsManager.resetFilter()
             self.showTopMessage(message: message, type: .Success, displayDuration:8)
             if let loginVC = LoginEmailAndSocialViewController.instance() {
-               // loginVC.onboarding = true
-                //  UserDefaultsManager.profileSetUpDone = "No"
+                loginVC.onboarding = true
+                 UserDefaultsManager.profileSetUpDone = "No"
                 let vc = NavController.init(rootViewController: loginVC)
                 AppConstants.appDelegate.window?.rootViewController = vc
             }

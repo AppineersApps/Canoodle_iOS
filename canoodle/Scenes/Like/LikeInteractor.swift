@@ -32,8 +32,8 @@ class LikeInteractor: LikeBusinessLogic, LikeDataStore
   
     func getConnections(request: Connection.Request) {
         worker = LikeWorker()
-        worker?.getConnections(request: request, completionHandler: { (response, message, success) in
-            self.presenter?.presentGetConnectionsResponse(response: response, message: message ?? "", successCode: success ?? "0")
+        worker?.getConnections(request: request, completionHandler: { (response, settings, message, success) in
+            self.presenter?.presentGetConnectionsResponse(response: response, settings: settings!, message: message ?? "", successCode: success ?? "0")
         })
     }
 }

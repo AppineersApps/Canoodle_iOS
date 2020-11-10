@@ -665,7 +665,7 @@ extension ChatViewController: MessagesLayoutDelegate {
 extension ChatViewController: ChatDisplayLogic {
     func didReceiveSendMessageResponse(message: String, successCode: String) {
         if successCode == "1" {
-            self.showTopMessage(message: message, type: .Success)
+           // self.showTopMessage(message: message, type: .Success)
         } else {
             self.showTopMessage(message: message, type: .Error)
         }
@@ -673,7 +673,7 @@ extension ChatViewController: ChatDisplayLogic {
     
     func didReceiveDeleteMessageResponse(message: String, successCode: String) {
         if successCode == "1" {
-            self.showTopMessage(message: message, type: .Success)
+            self.showTopMessage(message: "Message deleted successfully", type: .Success)
         } else {
             self.showTopMessage(message: message, type: .Error)
         }
@@ -682,7 +682,9 @@ extension ChatViewController: ChatDisplayLogic {
     func didReceiveBlockUserResponse(message: String, successCode: String) {
         if successCode == "1" {
             self.showTopMessage(message: message, type: .Success)
-            self.navigationController?.popViewController(animated: false)
+            if let blockedUserVC = BlockedUserViewController.instance() {
+                self.navigationController?.pushViewController(blockedUserVC, animated: true)
+            }
         } else {
             self.showTopMessage(message: message, type: .Error)
         }

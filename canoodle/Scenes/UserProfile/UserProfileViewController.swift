@@ -32,6 +32,7 @@ class UserProfileViewController: BaseViewControllerWithAd
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var petAgeLabel: UILabel!
     @IBOutlet weak var breedLabel: UILabel!
+    @IBOutlet weak var akcLabel: UILabel!
     @IBOutlet var slideshow: ImageSlideshow!
     @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var detailView: UIView!
@@ -104,7 +105,7 @@ class UserProfileViewController: BaseViewControllerWithAd
     profileImageView.layer.cornerRadius = profileImageView.frame.width / 2
     profileImageView.layer.borderColor = AppConstants.appColor2!.cgColor
     profileImageView.layer.borderWidth = 2.0
-    scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 1000)
+    scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 850)
   }
     
     /// Method is called when view will appears
@@ -127,7 +128,11 @@ class UserProfileViewController: BaseViewControllerWithAd
     func setUserData() {
         nameLabel.text = user.userName
         locationLabel.text = "\(user.city!), \(user.state!)"
-        aboutTextView.text = user.description
+        if(user.description == "") {
+            aboutTextView.text = "NA"
+        } else {
+            aboutTextView.text = user.description
+        }
         profileImageView.setImage(with: "\(user.userImage!)", placeHolder: UIImage.init(named: "placeholder"))
         if(user.connectionStatus != "Like" && user.connectionStatus != "Match") {
             statusView.isHidden = false
@@ -137,7 +142,13 @@ class UserProfileViewController: BaseViewControllerWithAd
             petAgeLabel.text = "\(user.petAge!) years"
         }
         breedLabel.text = user.breed
-        petAboutTextView.text = user.petDescription
+        if(user.petDescription == "") {
+            petAboutTextView.text = "NA"
+        } else {
+            petAboutTextView.text = user.petDescription
+        }
+        akcLabel.text = user.akcRegistered
+
         adjustUITextViewHeight(arg: aboutTextView)
         adjustUITextViewHeight(arg: petAboutTextView)
         aboutPetView.frame = CGRect(x: aboutPetView.frame.origin.x, y: aboutTextView.frame.origin.y + aboutTextView.frame.height + 30, width: aboutPetView.frame.width, height: aboutTextView.frame.height + 50)
@@ -295,6 +306,7 @@ extension UserProfileViewController: UserProfileDisplayLogic {
     func didReceiveSetConnectionResponse(message: String, successCode: String) {
         if successCode == "1" {
             self.showTopMessage(message: message, type: .Success)
+            getUserProfile()
         } else {
             self.showTopMessage(message: message, type: .Error)
         }
@@ -311,6 +323,9 @@ extension UserProfileViewController: UserProfileDisplayLogic {
     func didReceiveBlockUserResponse(message: String, successCode: String) {
         if successCode == "1" {
             self.showTopMessage(message: message, type: .Success)
+            if let blockedUserVC = BlockedUserViewController.instance() {
+                self.navigationController?.pushViewController(blockedUserVC, animated: true)
+            }
         } else {
             self.showTopMessage(message: message, type: .Error)
         }

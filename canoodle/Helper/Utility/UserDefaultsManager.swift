@@ -155,4 +155,13 @@ struct UserDefaultsManager {
                applicationDefaults.setValue(newValue, forKey: "Likes")
            }
     }
+    
+    static var profileSetUpDone: String {
+           get {
+            return applicationDefaults.string(forKey: UserDefaultsKey.profileSetUp) ?? "Yes"
+           }
+           set {
+               applicationDefaults.setValue(newValue, forKey: UserDefaultsKey.profileSetUp)
+           }
+       }
 }

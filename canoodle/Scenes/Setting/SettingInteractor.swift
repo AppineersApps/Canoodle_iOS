@@ -26,6 +26,14 @@ protocol SettingBusinessLogic {
     ///
     /// - Parameter request: Go Ad Free Request
     func goAddFree(request: GoAddFree.Request)
+    ///Call send log file to admin api
+    ///
+    /// - Parameter request: SendAdminLog
+    func sendLogFile(request : SendAdminLog.Request)
+    ///Call send log file to admin api
+    ///
+    /// - Parameter request: SendAdminLog
+    func sendDatabaseLogFile(request: SendAdminLog.Request)
 }
 
 /// Protocol for sttings data store
@@ -73,6 +81,28 @@ class SettingInteractor: SettingBusinessLogic, SettingDataStore {
         worker = SettingWorker()
         worker?.goAddFree(request: request, completionHandler: { (message, success) in
             self.presenter?.presentGoAddFree(message: message ?? "", success: success ?? "0")
+        })
+    }
+    
+    ///Call send log file to admin api
+    ///
+    /// - Parameter request: SendAdminLog
+    func sendLogFile(request: SendAdminLog.Request) {
+        
+        worker = SettingWorker()
+        worker?.sendLogFile(request: request, completionHandler: { (message, success) in
+            self.presenter?.presentSendLogFile(message: message ?? "", success: success ?? "0")
+        })
+    }
+    
+    ///Call send log file to admin api
+    ///
+    /// - Parameter request: SendAdminLog
+    func sendDatabaseLogFile(request: SendAdminLog.Request) {
+        
+        worker = SettingWorker()
+        worker?.sendDatabaseLogFile(request: request, completionHandler: { (message, success) in
+            self.presenter?.presentSendDatabaseLogFile(message: message ?? "", success: success ?? "0")
         })
     }
 }

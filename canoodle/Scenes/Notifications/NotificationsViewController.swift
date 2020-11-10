@@ -131,8 +131,14 @@ class NotificationsViewController: UIViewController
             let notification:Notification.ViewModel = $0
             switch segmentedControl.selectedSegmentIndex {
             case 0:
-                if(notification.notificationType == "Match") {
-                    filteredArray.append(notification)
+                if(UserDefaultsManager.getLoggedUserDetails()?.premiumStatus?.booleanStatus() == true) {
+                    if(notification.notificationType == "Match" || notification.notificationType == "Like") {
+                        filteredArray.append(notification)
+                    }
+                } else {
+                    if(notification.notificationType == "Match") {
+                        filteredArray.append(notification)
+                    }
                 }
             case 1:
                 if(notification.notificationType == "Message") {
@@ -295,6 +301,7 @@ extension NotificationsViewController: NotificationsDisplayLogic {
     func didReceiveDeleteNotificationResponse(message: String, successCode: String) {
         if successCode == "1" {
             self.showTopMessage(message: message, type: .Success)
+            getNotifications()
         } else {
             self.showTopMessage(message: message, type: .Error)
         }

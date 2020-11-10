@@ -46,10 +46,25 @@ protocol SettingDisplayLogic: class {
     ///   - message: API Message
     ///   - successCode: API Success
     func didReceiveGoAddFree(message: String, success: String)
+    /// Did Receive send log file to admin Response
+    ///
+    /// - Parameters:
+    ///   - Response: API Response
+    ///   - message: API Message
+    ///   - successCode: API Success
+    func didReceiveSendLogFile(message: String, Success: String)
+    
+    /// Did Receive send database log file to admin Response
+    ///
+    /// - Parameters:
+    ///   - Response: API Response
+    ///   - message: API Message
+    ///   - successCode: API Success
+    func didReceiveSendDatabaseLogFile(message: String, Success: String)
 }
 
 /// This class is used for displaying all settings options: account settings and support options.
-class SettingViewController: BaseViewControllerWithAd {
+class SettingViewController: BaseViewControllerWithAd, exportLogFileToAdminDelegate {
     /// Interactor for API Call
     var interactor: SettingBusinessLogic?
     /// Router for navigation between the screens
@@ -86,6 +101,7 @@ class SettingViewController: BaseViewControllerWithAd {
     @IBOutlet weak var viewAboutUJs: UIView!
     @IBOutlet weak var viewAddFree: UIView!
     @IBOutlet weak var viewChangePassword: UIView!
+    @IBOutlet weak var viewBuySubscription: UIView!
     /// View For Logs
     @IBOutlet weak var viewLogs: UIView!
     
@@ -143,6 +159,8 @@ class SettingViewController: BaseViewControllerWithAd {
     /// - Parameter animated: animated
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        viewAddFree.isHidden = AppConstants.isLoginSkipped || (UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false)
+        viewBuySubscription.isHidden = AppConstants.isLoginSkipped || (UserDefaultsManager.getLoggedUserDetails()?.premiumStatus?.booleanStatus() ?? false)
     }
     
     /// Set up UI
@@ -187,6 +205,8 @@ class SettingViewController: BaseViewControllerWithAd {
         self.viewLogout.isHidden = AppConstants.isLoginSkipped
         viewAccountSetting.isHidden = AppConstants.isLoginSkipped
         viewAddFree.isHidden = AppConstants.isLoginSkipped || (UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false)
+        viewBuySubscription.isHidden = AppConstants.isLoginSkipped || (UserDefaultsManager.getLoggedUserDetails()?.premiumStatus?.booleanStatus() ?? false)
+
         if(UserDefaultsManager.getLoggedUserDetails()?.logStatus == "Active") {
             self.viewLogs.isHidden = false
         }
@@ -398,6 +418,7 @@ class SettingViewController: BaseViewControllerWithAd {
         case btnLogs:
             #if canImport(TALogger)
             TALogger.shared.ShowLogs()
+            TALogger.delegate = self
             #endif
             
         default:
@@ -483,6 +504,37 @@ class SettingViewController: BaseViewControllerWithAd {
             self.interactor?.logout()
         }, cancelAction: nil)
     }
+    
+    func exportLogFile() {
+        #if canImport(TALogger)
+        TALogger.shared.ShowLogs()
+        TALogger.delegate = self
+        let logString = TALogger.shared.returnLogFile()
+        let databaseLogString = TALogger.shared.returnDatabaseLogFile()
+
+        print(logString.0)
+        print(logString.1)
+        print(logString.2)
+        
+        let request = SendAdminLog.Request(logFile: logString.1, logDatabase: databaseLogString.1, fileName: logString.2, databasefileName: databaseLogString.0)
+        interactor?.sendLogFile(request: request)
+        
+        #endif
+    }
+    
+    func exportDatabaseLogFile() {
+        #if canImport(TALogger)
+        TALogger.shared.ShowLogs()
+        TALogger.delegate = self
+        let logString = TALogger.shared.returnDatabaseLogFile()
+        print(logString.0)
+        print(logString.1)
+        
+        let request = SendAdminLog.Request(logFile: Data(), logDatabase: logString.1, fileName: logString.0, databasefileName: "")
+        interactor?.sendDatabaseLogFile(request: request)
+        
+        #endif
+    }
 }
 
 extension SettingViewController: SettingDisplayLogic {
@@ -552,6 +604,34 @@ extension SettingViewController: SettingDisplayLogic {
             self.router?.redirectToLogin()
         } else {
             self.showTopMessage(message: message, type: .Error)
+        }
+    }
+    
+    /// Did Receive send log file to admin Response
+    ///
+    /// - Parameters:
+    ///   - Response: API Response
+    ///   - message: API Message
+    ///   - successCode: API Success
+    func didReceiveSendLogFile(message: String, Success: String) {
+        if Success == "1" {
+            showTopMessage(message: message, type: .Success)
+        } else {
+            showTopMessage(message: message, type: .Error)
+        }
+    }
+    
+    /// Did Receive send database log file to admin Response
+    ///
+    /// - Parameters:
+    ///   - Response: API Response
+    ///   - message: API Message
+    ///   - successCode: API Success
+    func didReceiveSendDatabaseLogFile(message: String, Success: String) {
+        if Success == "1" {
+            showTopMessage(message: message, type: .Success)
+        } else {
+            showTopMessage(message: message, type: .Error)
         }
     }
 }

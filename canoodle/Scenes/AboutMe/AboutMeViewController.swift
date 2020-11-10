@@ -156,7 +156,14 @@ extension AboutMeViewController : AboutMeDisplayLogic {
     func didReceiveUpdateProfileResponse(message: String, success: String) {
         if success == "1" {
             self.showTopMessage(message: "Media added successfully", type: .Success)
-            self.navigationController?.popViewController(animated: true)
+            if(onboarding) {
+                let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
+                if let tab = storyboard.instantiateInitialViewController(), tab is TabbarController {
+                    AppConstants.appDelegate.window?.rootViewController = tab
+                }
+            } else {
+                self.navigationController?.popViewController(animated: true)
+            }
         } else {
             self.showTopMessage(message: message, type: .Error)
         }

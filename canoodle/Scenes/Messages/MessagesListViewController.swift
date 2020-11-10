@@ -118,11 +118,6 @@ class MessagesListViewController: BaseViewControllerWithAd {
         }
         /// manual refresh
         messagesTableView.cr.beginHeaderRefresh()
-        if(self.viewAd.isHidden) {
-            messagesTableView.frame = CGRect(x: messagesTableView.frame.origin.x, y: self.viewAd.frame.origin.y, width: messagesTableView.frame.size.width, height: self.view.frame.height - (viewAd.frame.height))
-           // self.tableView.reloadInputViews()
-           // self.view.reloadInputViews()
-        }
     }
     
     /// Method is called when view will appears

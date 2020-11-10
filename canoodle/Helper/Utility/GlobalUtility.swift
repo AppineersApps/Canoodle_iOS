@@ -160,7 +160,7 @@ import TALogger
     class func logButtonEvent(functionName : String,file:String,name:String)
     {
         #if canImport(TALogger)
-        TALogger.shared.LogEvent(function:functionName,file:file , name: name, description: "Button Event")
+        TALogger.shared.LogEvent(type: "Button", function:functionName,file:file , name: name, description: "Button Event")
         #endif
     }
     
@@ -171,7 +171,7 @@ import TALogger
     class func logScreenEvent(file:String,name:String,description:String)
     {
         #if canImport(TALogger)
-        TALogger.shared.LogEvent(function:name ,file:file, name: name, description: description)
+        TALogger.shared.LogEvent(type: "Screen", function:name ,file:file, name: name, description: description)
         #endif
     }
     

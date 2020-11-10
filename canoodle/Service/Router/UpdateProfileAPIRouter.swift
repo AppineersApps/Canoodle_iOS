@@ -54,7 +54,7 @@ enum UpdateProfileAPIRouter: RouterProtocol {
                 "breed": request.breed,
                 "pet_age": request.petAge,
                 "pet_description": request.description,
-                "akc_registered": request.akcRegistered
+                "pet_akc_registered": request.akcRegistered
                 ]
             } else {
             return [
@@ -62,7 +62,7 @@ enum UpdateProfileAPIRouter: RouterProtocol {
                 "breed": request.breed,
                 "pet_age": request.petAge,
                 "pet_description": request.description,
-                "akc_registered": request.akcRegistered
+                "pet_akc_registered": request.akcRegistered
             ]
             }
         }

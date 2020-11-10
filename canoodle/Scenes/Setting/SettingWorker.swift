@@ -86,4 +86,42 @@ class SettingWorker {
             }
         }
     }
+    
+    /// API call for send log file
+     ///
+     /// - Parameters:
+     ///   - request: Request for API Params
+     ///   - completionHandler: Completion handle for api call
+     func sendLogFile(request: SendAdminLog.Request, completionHandler: @escaping (_ message: String?, _ successCode: String?) -> Void) {
+         NetworkService.dataRequest(with: SendFeedbackAPIRouter.sendAdminLog(request: request)) { (responce: WSResponse<Setting.ViewModel>?, error: NetworkError?) in
+             if let detail = responce {
+                 if detail.arrayData != nil, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
+                     completionHandler( msg, detail.setting?.success)
+                 } else {
+                     completionHandler(detail.setting?.message, detail.setting?.success)
+                 }
+             } else {
+                 completionHandler( error?.erroMessage(), "0")
+             }
+         }
+     }
+     
+    /// API call for send database log file
+       ///
+       /// - Parameters:
+       ///   - request: Request for API Params
+       ///   - completionHandler: Completion handle for api call
+       func sendDatabaseLogFile(request: SendAdminLog.Request, completionHandler: @escaping (_ message: String?, _ successCode: String?) -> Void) {
+           NetworkService.dataRequest(with: SendFeedbackAPIRouter.sendAdminDatabaseLog(request: request)) { (responce: WSResponse<Setting.ViewModel>?, error: NetworkError?) in
+               if let detail = responce {
+                   if detail.arrayData != nil, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
+                       completionHandler( msg, detail.setting?.success)
+                   } else {
+                       completionHandler(detail.setting?.message, detail.setting?.success)
+                   }
+               } else {
+                   completionHandler( error?.erroMessage(), "0")
+               }
+           }
+       }
 }

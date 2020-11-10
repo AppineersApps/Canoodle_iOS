@@ -137,7 +137,7 @@ class HomeViewController: BaseViewControllerWithAd {
     }
     
     @IBAction func reloadButtonTapped(_ sender: AnyObject) {
-        setUpHomeCardViews()
+        getUsers()
     }
     
     @IBAction func btnFilterAction(_ sender: UIButton) {
@@ -224,7 +224,7 @@ extension HomeViewController: HomeDisplayLogic {
     
     func didReceiveSetConnectionResponse(message: String, successCode: String) {
         if successCode == "1" {
-            self.showTopMessage(message: message, type: .Success)
+            self.showTopMessage(message: "User liked successfully", type: .Success)
         } else {
             self.showTopMessage(message: message, type: .Error)
         }

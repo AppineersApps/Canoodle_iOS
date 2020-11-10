@@ -7,6 +7,9 @@
 //
 
 import UIKit
+#if canImport(TALogger)
+import TALogger
+#endif
 
 class TabbarController: UITabBarController {
     
@@ -25,6 +28,10 @@ class TabbarController: UITabBarController {
 
 extension TabbarController : UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        #if canImport(TALogger)
+        let className = GlobalUtility.classNameAsString(obj: self.selectedViewController!)
+        TALogger.shared.LogEvent(type: "Tab Menu", function:"\(#function)", file:className, name: self.tabBar.selectedItem?.title ?? "--", description: "Tab Bar Event")
+        #endif
         if AppConstants.isLoginSkipped {
             var displayVC : UIViewController?
             if let aNavVC = viewController as? NavController {

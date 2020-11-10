@@ -207,6 +207,8 @@ struct UserDefaultsKey {
     static let notificationEnable = "notification_enable"
     /// Onboarding
     static let onboarding = "onboarding"
+    /// Profile Setup
+    static let profileSetUp = "profile_setup"
 }
 
 //// Enable or Disable Print Log

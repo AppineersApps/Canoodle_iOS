@@ -35,11 +35,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VMa-sx-jx7">
-                                        <rect key="frame" x="12" y="8" width="350" height="497"/>
+                                        <rect key="frame" x="12" y="8" width="350" height="526"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzU-VZ-VCY" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
-                                                <rect key="frame" x="86" y="225.5" width="178" height="44"/>
+                                                <rect key="frame" x="86" y="239.5" width="178" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" name="AppColor2"/>
                                                 <state key="normal" title="View More">

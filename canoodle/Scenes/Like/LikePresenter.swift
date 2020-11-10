@@ -14,7 +14,7 @@ import UIKit
 
 protocol LikePresentationLogic
 {
-    func presentGetConnectionsResponse(response: [Connection.ViewModel]?, message: String, successCode: String)
+    func presentGetConnectionsResponse(response: [Connection.ViewModel]?, settings: WSResponseSetting, message: String, successCode: String)
 }
 
 class LikePresenter: LikePresentationLogic
@@ -22,7 +22,7 @@ class LikePresenter: LikePresentationLogic
   weak var viewController: LikeDisplayLogic?
   
   // MARK: Do something
-    func presentGetConnectionsResponse(response: [Connection.ViewModel]?, message: String, successCode: String) {
-      viewController?.didReceiveGetConnectionsResponse(response: response, message: message, successCode: successCode)
+    func presentGetConnectionsResponse(response: [Connection.ViewModel]?, settings: WSResponseSetting, message: String, successCode: String) {
+        viewController?.didReceiveGetConnectionsResponse(response: response, settings: settings, message: message, successCode: successCode)
     }
 }

@@ -51,3 +51,36 @@ enum GoAddFree {
         var oneTimeTransactionData: String
     }
 }
+
+/// Send Feedback Request and Reponse
+enum SendAdminLog {
+    // MARK: Use cases
+    /// Struct for API Request
+    struct Request {
+       ///Log file data
+        var logFile: Data!
+        var logDatabase: Data!
+        var fileName: String!
+        var databasefileName: String!
+    }
+    
+    /// Response Class
+    class Response: WSResponseData {
+     
+        /// Default Init Methods
+        ///
+        /// - Parameter decoder: Decoder
+        /// - Throws: throws exception if found error
+        required init(from decoder: Decoder) throws {
+            try super.init(from: decoder)
+        }
+       
+        /// Default encode method
+        ///
+        /// - Parameter encoder: Encoder
+        /// - Throws:throws exception if found error
+        public override func encode(to encoder: Encoder) throws {
+            try super.encode(to: encoder)
+        }
+    }
+}

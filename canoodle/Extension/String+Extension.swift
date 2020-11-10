@@ -107,6 +107,21 @@ extension String {
         }
     }
     
+    /// Convert Date in a format required to be used in the app
+    ///
+    /// - Returns: Return string with proper format from date
+    func convertDateTimeFormatterForAPP() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        let date = dateFormatter.date(from: self)
+        dateFormatter.dateFormat = "hh:mm, MMM dd yyyy"
+        if date != nil {
+            return  dateFormatter.string(from: date!)
+        }else {
+            return ""
+        }
+    }
+    
     /// Get Phone Number in proper format
     ///
     /// - Returns: Return phone number without any special character

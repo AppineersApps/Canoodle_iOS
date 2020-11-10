@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -287,7 +286,6 @@ EE5vdGlmaWNhdGlvbnM
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vB-pN-two">
                                                                                 <rect key="frame" x="15" y="0.0" width="345" height="47"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                                <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I3b-lb-pw1">
@@ -299,9 +297,11 @@ EE5vdGlmaWNhdGlvbnM
                                                                             </imageView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUs-JO-0Wm" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                                                 <rect key="frame" x="15" y="0.0" width="345" height="46"/>
-                                                                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <inset key="imageEdgeInsets" minX="15" minY="12" maxX="0.0" maxY="10"/>
-                                                                                <state key="normal" image="icon_trash"/>
+                                                                                <state key="normal" image="trash" catalog="system">
+                                                                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </state>
                                                                                 <connections>
                                                                                     <action selector="btnSettingOptionAction:" destination="Erm-cZ-zzI" eventType="touchUpInside" id="hRH-7f-LuQ"/>
                                                                                 </connections>
@@ -337,9 +337,9 @@ EE5vdGlmaWNhdGlvbnM
                                                                             </imageView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUv-Mh-qnE" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                                                 <rect key="frame" x="15" y="0.0" width="345" height="46"/>
-                                                                                <color key="tintColor" systemColor="systemRedColor"/>
+                                                                                <color key="tintColor" name="AppColor"/>
                                                                                 <inset key="imageEdgeInsets" minX="10" minY="10" maxX="0.0" maxY="10"/>
-                                                                                <state key="normal" image="icon_logout"/>
+                                                                                <state key="normal" image="power" catalog="system"/>
                                                                                 <connections>
                                                                                     <action selector="btnLogoutTapAction:" destination="Erm-cZ-zzI" eventType="touchUpInside" id="Mnn-Ah-gwB"/>
                                                                                 </connections>
@@ -762,6 +762,7 @@ EE5vdGlmaWNhdGlvbnM
                         <outlet property="viewAboutUJs" destination="uNb-P8-FTh" id="gv8-eT-y6Z"/>
                         <outlet property="viewAccountSetting" destination="AYh-41-25K" id="8sP-lD-UUN"/>
                         <outlet property="viewAddFree" destination="hw9-Ea-LvQ" id="fJq-Or-XIK"/>
+                        <outlet property="viewBuySubscription" destination="MZC-1q-cYg" id="QMy-RH-zsb"/>
                         <outlet property="viewChangeMobileNumber" destination="XJ0-pl-HXt" id="gUB-QV-WMu"/>
                         <outlet property="viewChangePassword" destination="p52-cj-5aG" id="YdS-Qc-gMF"/>
                         <outlet property="viewDeleteAccount" destination="k24-3V-6RN" id="V35-nh-yIq"/>
@@ -809,13 +810,10 @@ EE5vdGlmaWNhdGlvbnM
     <resources>
         <image name="Chat" width="24" height="24"/>
         <image name="dropdown_arrow_s_10" width="7.5" height="12"/>
-        <image name="icon_logout" width="24.5" height="26.5"/>
-        <image name="icon_trash" width="22" height="28"/>
+        <image name="power" catalog="system" width="128" height="124"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="AppColor">
             <color red="0.40784313725490196" green="0.22745098039215686" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

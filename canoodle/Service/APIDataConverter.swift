@@ -14,6 +14,8 @@ public class WSResponseSetting: Codable {
     var success: String?
     var message: String?
     var count: String?
+    var likeCount: String?
+    var likeMeCount: String?
     var nextPage: String?
     var accessToken: String?
    
@@ -35,6 +37,8 @@ public class WSResponseSetting: Codable {
         case success = "success"
         case message = "message"
         case count = "count"
+        case likeCount = "Like_count"
+        case likeMeCount = "Likeme_count"
         case nextPage = "next_page"
         case accessToken = "access_token"
     }
@@ -48,6 +52,8 @@ public class WSResponseSetting: Codable {
         try container.encode(success, forKey: .success)
         try container.encode(message, forKey: .message)
         try container.encode(count, forKey: .count)
+        try container.encode(likeCount, forKey: .likeCount)
+        try container.encode(likeMeCount, forKey: .likeMeCount)
         try container.encode(nextPage, forKey: .nextPage)
         try container.encode(accessToken, forKey: .accessToken)
     }
@@ -61,6 +67,8 @@ public class WSResponseSetting: Codable {
         success = try? values.decode(String.self, forKey: .success)
         message = try? values.decode(String.self, forKey: .message)
         count = try? values.decode(String.self, forKey: .count)
+        likeCount = try? values.decode(String.self, forKey: .likeCount)
+        likeMeCount = try? values.decode(String.self, forKey: .likeMeCount)
         nextPage = try? values.decode(String.self, forKey: .nextPage)
         accessToken = try? values.decode(String.self, forKey: .accessToken)
     }

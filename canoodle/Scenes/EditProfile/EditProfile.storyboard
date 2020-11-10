@@ -3,7 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -74,7 +74,7 @@
                                                             <constraint firstAttribute="height" constant="20" id="PA5-yd-mut"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJ3-Di-v9z">
@@ -83,7 +83,7 @@
                                                             <constraint firstAttribute="height" constant="20" id="9I6-Vn-9bG"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -398,34 +398,34 @@
     </scenes>
     <designables>
         <designable name="1Ww-tt-Ik9">
-            <size key="intrinsicContentSize" width="126.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="96.5" height="18.5"/>
         </designable>
         <designable name="CGm-Zj-mU1">
-            <size key="intrinsicContentSize" width="99" height="18.5"/>
+            <size key="intrinsicContentSize" width="69" height="18.5"/>
         </designable>
         <designable name="QVx-Kr-oFy">
-            <size key="intrinsicContentSize" width="89" height="18.5"/>
+            <size key="intrinsicContentSize" width="59" height="18.5"/>
         </designable>
         <designable name="Rwl-U9-tVj">
-            <size key="intrinsicContentSize" width="64" height="18.5"/>
+            <size key="intrinsicContentSize" width="34" height="18.5"/>
         </designable>
         <designable name="STf-bE-dFf">
-            <size key="intrinsicContentSize" width="78" height="18.5"/>
+            <size key="intrinsicContentSize" width="48" height="18.5"/>
         </designable>
         <designable name="eqd-Mc-Nff">
-            <size key="intrinsicContentSize" width="100" height="18.5"/>
+            <size key="intrinsicContentSize" width="70" height="18.5"/>
         </designable>
         <designable name="mxi-aT-vvG">
-            <size key="intrinsicContentSize" width="56" height="18.5"/>
+            <size key="intrinsicContentSize" width="26" height="18.5"/>
         </designable>
         <designable name="myr-Xe-EaR">
-            <size key="intrinsicContentSize" width="83" height="18.5"/>
+            <size key="intrinsicContentSize" width="53" height="18.5"/>
         </designable>
         <designable name="qhv-t6-z2F">
-            <size key="intrinsicContentSize" width="96" height="18.5"/>
+            <size key="intrinsicContentSize" width="66" height="18.5"/>
         </designable>
         <designable name="xWm-3i-v3x">
-            <size key="intrinsicContentSize" width="112" height="18.5"/>
+            <size key="intrinsicContentSize" width="82" height="18.5"/>
         </designable>
     </designables>
     <resources>

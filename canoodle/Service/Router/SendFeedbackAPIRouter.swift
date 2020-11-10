@@ -19,6 +19,10 @@ enum SendFeedbackAPIRouter: RouterProtocol {
     
     /// Send Feedback Case
     case sendFeedback(request: SendFeedback.Request)
+    /// Send log file to Admin Case
+    case sendAdminLog(request: SendAdminLog.Request)
+    /// Send log database file to Admin Case
+    case sendAdminDatabaseLog(request: SendAdminLog.Request)
     
     /// HTTP Method
     var method: HTTPMethod {
@@ -27,10 +31,7 @@ enum SendFeedbackAPIRouter: RouterProtocol {
     
     /// Path for API
     var path: String {
-        switch self {
-        case .sendFeedback:
-            return "/post_a_feedback"
-        }
+        return "/post_a_feedback"
     }
     
     /// Parameters for API
@@ -44,6 +45,15 @@ enum SendFeedbackAPIRouter: RouterProtocol {
                 "device_model": AppConstants.device_model,
                 "device_os": AppConstants.os_version
             ]
+            case .sendAdminLog(let request),.sendAdminDatabaseLog(let request):
+               return [
+                   "feedback": request.fileName,
+                   "images_count": "2",
+                   "device_token": UserDefaultsManager.deviceToken,
+                   "device_model": AppConstants.device_model,
+                   "device_os": AppConstants.os_version
+
+               ]
         }
     }
     
@@ -75,6 +85,20 @@ enum SendFeedbackAPIRouter: RouterProtocol {
                 }
             }
             return arrMultiPart
+            case .sendAdminLog(let request):
+                       
+               var arrMultiPart = [MultiPartData]()
+               arrMultiPart.append(MultiPartData(fileName: request.fileName, data: request.logFile, paramKey: "image_1", mimeType: "text/plain", fileKey:  "image_1"))
+                arrMultiPart.append(MultiPartData(fileName: request.databasefileName, data: request.logDatabase, paramKey: "image_2", mimeType: "application/zip", fileKey:  "image_2"))
+               //request.fileName
+               return arrMultiPart
+               
+            case .sendAdminDatabaseLog(let request):
+                      
+              var arrMultiPart = [MultiPartData]()
+              arrMultiPart.append(MultiPartData(fileName: request.databasefileName, data: request.logDatabase, paramKey: "image_1", mimeType: "application/zip", fileKey:  "image_1"))
+              //request.fileName
+              return arrMultiPart
         }
     }
     

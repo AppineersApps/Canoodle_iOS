@@ -52,7 +52,7 @@ extension UIButton {
         }
         if let _ = aClass
         {
-            GlobalUtility.logButtonEvent(functionName: aFunctionName, file: GlobalUtility.classNameAsString(obj: aClass!), name: aFunctionName)
+            GlobalUtility.logButtonEvent(functionName: aFunctionName, file: GlobalUtility.classNameAsString(obj: aClass!), name: self.titleLabel?.text ?? "Button")
         }
     }
 }

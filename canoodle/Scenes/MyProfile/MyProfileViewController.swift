@@ -26,6 +26,7 @@ class MyProfileViewController: BaseViewControllerWithAd {
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var petAgeLabel: UILabel!
     @IBOutlet weak var breedLabel: UILabel!
+    @IBOutlet weak var akcLabel: UILabel!
     @IBOutlet var slideshow: ImageSlideshow!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -91,7 +92,7 @@ class MyProfileViewController: BaseViewControllerWithAd {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayout()
-        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 1000)
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 850)
     }
 
     /// Method is called when view will appears
@@ -125,7 +126,11 @@ class MyProfileViewController: BaseViewControllerWithAd {
     func setUserData() {
         nameLabel.text = user.userName
         locationLabel.text = "\(user.city!), \(user.state!)"
-        aboutTextView.text = user.description
+        if(user.description == "") {
+            aboutTextView.text = "NA"
+        } else {
+            aboutTextView.text = user.description
+        }
         profileImageView.setImage(with: "\(user.userImage!)", placeHolder: UIImage.init(named: "placeholder"))
         if(user.petName != "") {
             petNameLabel.text = user.petName
@@ -134,7 +139,12 @@ class MyProfileViewController: BaseViewControllerWithAd {
             petAgeLabel.text = "\(user.petAge!) years"
         }
         breedLabel.text = user.breed
-        petAboutTextView.text = user.petDescription
+        if(user.petDescription == "") {
+            petAboutTextView.text = "NA"
+        } else {
+            petAboutTextView.text = user.petDescription
+        }
+        akcLabel.text = user.akcRegistered
         adjustUITextViewHeight(arg: aboutTextView)
         adjustUITextViewHeight(arg: petAboutTextView)
         aboutPetView.frame = CGRect(x: aboutPetView.frame.origin.x, y: aboutTextView.frame.origin.y + aboutTextView.frame.height + 30, width: aboutPetView.frame.width, height: aboutTextView.frame.height + 50)

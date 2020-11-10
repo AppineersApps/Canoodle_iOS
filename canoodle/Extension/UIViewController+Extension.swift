@@ -158,7 +158,7 @@ extension UIViewController  {
        
         #if canImport(TALogger)
         let aStrType = type.rawValue == "Error" ? "Debug" :  type.rawValue
-        TALogger.shared.LogEvent(name: aStrType, description: message ?? "")
+        TALogger.shared.LogEvent(type: "Debug", name: aStrType, description: message ?? "")
         #endif
         
         if let _ = message {

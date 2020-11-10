@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboardingbg" id="nWj-bA-iGA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="672"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Idp-pf-Xkk">
@@ -97,7 +97,6 @@
                             <constraint firstItem="Nxp-xX-ZGg" firstAttribute="top" secondItem="tzi-7H-jBg" secondAttribute="bottom" constant="20" id="D5j-sY-qRl"/>
                             <constraint firstItem="UjT-Uo-XhP" firstAttribute="top" secondItem="gXh-Pi-cJc" secondAttribute="top" constant="35" id="Esp-j3-YNN"/>
                             <constraint firstItem="Nxp-xX-ZGg" firstAttribute="leading" secondItem="gXh-Pi-cJc" secondAttribute="leading" constant="48.5" id="IMa-Y7-Enj"/>
-                            <constraint firstItem="cqn-Ga-zAz" firstAttribute="centerX" secondItem="nWj-bA-iGA" secondAttribute="centerX" id="JP2-Qg-cLS"/>
                             <constraint firstItem="Idp-pf-Xkk" firstAttribute="top" secondItem="Nxp-xX-ZGg" secondAttribute="bottom" constant="50" id="Lr9-rL-oLm"/>
                             <constraint firstItem="tzi-7H-jBg" firstAttribute="top" secondItem="cqn-Ga-zAz" secondAttribute="bottom" constant="15" id="Ona-Hh-Yva"/>
                             <constraint firstItem="UjT-Uo-XhP" firstAttribute="trailing" secondItem="iDk-Bl-TRI" secondAttribute="trailingMargin" id="Xqd-hl-hmU"/>

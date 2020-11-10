@@ -14,7 +14,7 @@ import UIKit
 
 protocol LikeDisplayLogic: class
 {
-    func didReceiveGetConnectionsResponse(response: [Connection.ViewModel]?, message: String, successCode: String)
+    func didReceiveGetConnectionsResponse(response: [Connection.ViewModel]?, settings: WSResponseSetting, message: String, successCode: String)
 }
 
 class LikeViewController: BaseViewControllerWithAd
@@ -26,6 +26,7 @@ class LikeViewController: BaseViewControllerWithAd
     @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var likedMeCountLabel: UILabel!
     @IBOutlet weak var connectionsTableView: UITableView!
+    @IBOutlet weak var connectionsCollectionView: UICollectionView!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var watermarkView: UIView!
 
@@ -105,7 +106,12 @@ class LikeViewController: BaseViewControllerWithAd
    override func viewDidAppear(_ animated: Bool) {
        super.viewDidAppear(animated)
        self.setAddMobView(viewAdd: self.viewAd)
-       getConnections(type: "Like")
+    
+        if(selectedSegmentIndex == 1) {
+            getConnections(type: "Likeme")
+        } else {
+            getConnections(type: "Like")
+        }
    }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -117,17 +123,19 @@ class LikeViewController: BaseViewControllerWithAd
     }
   
     
-    @IBAction func likedButtonTapped(_ sender: Any) {
-       // overlayView.removeFromSuperview()
+    @IBAction func likedButtonTapped(_ sender: WLButton) {
+        //overlayView.removeFromSuperview()
         likedButton.setBackgroundImage(UIImage.init(named: "purpleRectBg"), for: UIControl.State.normal)
         likedMeButton.setBackgroundImage(UIImage.init(named: "greyRectBg"), for: UIControl.State.normal)
         selectedSegmentIndex = 0
         getConnections(type: "Like")
     }
     
-    @IBAction func likedMeButtonTapped(_ sender: Any) {
-       // overlayView.frame = CGRect(x: 0, y: self.view.frame.height - overlayView.frame.height, width: self.view.frame.width, height: overlayView.frame.height)
-       // self.view.addSubview(overlayView)
+    @IBAction func likedMeButtonTapped(_ sender: WLButton) {
+        if(UserDefaultsManager.getLoggedUserDetails()?.premiumStatus?.booleanStatus() == false) {
+            overlayView.frame = CGRect(x: 0, y: connectionsTableView.frame.origin.y, width: self.view.frame.width, height: connectionsTableView.frame.height)
+            //detailView.addSubview(overlayView)
+        }
         likedButton.setBackgroundImage(UIImage.init(named: "greyRectBg"), for: UIControl.State.normal)
         likedMeButton.setBackgroundImage(UIImage.init(named: "purpleRectBg"), for: UIControl.State.normal)
         selectedSegmentIndex = 1
@@ -158,10 +166,10 @@ extension LikeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(connectionsList.count == 0) {
             watermarkView.isHidden = false
-            connectionsTableView.isHidden = true
+            connectionsCollectionView.isHidden = true
         } else {
             watermarkView.isHidden = true
-            connectionsTableView.isHidden = false
+            connectionsCollectionView.isHidden = false
         }
         return connectionsList.count
     }
@@ -187,24 +195,82 @@ extension LikeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+extension LikeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if(connectionsList.count == 0) {
+            watermarkView.isHidden = false
+            connectionsCollectionView.isHidden = true
+        } else {
+            watermarkView.isHidden = true
+            connectionsCollectionView.isHidden = false
+        }
+        return connectionsList.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var cell: LikeCollectionViewCell! = collectionView.dequeueReusableCell(withReuseIdentifier: "LikeCollectionViewCell", for: indexPath) as? LikeCollectionViewCell
+    if cell == nil {
+        collectionView.register(UINib(nibName: "LikeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "LikeCollectionViewCell")
+        cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LikeCollectionViewCell", for: indexPath) as? LikeCollectionViewCell
+    }
+        // Configure the cell
+        cell.setCellData(connection: connectionsList[indexPath.row], index: selectedSegmentIndex)
+        //cell.delegate = self
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if(UserDefaultsManager.getLoggedUserDetails()?.premiumStatus?.booleanStatus() == false) {
+            self.displayAlert(msg: "Please Subscribe to see who liked your profile", ok: "Subscribe", cancel: "No", okAction: {
+                if let subscriptionVC = SubscriptionViewController.instance() {
+                    self.navigationController?.pushViewController(subscriptionVC, animated: true)
+                }
+            }, cancelAction: nil)
+        } else {
+            if let userProfileVC = UserProfileViewController.instance() {
+                let user: Connection.ViewModel = connectionsList[indexPath.row]
+                userProfileVC.setUserId(userId: user.userId!)
+                self.navigationController?.pushViewController(userProfileVC, animated: true)
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: ((self.connectionsCollectionView.frame.width / 2) - 15), height: 180)
+    }
+}
+
 extension LikeViewController: LikeDisplayLogic {
-    func didReceiveGetConnectionsResponse(response: [Connection.ViewModel]?, message: String, successCode: String) {
+    func didReceiveGetConnectionsResponse(response: [Connection.ViewModel]?, settings: WSResponseSetting, message: String, successCode: String) {
         if successCode == "1" {
             print(message)
             if let data = response {
                 connectionsList.removeAll()
                 self.connectionsList.append(contentsOf: data)
-                if(selectedSegmentIndex == 0) {
+                likeCountLabel.text = "\(settings.likeCount ?? "0")"
+                likedMeCountLabel.text = "\(settings.likeMeCount ?? "0")"
+
+               /* if(selectedSegmentIndex == 0) {
                     likeCountLabel.text = "\(connectionsList.count)"
                 } else {
                     likedMeCountLabel.text = "\(connectionsList.count)"
-                }
-                connectionsTableView.reloadData()
+                }*/
+                connectionsCollectionView.reloadData()
             }
         } else {
             //self.showTopMessage(message: message, type: .Error)
             connectionsList.removeAll()
-            connectionsTableView.reloadData()
+            if(selectedSegmentIndex == 0) {
+                likeCountLabel.text = "\(connectionsList.count)"
+            } else {
+                likedMeCountLabel.text = "\(connectionsList.count)"
+            }
+            connectionsCollectionView.reloadData()
         }
     }
 }

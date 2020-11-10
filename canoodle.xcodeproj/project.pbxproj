@@ -218,7 +218,6 @@
 		27F8A3AF233107AE0089C804 /* LoginEmailAndSocialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8A3AE233107AE0089C804 /* LoginEmailAndSocialModel.swift */; };
 		27F8A3B1233107C20089C804 /* LoginEmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8A3B0233107C20089C804 /* LoginEmailModel.swift */; };
 		27F8A3B3233107CF0089C804 /* LoginPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8A3B2233107CF0089C804 /* LoginPhoneModel.swift */; };
-		AE522DC5254032440046335A /* Pods_canoodle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787FCF655A5FE8AEA0259917 /* Pods_canoodle.framework */; };
 		AE537EE22535378B0084A780 /* HomeCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE537EE02535378B0084A780 /* HomeCardView.xib */; };
 		AE537EE32535378B0084A780 /* HomeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE537EE12535378B0084A780 /* HomeCardView.swift */; };
 		AE53DD3C25384B4500824C8E /* CanoodleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE53DD3A25384B4500824C8E /* CanoodleViewCell.swift */; };
@@ -258,6 +257,7 @@
 		AE55B8B2253DE3400056C64C /* Chat1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B8B1253DE3400056C64C /* Chat1.swift */; };
 		AE55B8ED253DE60F0056C64C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B8EC253DE60F0056C64C /* Date+Extension.swift */; };
 		AE55CA1D254811C700CC32B5 /* DeleteMediaAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55CA1C254811C700CC32B5 /* DeleteMediaAPIRouter.swift */; };
+		AE60601A25592EAE003AAD96 /* Pods_canoodle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787FCF655A5FE8AEA0259917 /* Pods_canoodle.framework */; };
 		AE69E07A25398B38008185A0 /* UserAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E07925398B38008185A0 /* UserAPIRouter.swift */; };
 		AE69E08025398D64008185A0 /* GetRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E07F25398D64008185A0 /* GetRouterProtocol.swift */; };
 		AE69E08425398D6F008185A0 /* GetNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E08325398D6F008185A0 /* GetNetworkService.swift */; };
@@ -279,8 +279,8 @@
 		AE6A3B542542C1BE003C9547 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE6A3B532542C1BE003C9547 /* GoogleService-Info.plist */; };
 		AE6A3B932542C55B003C9547 /* MessageAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A3B922542C55B003C9547 /* MessageAPIRouter.swift */; };
 		AE6A3B9A2542E130003C9547 /* UpdateProfileAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A3B992542E130003C9547 /* UpdateProfileAPIRouter.swift */; };
-		AE6F6F2525517BE00006D36A /* TALogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6F6F2325517BD50006D36A /* TALogger.framework */; };
-		AE6F6F2625517BE00006D36A /* TALogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE6F6F2325517BD50006D36A /* TALogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AE7A41752552910000A1A984 /* LikeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A41732552910000A1A984 /* LikeCollectionViewCell.swift */; };
+		AE7A41762552910000A1A984 /* LikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE7A41742552910000A1A984 /* LikeCollectionViewCell.xib */; };
 		AE7CCD3F252D825B001D9C88 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AE7CCD3E252D825B001D9C88 /* .swiftlint.yml */; };
 		AE838A6524C839C000F60EE6 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE838A6424C839C000F60EE6 /* GradientView.swift */; };
 		AE8467DB24DED3440042E0FE /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8467DA24DED3440042E0FE /* Array+Extension.swift */; };
@@ -317,6 +317,8 @@
 		AE88A184253EFB9600EF981D /* PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88A17E253EFB9600EF981D /* PetProfileViewController.swift */; };
 		AE88A185253EFB9600EF981D /* PetProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88A17F253EFB9600EF981D /* PetProfileInteractor.swift */; };
 		AE88A18B253EFBA700EF981D /* PetProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE88A18A253EFBA700EF981D /* PetProfile.storyboard */; };
+		AE9D11ED255A94EB00275366 /* TALogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9D11EB255A94A500275366 /* TALogger.framework */; };
+		AE9D11EE255A94EB00275366 /* TALogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE9D11EB255A94A500275366 /* TALogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AECB563E254158D900A73C2A /* ReportUserAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB563D254158D900A73C2A /* ReportUserAPIRouter.swift */; };
 		AECB5642254162DC00A73C2A /* SetConnectionAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB5641254162DC00A73C2A /* SetConnectionAPIRouter.swift */; };
 		AECB564625416BE300A73C2A /* UploadMediaAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB564525416BE300A73C2A /* UploadMediaAPIRouter.swift */; };
@@ -359,7 +361,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AE6F6F2625517BE00006D36A /* TALogger.framework in Embed Frameworks */,
+				AE9D11EE255A94EB00275366 /* TALogger.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,7 +651,8 @@
 		AE6A3B922542C55B003C9547 /* MessageAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAPIRouter.swift; sourceTree = "<group>"; };
 		AE6A3B962542DE7D003C9547 /* CanoodleRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CanoodleRelease.entitlements; sourceTree = "<group>"; };
 		AE6A3B992542E130003C9547 /* UpdateProfileAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileAPIRouter.swift; sourceTree = "<group>"; };
-		AE6F6F2325517BD50006D36A /* TALogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TALogger.framework; sourceTree = "<group>"; };
+		AE7A41732552910000A1A984 /* LikeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCollectionViewCell.swift; sourceTree = "<group>"; };
+		AE7A41742552910000A1A984 /* LikeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeCollectionViewCell.xib; sourceTree = "<group>"; };
 		AE7CCD3E252D825B001D9C88 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		AE838A6424C839C000F60EE6 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		AE8467DA24DED3440042E0FE /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -686,6 +689,7 @@
 		AE88A17E253EFB9600EF981D /* PetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileViewController.swift; sourceTree = "<group>"; };
 		AE88A17F253EFB9600EF981D /* PetProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileInteractor.swift; sourceTree = "<group>"; };
 		AE88A18A253EFBA700EF981D /* PetProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetProfile.storyboard; sourceTree = "<group>"; };
+		AE9D11EB255A94A500275366 /* TALogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TALogger.framework; sourceTree = "<group>"; };
 		AECB563D254158D900A73C2A /* ReportUserAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserAPIRouter.swift; sourceTree = "<group>"; };
 		AECB5641254162DC00A73C2A /* SetConnectionAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetConnectionAPIRouter.swift; sourceTree = "<group>"; };
 		AECB564525416BE300A73C2A /* UploadMediaAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadMediaAPIRouter.swift; sourceTree = "<group>"; };
@@ -710,8 +714,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE522DC5254032440046335A /* Pods_canoodle.framework in Frameworks */,
-				AE6F6F2525517BE00006D36A /* TALogger.framework in Frameworks */,
+				AE60601A25592EAE003AAD96 /* Pods_canoodle.framework in Frameworks */,
+				AE9D11ED255A94EB00275366 /* TALogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -930,7 +934,7 @@
 		2709AC52232F6090000708FF /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				AE6F6F2325517BD50006D36A /* TALogger.framework */,
+				AE9D11EB255A94A500275366 /* TALogger.framework */,
 				AE6A3B532542C1BE003C9547 /* GoogleService-Info.plist */,
 				277D7811233E38FD00A496FD /* Loader */,
 				2709AC79232F6091000708FF /* CustomFiles */,
@@ -1456,6 +1460,8 @@
 				AE88152A2534A35700B4B34C /* Like.storyboard */,
 				AE53DD9625386CC900824C8E /* LikeViewCell.swift */,
 				AE53DD9725386CC900824C8E /* LikeViewCell.xib */,
+				AE7A41732552910000A1A984 /* LikeCollectionViewCell.swift */,
+				AE7A41742552910000A1A984 /* LikeCollectionViewCell.xib */,
 			);
 			path = Like;
 			sourceTree = "<group>";
@@ -1698,6 +1704,7 @@
 				27425E49233B66E7009F9E3E /* EditProfile.storyboard in Resources */,
 				2709ACDC232F6092000708FF /* loading.json in Resources */,
 				27BFF7032332657E0056CA93 /* Home.storyboard in Resources */,
+				AE7A41762552910000A1A984 /* LikeCollectionViewCell.xib in Resources */,
 				AE69E1502539EB7B008185A0 /* Subscription.storyboard in Resources */,
 				27AA5A432330D91F00632CBD /* Assets.xcassets in Resources */,
 				AE88A142253EA2A600EF981D /* NotificationsViewCell.xib in Resources */,
@@ -1814,6 +1821,7 @@
 				2709ACB2232F6092000708FF /* LoginPhoneRouter.swift in Sources */,
 				AE69E08025398D64008185A0 /* GetRouterProtocol.swift in Sources */,
 				27F34846233B37D00036558B /* MessagesWorker.swift in Sources */,
+				AE7A41752552910000A1A984 /* LikeCollectionViewCell.swift in Sources */,
 				278CC139232FB32000F2CE32 /* LoginPhoneAndSocialInteractor.swift in Sources */,
 				2709ACC3232F6092000708FF /* GlobalUtility.swift in Sources */,
 				27F30B5E233C906E008503EB /* SendFeedbackPresenter.swift in Sources */,
@@ -2247,7 +2255,7 @@
 				CODE_SIGN_ENTITLEMENTS = canoodle/canoodle.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = NPMQJ6P5X4;
 				ENABLE_BITCODE = YES;
@@ -2255,9 +2263,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/canoodle/Helper",
+					"$(PROJECT_DIR)/canoodle/Extension",
 				);
 				INFOPLIST_FILE = canoodle/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2281,16 +2290,17 @@
 				CODE_SIGN_ENTITLEMENTS = canoodle/CanoodleRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = NPMQJ6P5X4;
 				ENABLE_BITCODE = YES;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/canoodle/Helper",
+					"$(PROJECT_DIR)/canoodle/Extension",
 				);
 				INFOPLIST_FILE = canoodle/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -54,6 +54,8 @@ class LoginEmailAndSocialViewController: BaseViewController {
     @IBOutlet weak var btnApple: WLButton!
     @IBOutlet weak var viewAppleLogin: UIView!
     
+    var onboarding: Bool = false
+    
     // MARK: Object lifecycle
     
     /// Override method to initialize with nib
@@ -349,7 +351,14 @@ extension LoginEmailAndSocialViewController: LoginEmailAndSocialDisplayLogic {
             if let data = response {
                 UserDefaultsManager.setLoggedUserDetails(userDetail: data)
                 AppConstants.isLoginSkipped = false
-                router?.redirectToHome()
+                if UserDefaultsManager.profileSetUpDone != "Yes" {
+                    if let petProfileVC = PetProfileViewController.instance() {
+                        petProfileVC.onboarding = true
+                        self.navigationController?.pushViewController(petProfileVC, animated: true)
+                    }
+                } else {
+                    router?.redirectToHome()
+                }
             }
         } else {
             self.showTopMessage(message: message, type: .Error)
@@ -367,7 +376,14 @@ extension LoginEmailAndSocialViewController: LoginEmailAndSocialDisplayLogic {
             if let data = response {
                 UserDefaultsManager.setLoggedUserDetails(userDetail: data)
                 AppConstants.isLoginSkipped = false
-                router?.redirectToHome()
+                if UserDefaultsManager.profileSetUpDone != "Yes" {
+                    if let petProfileVC = PetProfileViewController.instance() {
+                        petProfileVC.onboarding = true
+                        self.navigationController?.pushViewController(petProfileVC, animated: true)
+                    }
+                } else {
+                    router?.redirectToHome()
+                }
             }
         } else if success == "2" {
             router?.navigateToSignup()
