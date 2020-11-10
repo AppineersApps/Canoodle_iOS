@@ -6,6 +6,10 @@
 
 import UIKit
 import FBSDKLoginKit
+#if canImport(TALogger)
+import TALogger
+#endif
+
 /// Protocol for presenting response
 protocol HomeDisplayLogic: class {
     /// Call API To Display Something
@@ -195,9 +199,15 @@ extension HomeViewController: HomeCardViewProtocol {
     func swipedCard(user: User.ViewModel, type: SwipeType) {
         if(type == SwipeType.Right) {
            //showCollabView()
+            #if canImport(TALogger)
+            TALogger.shared.LogEvent(type: "Swipe", function:(#function),file:GlobalUtility.classNameAsString(obj: self) , name: "Swipe Right", description: "Swipe Event")
+            #endif
             self.addAnayltics(analyticsParameterItemID: "id-likeprofile", analyticsParameterItemName: "click_likeprofile", analyticsParameterContentType: "click_likeprofile")
             setConnection(userId: user.userId!, type: "Like")
         } else {
+            #if canImport(TALogger)
+            TALogger.shared.LogEvent(type: "Swipe", function:(#function),file:GlobalUtility.classNameAsString(obj: self) , name: "Swipe Left", description: "Swipe Event")
+            #endif
             self.addAnayltics(analyticsParameterItemID: "id-unlikeprofile", analyticsParameterItemName: "click_unlikeprofile", analyticsParameterContentType: "click_unlikeprofile")
            // setConnection(userId: user.userId!, type: "Unlike")
         }

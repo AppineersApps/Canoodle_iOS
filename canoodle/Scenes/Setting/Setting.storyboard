@@ -110,6 +110,7 @@ EE5vdGlmaWNhdGlvbnM
                                                                             </imageView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZz-H2-YUH" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                                                 <rect key="frame" x="15" y="0.0" width="345" height="46"/>
+                                                                                <inset key="imageEdgeInsets" minX="13" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                                 <state key="normal" image="dropdown_arrow_s_10"/>
                                                                                 <connections>
                                                                                     <action selector="btnSettingOptionAction:" destination="Erm-cZ-zzI" eventType="touchUpInside" id="xhs-40-fjD"/>
@@ -147,7 +148,9 @@ EE5vdGlmaWNhdGlvbnM
                                                                             </imageView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="han-gO-YUC" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                                                 <rect key="frame" x="15" y="0.0" width="345" height="46"/>
-                                                                                <state key="normal" image="dropdown_arrow_s_10"/>
+                                                                                <state key="normal" image="dropdown_arrow_s_10">
+                                                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </state>
                                                                                 <connections>
                                                                                     <action selector="btnSettingOptionAction:" destination="Erm-cZ-zzI" eventType="touchUpInside" id="bVb-zS-P4p"/>
                                                                                 </connections>
@@ -182,7 +185,9 @@ EE5vdGlmaWNhdGlvbnM
                                                                             </imageView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBF-uK-jOS" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                                                 <rect key="frame" x="15" y="0.0" width="345" height="46"/>
-                                                                                <state key="normal" image="dropdown_arrow_s_10"/>
+                                                                                <state key="normal" image="dropdown_arrow_s_10">
+                                                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </state>
                                                                                 <connections>
                                                                                     <action selector="btnSettingOptionAction:" destination="Erm-cZ-zzI" eventType="touchUpInside" id="32r-WE-3MG"/>
                                                                                 </connections>
@@ -217,7 +222,9 @@ EE5vdGlmaWNhdGlvbnM
                                                                             </imageView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGv-SD-1Lp" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                                                 <rect key="frame" x="15" y="0.0" width="345" height="46"/>
-                                                                                <state key="normal" image="dropdown_arrow_s_10"/>
+                                                                                <state key="normal" image="dropdown_arrow_s_10">
+                                                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </state>
                                                                                 <connections>
                                                                                     <action selector="buySubscriptionAction:" destination="Erm-cZ-zzI" eventType="touchUpInside" id="KI4-JZ-e9D"/>
                                                                                 </connections>
@@ -300,7 +307,7 @@ EE5vdGlmaWNhdGlvbnM
                                                                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <inset key="imageEdgeInsets" minX="15" minY="12" maxX="0.0" maxY="10"/>
                                                                                 <state key="normal" image="trash" catalog="system">
-                                                                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
                                                                                 <connections>
                                                                                     <action selector="btnSettingOptionAction:" destination="Erm-cZ-zzI" eventType="touchUpInside" id="hRH-7f-LuQ"/>
@@ -428,7 +435,9 @@ EE5vdGlmaWNhdGlvbnM
                                                                             </imageView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Os6-KW-EK0" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                                                 <rect key="frame" x="15" y="0.0" width="345" height="46"/>
-                                                                                <state key="normal" image="dropdown_arrow_s_10"/>
+                                                                                <state key="normal" image="dropdown_arrow_s_10">
+                                                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </state>
                                                                                 <connections>
                                                                                     <action selector="btnSettingOptionAction:" destination="Erm-cZ-zzI" eventType="touchUpInside" id="Dvj-YT-AAF"/>
                                                                                 </connections>
@@ -469,7 +478,9 @@ EE5vdGlmaWNhdGlvbnM
                                                                             </imageView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDL-aF-hu9" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                                                 <rect key="frame" x="15" y="0.0" width="345" height="46"/>
-                                                                                <state key="normal" image="dropdown_arrow_s_10"/>
+                                                                                <state key="normal" image="dropdown_arrow_s_10">
+                                                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </state>
                                                                                 <connections>
                                                                                     <action selector="btnSettingOptionAction:" destination="Erm-cZ-zzI" eventType="touchUpInside" id="8YW-oQ-FSS"/>
                                                                                 </connections>
@@ -504,7 +515,9 @@ EE5vdGlmaWNhdGlvbnM
                                                                             </imageView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLv-4h-D3Y" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                                                 <rect key="frame" x="15" y="0.0" width="345" height="46"/>
-                                                                                <state key="normal" image="dropdown_arrow_s_10"/>
+                                                                                <state key="normal" image="dropdown_arrow_s_10">
+                                                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </state>
                                                                                 <connections>
                                                                                     <action selector="btnSettingOptionAction:" destination="Erm-cZ-zzI" eventType="touchUpInside" id="wz0-Z4-kZc"/>
                                                                                 </connections>
@@ -539,7 +552,9 @@ EE5vdGlmaWNhdGlvbnM
                                                                             </imageView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INl-Pa-N3h" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                                                 <rect key="frame" x="15" y="0.0" width="345" height="46"/>
-                                                                                <state key="normal" image="dropdown_arrow_s_10"/>
+                                                                                <state key="normal" image="dropdown_arrow_s_10">
+                                                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </state>
                                                                                 <connections>
                                                                                     <action selector="btnSettingOptionAction:" destination="Erm-cZ-zzI" eventType="touchUpInside" id="VL3-g6-6tT"/>
                                                                                 </connections>
@@ -574,7 +589,9 @@ EE5vdGlmaWNhdGlvbnM
                                                                             </imageView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDM-gp-3pZ" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                                                 <rect key="frame" x="15" y="0.0" width="345" height="47"/>
-                                                                                <state key="normal" image="dropdown_arrow_s_10"/>
+                                                                                <state key="normal" image="dropdown_arrow_s_10">
+                                                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </state>
                                                                                 <connections>
                                                                                     <action selector="btnSettingOptionAction:" destination="Erm-cZ-zzI" eventType="touchUpInside" id="wqZ-LS-Y4K"/>
                                                                                 </connections>
@@ -614,7 +631,9 @@ EE5vdGlmaWNhdGlvbnM
                                                                             </imageView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liU-Hk-WEv" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                                                 <rect key="frame" x="15" y="0.0" width="345" height="46"/>
-                                                                                <state key="normal" image="dropdown_arrow_s_10"/>
+                                                                                <state key="normal" image="dropdown_arrow_s_10">
+                                                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </state>
                                                                                 <connections>
                                                                                     <action selector="btnSettingOptionAction:" destination="Erm-cZ-zzI" eventType="touchUpInside" id="Rvx-So-eB5"/>
                                                                                 </connections>
@@ -649,7 +668,9 @@ EE5vdGlmaWNhdGlvbnM
                                                                             </imageView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3su-eF-TGp">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="360" height="47"/>
-                                                                                <state key="normal" image="dropdown_arrow_s_10"/>
+                                                                                <state key="normal" image="dropdown_arrow_s_10">
+                                                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </state>
                                                                                 <connections>
                                                                                     <action selector="btnSettingOptionAction:" destination="Erm-cZ-zzI" eventType="touchUpInside" id="nfk-2i-rYi"/>
                                                                                 </connections>

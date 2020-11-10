@@ -317,8 +317,8 @@
 		AE88A184253EFB9600EF981D /* PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88A17E253EFB9600EF981D /* PetProfileViewController.swift */; };
 		AE88A185253EFB9600EF981D /* PetProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88A17F253EFB9600EF981D /* PetProfileInteractor.swift */; };
 		AE88A18B253EFBA700EF981D /* PetProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE88A18A253EFBA700EF981D /* PetProfile.storyboard */; };
-		AE9D11ED255A94EB00275366 /* TALogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9D11EB255A94A500275366 /* TALogger.framework */; };
-		AE9D11EE255A94EB00275366 /* TALogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE9D11EB255A94A500275366 /* TALogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AE9D129B255AB7DB00275366 /* TALogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9D1299255AB7CE00275366 /* TALogger.framework */; };
+		AE9D129C255AB7DB00275366 /* TALogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE9D1299255AB7CE00275366 /* TALogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AECB563E254158D900A73C2A /* ReportUserAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB563D254158D900A73C2A /* ReportUserAPIRouter.swift */; };
 		AECB5642254162DC00A73C2A /* SetConnectionAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB5641254162DC00A73C2A /* SetConnectionAPIRouter.swift */; };
 		AECB564625416BE300A73C2A /* UploadMediaAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB564525416BE300A73C2A /* UploadMediaAPIRouter.swift */; };
@@ -361,7 +361,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AE9D11EE255A94EB00275366 /* TALogger.framework in Embed Frameworks */,
+				AE9D129C255AB7DB00275366 /* TALogger.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -689,7 +689,7 @@
 		AE88A17E253EFB9600EF981D /* PetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileViewController.swift; sourceTree = "<group>"; };
 		AE88A17F253EFB9600EF981D /* PetProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileInteractor.swift; sourceTree = "<group>"; };
 		AE88A18A253EFBA700EF981D /* PetProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetProfile.storyboard; sourceTree = "<group>"; };
-		AE9D11EB255A94A500275366 /* TALogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TALogger.framework; sourceTree = "<group>"; };
+		AE9D1299255AB7CE00275366 /* TALogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TALogger.framework; sourceTree = "<group>"; };
 		AECB563D254158D900A73C2A /* ReportUserAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserAPIRouter.swift; sourceTree = "<group>"; };
 		AECB5641254162DC00A73C2A /* SetConnectionAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetConnectionAPIRouter.swift; sourceTree = "<group>"; };
 		AECB564525416BE300A73C2A /* UploadMediaAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadMediaAPIRouter.swift; sourceTree = "<group>"; };
@@ -715,7 +715,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE60601A25592EAE003AAD96 /* Pods_canoodle.framework in Frameworks */,
-				AE9D11ED255A94EB00275366 /* TALogger.framework in Frameworks */,
+				AE9D129B255AB7DB00275366 /* TALogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -934,7 +934,7 @@
 		2709AC52232F6090000708FF /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				AE9D11EB255A94A500275366 /* TALogger.framework */,
+				AE9D1299255AB7CE00275366 /* TALogger.framework */,
 				AE6A3B532542C1BE003C9547 /* GoogleService-Info.plist */,
 				277D7811233E38FD00A496FD /* Loader */,
 				2709AC79232F6091000708FF /* CustomFiles */,
@@ -2259,7 +2259,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = NPMQJ6P5X4;
 				ENABLE_BITCODE = YES;
-				EXCLUDED_ARCHS = "";
+				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/canoodle/Helper",
@@ -2293,7 +2293,7 @@
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = NPMQJ6P5X4;
 				ENABLE_BITCODE = YES;
-				EXCLUDED_ARCHS = "";
+				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/canoodle/Helper",

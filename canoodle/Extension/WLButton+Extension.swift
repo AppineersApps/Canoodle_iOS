@@ -29,6 +29,7 @@ extension UIButton {
     @objc func logEvent() {
         
         var aFunctionName = ""
+        var buttonName = ""
         var aClass = self.superview?.parentViewController
         if aClass is NavController
         {
@@ -45,6 +46,7 @@ extension UIButton {
                     if aStr != "logEvent"
                     {
                         aFunctionName = aStr
+                        buttonName = target.description
                     }
                     print(aStr)
                 }
@@ -52,7 +54,7 @@ extension UIButton {
         }
         if let _ = aClass
         {
-            GlobalUtility.logButtonEvent(functionName: aFunctionName, file: GlobalUtility.classNameAsString(obj: aClass!), name: self.titleLabel?.text ?? "Button")
+            GlobalUtility.logButtonEvent(functionName: aFunctionName, file: GlobalUtility.classNameAsString(obj: aClass!), name: self.titleLabel?.text ?? aFunctionName)
         }
     }
 }

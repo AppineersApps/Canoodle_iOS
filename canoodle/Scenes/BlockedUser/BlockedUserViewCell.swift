@@ -48,7 +48,7 @@ class BlockedUserViewCell: UITableViewCell {
         }
     }
     
-    @IBAction func unblockButtonTapped(_ sender: Any) {
+    @IBAction func unblockButtonTapped(_ sender: UIButton) {
         self.delegate?.unblockUser(otherUserId: self.user.userId!)
     }
     
