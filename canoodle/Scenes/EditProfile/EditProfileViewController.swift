@@ -163,6 +163,8 @@ class EditProfileViewController: BaseViewController {
         self.txtFieldCity.text = loginData?.city
         self.txtFieldState.text = loginData?.state
         self.txtFieldZip.text = loginData?.zipCode
+        self.latitude = loginData?.lat ?? "0"
+        self.longitude = loginData?.long ?? "0"
         self.txtFieldDateOfBirth.text = (loginData?.dob ?? "").convertDateFormaterForAPP()
         self.stateId = loginData?.stateId ?? ""
         self.imgProfile.setImage(with: loginData?.userProfile, placeHolder: #imageLiteral(resourceName: "signup_default_user"))
@@ -356,6 +358,11 @@ class EditProfileViewController: BaseViewController {
     @objc func showDatePicker() {
         //Formate Date
         datePicker.datePickerMode = .date
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        } else {
+            // Fallback on earlier versions
+        }
         let calendar = Calendar(identifier: .gregorian)
         var comps = DateComponents()
         comps.year = -18

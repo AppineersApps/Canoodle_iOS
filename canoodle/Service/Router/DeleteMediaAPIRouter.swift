@@ -32,7 +32,7 @@ enum DeleteMediaAPIRouter: GetRouterProtocol {
     var path: String {
         switch self {
             case .deleteMedia:
-                return AppConstants.baseUrl + "/mad_collab_user"
+                return AppConstants.baseUrl + "/user_list"
         }
     }
     

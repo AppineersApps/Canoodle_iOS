@@ -29,7 +29,7 @@ enum UploadMediaAPIRouter: RouterProtocol {
     var path: String {
         switch self {
         case .uploadMedia:
-            return "/mad_collab_user"
+            return "/user_list"
         }
     }
     

@@ -9,7 +9,9 @@
 import UIKit
 import GoogleMobileAds
 import Alamofire
-//import TALogger
+#if canImport(TALogger)
+import TALogger
+#endif
 
 /// Base View controller with ads
 class BaseViewControllerWithAd: UIViewController {
@@ -51,6 +53,26 @@ class BaseViewControllerWithAd: UIViewController {
         }
         
         GlobalUtility.logScreenEvent(file: className, name: functionName, description: aName)
+        
+    }
+    
+    func logAdEvent(_ functionName:String) {
+        var aName = GlobalUtility.classNameAsString(obj: self) + " Screen"
+        aName = aName.replacingOccurrences(of: "ViewController", with: "")
+        let className = GlobalUtility.classNameAsString(obj: self)
+        
+        if let aModel = UserDefaultsManager.getLoggedUserDetails()
+        {
+            GlobalUtility.setUser(user: aModel.email ?? "")
+        }
+        else
+        {
+            GlobalUtility.setUser(user: "N/A")
+        }
+        
+            #if canImport(TALogger)
+            TALogger.shared.LogEvent(type: "Ad", function:functionName ,file:GlobalUtility.classNameAsString(obj: self), name: functionName, description: description)
+            #endif
         
     }
     
@@ -180,36 +202,36 @@ extension BaseViewControllerWithAd: GADBannerViewDelegate {
     ///
     /// - Parameter bannerView: Bannerview
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        self.logScreenEvent("\(#function)")
+        self.logAdEvent("\(#function)")
         print("")
     }
     
     /// Tells the delegate an ad request failed.
     func adView(_ bannerView: GADBannerView,
                 didFailToReceiveAdWithError error: GADRequestError) {
-        self.logScreenEvent("\(#function)")
+        self.logAdEvent("\(#function)")
         
     }
     
     /// Tells the delegate that a full-screen view will be presented in response
     /// to the user clicking on an ad.
     func adViewWillPresentScreen(_ bannerView: GADBannerView) {
-        self.logScreenEvent("\(#function)")
+        self.logAdEvent("\(#function)")
     }
     
     /// Tells the delegate that the full-screen view will be dismissed.
     func adViewWillDismissScreen(_ bannerView: GADBannerView) {
-        self.logScreenEvent("\(#function)")
+        self.logAdEvent("\(#function)")
     }
     
     /// Tells the delegate that the full-screen view has been dismissed.
     func adViewDidDismissScreen(_ bannerView: GADBannerView) {
-        self.logScreenEvent("\(#function)")
+        self.logAdEvent("\(#function)")
     }
     
     /// Tells the delegate that a user click will open another app (such as
     /// the App Store), backgrounding the current app.
     func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-        self.logScreenEvent("\(#function)")
+        self.logAdEvent("\(#function)")
     }
 }

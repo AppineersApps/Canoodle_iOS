@@ -30,7 +30,7 @@ enum UpdateProfileAPIRouter: RouterProtocol {
     var path: String {
         switch self {
         case .updateProfile:
-            return "/mad_collab_user"
+            return "/user_list"
         case .updatePetProfile:
             return "/pets"
         }

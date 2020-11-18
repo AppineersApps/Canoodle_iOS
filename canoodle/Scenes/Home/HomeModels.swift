@@ -16,6 +16,7 @@ import UIKit
 enum User {
     struct Request {
         var gender : String?
+        var radius : String?
     }
     
     class ViewModel: WSResponseData {

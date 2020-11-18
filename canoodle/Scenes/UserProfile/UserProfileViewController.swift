@@ -305,7 +305,7 @@ extension UserProfileViewController: UserProfileDisplayLogic {
     
     func didReceiveSetConnectionResponse(message: String, successCode: String) {
         if successCode == "1" {
-            self.showTopMessage(message: message, type: .Success)
+           // self.showTopMessage(message: message, type: .Success)
             getUserProfile()
         } else {
             self.showTopMessage(message: message, type: .Error)

@@ -224,4 +224,16 @@ class HomeCardView: UIView {
         imageView.frame = CGRect.init(x: self.frame.width/2 - 60, y: self.frame.height/2 - 60, width: 120, height:  120)
         self.addSubview(imageView)
     }
+    
+    @IBAction func skipAction(_ sender: Any) {
+        UIView.animate(withDuration: 0.3,
+                       delay: 0.0,
+                       options: [.curveEaseInOut, .allowUserInteraction],
+                       animations: {
+                        self.alpha = 0.1
+        },
+         completion: { _ in
+            self.removeFromSuperview()
+        })
+    }
 }

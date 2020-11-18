@@ -156,7 +156,7 @@ class HomeViewController: BaseViewControllerWithAd {
         }
     }
     
-    @IBAction func btnSettingsAction(_ sender: Any) {
+    @IBAction func btnSettingsAction(_ sender: UIBarButtonItem) {
         if let settingsVC = SettingViewController.instance() {
             self.navigationController?.pushViewController(settingsVC, animated: true)
         }
@@ -184,7 +184,7 @@ class HomeViewController: BaseViewControllerWithAd {
     
     func getUsers() {
         let filter = UserDefaultsManager.getFilter()
-        let request = User.Request(gender: filter.gender!)
+        let request = User.Request(gender: filter.gender!, radius: filter.distance!)
         interactor?.getUsers(request: request)
     }
     
@@ -209,7 +209,7 @@ extension HomeViewController: HomeCardViewProtocol {
             TALogger.shared.LogEvent(type: "Swipe", function:(#function),file:GlobalUtility.classNameAsString(obj: self) , name: "Swipe Left", description: "Swipe Event")
             #endif
             self.addAnayltics(analyticsParameterItemID: "id-unlikeprofile", analyticsParameterItemName: "click_unlikeprofile", analyticsParameterContentType: "click_unlikeprofile")
-           // setConnection(userId: user.userId!, type: "Unlike")
+            setConnection(userId: user.userId!, type: "Unlike")
         }
     }
 }
@@ -234,7 +234,7 @@ extension HomeViewController: HomeDisplayLogic {
     
     func didReceiveSetConnectionResponse(message: String, successCode: String) {
         if successCode == "1" {
-            self.showTopMessage(message: "User liked successfully", type: .Success)
+            //self.showTopMessage(message: "User liked successfully", type: .Success)
         } else {
             self.showTopMessage(message: message, type: .Error)
         }

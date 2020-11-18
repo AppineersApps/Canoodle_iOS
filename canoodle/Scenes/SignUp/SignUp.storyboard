@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VNE-Y9-jAz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VNE-Y9-jAz">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -245,7 +245,7 @@
                                                             <outlet property="delegate" destination="YN9-rI-62c" id="hVT-m2-krV"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QT4-7d-7y2" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
+                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QT4-7d-7y2" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="400" width="345" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -488,43 +488,43 @@
     </scenes>
     <designables>
         <designable name="2qw-xj-QgE">
-            <size key="intrinsicContentSize" width="83" height="18.5"/>
+            <size key="intrinsicContentSize" width="53" height="18.5"/>
         </designable>
         <designable name="7I0-DS-HLx">
-            <size key="intrinsicContentSize" width="100" height="18.5"/>
+            <size key="intrinsicContentSize" width="70" height="18.5"/>
         </designable>
         <designable name="A0K-zU-mMn">
-            <size key="intrinsicContentSize" width="64.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="34.5" height="18.5"/>
         </designable>
         <designable name="Edg-j1-KEQ">
-            <size key="intrinsicContentSize" width="56" height="18.5"/>
+            <size key="intrinsicContentSize" width="26" height="18.5"/>
         </designable>
         <designable name="NlC-zG-MGf">
-            <size key="intrinsicContentSize" width="147.5" height="17"/>
+            <size key="intrinsicContentSize" width="117.5" height="17"/>
         </designable>
         <designable name="QT4-7d-7y2">
-            <size key="intrinsicContentSize" width="64" height="18.5"/>
+            <size key="intrinsicContentSize" width="34" height="18.5"/>
         </designable>
         <designable name="X5P-yR-MlT">
-            <size key="intrinsicContentSize" width="96" height="18.5"/>
+            <size key="intrinsicContentSize" width="66" height="18.5"/>
         </designable>
         <designable name="b6e-Lb-O9P">
-            <size key="intrinsicContentSize" width="99" height="18.5"/>
+            <size key="intrinsicContentSize" width="69" height="18.5"/>
         </designable>
         <designable name="fVp-HW-1tH">
-            <size key="intrinsicContentSize" width="126.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="96.5" height="18.5"/>
         </designable>
         <designable name="gcM-uu-cdF">
-            <size key="intrinsicContentSize" width="112" height="18.5"/>
+            <size key="intrinsicContentSize" width="82" height="18.5"/>
         </designable>
         <designable name="k0q-nC-jZv">
-            <size key="intrinsicContentSize" width="92.5" height="17"/>
+            <size key="intrinsicContentSize" width="62.5" height="17"/>
         </designable>
         <designable name="lol-80-6nI">
-            <size key="intrinsicContentSize" width="78" height="18.5"/>
+            <size key="intrinsicContentSize" width="48" height="18.5"/>
         </designable>
         <designable name="lry-aI-N3N">
-            <size key="intrinsicContentSize" width="89" height="18.5"/>
+            <size key="intrinsicContentSize" width="59" height="18.5"/>
         </designable>
     </designables>
     <resources>

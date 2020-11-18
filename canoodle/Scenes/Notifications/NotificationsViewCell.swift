@@ -43,7 +43,19 @@ class NotificationsViewCell: UITableViewCell {
         self.notification = notification
         nameLabel.text = notification.userName
         messageLabel.text = notification.message
-        dateLabel.text = notification.notificationDate?.convertDateTimeFormatterForAPP()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a, MMM dd yyyy"
+        dateFormatter.timeZone = TimeZone.current
+
+        
+        let dateFormatter1 = DateFormatter()
+        dateFormatter1.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter1.timeZone = TimeZone(abbreviation: "UTC")
+
+        
+        let date = dateFormatter1.date(from: notification.notificationDate!)
+        dateLabel.text = dateFormatter.string(from: date!)
+        //dateLabel.text = notification.notificationDate?.convertDateTimeFormatterForAPP()
         if(notification.userImage != "") {
             profileImageView.setImage(with: notification.userImage, placeHolder: UIImage.init(named: "placeholder"))
             profileImageView.setImage(with: "\(notification.userImage!)", placeHolder: UIImage.init(named: "placeholder"))

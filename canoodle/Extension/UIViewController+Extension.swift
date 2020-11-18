@@ -156,10 +156,12 @@ extension UIViewController  {
     ///   - type: Type of Message
     func showTopMessage(message : String?, type : NotificationType, displayDuration: Double = 2) {
        
+        if(type == .Error) {
         #if canImport(TALogger)
-        let aStrType = type.rawValue == "Error" ? "Debug" :  type.rawValue
-        TALogger.shared.LogEvent(type: "Debug", name: aStrType, description: message ?? "")
-        #endif
+            let aStrType = type.rawValue == "Error" ? "Debug" :  type.rawValue
+            TALogger.shared.LogEvent(type: "Debug", name: aStrType, description: message ?? "")
+            #endif
+        }
         
         if let _ = message {
             let view: MessageView = MessageView.viewFromNib(layout: .cardView)

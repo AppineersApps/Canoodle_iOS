@@ -43,9 +43,11 @@ class MessagesViewCell: UITableViewCell {
         messageLabel.text = message.message
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h:mm a, MMM dd yyyy"
+        dateFormatter.timeZone = TimeZone.current
         
         let dateFormatter1 = DateFormatter()
         dateFormatter1.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter1.timeZone = TimeZone(abbreviation: "UTC")
         
         let date = dateFormatter1.date(from: message.updatedAt!)
         timeLabel.text = dateFormatter.string(from: date!)
@@ -57,7 +59,7 @@ class MessagesViewCell: UITableViewCell {
                 profileImageView.setImage(with: message.senderImage, placeHolder: UIImage.init(named: "placeholder"))
             }
             else {
-                profileImageView.image = UIImage.init(named: "watermark")
+                profileImageView.image = UIImage.init(named: "placeholder")
             }
         } else {
             nameLabel.text = message.receiverName
@@ -65,7 +67,7 @@ class MessagesViewCell: UITableViewCell {
                 profileImageView.setImage(with: message.receiverImage, placeHolder: UIImage.init(named: "placeholder"))
             }
             else {
-                profileImageView.image = UIImage.init(named: "watermark")
+                profileImageView.image = UIImage.init(named: "placeholder")
             }
         }
 

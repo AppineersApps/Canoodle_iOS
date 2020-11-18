@@ -173,6 +173,7 @@ class SignUpViewController: BaseViewController {
             txtFieldFirstName.text = facbookUserData["first_name"] as? String ?? ""
             txtFieldLastName.text = facbookUserData["last_name"] as? String ?? ""
             txtFieldEmail.text = facbookUserData["email"] as? String ?? ""
+            txtFieldEmail.isUserInteractionEnabled = false
             let faceBookId = facbookUserData["id"] as? String ?? ""
             self.imgProfile.setImage(with: "http://graph.facebook.com/\(faceBookId)/picture?type=large&redirect=true&width=500&height=500", placeHolder:  #imageLiteral(resourceName: "signup_default_user"))
             socialLoginId = facbookUserData["id"] as? String ?? ""
@@ -182,6 +183,7 @@ class SignUpViewController: BaseViewController {
             txtFieldFirstName.text = googleDict.profile.givenName ?? ""
             txtFieldLastName.text = googleDict.profile.familyName ?? ""
             txtFieldEmail.text = googleDict.profile.email ?? ""
+            txtFieldEmail.isUserInteractionEnabled = false
             self.imgProfile.setImage(with: googleDict.profile.imageURL(withDimension: 500).absoluteString, placeHolder: #imageLiteral(resourceName: "signup_default_user"))
             socialLoginId = googleDict.userID ?? ""
             let img = imgProfile.image ?? UIImage()
@@ -198,6 +200,7 @@ class SignUpViewController: BaseViewController {
                     txtFieldFirstName.text = KeychainItem.currentUserFirstName
                     txtFieldLastName.text = KeychainItem.currentUserLastName
                     txtFieldEmail.text = KeychainItem.currentUserEmail
+                    txtFieldEmail.isUserInteractionEnabled = false
                 }
             }
         }

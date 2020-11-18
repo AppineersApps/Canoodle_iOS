@@ -163,7 +163,7 @@ extension BreedsViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
 extension BreedsViewController: BreedsViewCellProtocol {
     func breedSelected(breed: Breeds.ViewModel) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             let vc: PetProfileViewController = (self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)! - 2])! as! PetProfileViewController as PetProfileViewController
             vc.breed = breed.breedName!
             self.navigationController?.popViewController(animated: true)
