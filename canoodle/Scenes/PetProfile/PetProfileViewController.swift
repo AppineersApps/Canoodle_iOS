@@ -106,6 +106,12 @@ class PetProfileViewController: BaseViewController
         self.navigationItem.leftBarButtonItem = nil
     }
   }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        petNameTextField.resignFirstResponder()
+        petAgeTextField.resignFirstResponder()
+        breedTextField.resignFirstResponder()
+    }
     
     func setPetData() {
         self.title = "Edit Pet Profile"
@@ -312,7 +318,7 @@ extension PetProfileViewController: PetProfileDisplayLogic {
     
     func didReceiveUpdatePetProfileResponse(message: String, success: String) {
         if success == "1" {
-            self.showTopMessage(message: "Media added successfully", type: .Success)
+            self.showTopMessage(message: "Profile updated successfully", type: .Success)
             if(onboarding) {
                  UserDefaultsManager.profileSetUpDone = "Yes"
                 if let aboutMeVC = AboutMeViewController.instance() {

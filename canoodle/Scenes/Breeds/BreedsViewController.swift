@@ -12,6 +12,7 @@
 
 import UIKit
 import CRRefresh
+import IQKeyboardManagerSwift
 
 
 protocol BreedsDisplayLogic: class
@@ -19,7 +20,7 @@ protocol BreedsDisplayLogic: class
     func didReceiveGetBreedsResponse(response: [Breeds.ViewModel]?, message: String, successCode: String)
 }
 
-class BreedsViewController: UIViewController
+class BreedsViewController: BaseViewController
 {
     @IBOutlet weak var breedCollectionView: UICollectionView!
     @IBOutlet weak var nextButton: UIButton!
@@ -100,6 +101,7 @@ class BreedsViewController: UIViewController
     breedCollectionView.cr.beginHeaderRefresh()
     
   }
+
   
   // MARK: Do something
   

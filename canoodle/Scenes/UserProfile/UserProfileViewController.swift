@@ -105,7 +105,7 @@ class UserProfileViewController: BaseViewControllerWithAd
     profileImageView.layer.cornerRadius = profileImageView.frame.width / 2
     profileImageView.layer.borderColor = AppConstants.appColor2!.cgColor
     profileImageView.layer.borderWidth = 2.0
-    scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 850)
+    scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 900)
   }
     
     /// Method is called when view will appears
@@ -136,6 +136,8 @@ class UserProfileViewController: BaseViewControllerWithAd
         profileImageView.setImage(with: "\(user.userImage!)", placeHolder: UIImage.init(named: "placeholder"))
         if(user.connectionStatus != "Like" && user.connectionStatus != "Match") {
             statusView.isHidden = false
+        } else {
+            statusView.isHidden = true
         }
         petNameLabel.text = user.petName
         if(user.petAge != "") {
@@ -151,7 +153,7 @@ class UserProfileViewController: BaseViewControllerWithAd
 
         adjustUITextViewHeight(arg: aboutTextView)
         adjustUITextViewHeight(arg: petAboutTextView)
-        aboutPetView.frame = CGRect(x: aboutPetView.frame.origin.x, y: aboutTextView.frame.origin.y + aboutTextView.frame.height + 30, width: aboutPetView.frame.width, height: aboutTextView.frame.height + 50)
+        aboutPetView.frame = CGRect(x: aboutPetView.frame.origin.x, y: aboutTextView.frame.origin.y + aboutTextView.frame.height + 30, width: aboutPetView.frame.width, height: petAboutTextView.frame.height + 50)
         setUpSlideshow()
     }
     
@@ -216,7 +218,9 @@ class UserProfileViewController: BaseViewControllerWithAd
        }
        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
 
-       optionMenu.addAction(blockAction)
+        if(user.connectionStatus == "Match") {
+            optionMenu.addAction(blockAction)
+        }
        optionMenu.addAction(reportAction)
        optionMenu.addAction(cancelAction)
            
@@ -322,7 +326,7 @@ extension UserProfileViewController: UserProfileDisplayLogic {
     
     func didReceiveBlockUserResponse(message: String, successCode: String) {
         if successCode == "1" {
-            self.showTopMessage(message: message, type: .Success)
+            self.showTopMessage(message: "Blocked user successfully", type: .Success)
             if let blockedUserVC = BlockedUserViewController.instance() {
                 self.navigationController?.pushViewController(blockedUserVC, animated: true)
             }

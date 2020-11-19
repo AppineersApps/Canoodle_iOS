@@ -225,7 +225,7 @@ extension LikeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if(UserDefaultsManager.getLoggedUserDetails()?.premiumStatus?.booleanStatus() == false) {
+        if((selectedSegmentIndex == 1) && (UserDefaultsManager.getLoggedUserDetails()?.premiumStatus?.booleanStatus() == false)) {
             self.displayAlert(msg: "Please Subscribe to see who liked your profile", ok: "Subscribe", cancel: "No", okAction: {
                 if let subscriptionVC = SubscriptionViewController.instance() {
                     self.navigationController?.pushViewController(subscriptionVC, animated: true)
@@ -241,7 +241,7 @@ extension LikeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: ((self.connectionsCollectionView.frame.width / 2) - 15), height: 180)
+        return CGSize(width: ((self.connectionsCollectionView.frame.width / 2) - 15), height: 185)
     }
 }
 

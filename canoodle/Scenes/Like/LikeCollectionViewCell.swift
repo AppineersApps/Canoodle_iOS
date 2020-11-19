@@ -23,7 +23,7 @@ class LikeCollectionViewCell: UICollectionViewCell {
     func setCellData(connection: Connection.ViewModel, index: Int) {
         nameLabel.text = connection.userName
         profileImageView.setImage(with: "\(connection.userImage!)", placeHolder: UIImage.init(named: "placeholder"))
-        if(index == 1) {
+        if(index == 1 && (UserDefaultsManager.getLoggedUserDetails()?.premiumStatus?.booleanStatus() ?? false == false)) {
            // blurImageView.setImage(with: "\(connection.userImage!)", placeHolder: UIImage.init(named: "placeholder"))
             blurImageView.isHidden = false
             blurImageView.addBlurEffect(9)
