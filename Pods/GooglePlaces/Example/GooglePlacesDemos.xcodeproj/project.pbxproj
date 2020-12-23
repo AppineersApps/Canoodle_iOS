@@ -240,7 +240,6 @@
 		B0EA45FFFB815F6F5A3E1BDD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
 			};
 			buildConfigurationList = 63964CA36C9733EFF27C66CD /* Build configuration list for PBXProject "GooglePlacesDemos" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -255,15 +254,15 @@
 				da,
 				de,
 				el,
-				"en-AU",
-				"en-GB",
-				"en-IN",
+				en_AU,
+				en_GB,
+				en_IN,
 				es,
-				"es-419",
-				"es-MX",
+				es_419,
+				es_MX,
 				fi,
 				fr,
-				"fr-CA",
+				fr_CA,
 				he,
 				hi,
 				hr,
@@ -277,8 +276,8 @@
 				nl,
 				pl,
 				pt,
-				"pt-BR",
-				"pt-PT",
+				pt_BR,
+				pt_PT,
 				ro,
 				ru,
 				sk,
@@ -287,9 +286,9 @@
 				tr,
 				uk,
 				vi,
-				"zh-Hans",
-				"zh-HK",
-				"zh-Hant",
+				zh_CN,
+				zh_HK,
+				zh_TW,
 			);
 			mainGroup = 7C4A8D45D6D1B907A8C0521E;
 			projectDirPath = "";
@@ -409,16 +408,21 @@
 		C88A918BB441623AA489A34D /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"ARCHS[sdk=iphonesimulator*]" = (
+					i386,
+					x86_64,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ./GooglePlacesDemos/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
 					.,
 					"$(SDKROOT)/System/Library/Frameworks",
 				);
 				PRODUCT_NAME = GooglePlacesDemos;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)";
 				USE_HEADERMAP = NO;

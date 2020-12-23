@@ -28,6 +28,7 @@ enum User {
         var city : String?
         var state : String?
         var connectionStatus: String?
+        var reverseConnectionStatus: String?
         var petId: String?
         var petName: String?
         var petAge: String?
@@ -47,6 +48,7 @@ enum User {
             case city
             case state
             case connection_type_by_logged_user
+            case connection_type_by_receiver_user
             case pet_id
             case pet_name
             case pet_age
@@ -67,6 +69,7 @@ enum User {
             try container.encode(city, forKey: .city)
             try container.encode(state, forKey: .state)
             try container.encode(connectionStatus, forKey: .connection_type_by_logged_user)
+            try container.encode(reverseConnectionStatus, forKey: .connection_type_by_receiver_user)
             try container.encode(petId, forKey: .pet_id)
             try container.encode(petName, forKey: .pet_name)
             try container.encode(petAge, forKey: .pet_age)
@@ -87,6 +90,7 @@ enum User {
             city = try values.decodeIfPresent(String.self, forKey: .city)
             state = try values.decodeIfPresent(String.self, forKey: .state)
             connectionStatus = try values.decodeIfPresent(String.self, forKey: .connection_type_by_logged_user)
+            reverseConnectionStatus = try values.decodeIfPresent(String.self, forKey: .connection_type_by_receiver_user)
             petId = try values.decodeIfPresent(String.self, forKey: .pet_id)
             petName = try values.decodeIfPresent(String.self, forKey: .pet_name)
             petAge = try values.decodeIfPresent(String.self, forKey: .pet_age)

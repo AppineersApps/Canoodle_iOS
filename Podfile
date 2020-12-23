@@ -39,15 +39,6 @@ target 'canoodle' do
   # Google places search
   pod 'GooglePlaces'
   
-  # Firebase Crashlytics &  Analytics
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Crashlytics'
-  pod 'Firebase/Core'
-  pod 'Firebase/Auth'
-  pod 'MessageKit'
-  pod 'Firebase/Firestore'
-  pod 'SDWebImage'
-  
   # Google Ads
   pod 'Google-Mobile-Ads-SDK'
   
@@ -70,6 +61,14 @@ target 'canoodle' do
    pod "ImageSlideshow/Kingfisher"
  
    pod 'Firebase/Messaging'
+   # Firebase Crashlytics &  Analytics
+   pod 'Firebase/Crashlytics'
+   pod 'Firebase/Analytics'
+   pod 'Firebase/Core'
+   pod 'Firebase/Auth'
+   pod 'MessageKit'
+   pod 'Firebase/Firestore'
+   pod 'SDWebImage'
 
 end
 

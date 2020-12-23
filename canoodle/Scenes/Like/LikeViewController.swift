@@ -20,7 +20,7 @@ protocol LikeDisplayLogic: class
 class LikeViewController: BaseViewControllerWithAd
 {
     @IBOutlet weak var viewAd: UIView!
-    @IBOutlet weak var overlayView: UIView!
+    @IBOutlet weak var subscribeView: UIView!
     @IBOutlet weak var likedButton: UIButton!
     @IBOutlet weak var likedMeButton: UIButton!
     @IBOutlet weak var likeCountLabel: UILabel!
@@ -132,10 +132,6 @@ class LikeViewController: BaseViewControllerWithAd
     }
     
     @IBAction func likedMeButtonTapped(_ sender: WLButton) {
-        if(UserDefaultsManager.getLoggedUserDetails()?.premiumStatus?.booleanStatus() == false) {
-            overlayView.frame = CGRect(x: 0, y: connectionsTableView.frame.origin.y, width: self.view.frame.width, height: connectionsTableView.frame.height)
-            //detailView.addSubview(overlayView)
-        }
         likedButton.setBackgroundImage(UIImage.init(named: "greyRectBg"), for: UIControl.State.normal)
         likedMeButton.setBackgroundImage(UIImage.init(named: "purpleRectBg"), for: UIControl.State.normal)
         selectedSegmentIndex = 1
@@ -158,6 +154,22 @@ class LikeViewController: BaseViewControllerWithAd
     func getConnections(type: String) {
         let request = Connection.Request(connectionType: type)
         interactor?.getConnections(request: request)
+    }
+    
+    func showSubscribeView() {
+        subscribeView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.view.addSubview(subscribeView)
+    }
+    
+    @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        subscribeView.removeFromSuperview()
+    }
+    
+    @IBAction func subscribeButtonTapped(_ sender: UIButton) {
+        subscribeView.removeFromSuperview()
+        if let subscriptionVC = SubscriptionViewController.instance() {
+            self.navigationController?.pushViewController(subscriptionVC, animated: true)
+        }
     }
 }
 
@@ -226,11 +238,7 @@ extension LikeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if((selectedSegmentIndex == 1) && (UserDefaultsManager.getLoggedUserDetails()?.premiumStatus?.booleanStatus() == false)) {
-            self.displayAlert(msg: "Please Subscribe to see who liked your profile", ok: "Subscribe", cancel: "No", okAction: {
-                if let subscriptionVC = SubscriptionViewController.instance() {
-                    self.navigationController?.pushViewController(subscriptionVC, animated: true)
-                }
-            }, cancelAction: nil)
+            showSubscribeView()
         } else {
             if let userProfileVC = UserProfileViewController.instance() {
                 let user: Connection.ViewModel = connectionsList[indexPath.row]

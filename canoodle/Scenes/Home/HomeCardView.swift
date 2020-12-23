@@ -10,6 +10,7 @@ import UIKit
 
 protocol HomeCardViewProtocol: AnyObject {
     func swipedCard(user: User.ViewModel, type: SwipeType)
+    func showProfile(user: User.ViewModel)
 }
 
 enum SwipeType : String {
@@ -224,8 +225,13 @@ class HomeCardView: UIView {
         imageView.frame = CGRect.init(x: self.frame.width/2 - 60, y: self.frame.height/2 - 60, width: 120, height:  120)
         self.addSubview(imageView)
     }
+    @IBAction func viewProfileAction(_ sender: Any) {
+        delegate?.showProfile(user: self.user)
+    }
     
     @IBAction func skipAction(_ sender: Any) {
+        GlobalUtility.addClickEvent()
+
         UIView.animate(withDuration: 0.3,
                        delay: 0.0,
                        options: [.curveEaseInOut, .allowUserInteraction],

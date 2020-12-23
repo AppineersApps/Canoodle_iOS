@@ -16,7 +16,7 @@ struct AppConstants {
     static let appColor = UIColor(named: "AppColor")
     static let appColor2 = UIColor(named: "AppColor2")
     /// App Name
-    static let appName = "canoodle"
+    static let appName = "Canoodle"
     /// App delegate object
     static let appDelegate = UIApplication.shared.delegate as? AppDelegate ?? AppDelegate()
     /// Screen width

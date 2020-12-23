@@ -64,7 +64,13 @@ enum GetMessageAPIRouter: GetRouterProtocol {
     
     /// Headers for the url request
     var headers: [String: String]? {
-        return ["Content-Type": "application/x-www-form-urlencoded", "AUTHTOKEN": UserDefaultsManager.getLoggedUserDetails()?.authToken ?? ""]
+        switch self {
+            case .getMessages:
+                return ["Content-Type": "application/x-www-form-urlencoded", "AUTHTOKEN": UserDefaultsManager.getLoggedUserDetails()?.authToken ?? ""]
+            case .deleteMessage:
+                return ["Content-Type": "application/json", "AUTHTOKEN": UserDefaultsManager.getLoggedUserDetails()?.authToken ?? ""]
+        }
+
     }
 
     /// Get Device Info

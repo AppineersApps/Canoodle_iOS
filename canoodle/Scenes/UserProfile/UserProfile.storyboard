@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -54,26 +54,6 @@
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zpH-rm-L5y">
-                                                                        <rect key="frame" x="135" y="194" width="104" height="45"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                        <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyL-Tr-HO0">
-                                                                                <rect key="frame" x="1" y="-2" width="50" height="50"/>
-                                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                <state key="normal" image="icon_yes"/>
-                                                                                <connections>
-                                                                                    <action selector="likeButtonTapped:" destination="QPJ-m7-5G5" eventType="touchUpInside" id="Of4-wy-1IG"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pjz-cn-1oO">
-                                                                                <rect key="frame" x="54" y="-2" width="50" height="50"/>
-                                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                <state key="normal" image="icon_no"/>
-                                                                            </button>
-                                                                        </subviews>
-                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    </view>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             </view>
@@ -125,6 +105,36 @@
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </imageView>
+                                                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zpH-rm-L5y">
+                                                                        <rect key="frame" x="263" y="8" width="104" height="45"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyL-Tr-HO0">
+                                                                                <rect key="frame" x="1" y="-2" width="50" height="50"/>
+                                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                                <state key="normal" image="icon_no"/>
+                                                                                <connections>
+                                                                                    <action selector="unlikeButtonTapped:" destination="QPJ-m7-5G5" eventType="touchUpInside" id="h3H-e4-4AV"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pjz-cn-1oO">
+                                                                                <rect key="frame" x="54" y="-2" width="50" height="50"/>
+                                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                                <state key="normal" image="icon_like"/>
+                                                                                <connections>
+                                                                                    <action selector="likeButtonTapped:" destination="QPJ-m7-5G5" eventType="touchUpInside" id="Eat-Z4-Wcb"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </view>
+                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKp-m1-DVz">
+                                                                        <rect key="frame" x="8" y="2" width="55" height="56"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <connections>
+                                                                            <action selector="btnImagedetailsAction:" destination="QPJ-m7-5G5" eventType="touchUpInside" id="ZlG-LY-jRG"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             </view>
@@ -266,6 +276,8 @@
                         <outlet property="profileImageView" destination="uwh-Kn-U9X" id="tU2-pr-xS2"/>
                         <outlet property="scrollView" destination="mYz-iw-4vv" id="sPc-PP-G8t"/>
                         <outlet property="slideshow" destination="R6L-F3-Gya" id="f2b-xQ-nD6"/>
+                        <outlet property="status1Button" destination="Pjz-cn-1oO" id="ZDA-a1-g4f"/>
+                        <outlet property="status2Button" destination="jyL-Tr-HO0" id="dDz-0a-JL5"/>
                         <outlet property="statusView" destination="zpH-rm-L5y" id="2xS-BH-ATL"/>
                         <outlet property="viewAd" destination="3FV-FH-neU" id="TNW-6T-jFM"/>
                     </connections>
@@ -276,9 +288,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_like" width="50" height="50"/>
         <image name="icon_no" width="50" height="50"/>
         <image name="icon_options" width="9" height="24"/>
-        <image name="icon_yes" width="50" height="50"/>
         <image name="placeholder" width="1024" height="1024"/>
         <image name="watermark" width="303" height="52"/>
         <namedColor name="AppColor">

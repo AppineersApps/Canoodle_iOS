@@ -10,6 +10,7 @@ import UIKit
 
 protocol CanoodleViewCellProtocol: AnyObject {
     func messageUser(user: Connection.ViewModel)
+    func showProfileImage(user: Connection.ViewModel)
 }
 
 class CanoodleViewCell: UITableViewCell {
@@ -45,4 +46,9 @@ class CanoodleViewCell: UITableViewCell {
     @IBAction func btnChatAction(_ sender: Any) {
         self.delegate?.messageUser(user: self.user)
     }
+    
+    @IBAction func btnImagedetailsAction(_ sender: Any) {
+        delegate?.showProfileImage(user: self.user)
+    }
+    
 }

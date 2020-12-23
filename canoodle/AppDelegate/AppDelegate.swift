@@ -37,9 +37,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         initialSetup()
+        self.window?.backgroundColor = UIColor.white
         // If app luanch using tapping notification
         if let userInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [AnyHashable : Any] {
             print("Notification Info :: ", userInfo)
+            NSLog("Notification userinfo: \(userInfo)")
+            let type = userInfo["type"] as! String
+            let currVC = GlobalUtility.shared.topViewController(withRootViewController: GlobalUtility.shared.currentTopViewController())
+
+            if(type == "Message") {
+                if (UserDefaultsManager.getLoggedUserDetails() != nil) {
+                    if let chatVC = ChatViewController.instance() {
+                        let connection = Connection.ViewModel.init(dictionary: ["user_id": userInfo["receiver_id"] as! String, "user_name": userInfo["user_name"], "user_image": userInfo["user_image"]])
+                        chatVC.setConnection(connection: connection!)
+
+                      //  self.navigationController?.pushViewController(chatVC, animated: false)
+                        currVC.present(chatVC, animated: false)
+
+                    }
+                } else {
+                    //GlobalUtility.redirectToLogin()
+                }
+            } else {
+                if (UserDefaultsManager.getLoggedUserDetails() != nil) {
+                    if let userProfileVC = UserProfileViewController.instance() {
+                        userProfileVC.userId = userInfo["receiver_id"] as! String
+                       // self.navigationController?.pushViewController(userProfileVC, animated: false)
+                        currVC.present(userProfileVC, animated: false)
+
+                    }
+                } else {
+                    //GlobalUtility.redirectToLogin()
+                }
+            }
         }
         
         FirebaseApp.configure()

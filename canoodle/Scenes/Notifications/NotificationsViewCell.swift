@@ -11,6 +11,7 @@ import UIKit
 protocol NotificationsViewCellProtocol: AnyObject {
     func messageUser(notification: Notification.ViewModel)
     func showUser(notification: Notification.ViewModel)
+    func showProfileImage(userImage: String)
 }
 
 class NotificationsViewCell: UITableViewCell {
@@ -94,4 +95,7 @@ class NotificationsViewCell: UITableViewCell {
         }
     }
     
+    @IBAction func btnImagedetailsAction(_ sender: Any) {
+        delegate?.showProfileImage(userImage: self.notification.userImage!)
+    }
 }

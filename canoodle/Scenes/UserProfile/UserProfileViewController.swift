@@ -38,6 +38,8 @@ class UserProfileViewController: BaseViewControllerWithAd
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var aboutPetView: UIView!
+    @IBOutlet weak var status1Button: UIButton!
+    @IBOutlet weak var status2Button: UIButton!
 
 
   var interactor: UserProfileBusinessLogic?
@@ -49,6 +51,7 @@ class UserProfileViewController: BaseViewControllerWithAd
 
     var localSource: [KingfisherSource] = []
     
+    var connStatus: String!
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -105,7 +108,7 @@ class UserProfileViewController: BaseViewControllerWithAd
     profileImageView.layer.cornerRadius = profileImageView.frame.width / 2
     profileImageView.layer.borderColor = AppConstants.appColor2!.cgColor
     profileImageView.layer.borderWidth = 2.0
-    scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 900)
+    scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 1200)
   }
     
     /// Method is called when view will appears
@@ -134,11 +137,19 @@ class UserProfileViewController: BaseViewControllerWithAd
             aboutTextView.text = user.description
         }
         profileImageView.setImage(with: "\(user.userImage!)", placeHolder: UIImage.init(named: "placeholder"))
-        if(user.connectionStatus != "Like" && user.connectionStatus != "Match") {
+        if(user.connectionStatus != "Like" && user.connectionStatus != "Match" && user.connectionStatus != "Unlike") {
             statusView.isHidden = false
         } else {
             statusView.isHidden = true
         }
+        
+        if(user.connectionStatus == "Like" && user.reverseConnectionStatus == "Like") {
+            status2Button.setImage(UIImage.init(named: "Chat"), for: UIControl.State.normal)
+            status1Button.isHidden = true
+            statusView.isHidden = false
+        }
+        
+        
         petNameLabel.text = user.petName
         if(user.petAge != "") {
             petAgeLabel.text = "\(user.petAge!) years"
@@ -153,7 +164,7 @@ class UserProfileViewController: BaseViewControllerWithAd
 
         adjustUITextViewHeight(arg: aboutTextView)
         adjustUITextViewHeight(arg: petAboutTextView)
-        aboutPetView.frame = CGRect(x: aboutPetView.frame.origin.x, y: aboutTextView.frame.origin.y + aboutTextView.frame.height + 30, width: aboutPetView.frame.width, height: petAboutTextView.frame.height + 50)
+        aboutPetView.frame = CGRect(x: aboutPetView.frame.origin.x, y: aboutTextView.frame.origin.y + aboutTextView.frame.height + 30, width: aboutPetView.frame.width, height: petAboutTextView.frame.height + 200)
         setUpSlideshow()
     }
     
@@ -189,11 +200,24 @@ class UserProfileViewController: BaseViewControllerWithAd
         }
         slideshow.setImageInputs(localSource)
 
-       /* if((item?.imageUrls.count)! > 0) {
-            let recognizer = UITapGestureRecognizer(target: self, action: #selector(ItemListTableViewCell.didTap))
+        if((medias.count) > 0) {
+            let recognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
             slideshow.addGestureRecognizer(recognizer)
-        }*/
+        }
         slideshow.bringSubviewToFront(statusView)
+    }
+    
+    @objc func didTap() {
+        let fullScreenController = slideshow.presentFullScreenController(from: self)
+        // set the activity indicator for full screen controller (skipping the line will show no activity indicator)
+       fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
+    }
+    
+    @IBAction func btnImagedetailsAction(_ sender: Any) {
+            if let customPopUp = ImageDetailsViewController.instance() {
+                customPopUp.imgStr = self.user.userImage ?? ""
+                self.present(customPopUp, animated: true, completion: nil)
+            }
     }
     
     func filterMedia() {
@@ -218,7 +242,7 @@ class UserProfileViewController: BaseViewControllerWithAd
        }
        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
 
-        if(user.connectionStatus == "Match") {
+        if(user.connectionStatus == "Like" && user.reverseConnectionStatus == "Like") {
             optionMenu.addAction(blockAction)
         }
        optionMenu.addAction(reportAction)
@@ -250,13 +274,23 @@ class UserProfileViewController: BaseViewControllerWithAd
     
     
     @IBAction func likeButtonTapped(_ sender: Any) {
+        GlobalUtility.addClickEvent()
         self.addAnayltics(analyticsParameterItemID: "id-likeprofile", analyticsParameterItemName: "click_likeprofile", analyticsParameterContentType: "click_likeprofile")
         setConnection(userId: user.userId!, type: "Like")
     }
     
     @IBAction func unlikeButtonTapped(_ sender: Any) {
-        self.addAnayltics(analyticsParameterItemID: "id-unlikeprofile", analyticsParameterItemName: "click_unlikeprofile", analyticsParameterContentType: "click_unlikeprofile")
-       // setConnection(userId: user.userId!, type: "Unlike")
+        if(user.connectionStatus == "Like" && user.reverseConnectionStatus == "Like") {
+            if let chatVC = ChatViewController.instance() {
+                let connection = Connection.ViewModel.init(dictionary: ["user_id": self.user.userId, "user_name": self.user.userName, "user_image": self.user.userImage])
+                chatVC.setConnection(connection: connection!)
+                self.navigationController?.pushViewController(chatVC, animated: true)
+            }
+        } else {
+            self.addAnayltics(analyticsParameterItemID: "id-unlikeprofile", analyticsParameterItemName: "click_unlikeprofile", analyticsParameterContentType: "click_unlikeprofile")
+            setConnection(userId: user.userId!, type: "Unlike")
+            self.navigationController?.popViewController(animated: false)
+        }
     }
   
   // MARK: Do something
@@ -271,17 +305,20 @@ class UserProfileViewController: BaseViewControllerWithAd
     }
     
     func setConnection(userId: String, type: String) {
+        connStatus = type
         let request = SetConnection.Request(connectionUserId: userId, connectionType: type)
         interactor?.setConnection(request: request)
     }
     
     func reportUser(otherUserId: String, message: String) {
+        GlobalUtility.addClickEvent()
         self.addAnayltics(analyticsParameterItemID: "id-reportuserclick", analyticsParameterItemName: "click_reportuser", analyticsParameterContentType: "click_reportuser")
         let request = ReportUser.Request(reportOn: otherUserId, message: message)
         interactor?.reportUser(request: request)
     }
     
     func blockUser() {
+        GlobalUtility.addClickEvent()
         self.addAnayltics(analyticsParameterItemID: "id-blockuserclick", analyticsParameterItemName: "click_blockuser", analyticsParameterContentType: "click_blockuser")
         let request = BlockUser.Request(connectionUserId: self.userId, connectionType: "Block")
         interactor?.blockUser(request: request)
@@ -310,6 +347,17 @@ extension UserProfileViewController: UserProfileDisplayLogic {
     func didReceiveSetConnectionResponse(message: String, successCode: String) {
         if successCode == "1" {
            // self.showTopMessage(message: message, type: .Success)
+           /* if(connStatus == "Unlike") {
+                self.navigationController?.popViewController(animated: false)
+            } else if(connStatus == "Like" && user.reverseConnectionStatus == "Like"){
+                if let canoodleVC = CanoodleViewController.instance() {
+                    self.navigationController?.pushViewController(canoodleVC, animated: true)
+                }
+            } else {
+                if let likeVC = LikeViewController.instance() {
+                    self.navigationController?.pushViewController(likeVC, animated: true)
+                }
+            }*/
             getUserProfile()
         } else {
             self.showTopMessage(message: message, type: .Error)

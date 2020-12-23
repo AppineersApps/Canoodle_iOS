@@ -34,7 +34,7 @@ private class SVPinViewFlowLayout: UICollectionViewFlowLayout {
     override var flipsHorizontallyInOppositeLayoutDirection: Bool { return true }
 }
 
-@objc
+@objcMembers
 public class SVPinView: UIView {
     
     // MARK: - Private Properties -
@@ -106,7 +106,7 @@ public class SVPinView: UIView {
         view = nib.instantiate(withOwner: self, options: nil)[0] as? UIView
         
         // for CollectionView
-        let collectionViewNib = UINib(nibName: "SVPinCell", bundle:podBundle)
+        let collectionViewNib = UINib(nibName: "SVPinCell", bundle: podBundle)
         collectionView.register(collectionViewNib, forCellWithReuseIdentifier: reuseIdentifier)
         flowLayout.scrollDirection = .vertical
         collectionView.isScrollEnabled = false
@@ -442,7 +442,7 @@ extension SVPinView : UITextFieldDelegate
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if (string == UIPasteboard.general.string) || (isContentTypeOneTimeCode && string.count >= pinLength) {
+        if (string.count >= pinLength) && (string == UIPasteboard.general.string || isContentTypeOneTimeCode) {
             textField.resignFirstResponder()
             DispatchQueue.main.async { self.pastePin(pin: string) }
             return false

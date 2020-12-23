@@ -189,6 +189,11 @@ class HomeFilterViewController: BaseViewController, HomeFilterDisplayLogic
         UserDefaultsManager.setFilter(filter: filter!)
     }
     
+    @IBAction func resetButtonPressed(sender: UIButton) {
+        UserDefaultsManager.resetFilter()
+        setUpLayout()
+    }
+    
     @IBAction func cancelButtonPressed(sender: UIBarButtonItem!) {
         
     }

@@ -270,6 +270,13 @@ extension NotificationsViewController: NotificationsViewCellProtocol {
             self.navigationController?.pushViewController(userProfileVC, animated: true)
         }
     }
+    
+    func showProfileImage(userImage: String) {
+        if let customPopUp = ImageDetailsViewController.instance() {
+            customPopUp.imgStr = userImage ?? ""
+            self.present(customPopUp, animated: true, completion: nil)
+        }
+    }
 }
 
 extension NotificationsViewController: NotificationsDisplayLogic {

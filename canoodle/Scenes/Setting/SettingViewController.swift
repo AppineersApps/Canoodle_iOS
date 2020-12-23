@@ -547,6 +547,7 @@ extension SettingViewController: SettingDisplayLogic {
     func logout(message: String, Success: String) {
         self.addAnayltics(analyticsParameterItemID: "id-logout", analyticsParameterItemName: "click_logout", analyticsParameterContentType: "click_logout")
         if Success == "1" {
+            UserDefaultsManager.resetFilter()
             self.router?.redirectToLogin()
         } else {
             self.showTopMessage(message: message, type: .Error)

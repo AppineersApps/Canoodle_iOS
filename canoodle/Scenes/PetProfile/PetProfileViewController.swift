@@ -27,6 +27,8 @@ class PetProfileViewController: BaseViewController
     @IBOutlet weak var breedTextField: UITextField!
     @IBOutlet weak var descTextView: UITextView!
     @IBOutlet weak var akcSwitch: UISwitch!
+    @IBOutlet weak var lblDescriptionCharacterCount: UILabel!
+
 
   var interactor: PetProfileBusinessLogic?
   var router: (NSObjectProtocol & PetProfileRoutingLogic & PetProfileDataPassing)?
@@ -119,6 +121,7 @@ class PetProfileViewController: BaseViewController
         petAgeTextField.text = user.petAge
         breedTextField.text = user.breed
         descTextView.text = user.petDescription
+        self.lblDescriptionCharacterCount.text = "(\(descTextView.text.count)/1000)"
         if(user.akcRegistered == "yes") {
             akcSwitch.isOn = true
         } else {
@@ -207,6 +210,12 @@ class PetProfileViewController: BaseViewController
             self.showSimpleAlert(message: "Please add atleast one media")
             return
         }
+        
+        if(petId != "" && imageArray.count == 0 && medias.count == 0) {
+            self.showSimpleAlert(message: "Please add atleast one media")
+            return
+        }
+        
         let request = UpdatePetProfile.Request(petId: petId, petName: petNameTextField.text!, breed: breedTextField.text!, petAge: petAgeTextField.text!, akcRegistered: akc, description: descTextView.text)
         interactor?.updatePetProfile(request: request)
     }
@@ -227,6 +236,14 @@ class PetProfileViewController: BaseViewController
         self.addAnayltics(analyticsParameterItemID: "id-imagedelete", analyticsParameterItemName: "click_imagedelete", analyticsParameterContentType: "click_imagedelete")
         let request = DeleteMedia.Request(media_id: mediaId)
         interactor?.deleteMedia(request: request)
+    }
+    
+    @IBAction func breedButtonTapped(_ sender: Any) {
+        petNameTextField.resignFirstResponder()
+        petAgeTextField.resignFirstResponder()
+        if let breedsVC = BreedsViewController.instance() {
+            self.navigationController?.pushViewController(breedsVC, animated: true)
+        }
     }
 }
 
@@ -302,6 +319,21 @@ extension PetProfileViewController: UITextFieldDelegate {
                 self.navigationController?.pushViewController(breedsVC, animated: true)
             }
         }
+    }
+    
+    /// Method is called when textview text changes
+    ///
+    /// - Parameter textView: TextView
+    func textViewDidChange(_ textView: UITextView) {
+        textView.layer.borderColor = UIColor.lightGray.cgColor
+        textView.layer.borderWidth = 1.0
+        textView.layer.cornerRadius = 16.0
+        if textView.text.count > 1000 {
+            var str = textView.text ?? ""
+            str = String(str.prefix(1000))
+            self.descTextView.text = str
+        }
+        self.lblDescriptionCharacterCount.text = "(\(textView.text.count)/1000)"
     }
 }
 

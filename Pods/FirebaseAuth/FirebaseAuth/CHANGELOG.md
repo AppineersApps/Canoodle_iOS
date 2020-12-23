@@ -1,3 +1,20 @@
+# 7.1.0
+- [fixed] Fixed completion handler issue in `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)` method. (#6863)
+
+# 7.0.0
+- [removed] Remove deprecated APIs `dataForKey`,`fetchProvidersForEmail:completion`, `signInAndRetrieveDataWithCredential:completion`, `reauthenticateAndRetrieveDataWithCredential:completion`, `linkAndRetrieveDataWithCredential:completion`. (#6607)
+- [added] Add support for the auth emulator. (#6624)
+- [changed] The global variables `FirebaseAuthVersionNum` and `FirebaseAuthVersionStr` are deleted.
+  `FirebaseVersion()` or `FIRFirebaseVersion()` should be used instead.
+
+# v6.9.1
+- [fixed] Internal source documentation. (#6371)
+
+# v6.9.0
+- [added] Added support for multi-tenancy (#6142).
+- [added] Added basic watchOS support. (#4621)
+- [changed] Improved Xcode completion of public API completion handlers in Swift. (#6283)
+
 # v6.8.0
 - [fixed] Fix bug where multiple keychain entries would result in user persistence failure. (#5906)
 - [changed] Added support for using GOOGLE_APP_ID in generic IDP and phone auth reCAPTCHA fallback flows. (#6121)

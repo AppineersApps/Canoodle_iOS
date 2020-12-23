@@ -29,7 +29,7 @@ class HomeViewController: BaseViewControllerWithAd {
     @IBOutlet weak var viewAd: UIView!
     @IBOutlet weak var cardHolderView: UIView!
     @IBOutlet weak var detailView: UIView!
-
+    @IBOutlet weak var subscribeView: UIView!
     
     var homeCardViews: [HomeCardView] = []
     
@@ -80,7 +80,6 @@ class HomeViewController: BaseViewControllerWithAd {
         self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false)
         self.addAnayltics(analyticsParameterItemID: "id-homescreen", analyticsParameterItemName: "view_homescreen", analyticsParameterContentType: "view_homescreen")
         //addForceCrashButton()
-        getUsers()
     }
     
     func setUpHomeCardViews() {
@@ -166,6 +165,7 @@ class HomeViewController: BaseViewControllerWithAd {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.setAddMobView(viewAdd: self.viewAd)
+        getUsers()
     }
     
     /// Method is called when view will appears
@@ -196,7 +196,16 @@ class HomeViewController: BaseViewControllerWithAd {
 
 
 extension HomeViewController: HomeCardViewProtocol {
+    func showProfile(user: User.ViewModel) {
+        if let userProfileVC = UserProfileViewController.instance() {
+            userProfileVC.userId = user.userId!
+            self.navigationController?.pushViewController(userProfileVC, animated: true)
+        }
+    }
+    
     func swipedCard(user: User.ViewModel, type: SwipeType) {
+        GlobalUtility.addClickEvent()
+
         if(type == SwipeType.Right) {
            //showCollabView()
             #if canImport(TALogger)
@@ -210,6 +219,22 @@ extension HomeViewController: HomeCardViewProtocol {
             #endif
             self.addAnayltics(analyticsParameterItemID: "id-unlikeprofile", analyticsParameterItemName: "click_unlikeprofile", analyticsParameterContentType: "click_unlikeprofile")
             setConnection(userId: user.userId!, type: "Unlike")
+        }
+    }
+    
+    func showSubscribeView() {
+        subscribeView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.view.addSubview(subscribeView)
+    }
+    
+    @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        subscribeView.removeFromSuperview()
+    }
+    
+    @IBAction func subscribeButtonTapped(_ sender: UIButton) {
+        subscribeView.removeFromSuperview()
+        if let subscriptionVC = SubscriptionViewController.instance() {
+            self.navigationController?.pushViewController(subscriptionVC, animated: true)
         }
     }
 }
@@ -236,6 +261,9 @@ extension HomeViewController: HomeDisplayLogic {
         if successCode == "1" {
             //self.showTopMessage(message: "User liked successfully", type: .Success)
         } else {
+            if(message.contains("exceeded")) {
+                showSubscribeView()
+            }
             self.showTopMessage(message: message, type: .Error)
         }
     }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class WLButton: UIButton {
+@IBDesignable class WLButton: UIButton {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -17,6 +17,34 @@ class WLButton: UIButton {
     }
     */
     
-   
+    /// Sets corner radius for textfield
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+        }
+    }
+    
+    /// Sets corner radius for textfield
+    @IBInspectable var borderColor: UIColor {
+        get {
+            return UIColor.clear
+        }
+        set {
+            layer.borderColor = newValue.cgColor
+        }
+    }
+    
+    /// Sets corner radius for textfield
+    @IBInspectable var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
 
 }

@@ -156,7 +156,7 @@ extension BlockedUserViewController: BlockedUserDisplayLogic {
     
     func didReceiveUnblockUserResponse(message: String, successCode: String) {
         if successCode == "1" {
-            self.showTopMessage(message: message, type: .Success)
+            self.showTopMessage(message: "User unblocked successfully", type: .Success)
             getBlockedUsers()
         } else {
             self.showTopMessage(message: message, type: .Error)

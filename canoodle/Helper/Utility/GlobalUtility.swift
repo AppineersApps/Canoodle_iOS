@@ -49,6 +49,13 @@ import TALogger
         }
     }
     
+    // Interstitial Ad Event
+    class func addClickEvent() {
+        if !(UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false) {
+            WhiteLabelSessionHandler.shared.addCount += 1
+        }
+    }
+    
     /// Get Navigation bar Button
     ///
     /// - Parameters:
@@ -93,6 +100,24 @@ import TALogger
             topVC = topVC?.presentedViewController
         }
         return topVC!
+    }
+    
+    func topViewController(withRootViewController rootViewController: UIViewController) -> UIViewController {
+        if (rootViewController is UITabBarController) {
+            let tabBarController = (rootViewController as! UITabBarController)
+            return self.topViewController(withRootViewController: tabBarController.selectedViewController!)
+        }
+        else if (rootViewController is UINavigationController) {
+            let navigationController = (rootViewController as! UINavigationController)
+            return self.topViewController(withRootViewController: navigationController.visibleViewController!)
+        }
+        else if (rootViewController.presentedViewController != nil) {
+            let presentedViewController = rootViewController.presentedViewController
+            return self.topViewController(withRootViewController: presentedViewController!)
+        }
+        else {
+            return rootViewController
+        }
     }
     
     /// Get Json String from any Object

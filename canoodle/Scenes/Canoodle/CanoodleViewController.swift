@@ -166,6 +166,13 @@ extension CanoodleViewController: CanoodleViewCellProtocol {
             self.navigationController?.pushViewController(chatVC, animated: true)
         }
     }
+    
+    func showProfileImage(user: Connection.ViewModel) {
+        if let customPopUp = ImageDetailsViewController.instance() {
+            customPopUp.imgStr = user.userImage ?? ""
+            self.present(customPopUp, animated: true, completion: nil)
+        }
+    }
 }
 
 

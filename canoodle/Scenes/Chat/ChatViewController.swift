@@ -13,7 +13,7 @@ import MessageKit
 import FirebaseFirestore
 import SDWebImage
 import Foundation
-
+import IQKeyboardManagerSwift
 
 
 protocol ChatDisplayLogic: class
@@ -90,6 +90,8 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = UIColor.white
         let userData = UserDefaultsManager.getLoggedUserDetails()
         user1UID = userData?.userId as! String
         user1Name = userData?.userName as! String
@@ -106,7 +108,21 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
         configureMessageInputBar()
         self.addAnayltics(analyticsParameterItemID: "id-chatscreen", analyticsParameterItemName: "view_chatscreen", analyticsParameterContentType: "view_chatscreen")
         loadChat()
+        /*DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+             self.messagesCollectionView.scrollToBottom(animated: true)
+        }*/
     }
+    
+    override func viewDidAppear(_ animated:Bool) {
+            super.viewDidAppear(animated)
+            IQKeyboardManager.shared.enable = false
+        }
+
+
+     override func viewDidDisappear(_ animated: Bool) {
+            IQKeyboardManager.shared.enable = true
+            super.viewDidDisappear(animated)
+        }
     
     func configureMessageCollectionView() {
        // messagesCollectionView = MessagesCollectionView(frame: .zero, collectionViewLayout: CustomMessagesFlowLayout())
@@ -116,16 +132,18 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         
-        scrollsToBottomOnKeyboardBeginsEditing = false // default false
-        maintainPositionOnKeyboardFrameChanged = false // default false
-        scrollsToLastItemOnKeyboardBeginsEditing = false
-        
+      //  scrollsToBottomOnKeyboardBeginsEditing = true // default false
+        maintainPositionOnKeyboardFrameChanged = true // default false
+      //  scrollsToLastItemOnKeyboardBeginsEditing = true
+        messagesCollectionView.frame = CGRect(x: 0, y: 50, width: self.view.frame.width, height: self.view.frame.height - 100)
         messagesCollectionView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: #selector(loadChat), for: .valueChanged)
     }
     
     func configureMessageInputBar() {
         messageInputBar.delegate = self
+        messageInputBar.backgroundView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 100)
+
         messageInputBar.inputTextView.tintColor = AppConstants.appColor
         messageInputBar.sendButton.setTitleColor(AppConstants.appColor, for: .normal)
         messageInputBar.sendButton.setTitleColor(
@@ -176,6 +194,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
                 }
                 //let color = isOverLimit ? .red : UIColor(white: 0.6, alpha: 1)
                 //item.setTitleColor(color, for: .normal)
+
         }
         let bottomItems = [.flexibleSpace, charCountButton]
         
@@ -202,13 +221,13 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
     private func configureInputBarPadding() {
     
         // Entire InputBar padding
-        messageInputBar.padding.bottom = 8
+       // messageInputBar.padding.bottom = 8
         
         // or MiddleContentView padding
         messageInputBar.middleContentViewPadding.right = -38
 
         // or InputTextView padding
-        messageInputBar.inputTextView.textContainerInset.bottom = 8
+       // messageInputBar.inputTextView.textContainerInset.bottom = 8
         
     }
     
@@ -249,6 +268,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
     }
     
     @objc func loadChat() {
+        print("inside loadChat")
        // Auth.auth().signInAnonymously { (authResult, error) in
          //   guard let user = authResult?.user else { return }
             
@@ -260,7 +280,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
         
         //Fetch all the chats which has current user in it
         let db = Firestore.firestore().collection("Chats")
-            .whereField("users", arrayContains: self.user1UID ?? "Not Found User 1")
+            .whereField("users", arrayContains: self.user1UID )
         
         
         db.getDocuments { (chatQuerySnap, error) in
@@ -292,7 +312,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
                             //fetch it's thread collection
                              doc.reference.collection("thread")
                                 .order(by: "created", descending: false)
-                                .addSnapshotListener(includeMetadataChanges: true, listener: { (threadQuery, error) in
+                                .addSnapshotListener(includeMetadataChanges: true, listener: { [self] (threadQuery, error) in
                             if let error = error {
                                 print("Error: \(error)")
                                 return
@@ -357,7 +377,6 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
                     }
                 }
             }
-            
         }
     }
     
@@ -378,8 +397,8 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
                 return
             }
             self.messagesCollectionView.scrollToBottom()
-            self.sendMessage(msg: message.content)
         })
+        self.sendMessage(msg: message.content)
     }
     
     
@@ -548,10 +567,23 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
                         }
                     }
             }
-            self.loadChat()
+           // self.loadChat()
+            self.messages.removeAll()
+            self.messagesCollectionView.reloadData()
             self.sendMessage(msg: "")
         }
     }
+    
+    func updateCollectionContentInset() {
+         /*  let contentSize = messagesCollectionView.collectionViewLayout.collectionViewContentSize
+           var contentInsetTop = messagesCollectionView.bounds.size.height
+
+               contentInsetTop -= (contentSize.height + 150)
+               if contentInsetTop <= 0 {
+                   contentInsetTop = 0
+           }
+           messagesCollectionView.contentInset = UIEdgeInsets(top: contentInsetTop,left: 0,bottom: 0,right: 0)*/
+       }
 
 }
 
@@ -596,6 +628,8 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
                       save(message)
         
                       inputBar.inputTextView.text = ""
+                       //messagesCollectionView.frame = CGRect(x: 0, y: 50, width: self.view.frame.width, height: self.view.frame.height - 100)
+
                       messagesCollectionView.reloadData()
                       messagesCollectionView.scrollToBottom(animated: true)
     }
@@ -604,7 +638,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
     private func insertNewMessage(_ message: ChatMessage) {
         messages.append(message)
         messagesCollectionView.reloadData()
-        
+        updateCollectionContentInset()
         DispatchQueue.main.async {
             //self.messagesCollectionView.scrollToBottom(animated: true)
         }
@@ -664,10 +698,12 @@ extension ChatViewController: MessagesLayoutDelegate {
 
 extension ChatViewController: ChatDisplayLogic {
     func didReceiveSendMessageResponse(message: String, successCode: String) {
+        GlobalUtility.addClickEvent()
+
         if successCode == "1" {
            // self.showTopMessage(message: message, type: .Success)
         } else {
-            self.showTopMessage(message: message, type: .Error)
+            self.showTopMessage(message: "Sorry your message did not go through", type: .Error)
         }
     }
     
@@ -681,7 +717,7 @@ extension ChatViewController: ChatDisplayLogic {
     
     func didReceiveBlockUserResponse(message: String, successCode: String) {
         if successCode == "1" {
-            self.showTopMessage(message: message, type: .Success)
+            self.showTopMessage(message: "Blocked user successfully", type: .Success)
             if let blockedUserVC = BlockedUserViewController.instance() {
                 self.navigationController?.pushViewController(blockedUserVC, animated: true)
             }

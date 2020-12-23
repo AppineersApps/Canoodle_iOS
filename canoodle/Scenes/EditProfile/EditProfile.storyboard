@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="95k-lH-nZj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="95k-lH-nZj">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -403,6 +403,9 @@
         <designable name="CGm-Zj-mU1">
             <size key="intrinsicContentSize" width="69" height="18.5"/>
         </designable>
+        <designable name="QSt-Vq-nJK">
+            <size key="intrinsicContentSize" width="33" height="30"/>
+        </designable>
         <designable name="QVx-Kr-oFy">
             <size key="intrinsicContentSize" width="59" height="18.5"/>
         </designable>
@@ -415,6 +418,9 @@
         <designable name="eqd-Mc-Nff">
             <size key="intrinsicContentSize" width="70" height="18.5"/>
         </designable>
+        <designable name="lly-Yk-o9e">
+            <size key="intrinsicContentSize" width="42" height="34"/>
+        </designable>
         <designable name="mxi-aT-vvG">
             <size key="intrinsicContentSize" width="26" height="18.5"/>
         </designable>
@@ -423,6 +429,9 @@
         </designable>
         <designable name="qhv-t6-z2F">
             <size key="intrinsicContentSize" width="66" height="18.5"/>
+        </designable>
+        <designable name="tTa-mo-VhD">
+            <size key="intrinsicContentSize" width="62" height="34"/>
         </designable>
         <designable name="xWm-3i-v3x">
             <size key="intrinsicContentSize" width="82" height="18.5"/>
