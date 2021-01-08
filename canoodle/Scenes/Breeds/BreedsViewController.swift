@@ -184,7 +184,9 @@ extension BreedsViewController: BreedsDisplayLogic {
                 breedCollectionView.reloadData()
             }
         } else {
-            //self.showTopMessage(message: message, type: .Error)
+            if(successCode != "0") {
+                self.showTopMessage(message: message, type: .Error)
+            }
             breedsList.removeAll()
             breedCollectionView.reloadData()
         }

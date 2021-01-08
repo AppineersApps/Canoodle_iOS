@@ -329,7 +329,9 @@ extension MessagesListViewController: MessagesDisplayLogic {
                 messagesTableView.reloadData()
             }
         } else {
-            //self.showTopMessage(message: message, type: .Error)
+            if(successCode != "0") {
+                self.showTopMessage(message: message, type: .Error)
+            }
             messagesList.removeAll()
             filteredList = messagesList
             messagesTableView.reloadData()

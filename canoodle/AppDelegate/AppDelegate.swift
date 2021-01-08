@@ -18,12 +18,15 @@ import TALogger
 #endif
 import Alamofire
 import AppRating
+import FirebaseMessaging
 import FirebaseCore
+import UserNotifications
+import UserNotificationsUI
 
 @UIApplicationMain
 
 /// AppDelegate class
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     
     /// Main Window object
     var window: UIWindow?
@@ -42,34 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let userInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [AnyHashable : Any] {
             print("Notification Info :: ", userInfo)
             NSLog("Notification userinfo: \(userInfo)")
-            let type = userInfo["type"] as! String
-            let currVC = GlobalUtility.shared.topViewController(withRootViewController: GlobalUtility.shared.currentTopViewController())
-
-            if(type == "Message") {
-                if (UserDefaultsManager.getLoggedUserDetails() != nil) {
-                    if let chatVC = ChatViewController.instance() {
-                        let connection = Connection.ViewModel.init(dictionary: ["user_id": userInfo["receiver_id"] as! String, "user_name": userInfo["user_name"], "user_image": userInfo["user_image"]])
-                        chatVC.setConnection(connection: connection!)
-
-                      //  self.navigationController?.pushViewController(chatVC, animated: false)
-                        currVC.present(chatVC, animated: false)
-
-                    }
-                } else {
-                    //GlobalUtility.redirectToLogin()
-                }
-            } else {
-                if (UserDefaultsManager.getLoggedUserDetails() != nil) {
-                    if let userProfileVC = UserProfileViewController.instance() {
-                        userProfileVC.userId = userInfo["receiver_id"] as! String
-                       // self.navigationController?.pushViewController(userProfileVC, animated: false)
-                        currVC.present(userProfileVC, animated: false)
-
-                    }
-                } else {
-                    //GlobalUtility.redirectToLogin()
-                }
-            }
+            self.handlePushNotification(userInfo: userInfo)
         }
         
         FirebaseApp.configure()
@@ -80,9 +56,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #endif
         setupIAP()
         setupAppRating()
+        Messaging.messaging().delegate = self
         self.registerRemoteNotification()
 
         return true
+    }
+    
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+         print("Firebase registration token: \(fcmToken!)")
+
+        UserDefaultsManager.deviceToken = fcmToken!
+        
+         let dataDict:[String: String] = ["token": fcmToken!]
+         NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+        
+         // TODO: If necessary send token to application server.
+         // Note: This callback is fired at each app startup and whenever a new token is generated.
+       }
+    
+    
+    private func userNotificationCenter(center: UNUserNotificationCenter, willPresentNotification notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -> Void) {
+         completionHandler([UNNotificationPresentationOptions.alert,UNNotificationPresentationOptions.sound,UNNotificationPresentationOptions.badge])
     }
     
     /// Method is called when app resigns active

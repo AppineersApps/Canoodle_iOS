@@ -106,16 +106,6 @@ class HomeViewController: BaseViewControllerWithAd {
             homeCardView.frame = CGRect(x: 0, y: 5, width: homeCardView.frame.size.width, height: self.detailView.frame.size.height - 60)
             homeCardView.initCard(index: n, user: usersList[n])
             homeCardView.delegate = self
-                /* UIView.animate(withDuration: 0.3,
-                           delay: 0.0,
-                           options: [.curveEaseInOut, .allowUserInteraction],
-                           animations: {
-                            homeCardView.frame = CGRect(x: 16, y: 0, width: self.cardHolderView.frame.size.width - 32, height: self.cardHolderView.frame.size.height)
-            },
-                           completion: { finished in
-                            homeCardView.initCard(user: self.usersList[n])
-                            homeCardView.delegate = self
-            })*/
             homeCardViews.append(homeCardView)
         }
         let secondsToDelay = 2.0

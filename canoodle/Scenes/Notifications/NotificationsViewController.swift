@@ -16,7 +16,7 @@ import CRRefresh
 
 protocol NotificationsDisplayLogic: class
 {
-    func didReceiveNotificationsResponse(response: [Notification.ViewModel]?, message: String, successCode: String)
+    func didReceiveNotificationsResponse(response: [Notifications.ViewModel]?, message: String, successCode: String)
     func didReceiveDeleteNotificationResponse(message: String, successCode: String)
 }
 
@@ -30,8 +30,8 @@ class NotificationsViewController: UIViewController
   var interactor: NotificationsBusinessLogic?
   var router: (NSObjectProtocol & NotificationsRoutingLogic & NotificationsDataPassing)?
 
-    var notificationsList:[Notification.ViewModel] = []
-    var filteredList:[Notification.ViewModel] = []
+    var notificationsList:[Notifications.ViewModel] = []
+    var filteredList:[Notifications.ViewModel] = []
 
     var selectedRowIndex: Int = 0
 
@@ -120,15 +120,15 @@ class NotificationsViewController: UIViewController
     
     func clearAllNotifications() {
         notificationsList.forEach { notification in
-            let request = Notification.Request(notificationId: notification.notificationId)
+            let request = Notifications.Request(notificationId: notification.notificationId)
             interactor?.deleteNotification(request: request)
         }
     }
     
     func filterList() {
-        var filteredArray:[Notification.ViewModel] = []
+        var filteredArray:[Notifications.ViewModel] = []
         notificationsList.forEach {
-            let notification:Notification.ViewModel = $0
+            let notification:Notifications.ViewModel = $0
             switch segmentedControl.selectedSegmentIndex {
             case 0:
                 if(UserDefaultsManager.getLoggedUserDetails()?.premiumStatus?.booleanStatus() == true) {
@@ -153,9 +153,9 @@ class NotificationsViewController: UIViewController
     }
     
     func filterBlockedUsers() {
-        var filteredArray:[Notification.ViewModel] = []
+        var filteredArray:[Notifications.ViewModel] = []
         notificationsList.forEach {
-            let notification:Notification.ViewModel = $0
+            let notification:Notifications.ViewModel = $0
             if(notification.connectionStatus != "Block") {
                 filteredArray.append(notification)
             }
@@ -167,9 +167,9 @@ class NotificationsViewController: UIViewController
         filterList()
     }
     
-    func deleteNotification(notification: Notification.ViewModel)
+    func deleteNotification(notification: Notifications.ViewModel)
     {
-        let request = Notification.Request(notificationId: notification.notificationId)
+        let request = Notifications.Request(notificationId: notification.notificationId)
         interactor?.deleteNotification(request: request)
     }
 
@@ -225,7 +225,7 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let notification: Notification.ViewModel = notificationsList[indexPath.row]
+        let notification: Notifications.ViewModel = notificationsList[indexPath.row]
         switch notification.notificationType {
         case "Like", "Match":
             if let userProfileVC = UserProfileViewController.instance() {
@@ -256,7 +256,7 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
 //NotificationsViewCellProtocol methods
 extension NotificationsViewController: NotificationsViewCellProtocol {
     
-    func messageUser(notification: Notification.ViewModel) {
+    func messageUser(notification: Notifications.ViewModel) {
         if let chatVC = ChatViewController.instance() {
             let connection = Connection.ViewModel.init(dictionary: ["user_id": notification.notificationUserId!, "user_name": notification.userName!, "user_image": notification.userImage!])
             chatVC.setConnection(connection: connection!)
@@ -264,7 +264,7 @@ extension NotificationsViewController: NotificationsViewCellProtocol {
         }
     }
     
-    func showUser(notification: Notification.ViewModel) {
+    func showUser(notification: Notifications.ViewModel) {
         if let userProfileVC = UserProfileViewController.instance() {
             userProfileVC.userId = notification.notificationUserId!
             self.navigationController?.pushViewController(userProfileVC, animated: true)
@@ -280,7 +280,7 @@ extension NotificationsViewController: NotificationsViewCellProtocol {
 }
 
 extension NotificationsViewController: NotificationsDisplayLogic {
-    func didReceiveNotificationsResponse(response: [Notification.ViewModel]?, message: String, successCode: String) {
+    func didReceiveNotificationsResponse(response: [Notifications.ViewModel]?, message: String, successCode: String) {
         self.notificationsTableView.cr.endHeaderRefresh()
         if successCode == "1" {
             print(message)
@@ -298,7 +298,9 @@ extension NotificationsViewController: NotificationsDisplayLogic {
                 }
             }
         } else {
-            //self.showTopMessage(message: message, type: .Error)
+            if(successCode != "0") {
+                self.showTopMessage(message: message, type: .Error)
+            }
             notificationsList.removeAll()
             notificationsTableView.reloadData()
             self.navigationItem.rightBarButtonItem = nil

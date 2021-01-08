@@ -271,7 +271,9 @@ extension LikeViewController: LikeDisplayLogic {
                 connectionsCollectionView.reloadData()
             }
         } else {
-            //self.showTopMessage(message: message, type: .Error)
+            if(successCode != "0") {
+                self.showTopMessage(message: message, type: .Error)
+            }
             connectionsList.removeAll()
             if(selectedSegmentIndex == 0) {
                 likeCountLabel.text = "\(connectionsList.count)"

@@ -147,7 +147,9 @@ extension BlockedUserViewController: BlockedUserDisplayLogic {
                 tableView.reloadData()
             }
         } else {
-            //self.showTopMessage(message: message, type: .Error)
+            if(successCode != "0") {
+                self.showTopMessage(message: message, type: .Error)
+            }
             blockedUserList.removeAll()
             filteredList = blockedUserList
             tableView.reloadData()

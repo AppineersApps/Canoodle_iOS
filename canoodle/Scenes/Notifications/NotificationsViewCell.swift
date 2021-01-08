@@ -9,8 +9,8 @@
 import UIKit
 
 protocol NotificationsViewCellProtocol: AnyObject {
-    func messageUser(notification: Notification.ViewModel)
-    func showUser(notification: Notification.ViewModel)
+    func messageUser(notification: Notifications.ViewModel)
+    func showUser(notification: Notifications.ViewModel)
     func showProfileImage(userImage: String)
 }
 
@@ -24,7 +24,7 @@ class NotificationsViewCell: UITableViewCell {
 
     public weak var delegate: NotificationsViewCellProtocol?
     
-    var notification: Notification.ViewModel!
+    var notification: Notifications.ViewModel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,7 +40,7 @@ class NotificationsViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCellData(notification: Notification.ViewModel) {
+    func setCellData(notification: Notifications.ViewModel) {
         self.notification = notification
         nameLabel.text = notification.userName
         messageLabel.text = notification.message

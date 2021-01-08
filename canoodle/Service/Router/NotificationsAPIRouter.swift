@@ -18,7 +18,7 @@ enum NotificationsAPIRouter: GetRouterProtocol {
     
     /// get Notifications Case
     case getNotifications
-    case deleteNotification(request: Notification.Request)
+    case deleteNotification(request: Notifications.Request)
 
 
     /// HTTP Method

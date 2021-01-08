@@ -12,7 +12,7 @@
 
 import UIKit
 
-enum Notification {
+enum Notifications {
     struct Request {
         var notificationId : String?
     }

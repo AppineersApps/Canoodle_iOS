@@ -49,9 +49,13 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
     
     let formatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return formatter
     }()
+    
+    var lastSeenDate: Date!
+
+    var timer = Timer()
 
     // MARK: Setup
     
@@ -108,9 +112,8 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
         configureMessageInputBar()
         self.addAnayltics(analyticsParameterItemID: "id-chatscreen", analyticsParameterItemName: "view_chatscreen", analyticsParameterContentType: "view_chatscreen")
         loadChat()
-        /*DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-             self.messagesCollectionView.scrollToBottom(animated: true)
-        }*/
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self,   selector: (#selector(updateLastSeen)), userInfo: nil, repeats: true)
+
     }
     
     override func viewDidAppear(_ animated:Bool) {
@@ -267,16 +270,32 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
          }
     }
     
+    func createNewUser() {
+        print("Creating new user")
+         let data: [String: Any] = [
+             user1UID:formatter.string(from: Date())
+         ]
+        let db = Firestore.firestore().collection("UserLastSeen")
+        db.addDocument(data: data) { (error) in
+            if let error = error {
+                print("Unable to create chat! \(error)")
+                return
+            } else {
+               // self.loadChat()
+            }
+        }
+    }
+    
     @objc func loadChat() {
         print("inside loadChat")
-       // Auth.auth().signInAnonymously { (authResult, error) in
-         //   guard let user = authResult?.user else { return }
+        Auth.auth().signInAnonymously { (authResult, error) in
+            guard let user = authResult?.user else { return }
             
-            /*if Auth.auth().currentUser != nil {
-                OnlineOfflineService.online(for: (Auth.auth().currentUser?.uid)!, status: true){ (success) in
-                    print("User ==>", success)
-                }
-            }*/
+            if Auth.auth().currentUser != nil {
+               // OnlineOfflineService.online(for: (Auth.auth().currentUser?.uid)!, status: true){ (success) in
+                print("Authenticated User ==>",  Auth.auth().currentUser?.uid ?? "")
+               // }
+            }
         
         //Fetch all the chats which has current user in it
         let db = Firestore.firestore().collection("Chats")
@@ -357,7 +376,61 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
                 }
             }
         }
-    //}
+    }
+    }
+    
+    @objc func updateLastSeen() {
+        print("inside updateLastSeen")
+        let db = Firestore.firestore().collection("UserLastSeen")
+        db.getDocuments { (chatQuerySnap, error) in
+            
+            if let error = error {
+                print("Error: \(error)")
+                return
+            } else {
+                
+                //Count the no. of documents returned
+                guard let queryCount = chatQuerySnap?.documents.count else {
+                    print("querycount = 0")
+                    return
+                }
+                if queryCount >= 1 {
+                    //Chat(s) found for currentUser
+                    var userFound: Bool = false
+                    for doc in chatQuerySnap!.documents {
+                        let user = doc.data()
+                        print("user = \(user)")
+                        if(user.keys.contains(self.user1UID)) {
+                            userFound = true
+                            let data: [String: String] = [
+                                self.user1UID:self.formatter.string(from: Date())
+                            ]
+                            doc.reference.setData(data){ err in
+                                if let err = err {
+                                    print("Error updating last seen: \(err)")
+                                } else {
+                                    print("last seen updated successfully!")
+                                    //self.loadChat()
+                                }
+                            }
+                            //doc.setValue(self.formatter.string(from: Date()), forKey: self.user1UID)
+                        }
+                        if(user.keys.contains(self.user2UID)) {
+                            if((user[self.user2UID] as! String) != "") {
+                                self.lastSeenDate = self.formatter.date(from: user[self.user2UID] as! String)!
+                            }
+                        }
+                    } //end of for
+                    if(!userFound) {
+                        self.createNewUser()
+                    }
+                    
+                    } else {
+                    print("Let's hope this error never prints!")
+                    self.createNewUser()
+                }
+            }
+        }
     }
 
     
@@ -398,7 +471,16 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
             }
             self.messagesCollectionView.scrollToBottom()
         })
-        self.sendMessage(msg: message.content)
+        if((lastSeenDate == nil)) {
+            self.sendMessage(msg: message.content)
+        } else {
+            let interval = Date().timeIntervalSince(self.lastSeenDate)
+            let diffComponents = Calendar.current.dateComponents([.second], from: self.lastSeenDate, to: Date())
+            let secs = diffComponents.second
+            if(interval > 15) {
+                self.sendMessage(msg: message.content)
+            }
+        }
     }
     
     

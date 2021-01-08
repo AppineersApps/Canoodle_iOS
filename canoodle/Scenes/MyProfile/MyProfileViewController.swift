@@ -268,7 +268,9 @@ extension MyProfileViewController: MyProfileDisplayLogic {
                 setUserData()
             }
         } else {
-            //self.showTopMessage(message: message, type: .Error)
+            if(successCode != "0") {
+                self.showTopMessage(message: message, type: .Error)
+            }
             //usersList.removeAll()
         }
     }

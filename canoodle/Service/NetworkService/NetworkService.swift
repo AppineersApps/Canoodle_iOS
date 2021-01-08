@@ -216,7 +216,6 @@ extension NetworkService: NetworkProtocol {
                                 GlobalUtility.hideHud()
                                 UserDefaultsManager.logoutUser()
                                 GlobalUtility.redirectToLogin()
-                              
                             }
                             
                             /*if decodedValue.setting?.isValidToken ?? false {

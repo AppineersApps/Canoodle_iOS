@@ -230,7 +230,7 @@ class HomeCardView: UIView {
     }
     
     @IBAction func skipAction(_ sender: Any) {
-        GlobalUtility.addClickEvent()
+       // GlobalUtility.addClickEvent()
 
         UIView.animate(withDuration: 0.3,
                        delay: 0.0,
