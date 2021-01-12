@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -258,6 +258,9 @@
 		AE55B8ED253DE60F0056C64C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B8EC253DE60F0056C64C /* Date+Extension.swift */; };
 		AE55CA1D254811C700CC32B5 /* DeleteMediaAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55CA1C254811C700CC32B5 /* DeleteMediaAPIRouter.swift */; };
 		AE56514C255C08CF0043DFD8 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE56514B255C08CF0043DFD8 /* UIBarButtonItem+Extension.swift */; };
+		AE5A352E25AC52470000939C /* TALogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A352A25AC4E010000939C /* TALogger.framework */; };
+		AE5A352F25AC52470000939C /* TALogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A352A25AC4E010000939C /* TALogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AE5A35E425AC68090000939C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE5A35E225AC68090000939C /* GoogleService-Info.plist */; };
 		AE60601A25592EAE003AAD96 /* Pods_canoodle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787FCF655A5FE8AEA0259917 /* Pods_canoodle.framework */; };
 		AE69E07A25398B38008185A0 /* UserAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E07925398B38008185A0 /* UserAPIRouter.swift */; };
 		AE69E08025398D64008185A0 /* GetRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E07F25398D64008185A0 /* GetRouterProtocol.swift */; };
@@ -279,7 +282,6 @@
 		AE69E1C22539F21A008185A0 /* SubscriptionAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E1C12539F21A008185A0 /* SubscriptionAPIRouter.swift */; };
 		AE6A3B932542C55B003C9547 /* MessageAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A3B922542C55B003C9547 /* MessageAPIRouter.swift */; };
 		AE6A3B9A2542E130003C9547 /* UpdateProfileAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A3B992542E130003C9547 /* UpdateProfileAPIRouter.swift */; };
-		AE765273258230AF00BC4BBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE765272258230AF00BC4BBE /* GoogleService-Info.plist */; };
 		AE7A41752552910000A1A984 /* LikeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A41732552910000A1A984 /* LikeCollectionViewCell.swift */; };
 		AE7A41762552910000A1A984 /* LikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE7A41742552910000A1A984 /* LikeCollectionViewCell.xib */; };
 		AE7CCD3F252D825B001D9C88 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AE7CCD3E252D825B001D9C88 /* .swiftlint.yml */; };
@@ -318,8 +320,6 @@
 		AE88A184253EFB9600EF981D /* PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88A17E253EFB9600EF981D /* PetProfileViewController.swift */; };
 		AE88A185253EFB9600EF981D /* PetProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88A17F253EFB9600EF981D /* PetProfileInteractor.swift */; };
 		AE88A18B253EFBA700EF981D /* PetProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE88A18A253EFBA700EF981D /* PetProfile.storyboard */; };
-		AE8A432425A5FBA6008B1A98 /* TALogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8A432025A5FB89008B1A98 /* TALogger.framework */; };
-		AE8A432525A5FBA6008B1A98 /* TALogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE8A432025A5FB89008B1A98 /* TALogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE9416C3256794F2002F2C0B /* ImageScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9416C1256794F1002F2C0B /* ImageScrollerView.swift */; };
 		AE9416C4256794F2002F2C0B /* ImageScrollerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9416C2256794F1002F2C0B /* ImageScrollerView.storyboard */; };
 		AECB563E254158D900A73C2A /* ReportUserAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB563D254158D900A73C2A /* ReportUserAPIRouter.swift */; };
@@ -364,7 +364,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AE8A432525A5FBA6008B1A98 /* TALogger.framework in Embed Frameworks */,
+				AE5A352F25AC52470000939C /* TALogger.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,6 +633,8 @@
 		AE55B8EC253DE60F0056C64C /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		AE55CA1C254811C700CC32B5 /* DeleteMediaAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMediaAPIRouter.swift; sourceTree = "<group>"; };
 		AE56514B255C08CF0043DFD8 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		AE5A352A25AC4E010000939C /* TALogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TALogger.framework; sourceTree = "<group>"; };
+		AE5A35E225AC68090000939C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AE69E07925398B38008185A0 /* UserAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIRouter.swift; sourceTree = "<group>"; };
 		AE69E07F25398D64008185A0 /* GetRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRouterProtocol.swift; sourceTree = "<group>"; };
 		AE69E08325398D6F008185A0 /* GetNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNetworkService.swift; sourceTree = "<group>"; };
@@ -654,7 +656,6 @@
 		AE6A3B922542C55B003C9547 /* MessageAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAPIRouter.swift; sourceTree = "<group>"; };
 		AE6A3B962542DE7D003C9547 /* CanoodleRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CanoodleRelease.entitlements; sourceTree = "<group>"; };
 		AE6A3B992542E130003C9547 /* UpdateProfileAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileAPIRouter.swift; sourceTree = "<group>"; };
-		AE765272258230AF00BC4BBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AE7A41732552910000A1A984 /* LikeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCollectionViewCell.swift; sourceTree = "<group>"; };
 		AE7A41742552910000A1A984 /* LikeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeCollectionViewCell.xib; sourceTree = "<group>"; };
 		AE7CCD3E252D825B001D9C88 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -693,7 +694,6 @@
 		AE88A17E253EFB9600EF981D /* PetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileViewController.swift; sourceTree = "<group>"; };
 		AE88A17F253EFB9600EF981D /* PetProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileInteractor.swift; sourceTree = "<group>"; };
 		AE88A18A253EFBA700EF981D /* PetProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetProfile.storyboard; sourceTree = "<group>"; };
-		AE8A432025A5FB89008B1A98 /* TALogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TALogger.framework; sourceTree = "<group>"; };
 		AE9416C1256794F1002F2C0B /* ImageScrollerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScrollerView.swift; sourceTree = "<group>"; };
 		AE9416C2256794F1002F2C0B /* ImageScrollerView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImageScrollerView.storyboard; sourceTree = "<group>"; };
 		AECB563D254158D900A73C2A /* ReportUserAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserAPIRouter.swift; sourceTree = "<group>"; };
@@ -721,7 +721,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE60601A25592EAE003AAD96 /* Pods_canoodle.framework in Frameworks */,
-				AE8A432425A5FBA6008B1A98 /* TALogger.framework in Frameworks */,
+				AE5A352E25AC52470000939C /* TALogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,7 +745,7 @@
 		2709ABDE232F6050000708FF = {
 			isa = PBXGroup;
 			children = (
-				AE765272258230AF00BC4BBE /* GoogleService-Info.plist */,
+				AE5A35E225AC68090000939C /* GoogleService-Info.plist */,
 				AE7CCD3E252D825B001D9C88 /* .swiftlint.yml */,
 				2709ABE9232F6050000708FF /* canoodle */,
 				2709ABFE232F6052000708FF /* WhiteLabelAppTests */,
@@ -942,7 +942,7 @@
 		2709AC52232F6090000708FF /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				AE8A432025A5FB89008B1A98 /* TALogger.framework */,
+				AE5A352A25AC4E010000939C /* TALogger.framework */,
 				277D7811233E38FD00A496FD /* Loader */,
 				2709AC79232F6091000708FF /* CustomFiles */,
 				2709ACE2232F709D000708FF /* Validators.swift */,
@@ -1675,7 +1675,6 @@
 				277D7814233E38FD00A496FD /* Loader.storyboard in Resources */,
 				AE69E1612539EB8B008185A0 /* HomeFilter.storyboard in Resources */,
 				278CC12D232FB31100F2CE32 /* LoginPhoneAndSocial.storyboard in Resources */,
-				AE765273258230AF00BC4BBE /* GoogleService-Info.plist in Resources */,
 				27E604ED2338BC5800704130 /* Setting.storyboard in Resources */,
 				AE53DD3D25384B4500824C8E /* CanoodleViewCell.xib in Resources */,
 				276EF5CA2333D3B200D359A3 /* ResetPassword.storyboard in Resources */,
@@ -1711,6 +1710,7 @@
 				AE55B82C253DC1440056C64C /* MessagesViewCell.xib in Resources */,
 				2709ACDF232F6092000708FF /* Montserrat-Bold.ttf in Resources */,
 				2709AC90232F6092000708FF /* ForgotPasswordPhone.storyboard in Resources */,
+				AE5A35E425AC68090000939C /* GoogleService-Info.plist in Resources */,
 				AE88152B2534A35700B4B34C /* Like.storyboard in Resources */,
 				27D8BF57233221830075DB6E /* GoogleSearch.storyboard in Resources */,
 				27F3488F233B853A0036558B /* ChangeMobileNumber.storyboard in Resources */,
@@ -1749,7 +1749,8 @@
 /* Begin PBXShellScriptBuildPhase section */
 		270170FE2341E06C0016B092 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			alwaysOutOfDate = 1;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -1761,7 +1762,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n\n\n";
 		};
@@ -2275,11 +2276,11 @@
 				CODE_SIGN_ENTITLEMENTS = canoodle/canoodle.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = NPMQJ6P5X4;
+				DEVELOPMENT_TEAM = 9YN33FMVMJ;
 				ENABLE_BITCODE = YES;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/canoodle/Helper",
@@ -2342,7 +2343,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.appineers.canoodle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.canoodle;
 				PRODUCT_NAME = Canoodle;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -2359,10 +2360,10 @@
 				CODE_SIGN_ENTITLEMENTS = canoodle/CanoodleRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
-				DEVELOPMENT_TEAM = NPMQJ6P5X4;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 9YN33FMVMJ;
 				ENABLE_BITCODE = YES;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/canoodle/Helper",
@@ -2376,7 +2377,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.appineers.canoodle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.canoodle;
 				PRODUCT_NAME = Canoodle;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

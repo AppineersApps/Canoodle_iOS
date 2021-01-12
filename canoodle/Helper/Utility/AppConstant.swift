@@ -64,7 +64,7 @@ struct AppConstants {
     
     /// Subscription id for IAP
     static let goadfreeId = "goadfree"
-    static let subscriptionId = "subscription"
+    static let subscriptionId = "monthly"
     /// Is login skipped
     static var isLoginSkipped = false
     
@@ -143,7 +143,7 @@ struct AppInfo {
     /// App Bundle identifier
     static let kBundleIdentifier = Bundle.main.bundleIdentifier
     /// App Store ID
-    static let kAppstoreID = "1535434678"
+    static let kAppstoreID = "1548258713"
     /// Play store bundle id
     static let kAndriodAppId = "com.app.whitelabel"
 }
@@ -162,7 +162,7 @@ struct ServiceApiKey {
     struct Google {
         /// Client ID for google login
        // static let kClientID = "699060553821-8gcrb4mrrdqkfj91e32b4poepi4foq6g.apps.googleusercontent.com"
-        static let kClientID = "271806339695-ev0llro7ps6dkqd5h1ll8h8oneofdgd7.apps.googleusercontent.com"
+        static let kClientID = "271806339695-95pr4fjqmenbl6ilduj7tsfv5o7lgkgt.apps.googleusercontent.com"
 
         ///Key for google places search
         static let kGMSServicesAPIKey = "AIzaSyAyB7asyhW7JK6hyK90S_Ow_ai145KH14Y"

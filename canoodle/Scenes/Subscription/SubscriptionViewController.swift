@@ -148,7 +148,7 @@ class SubscriptionViewController: BaseViewController {
     
     // MARK: In App Purchase for Go Ad Free
     func buySubscription() {
-        let alertController = UIAlertController(title:  AppInfo.kAppName, message: AlertMessage.purchaseAlert, preferredStyle: .alert)
+        let alertController = UIAlertController(title:  AppInfo.kAppName, message: AlertMessage.subscriptionPurchaseAlert, preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
             
@@ -293,7 +293,7 @@ class SubscriptionViewController: BaseViewController {
     }*/
     
     func verifyReceipt(completion: @escaping (VerifyReceiptResult) -> Void) {
-        let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: "4e75827063f24320b3d8ff9b0fbb9f8c")
+        let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: "2564948a5dcc4c4bb4577f34736b0e7b")
         SwiftyStoreKit.verifyReceipt(using: appleValidator, completion: completion)
     }
     
