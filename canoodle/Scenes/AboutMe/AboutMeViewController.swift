@@ -159,6 +159,7 @@ extension AboutMeViewController : AboutMeDisplayLogic {
             if(onboarding) {
                 let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
                 if let tab = storyboard.instantiateInitialViewController(), tab is TabbarController {
+                    TabbarController.onboarding = true
                     AppConstants.appDelegate.window?.rootViewController = tab
                 }
             } else {

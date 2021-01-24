@@ -26,7 +26,7 @@ protocol StaticPageDisplayLogic: class {
 }
 
 /// This class is used for displaying content of static pages like Privacy Policy, Terms & Conditions etc.
-class StaticPageViewController: BaseViewController {
+class StaticPageViewController: BaseViewControllerWithAd {
     
     // MARK: IBOutlet
     /// Interactor for API Call

@@ -114,7 +114,7 @@ struct AlertMessage {
 
     //Sendfeeedback
     static let sendFeedbackTitle = NSLocalizedString("Send Feedback", comment: "")
-    static let sendFeedbackText = NSLocalizedString("You can send us your feedback about \(AppInfo.kAppName) application. We would love to here suggestions from you.", comment: "")
+    static let sendFeedbackText = NSLocalizedString("You can send us your feedback about \(AppInfo.kAppName) application. We would love to hear suggestions from you.", comment: "")
     static let deleteMessage = NSLocalizedString("Are you sure you want to remove this image?", comment: "")
     static let enterFeedback = NSLocalizedString("Please enter brief explanation ", comment: "")
     

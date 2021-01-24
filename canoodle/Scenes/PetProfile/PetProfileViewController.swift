@@ -211,7 +211,7 @@ class PetProfileViewController: BaseViewController
             return
         }
         
-        if(petId != "" && imageArray.count == 0 && medias.count == 0) {
+        if(petId != "" && (imageArray.count == 0 && medias.count == 0)) {
             self.showSimpleAlert(message: "Please add atleast one media")
             return
         }

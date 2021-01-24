@@ -128,7 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         
         let aStrURL = url.absoluteString
-        if aStrURL.contains("3173960712646425") {
+        if aStrURL.contains("244519223956247") {
             let aHandled = ApplicationDelegate.shared.application(app, open: url, options: options)
             return aHandled
         } else {

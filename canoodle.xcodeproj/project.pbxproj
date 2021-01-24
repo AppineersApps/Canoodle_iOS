@@ -260,7 +260,6 @@
 		AE56514C255C08CF0043DFD8 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE56514B255C08CF0043DFD8 /* UIBarButtonItem+Extension.swift */; };
 		AE5A352E25AC52470000939C /* TALogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A352A25AC4E010000939C /* TALogger.framework */; };
 		AE5A352F25AC52470000939C /* TALogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A352A25AC4E010000939C /* TALogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AE5A35E425AC68090000939C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE5A35E225AC68090000939C /* GoogleService-Info.plist */; };
 		AE60601A25592EAE003AAD96 /* Pods_canoodle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787FCF655A5FE8AEA0259917 /* Pods_canoodle.framework */; };
 		AE69E07A25398B38008185A0 /* UserAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E07925398B38008185A0 /* UserAPIRouter.swift */; };
 		AE69E08025398D64008185A0 /* GetRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E07F25398D64008185A0 /* GetRouterProtocol.swift */; };
@@ -322,6 +321,10 @@
 		AE88A18B253EFBA700EF981D /* PetProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE88A18A253EFBA700EF981D /* PetProfile.storyboard */; };
 		AE9416C3256794F2002F2C0B /* ImageScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9416C1256794F1002F2C0B /* ImageScrollerView.swift */; };
 		AE9416C4256794F2002F2C0B /* ImageScrollerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9416C2256794F1002F2C0B /* ImageScrollerView.storyboard */; };
+		AEA21E2025B97C6600D8BCE0 /* VerticalSwipe.json in Resources */ = {isa = PBXBuildFile; fileRef = AEA21E1D25B97C6500D8BCE0 /* VerticalSwipe.json */; };
+		AEA21E2125B97C6600D8BCE0 /* ScrollUp.json in Resources */ = {isa = PBXBuildFile; fileRef = AEA21E1E25B97C6500D8BCE0 /* ScrollUp.json */; };
+		AEA21E2225B97C6600D8BCE0 /* HorizontalSwipe.json in Resources */ = {isa = PBXBuildFile; fileRef = AEA21E1F25B97C6600D8BCE0 /* HorizontalSwipe.json */; };
+		AEA21E3025B99C8500D8BCE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEA21E2F25B99C8400D8BCE0 /* GoogleService-Info.plist */; };
 		AECB563E254158D900A73C2A /* ReportUserAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB563D254158D900A73C2A /* ReportUserAPIRouter.swift */; };
 		AECB5642254162DC00A73C2A /* SetConnectionAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB5641254162DC00A73C2A /* SetConnectionAPIRouter.swift */; };
 		AECB564625416BE300A73C2A /* UploadMediaAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB564525416BE300A73C2A /* UploadMediaAPIRouter.swift */; };
@@ -634,7 +637,6 @@
 		AE55CA1C254811C700CC32B5 /* DeleteMediaAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMediaAPIRouter.swift; sourceTree = "<group>"; };
 		AE56514B255C08CF0043DFD8 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		AE5A352A25AC4E010000939C /* TALogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TALogger.framework; sourceTree = "<group>"; };
-		AE5A35E225AC68090000939C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AE69E07925398B38008185A0 /* UserAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIRouter.swift; sourceTree = "<group>"; };
 		AE69E07F25398D64008185A0 /* GetRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRouterProtocol.swift; sourceTree = "<group>"; };
 		AE69E08325398D6F008185A0 /* GetNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNetworkService.swift; sourceTree = "<group>"; };
@@ -696,6 +698,10 @@
 		AE88A18A253EFBA700EF981D /* PetProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetProfile.storyboard; sourceTree = "<group>"; };
 		AE9416C1256794F1002F2C0B /* ImageScrollerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScrollerView.swift; sourceTree = "<group>"; };
 		AE9416C2256794F1002F2C0B /* ImageScrollerView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImageScrollerView.storyboard; sourceTree = "<group>"; };
+		AEA21E1D25B97C6500D8BCE0 /* VerticalSwipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VerticalSwipe.json; sourceTree = "<group>"; };
+		AEA21E1E25B97C6500D8BCE0 /* ScrollUp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ScrollUp.json; sourceTree = "<group>"; };
+		AEA21E1F25B97C6600D8BCE0 /* HorizontalSwipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HorizontalSwipe.json; sourceTree = "<group>"; };
+		AEA21E2F25B99C8400D8BCE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AECB563D254158D900A73C2A /* ReportUserAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserAPIRouter.swift; sourceTree = "<group>"; };
 		AECB5641254162DC00A73C2A /* SetConnectionAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetConnectionAPIRouter.swift; sourceTree = "<group>"; };
 		AECB564525416BE300A73C2A /* UploadMediaAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadMediaAPIRouter.swift; sourceTree = "<group>"; };
@@ -745,7 +751,7 @@
 		2709ABDE232F6050000708FF = {
 			isa = PBXGroup;
 			children = (
-				AE5A35E225AC68090000939C /* GoogleService-Info.plist */,
+				AEA21E2F25B99C8400D8BCE0 /* GoogleService-Info.plist */,
 				AE7CCD3E252D825B001D9C88 /* .swiftlint.yml */,
 				2709ABE9232F6050000708FF /* canoodle */,
 				2709ABFE232F6052000708FF /* WhiteLabelAppTests */,
@@ -1084,6 +1090,9 @@
 		2709AC82232F6091000708FF /* LottieFiles */ = {
 			isa = PBXGroup;
 			children = (
+				AEA21E1F25B97C6600D8BCE0 /* HorizontalSwipe.json */,
+				AEA21E1E25B97C6500D8BCE0 /* ScrollUp.json */,
+				AEA21E1D25B97C6500D8BCE0 /* VerticalSwipe.json */,
 				2709AC83232F6091000708FF /* loading.json */,
 			);
 			path = LottieFiles;
@@ -1679,6 +1688,7 @@
 				AE53DD3D25384B4500824C8E /* CanoodleViewCell.xib in Resources */,
 				276EF5CA2333D3B200D359A3 /* ResetPassword.storyboard in Resources */,
 				278CC13B232FB33000F2CE32 /* LoginEmailAndSocial.storyboard in Resources */,
+				AEA21E2225B97C6600D8BCE0 /* HorizontalSwipe.json in Resources */,
 				27F34832233B35B30036558B /* MyProfile.storyboard in Resources */,
 				27F3482C233B35830036558B /* Canoodle.storyboard in Resources */,
 				27AA9056233CE11A00A85134 /* ImageDetails.storyboard in Resources */,
@@ -1686,6 +1696,7 @@
 				27D36FFC2334FA7F00C4E72D /* StaticPage.storyboard in Resources */,
 				2709ACAF232F6092000708FF /* LoginEmail.storyboard in Resources */,
 				2709AC95232F6092000708FF /* SignUp.json in Resources */,
+				AEA21E3025B99C8500D8BCE0 /* GoogleService-Info.plist in Resources */,
 				27690CDA23EC337B004AE5DC /* ErrorCode.plist in Resources */,
 				27F3488A233B853A0036558B /* ChangePassword.storyboard in Resources */,
 				2709ACB4232F6092000708FF /* LoginPhone.storyboard in Resources */,
@@ -1710,11 +1721,12 @@
 				AE55B82C253DC1440056C64C /* MessagesViewCell.xib in Resources */,
 				2709ACDF232F6092000708FF /* Montserrat-Bold.ttf in Resources */,
 				2709AC90232F6092000708FF /* ForgotPasswordPhone.storyboard in Resources */,
-				AE5A35E425AC68090000939C /* GoogleService-Info.plist in Resources */,
 				AE88152B2534A35700B4B34C /* Like.storyboard in Resources */,
 				27D8BF57233221830075DB6E /* GoogleSearch.storyboard in Resources */,
+				AEA21E2125B97C6600D8BCE0 /* ScrollUp.json in Resources */,
 				27F3488F233B853A0036558B /* ChangeMobileNumber.storyboard in Resources */,
 				AE88A143253EA2A600EF981D /* Notifications.storyboard in Resources */,
+				AEA21E2025B97C6600D8BCE0 /* VerticalSwipe.json in Resources */,
 				AE537EE22535378B0084A780 /* HomeCardView.xib in Resources */,
 				2709ACDD232F6092000708FF /* Montserrat-Medium.ttf in Resources */,
 				AEED53BC24C446EA004B9AAE /* Onboarding.storyboard in Resources */,
@@ -2276,7 +2288,7 @@
 				CODE_SIGN_ENTITLEMENTS = canoodle/canoodle.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9YN33FMVMJ;
 				ENABLE_BITCODE = YES;
@@ -2336,7 +2348,7 @@
 					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
 				);
 				INFOPLIST_FILE = canoodle/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2360,7 +2372,7 @@
 				CODE_SIGN_ENTITLEMENTS = canoodle/CanoodleRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 9YN33FMVMJ;
 				ENABLE_BITCODE = YES;
 				EXCLUDED_ARCHS = "";
@@ -2370,7 +2382,7 @@
 					"$(PROJECT_DIR)/canoodle/Extension",
 				);
 				INFOPLIST_FILE = canoodle/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

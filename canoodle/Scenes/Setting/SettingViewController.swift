@@ -85,9 +85,12 @@ class SettingViewController: BaseViewControllerWithAd, exportLogFileToAdminDeleg
     @IBOutlet weak var btnAboutUs: WLButton!
     @IBOutlet weak var btnPrivacyPolicy: WLButton!
     @IBOutlet weak var btnTermsCondition: WLButton!
+    @IBOutlet weak var btnEULA: WLButton!
     @IBOutlet weak var btnShareApp: WLButton!
     @IBOutlet weak var btnRateUs: WLButton!
     @IBOutlet weak var btnDeleteAccount: WLButton!
+    @IBOutlet weak var btnWalkthrough: WLButton!
+
     /// Button For Logs
     @IBOutlet weak var btnLogs: WLButton!
     @IBOutlet weak var viewNotification: UIView!
@@ -401,6 +404,11 @@ class SettingViewController: BaseViewControllerWithAd, exportLogFileToAdminDeleg
                 staticPageVC.isFrom = StaticPageCode.termsCondition.rawValue
                 self.navigationController?.pushViewController(staticPageVC, animated: true)
             }
+        case btnEULA:
+            if let staticPageVC = StaticPageViewController.instance() {
+                staticPageVC.isFrom = StaticPageCode.eula.rawValue
+                self.navigationController?.pushViewController(staticPageVC, animated: true)
+            }
         case btnSendFeedback:
             if let sendFeedbackVC = SendFeedbackViewController.instance() {
                 self.navigationController?.pushViewController(sendFeedbackVC, animated: true)
@@ -415,6 +423,12 @@ class SettingViewController: BaseViewControllerWithAd, exportLogFileToAdminDeleg
                         }
                     }
                     self.addAnayltics(analyticsParameterItemID: "id-rateus", analyticsParameterItemName: "Rate Us", analyticsParameterContentType: "button_click")
+        case btnWalkthrough:
+            let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
+            if let tab = storyboard.instantiateInitialViewController(), tab is TabbarController {
+                TabbarController.onboarding = true
+                AppConstants.appDelegate.window?.rootViewController = tab
+            }
         case btnLogs:
             #if canImport(TALogger)
             TALogger.shared.ShowLogs()

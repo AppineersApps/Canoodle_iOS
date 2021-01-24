@@ -26,6 +26,11 @@ Description of what the lane does
 fastlane ios beta
 ```
 
+### ios refresh_dsyms
+```
+fastlane ios refresh_dsyms
+```
+
 
 ----
 

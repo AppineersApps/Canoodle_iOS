@@ -9,6 +9,8 @@ import FBSDKLoginKit
 #if canImport(TALogger)
 import TALogger
 #endif
+import Lottie
+
 
 /// Protocol for presenting response
 protocol HomeDisplayLogic: class {
@@ -30,10 +32,20 @@ class HomeViewController: BaseViewControllerWithAd {
     @IBOutlet weak var cardHolderView: UIView!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var subscribeView: UIView!
+    @IBOutlet weak var noUsersView: UIView!
+    
+    @IBOutlet weak var overlayView: UIView!
+    @IBOutlet weak var overlayLabel1: UILabel!
+    @IBOutlet weak var overlayLabel2: UILabel!
+    @IBOutlet weak var overlayLabel3: UILabel!
+    @IBOutlet weak var overlayButton: UIButton!
     
     var homeCardViews: [HomeCardView] = []
     
     var usersList = [User.ViewModel]()
+    var currOverlayIndex: Int = 0
+    var currPageIndex:Int = 0
+    var onboarding: Bool = false
 
     // MARK: Object lifecycle
     
@@ -82,6 +94,80 @@ class HomeViewController: BaseViewControllerWithAd {
         //addForceCrashButton()
     }
     
+    func setUpSwipeAnimation() {
+        switch currOverlayIndex {
+        case 0:
+            overlayLabel1.isHidden = false
+            overlayButton.setTitle("NEXT", for: UIControl.State.normal)
+            let swipeVerticalAnimationView : AnimationView = AnimationView(name: "VerticalSwipe")
+            swipeVerticalAnimationView.contentMode = .scaleAspectFit
+            swipeVerticalAnimationView.frame = CGRect(x: 50, y: 150, width: 100, height: 100)
+            swipeVerticalAnimationView.loopMode = .loop
+            swipeVerticalAnimationView.isHidden = false
+            swipeVerticalAnimationView.tag = 100
+            overlayView.addSubview(swipeVerticalAnimationView)
+            swipeVerticalAnimationView.play { (played) in
+                
+            }
+
+        case 1:
+            overlayLabel2.isHidden = false
+            overlayButton.setTitle("NEXT", for: UIControl.State.normal)
+            let swipeHorizontalAnimationView : AnimationView = AnimationView(name: "HorizontalSwipe")
+            swipeHorizontalAnimationView.contentMode = .scaleAspectFit
+            swipeHorizontalAnimationView.frame = CGRect(x: overlayView.frame.width/2 - 60, y: 250, width: 120, height: 120)
+            swipeHorizontalAnimationView.loopMode = .loop
+            swipeHorizontalAnimationView.isHidden = false
+            swipeHorizontalAnimationView.tag = 100
+            overlayView.addSubview(swipeHorizontalAnimationView)
+            swipeHorizontalAnimationView.play { (played) in
+                
+            }
+        case 2:
+            overlayLabel3.isHidden = false
+            overlayButton.setTitle("GOT IT!", for: UIControl.State.normal)
+            let scrollUpAnimationView : AnimationView = AnimationView(name: "ScrollUp")
+            scrollUpAnimationView.contentMode = .scaleAspectFit
+            scrollUpAnimationView.frame = CGRect(x: overlayView.frame.width/2 - 75, y: overlayView.frame.height - 300, width: 150, height: 150)
+            scrollUpAnimationView.loopMode = .loop
+            scrollUpAnimationView.isHidden = false
+            scrollUpAnimationView.tag = 100
+            //overlayView.addSubview(scrollUpAnimationView)
+            scrollUpAnimationView.play { (played) in
+                
+            }
+        default:
+            print("")
+        }
+
+       // timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(shakeAnimation)), userInfo: nil, repeats: true)
+    }
+    
+    func showOverlayView() {
+        overlayView.subviews.forEach({
+            if($0.tag == 100) {
+                $0.removeFromSuperview()
+            }
+        })
+        overlayLabel1.isHidden = true
+        overlayLabel2.isHidden = true
+        overlayLabel3.isHidden = true
+        overlayView.removeFromSuperview()
+        setUpSwipeAnimation()
+        overlayView.frame = CGRect(x: 0, y: -20, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        self.view.addSubview(overlayView)
+    }
+    
+    @IBAction func btnDoneAction(_ sender: UIButton) {
+        if(currOverlayIndex < 2) {
+            currOverlayIndex+=1
+            showOverlayView()
+        } else {
+            TabbarController.onboarding = false
+            overlayView.removeFromSuperview()
+        }
+    }
+    
     func setUpHomeCardViews() {
         homeCardViews.removeAll()
         cardHolderView.subviews.forEach({
@@ -94,7 +180,8 @@ class HomeViewController: BaseViewControllerWithAd {
         print("initialising home cards")
         if(usersList.count == 0) {
             GlobalUtility.hideHud()
-            self.showSimpleAlert(message: "No users to show")
+            //self.showSimpleAlert(message: "No users to show")
+            noUsersView.isHidden = false
             return
         }
         for n in 0...usersList.count - 1 {
@@ -130,7 +217,10 @@ class HomeViewController: BaseViewControllerWithAd {
     }
     
     @IBAction func reloadButtonTapped(_ sender: AnyObject) {
-        getUsers()
+        //getUsers()
+        if let filterVC = HomeFilterViewController.instance() {
+            self.navigationController?.pushViewController(filterVC, animated: true)
+        }
     }
     
     @IBAction func btnFilterAction(_ sender: UIButton) {
@@ -155,7 +245,11 @@ class HomeViewController: BaseViewControllerWithAd {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.setAddMobView(viewAdd: self.viewAd)
+        noUsersView.isHidden = true
         getUsers()
+        if(TabbarController.onboarding == true) {
+            showOverlayView()
+        }
     }
     
     /// Method is called when view will appears
@@ -209,6 +303,9 @@ extension HomeViewController: HomeCardViewProtocol {
             #endif
             self.addAnayltics(analyticsParameterItemID: "id-unlikeprofile", analyticsParameterItemName: "click_unlikeprofile", analyticsParameterContentType: "click_unlikeprofile")
             setConnection(userId: user.userId!, type: "Unlike")
+        }
+        if(cardHolderView.subviews.count == 1) {
+            getUsers()
         }
     }
     

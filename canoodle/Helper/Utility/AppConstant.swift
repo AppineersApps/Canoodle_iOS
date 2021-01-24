@@ -25,13 +25,13 @@ struct AppConstants {
     static let screenHeight = UIScreen.main.bounds.size.height
     
     /// Base URL for API
-    static let baseUrl = ApiServer.staging
+    static let baseUrl = ApiServer.prodcution
     /// Enable encryption for the api
     static var enableEncryption = false
     /// Enable checksum for the api
     static var enableChecksum = false
     /// Is debug mode on
-    static var isDebug = true
+    static var isDebug = false
     /// AES Encryption ket
     static let aesEncryptionKey = "CIT@WS!"
     /// Webservice checksum
@@ -102,7 +102,7 @@ struct ApiServer {
 //    static let staging = "http://18.211.58.235/AppineersApp_V2/WS"
     static let staging = "http://18.211.58.235/canoodle/WS"
     /// URL for production
-    static let prodcution = ""
+    static let prodcution = "https://mobile.canoodleapp.com/WS"
 }
 
 /// Ad Mob Test details
@@ -165,7 +165,7 @@ struct ServiceApiKey {
         static let kClientID = "271806339695-95pr4fjqmenbl6ilduj7tsfv5o7lgkgt.apps.googleusercontent.com"
 
         ///Key for google places search
-        static let kGMSServicesAPIKey = "AIzaSyAyB7asyhW7JK6hyK90S_Ow_ai145KH14Y"
+        static let kGMSServicesAPIKey = "AIzaSyA0wwldrxqyK6HsLKSSOU0-w5Iz7ECkhZc"
     }
     
 }

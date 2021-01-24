@@ -554,7 +554,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
         if message.sender.senderId == user1UID {
             if(user1ImgUrl == "") {
                 avatarView.backgroundColor = UIColor.init(rgb: (r: 200, g: 200, b: 200))
-                avatarView.image = UIImage.init(named: "watermark")
+                avatarView.image = UIImage.init(named: "placeholder")
             } else {
                 SDWebImageManager.shared.loadImage(with: URL(string: user1ImgUrl), options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
                     avatarView.image = image
@@ -564,7 +564,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
         } else {
             if(user2ImgUrl == "") {
                 avatarView.backgroundColor = UIColor.init(rgb: (r: 200, g: 200, b: 200))
-                avatarView.image = UIImage.init(named: "watermark")
+                avatarView.image = UIImage.init(named: "placeholder")
             } else {
                 SDWebImageManager.shared.loadImage(with: URL(string: user2ImgUrl), options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
                     avatarView.image = image

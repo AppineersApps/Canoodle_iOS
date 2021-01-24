@@ -24,7 +24,7 @@ class BaseViewControllerWithAd: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = AppConstants.backgroundColor
-        let bg = UIImageView.init(frame: CGRect(x: 0, y: self.view.frame.height - 400, width: self.view.frame.width, height: 250))
+        let bg = UIImageView.init(frame: CGRect(x: 20, y: self.view.frame.height - 350, width: self.view.frame.width, height: 250))
         bg.image = UIImage.init(named: "pawBg")
         bg.contentMode = .scaleAspectFit
         self.view.addSubview(bg)

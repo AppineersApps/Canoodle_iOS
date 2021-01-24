@@ -12,7 +12,8 @@ import TALogger
 #endif
 
 class TabbarController: UITabBarController {
-    
+    public static var onboarding: Bool = false
+
     /// Method is called when view loads
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,14 @@ class TabbarController: UITabBarController {
     // MARK: Class Instance
     class func instance() -> TabbarController? {
         return UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabbarController") as? TabbarController
+    }
+    
+    func setOnboarding(value: Bool) {
+        TabbarController.onboarding = value
+    }
+    
+    func getOnboarding() -> Bool {
+        return TabbarController.onboarding
     }
 }
 

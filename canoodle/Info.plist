@@ -27,7 +27,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb398147691208199</string>
+				<string>fb244519223956247</string>
 			</array>
 		</dict>
 		<dict>
@@ -42,7 +42,7 @@
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>FacebookAppID</key>
-	<string>398147691208199</string>
+	<string>244519223956247</string>
 	<key>FacebookDisplayName</key>
 	<string>Canoodle</string>
 	<key>GADApplicationIdentifier</key>
