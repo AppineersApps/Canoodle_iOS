@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Login Phone And Social View Controller-->
         <scene sceneID="RX1-KG-FqV">
             <objects>
-                <viewController storyboardIdentifier="LoginPhoneAndSocialViewController" id="uA4-EY-8aP" customClass="LoginPhoneAndSocialViewController" customModule="The_Appineers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginPhoneAndSocialViewController" id="uA4-EY-8aP" customClass="LoginPhoneAndSocialViewController" customModule="Canoodle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dav-OL-9Bw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,7 +46,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pez-Li-dOE" customClass="CustomTextField" customModule="The_Appineers" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pez-Li-dOE" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                                         <rect key="frame" x="18" y="70" width="307" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -72,7 +73,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DHH-Ci-xPf" customClass="CustomTextField" customModule="The_Appineers" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DHH-Ci-xPf" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
                                                         <rect key="frame" x="18" y="144" width="307" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" name="AppColor"/>
@@ -91,7 +92,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tyc-Au-cfv" customClass="WLButton" customModule="The_Appineers" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tyc-Au-cfv" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                         <rect key="frame" x="199" y="197" width="126" height="25"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                         <state key="normal" title="Forgot Password?">
@@ -102,7 +103,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="Pol-Jr-k5L" firstAttribute="top" secondItem="bBU-jO-gIQ" secondAttribute="bottom" constant="8.5" id="0dq-nd-Btd"/>
                                                     <constraint firstAttribute="trailing" secondItem="Pez-Li-dOE" secondAttribute="trailing" constant="20" id="2Of-8K-VUP"/>
@@ -131,7 +132,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEd-7B-MpX" customClass="WLButton" customModule="The_Appineers" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEd-7B-MpX" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                 <rect key="frame" x="15" y="403" width="345" height="40"/>
                                                 <color key="backgroundColor" name="AppColor"/>
                                                 <constraints>
@@ -148,7 +149,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Tvw-BA-Ez0">
                                                 <rect key="frame" x="95" y="473" width="185" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sC7-ww-g0w" customClass="WLButton" customModule="The_Appineers" customModuleProvider="target">
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sC7-ww-g0w" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="61.5" height="50"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -164,7 +165,7 @@
                                                             <action selector="appleTapAction:" destination="uA4-EY-8aP" eventType="touchUpInside" id="ydv-kW-QzH"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnp-8c-5M9" customClass="WLButton" customModule="The_Appineers" customModuleProvider="target">
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnp-8c-5M9" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                         <rect key="frame" x="61.5" y="0.0" width="62" height="50"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
@@ -177,7 +178,7 @@
                                                             <action selector="facebookTapAction:" destination="uA4-EY-8aP" eventType="touchUpInside" id="XqE-iw-VZD"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quH-6T-gka" customClass="WLButton" customModule="The_Appineers" customModuleProvider="target">
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quH-6T-gka" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                                         <rect key="frame" x="123.5" y="0.0" width="61.5" height="50"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
@@ -194,10 +195,10 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MSO-E0-NsS">
-                                                <rect key="frame" x="60.5" y="554" width="254.5" height="20"/>
+                                                <rect key="frame" x="60.5" y="554" width="254" height="20"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New to The Appineers App?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hp-8Z-dQG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="180.5" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="180" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="Tkq-lL-5Pd"/>
                                                         </constraints>
@@ -205,8 +206,8 @@
                                                         <color key="textColor" name="AppColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xC-DW-El7" customClass="WLButton" customModule="The_Appineers" customModuleProvider="target">
-                                                        <rect key="frame" x="190.5" y="0.0" width="64" height="20"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xC-DW-El7" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
+                                                        <rect key="frame" x="190" y="0.0" width="64" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                         <state key="normal" title="Sign Up!">
                                                             <color key="titleColor" name="AppColor"/>
@@ -251,6 +252,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="LAD-6a-irI"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="EJ2-Ni-yQl" firstAttribute="top" secondItem="LAD-6a-irI" secondAttribute="top" id="FDH-Z1-NP1"/>
@@ -258,11 +260,10 @@
                             <constraint firstItem="EJ2-Ni-yQl" firstAttribute="leading" secondItem="LAD-6a-irI" secondAttribute="leading" id="r9O-Lm-BxX"/>
                             <constraint firstItem="LAD-6a-irI" firstAttribute="trailing" secondItem="EJ2-Ni-yQl" secondAttribute="trailing" id="sQe-sw-K4o"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="LAD-6a-irI"/>
                     </view>
                     <navigationItem key="navigationItem" id="f2D-ED-Sob">
                         <barButtonItem key="rightBarButtonItem" id="V4J-Ok-uLY">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hCJ-b3-gtg" customClass="WLButton" customModule="The_Appineers" customModuleProvider="target">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="hCJ-b3-gtg" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
                                 <rect key="frame" x="299" y="2" width="60" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -293,6 +294,35 @@
             <point key="canvasLocation" x="1437.5999999999999" y="94.902548725637189"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="1xC-DW-El7">
+            <size key="intrinsicContentSize" width="64" height="32"/>
+        </designable>
+        <designable name="DHH-Ci-xPf">
+            <size key="intrinsicContentSize" width="90.5" height="34"/>
+        </designable>
+        <designable name="Pez-Li-dOE">
+            <size key="intrinsicContentSize" width="124.5" height="34"/>
+        </designable>
+        <designable name="Tyc-Au-cfv">
+            <size key="intrinsicContentSize" width="126" height="30"/>
+        </designable>
+        <designable name="hCJ-b3-gtg">
+            <size key="intrinsicContentSize" width="38" height="32"/>
+        </designable>
+        <designable name="jnp-8c-5M9">
+            <size key="intrinsicContentSize" width="50" height="50"/>
+        </designable>
+        <designable name="nEd-7B-MpX">
+            <size key="intrinsicContentSize" width="52" height="32"/>
+        </designable>
+        <designable name="quH-6T-gka">
+            <size key="intrinsicContentSize" width="50" height="50"/>
+        </designable>
+        <designable name="sC7-ww-g0w">
+            <size key="intrinsicContentSize" width="50" height="50"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Apple" width="50" height="50"/>
         <image name="FACEBOOK" width="50" height="50"/>
@@ -301,10 +331,13 @@
         <image name="login_password" width="25" height="25"/>
         <image name="login_phone" width="25" height="25"/>
         <namedColor name="AppColor">
-            <color red="0.039215686274509803" green="0.094117647058823528" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.40784313725490196" green="0.22745098039215686" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BackgroundColor">
-            <color red="0.92941176470588238" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
