@@ -281,6 +281,12 @@
 		AE69E1C22539F21A008185A0 /* SubscriptionAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E1C12539F21A008185A0 /* SubscriptionAPIRouter.swift */; };
 		AE6A3B932542C55B003C9547 /* MessageAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A3B922542C55B003C9547 /* MessageAPIRouter.swift */; };
 		AE6A3B9A2542E130003C9547 /* UpdateProfileAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A3B992542E130003C9547 /* UpdateProfileAPIRouter.swift */; };
+		AE7632C625C92E2100D07FAD /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE7632C025C92E2100D07FAD /* SF-Pro-Text-Heavy.otf */; };
+		AE7632C725C92E2100D07FAD /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE7632C125C92E2100D07FAD /* SF-Pro-Text-Light.otf */; };
+		AE7632C825C92E2100D07FAD /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE7632C225C92E2100D07FAD /* SF-Pro-Text-Regular.otf */; };
+		AE7632C925C92E2100D07FAD /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE7632C325C92E2100D07FAD /* SF-Pro-Text-Bold.otf */; };
+		AE7632CA25C92E2100D07FAD /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE7632C425C92E2100D07FAD /* SF-Pro-Text-Semibold.otf */; };
+		AE7632CB25C92E2100D07FAD /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE7632C525C92E2100D07FAD /* SF-Pro-Text-Medium.otf */; };
 		AE7A41752552910000A1A984 /* LikeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A41732552910000A1A984 /* LikeCollectionViewCell.swift */; };
 		AE7A41762552910000A1A984 /* LikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE7A41742552910000A1A984 /* LikeCollectionViewCell.xib */; };
 		AE7CCD3F252D825B001D9C88 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AE7CCD3E252D825B001D9C88 /* .swiftlint.yml */; };
@@ -658,6 +664,12 @@
 		AE6A3B922542C55B003C9547 /* MessageAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAPIRouter.swift; sourceTree = "<group>"; };
 		AE6A3B962542DE7D003C9547 /* CanoodleRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CanoodleRelease.entitlements; sourceTree = "<group>"; };
 		AE6A3B992542E130003C9547 /* UpdateProfileAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileAPIRouter.swift; sourceTree = "<group>"; };
+		AE7632C025C92E2100D07FAD /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
+		AE7632C125C92E2100D07FAD /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
+		AE7632C225C92E2100D07FAD /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		AE7632C325C92E2100D07FAD /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		AE7632C425C92E2100D07FAD /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		AE7632C525C92E2100D07FAD /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		AE7A41732552910000A1A984 /* LikeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCollectionViewCell.swift; sourceTree = "<group>"; };
 		AE7A41742552910000A1A984 /* LikeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeCollectionViewCell.xib; sourceTree = "<group>"; };
 		AE7CCD3E252D825B001D9C88 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -1101,6 +1113,7 @@
 		2709AC84232F6091000708FF /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				AE7632BF25C92E2100D07FAD /* SFProText */,
 				2709AC85232F6091000708FF /* Montserrat-Medium.ttf */,
 				2709AC86232F6091000708FF /* Montserrat-Light.ttf */,
 				2709AC87232F6091000708FF /* Montserrat-Bold.ttf */,
@@ -1465,6 +1478,19 @@
 			path = HomeFilter;
 			sourceTree = "<group>";
 		};
+		AE7632BF25C92E2100D07FAD /* SFProText */ = {
+			isa = PBXGroup;
+			children = (
+				AE7632C025C92E2100D07FAD /* SF-Pro-Text-Heavy.otf */,
+				AE7632C125C92E2100D07FAD /* SF-Pro-Text-Light.otf */,
+				AE7632C225C92E2100D07FAD /* SF-Pro-Text-Regular.otf */,
+				AE7632C325C92E2100D07FAD /* SF-Pro-Text-Bold.otf */,
+				AE7632C425C92E2100D07FAD /* SF-Pro-Text-Semibold.otf */,
+				AE7632C525C92E2100D07FAD /* SF-Pro-Text-Medium.otf */,
+			);
+			path = SFProText;
+			sourceTree = "<group>";
+		};
 		AE88151B2534A30200B4B34C /* Like */ = {
 			isa = PBXGroup;
 			children = (
@@ -1686,9 +1712,13 @@
 				278CC12D232FB31100F2CE32 /* LoginPhoneAndSocial.storyboard in Resources */,
 				27E604ED2338BC5800704130 /* Setting.storyboard in Resources */,
 				AE53DD3D25384B4500824C8E /* CanoodleViewCell.xib in Resources */,
+				AE7632C725C92E2100D07FAD /* SF-Pro-Text-Light.otf in Resources */,
+				AE7632C925C92E2100D07FAD /* SF-Pro-Text-Bold.otf in Resources */,
+				AE7632C625C92E2100D07FAD /* SF-Pro-Text-Heavy.otf in Resources */,
 				276EF5CA2333D3B200D359A3 /* ResetPassword.storyboard in Resources */,
 				278CC13B232FB33000F2CE32 /* LoginEmailAndSocial.storyboard in Resources */,
 				AEA21E2225B97C6600D8BCE0 /* HorizontalSwipe.json in Resources */,
+				AE7632CB25C92E2100D07FAD /* SF-Pro-Text-Medium.otf in Resources */,
 				27F34832233B35B30036558B /* MyProfile.storyboard in Resources */,
 				27F3482C233B35830036558B /* Canoodle.storyboard in Resources */,
 				27AA9056233CE11A00A85134 /* ImageDetails.storyboard in Resources */,
@@ -1703,6 +1733,7 @@
 				27F30B57233C904C008503EB /* SendFeedback.storyboard in Resources */,
 				AE53DD9925386CC900824C8E /* LikeViewCell.xib in Resources */,
 				27F3482F233B359B0036558B /* Messages.storyboard in Resources */,
+				AE7632C825C92E2100D07FAD /* SF-Pro-Text-Regular.otf in Resources */,
 				AE88A171253EC8E000EF981D /* BlockedUserViewCell.xib in Resources */,
 				273D74C1233387BB003FBEF9 /* ForgotPasswordEmail.storyboard in Resources */,
 				AE53DDAC25387A9000824C8E /* UserProfile.storyboard in Resources */,
@@ -1727,6 +1758,7 @@
 				27F3488F233B853A0036558B /* ChangeMobileNumber.storyboard in Resources */,
 				AE88A143253EA2A600EF981D /* Notifications.storyboard in Resources */,
 				AEA21E2025B97C6600D8BCE0 /* VerticalSwipe.json in Resources */,
+				AE7632CA25C92E2100D07FAD /* SF-Pro-Text-Semibold.otf in Resources */,
 				AE537EE22535378B0084A780 /* HomeCardView.xib in Resources */,
 				2709ACDD232F6092000708FF /* Montserrat-Medium.ttf in Resources */,
 				AEED53BC24C446EA004B9AAE /* Onboarding.storyboard in Resources */,

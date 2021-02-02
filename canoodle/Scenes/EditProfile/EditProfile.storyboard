@@ -8,6 +8,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Medium.otf">
+            <string>SFProText-Medium</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Edit Profile View Controller-->
         <scene sceneID="i2M-tE-Yvx">
@@ -73,7 +81,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="PA5-yd-mut"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -97,7 +105,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="yxo-2D-uvE"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" keyboardType="alphabet" returnKeyType="next"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
@@ -118,7 +126,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="jVi-eT-It2"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" keyboardType="alphabet" returnKeyType="next"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
@@ -139,7 +147,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="icp-p8-Gyz"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" returnKeyType="next"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
@@ -160,7 +168,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="zZy-H0-CMu"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="alphabet" returnKeyType="next"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
@@ -181,7 +189,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="o6i-u6-Q7x"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
@@ -202,7 +210,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="By9-uB-OTu"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" keyboardType="alphabet"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
@@ -226,7 +234,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Yev-ST-xvC"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
@@ -250,7 +258,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="q13-XE-49P"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" keyboardType="alphabet"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
@@ -271,7 +279,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="e0a-c6-Ggm"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
@@ -292,7 +300,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="huy-1S-CHU"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
@@ -315,7 +323,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="dcK-Nc-3Bj"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="18"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="3"/>
                                                 <state key="normal" title="Update">
                                                     <color key="titleColor" name="AppColor"/>
@@ -398,43 +406,43 @@
     </scenes>
     <designables>
         <designable name="1Ww-tt-Ik9">
-            <size key="intrinsicContentSize" width="96.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="94.5" height="18"/>
         </designable>
         <designable name="CGm-Zj-mU1">
-            <size key="intrinsicContentSize" width="69" height="18.5"/>
+            <size key="intrinsicContentSize" width="68" height="18"/>
         </designable>
         <designable name="QSt-Vq-nJK">
             <size key="intrinsicContentSize" width="33" height="30"/>
         </designable>
         <designable name="QVx-Kr-oFy">
-            <size key="intrinsicContentSize" width="59" height="18.5"/>
+            <size key="intrinsicContentSize" width="58" height="18"/>
         </designable>
         <designable name="Rwl-U9-tVj">
-            <size key="intrinsicContentSize" width="34" height="18.5"/>
+            <size key="intrinsicContentSize" width="33" height="18"/>
         </designable>
         <designable name="STf-bE-dFf">
-            <size key="intrinsicContentSize" width="48" height="18.5"/>
+            <size key="intrinsicContentSize" width="46.5" height="18"/>
         </designable>
         <designable name="eqd-Mc-Nff">
-            <size key="intrinsicContentSize" width="70" height="18.5"/>
+            <size key="intrinsicContentSize" width="68.5" height="18"/>
         </designable>
         <designable name="lly-Yk-o9e">
             <size key="intrinsicContentSize" width="42" height="34"/>
         </designable>
         <designable name="mxi-aT-vvG">
-            <size key="intrinsicContentSize" width="26" height="18.5"/>
+            <size key="intrinsicContentSize" width="25" height="18"/>
         </designable>
         <designable name="myr-Xe-EaR">
-            <size key="intrinsicContentSize" width="53" height="18.5"/>
+            <size key="intrinsicContentSize" width="52" height="18"/>
         </designable>
         <designable name="qhv-t6-z2F">
-            <size key="intrinsicContentSize" width="66" height="18.5"/>
+            <size key="intrinsicContentSize" width="64.5" height="18"/>
         </designable>
         <designable name="tTa-mo-VhD">
-            <size key="intrinsicContentSize" width="62" height="34"/>
+            <size key="intrinsicContentSize" width="60" height="33"/>
         </designable>
         <designable name="xWm-3i-v3x">
-            <size key="intrinsicContentSize" width="82" height="18.5"/>
+            <size key="intrinsicContentSize" width="79" height="18"/>
         </designable>
     </designables>
     <resources>
