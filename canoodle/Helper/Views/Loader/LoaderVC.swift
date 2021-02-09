@@ -22,9 +22,9 @@ class LoaderVC:  UIViewController {
       //  addAnimation()
       //  self.doInitialSettings()
         
-        animationView = AnimationView(name: "loading")
+        animationView = AnimationView(name: "paw")
         animationView.contentMode = .scaleAspectFill
-        animationView.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
+        animationView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         animationView.center = self.view.center
         animationView.loopMode = .loop
         animationView.isHidden = false

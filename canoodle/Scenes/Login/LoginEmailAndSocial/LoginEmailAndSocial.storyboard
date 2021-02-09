@@ -15,6 +15,9 @@
         <array key="SF-Pro-Text-Regular.otf">
             <string>SFProText-Regular</string>
         </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Login Email And Social View Controller-->
@@ -38,7 +41,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fYf-4l-jGx">
-                                                <rect key="frame" x="13" y="200" width="344" height="235"/>
+                                                <rect key="frame" x="12" y="200" width="344" height="235"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pez-Li-dOE" customClass="CustomTextField" customModule="Canoodle" customModuleProvider="target">
@@ -112,7 +115,7 @@
                                                 <rect key="frame" x="48" y="476" width="276" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                                 <state key="normal" title="Sign In">
                                                     <color key="titleColor" name="AppColor"/>
                                                 </state>
@@ -237,13 +240,13 @@
     </scenes>
     <designables>
         <designable name="DHH-Ci-xPf">
-            <size key="intrinsicContentSize" width="66.5" height="18"/>
+            <size key="intrinsicContentSize" width="68" height="18"/>
         </designable>
         <designable name="Pez-Li-dOE">
-            <size key="intrinsicContentSize" width="37" height="19"/>
+            <size key="intrinsicContentSize" width="38" height="19.5"/>
         </designable>
         <designable name="Tyc-Au-cfv">
-            <size key="intrinsicContentSize" width="123" height="30"/>
+            <size key="intrinsicContentSize" width="130" height="30"/>
         </designable>
         <designable name="hCJ-b3-gtg">
             <size key="intrinsicContentSize" width="38" height="32"/>
@@ -252,10 +255,10 @@
             <size key="intrinsicContentSize" width="50" height="50"/>
         </designable>
         <designable name="nEd-7B-MpX">
-            <size key="intrinsicContentSize" width="56" height="33"/>
+            <size key="intrinsicContentSize" width="61" height="34"/>
         </designable>
         <designable name="pAY-Jc-YRb">
-            <size key="intrinsicContentSize" width="66" height="32"/>
+            <size key="intrinsicContentSize" width="70" height="33"/>
         </designable>
         <designable name="quH-6T-gka">
             <size key="intrinsicContentSize" width="50" height="50"/>

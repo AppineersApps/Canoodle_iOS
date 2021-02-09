@@ -32,13 +32,12 @@ class HomeCardView: UIView {
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var bgImageView: UIImageView!
     @IBOutlet weak var watermarkView: UIView!
-    
-    public weak var delegate: HomeCardViewProtocol?
+   // @IBOutlet weak var gestureView: UIView!
 
+    public weak var delegate: HomeCardViewProtocol?
+    var likeImageView: UIImageView!
 
     var currPageIndex:Int = 0
-    
-    var breedArray = ["Cocker Spaniel", "Great Dane", "Pomeranian", "Saint Bernard", "Labrador", "German Shepherd", "Doberman", "Boxer", "Bull Terrier", "Greyhound", "Great Dane", "Wolfhound", "Poodle", "Siberian Husky", "Cocker Spaniel", "Great Dane", "Pomeranian", "Saint Bernard", "Labrador", "Cocker Spaniel", "Great Dane", "Pomeranian", "Saint Bernard", "Labrador", "German Shepherd", "Doberman", "Boxer", "Bull Terrier", "Greyhound", "Great Dane", "Wolfhound", "Poodle", "Siberian Husky", "Cocker Spaniel", "Great Dane", "Pomeranian", "Saint Bernard", "Labrador", "Cocker Spaniel", "Great Dane", "Pomeranian", "Saint Bernard", "Labrador", "German Shepherd", "Doberman", "Boxer", "Bull Terrier", "Greyhound", "Great Dane", "Wolfhound", "Poodle", "Siberian Husky", "Cocker Spaniel", "Great Dane", "Pomeranian", "Saint Bernard", "Labrador"]
 
     var mediaViews: [UIView] = []
     
@@ -55,7 +54,96 @@ class HomeCardView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //self.setCornerRadiusAndShadow(cornerRe: 16)
+        addPanGestureOnCards()
+    }
+    
+    func addPanGestureOnCards() {
+        self.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture)))
+          
+      }
+
+    @objc func handlePanGesture(sender: UIPanGestureRecognizer) {
+        
+        let card = sender.view as! HomeCardView
+        sender.delegate = self
+       // let velocity = sender.velocity(in: card)
+        let point = sender.translation(in: self)
+        let centerOfParentContainer = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
+        card.center = CGPoint(x: centerOfParentContainer.x + point.x, y: centerOfParentContainer.y + point.y)
+        let xFromCenter = card.center.x - centerOfParentContainer.x
+        card.layer.cornerRadius = 10
+ //       if card.center.x > 100 && card.center.x < 250 && velocity.y < 0 {
+//            likeDisLlkeView.alpha = 0
+//            superLikeImageView.alpha = 1
+//            gradientView.alpha = 0.4
+//            likeDislikeProfile.text = ""
+//        }
+         if xFromCenter > 0 {
+            self.showLikeAnimation()
+            self.alpha = 0.7
+        }else {
+            showUnLikeAnimation()
+//            likeDisLlkeView.image = #imageLiteral(resourceName: "dislike")
+//            likeDisLlkeView.alpha = abs(xFromCenter)/card.center.x
+//            likeDislikeProfile.text = "Dislike"
+//            likeDislikeProfile.textAlignment = .right
+//            let rotation = tan(-216.10364243431303 / (self.frame.width * 2.0))
+//            likeDislikeProfile.transform = CGAffineTransform(rotationAngle: rotation)
+//            likeDislikeProfile.alpha = abs(xFromCenter)/card.center.x
+            self.alpha = 0.7
+        }
+        switch sender.state {
+        case .ended:
+            if (card.center.x) > 250 {
+               // delegate?.swipeDidEnd(on: card)
+                showLikeAnimation()
+                UIView.animate(withDuration: 0.5,
+                               delay: 0.0,
+                               options: [.curveEaseInOut, .allowUserInteraction],
+                               animations:{
+                    card.center = CGPoint(x: centerOfParentContainer.x + point.x + 200, y: centerOfParentContainer.y + point.y + 75)
+                }, completion: { _ in
+                    card.alpha = 0
+                    self.removeFromSuperview()
+                    self.delegate?.swipedCard(user: self.user, type: SwipeType.Right)
+                })
+                return
+            }else if card.center.x < 100 {
+                showUnLikeAnimation()
+                //delegate?.swipeDidEnd(on: card)
+                UIView.animate(withDuration: 0.5,
+                               delay: 0.0,
+                               options: [.curveEaseInOut, .allowUserInteraction],
+                               animations: {
+                    card.center = CGPoint(x: centerOfParentContainer.x + point.x - 200, y: centerOfParentContainer.y + point.y + 75)
+                }, completion: { _ in
+                    card.alpha = 0
+                    self.removeFromSuperview()
+                    self.delegate?.swipedCard(user: self.user, type: SwipeType.Left)
+                })
+                return
+            } /*else {
+                likeImageView.removeFromSuperview()
+                likeImageView = nil
+            }*/
+            UIView.animate(withDuration: 0.5){
+                card.transform = .identity
+                card.center = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
+                //self.likeDisLlkeView.alpha = 0
+               // self.likeDislikeProfile.alpha = 0
+               // self.gradientView.alpha = 0
+                self.likeImageView.removeFromSuperview()
+                self.likeImageView = nil
+                //card.layer.cornerRadius = 0
+                card.alpha = 1.0
+               // self.layoutIfNeeded()
+            }
+        case .changed:
+            let rotation = tan(point.x / (self.frame.width * 2.0))
+            card.transform = CGAffineTransform(rotationAngle: rotation)
+        default:
+            break
+        }
     }
     
     func loadMedia() {
@@ -109,8 +197,8 @@ class HomeCardView: UIView {
 
          self.addGestureRecognizer(upSwipe)
          self.addGestureRecognizer(downSwipe)
-         self.addGestureRecognizer(leftSwipe)
-         self.addGestureRecognizer(rightSwipe)
+         //self.addGestureRecognizer(leftSwipe)
+         //self.addGestureRecognizer(rightSwipe)
 
         displayMedia(tag: 0)
     }
@@ -215,15 +303,23 @@ class HomeCardView: UIView {
     }
     
     func showLikeAnimation() {
-        let imageView: UIImageView = UIImageView.init(image: UIImage.init(named: "like"))
-        imageView.frame = CGRect.init(x: self.frame.width/2 - 60, y: self.frame.height/2 - 60, width: 120, height:  120)
-        self.addSubview(imageView)
+        if(likeImageView == nil) {
+            likeImageView = UIImageView.init(image: UIImage.init(named: "like"))
+            likeImageView.frame = CGRect.init(x: self.frame.width/2 - 60, y: self.frame.height/2 - 60, width: 120, height:  120)
+            self.addSubview(likeImageView)
+        } else {
+            likeImageView.image = UIImage.init(named: "like")
+        }
     }
     
     func showUnLikeAnimation() {
-        let imageView: UIImageView = UIImageView.init(image: UIImage.init(named: "unlike"))
-        imageView.frame = CGRect.init(x: self.frame.width/2 - 60, y: self.frame.height/2 - 60, width: 120, height:  120)
-        self.addSubview(imageView)
+        if(likeImageView == nil) {
+            likeImageView = UIImageView.init(image: UIImage.init(named: "unlike"))
+            likeImageView.frame = CGRect.init(x: self.frame.width/2 - 60, y: self.frame.height/2 - 60, width: 120, height:  120)
+            self.addSubview(likeImageView)
+        } else {
+            likeImageView.image = UIImage.init(named: "unlike")
+        }
     }
     @IBAction func viewProfileAction(_ sender: Any) {
         delegate?.showProfile(user: self.user)
@@ -242,4 +338,16 @@ class HomeCardView: UIView {
             self.removeFromSuperview()
         })
     }
+}
+
+extension HomeCardView: UIGestureRecognizerDelegate {
+    
+    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if let pan = gestureRecognizer as? UIPanGestureRecognizer {
+            let velocity = pan.velocity(in: self)
+            return abs(velocity.x) > abs(velocity.y)
+        }
+        return true
+    }
+    
 }

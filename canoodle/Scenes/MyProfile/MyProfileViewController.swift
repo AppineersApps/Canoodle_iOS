@@ -183,10 +183,10 @@ class MyProfileViewController: BaseViewControllerWithAd {
         }
         slideshow.setImageInputs(localSource)
 
-       /* if((item?.imageUrls.count)! > 0) {
-            let recognizer = UITapGestureRecognizer(target: self, action: #selector(ItemListTableViewCell.didTap))
+        if((medias.count) > 0) {
+            let recognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
             slideshow.addGestureRecognizer(recognizer)
-        }*/
+        }
     }
     
     func filterMedia() {
@@ -198,6 +198,13 @@ class MyProfileViewController: BaseViewControllerWithAd {
             
         }
     }
+    
+    @objc func didTap() {
+        let fullScreenController = slideshow.presentFullScreenController(from: self)
+        // set the activity indicator for full screen controller (skipping the line will show no activity indicator)
+       fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
+    }
+
     
     /// Open user profile in full screen
     ///

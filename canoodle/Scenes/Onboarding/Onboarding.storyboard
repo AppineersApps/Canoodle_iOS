@@ -44,7 +44,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nxp-xX-ZGg" customClass="WLButton" customModule="Canoodle" customModuleProvider="target">
-                                <rect key="frame" x="48" y="492" width="278" height="50"/>
+                                <rect key="frame" x="47" y="492" width="278" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
@@ -107,7 +107,7 @@
     </scenes>
     <designables>
         <designable name="Nxp-xX-ZGg">
-            <size key="intrinsicContentSize" width="130" height="32"/>
+            <size key="intrinsicContentSize" width="142" height="33"/>
         </designable>
     </designables>
     <resources>

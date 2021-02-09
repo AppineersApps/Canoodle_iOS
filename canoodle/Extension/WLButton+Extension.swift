@@ -24,12 +24,20 @@ extension UIButton {
         self.addTarget(self, action: #selector(logEvent), for: .touchUpInside)
     }
     
+    func press() {
+             UIView.animate(withDuration: 0.05, animations: {
+                 self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95) }, completion: { (finish: Bool) in
+                     UIView.animate(withDuration: 0.1, animations: {
+                         self.transform = CGAffineTransform.identity
+                     })
+             })
+     }
+
     
     /// Log the Button events in library
     @objc func logEvent() {
-        
+        press()
         var aFunctionName = ""
-        var buttonName = ""
         var aClass = self.superview?.parentViewController
         if aClass is NavController
         {
@@ -46,7 +54,6 @@ extension UIButton {
                     if aStr != "logEvent"
                     {
                         aFunctionName = aStr
-                        buttonName = target.description
                     }
                     print(aStr)
                 }
@@ -54,7 +61,7 @@ extension UIButton {
         }
         if let _ = aClass
         {
-            GlobalUtility.logButtonEvent(functionName: aFunctionName, file: GlobalUtility.classNameAsString(obj: aClass!), name: self.titleLabel?.text ?? aFunctionName)
+            GlobalUtility.logButtonEvent(functionName: aFunctionName, file: GlobalUtility.classNameAsString(obj: aClass!), name: aFunctionName)
         }
     }
 }

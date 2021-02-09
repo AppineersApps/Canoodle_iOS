@@ -22,6 +22,7 @@ class BlockedUserViewController: UIViewController
 {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var watermarkView: UIView!
+    @IBOutlet weak var searchBar: UISearchBar!
 
 
   var interactor: BlockedUserBusinessLogic?
@@ -163,5 +164,67 @@ extension BlockedUserViewController: BlockedUserDisplayLogic {
         } else {
             self.showTopMessage(message: message, type: .Error)
         }
+    }
+}
+
+// Search
+extension BlockedUserViewController : UISearchBarDelegate {
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        //self.searchBar.showsCancelButton = true
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+       // self.searchBar.showsCancelButton = false
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if(searchBar.text == "") {
+            searchBar.resignFirstResponder()
+            filteredList = blockedUserList
+            tableView.reloadData()
+        }
+        else {
+            filterSearchResults()
+        }
+        
+        if searchText.isEmpty {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                searchBar.resignFirstResponder()
+            }
+        }
+        
+    }// called when text changes (including clear)
+    
+    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool{
+        if(text == "\n") {
+            searchBar.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.placeholder = "Enter name"
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarResultsListButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func filterSearchResults() {
+        var filteredArray:[Connection.ViewModel] = []
+        blockedUserList.forEach {
+            let user:Connection.ViewModel = $0
+            let name:String = user.userName!
+            let searchText:String = self.searchBar.text!
+            if(name.lowercased().contains(searchText.lowercased())) {
+                filteredArray.append(user)
+            }
+        }
+        filteredList = filteredArray
+        tableView.reloadData()
     }
 }

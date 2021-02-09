@@ -39,7 +39,7 @@ class GoogleSearch: BaseViewController {
         fetcher = GMSAutocompleteFetcher()
         fetcher?.autocompleteFilter = filter
         fetcher?.delegate = self
-        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white], for: .normal)
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): AppConstants.appColor], for: .normal)
     }
     
     override func viewDidAppear(_ animated:Bool) {

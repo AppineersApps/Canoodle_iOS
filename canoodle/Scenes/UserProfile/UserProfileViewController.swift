@@ -204,7 +204,6 @@ class UserProfileViewController: BaseViewControllerWithAd
             let recognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
             slideshow.addGestureRecognizer(recognizer)
         }
-        slideshow.bringSubviewToFront(statusView)
     }
     
     @objc func didTap() {

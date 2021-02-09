@@ -25,7 +25,7 @@ class PetProfileViewController: BaseViewController
     @IBOutlet weak var petNameTextField: UITextField!
     @IBOutlet weak var petAgeTextField: UITextField!
     @IBOutlet weak var breedTextField: UITextField!
-    @IBOutlet weak var descTextView: UITextView!
+    @IBOutlet weak var descTextView: CustomTextView!
     @IBOutlet weak var akcSwitch: UISwitch!
     @IBOutlet weak var lblDescriptionCharacterCount: UILabel!
 
@@ -99,6 +99,7 @@ class PetProfileViewController: BaseViewController
   {
     super.viewDidLoad()
     self.title = "Add Pet Profile"
+    descTextView.delegate = self
     self.addAnayltics(analyticsParameterItemID: "id-editpetprofilescreen", analyticsParameterItemName: "view_editpetprofilescreen", analyticsParameterContentType: "view_editpetprofilescreen")
     if(user != nil && user.petId != "") {
         breed = user.breed!
@@ -121,7 +122,7 @@ class PetProfileViewController: BaseViewController
         petAgeTextField.text = user.petAge
         breedTextField.text = user.breed
         descTextView.text = user.petDescription
-        self.lblDescriptionCharacterCount.text = "(\(descTextView.text.count)/1000)"
+        self.lblDescriptionCharacterCount.text = "(\(descTextView.text.count)/500)"
         if(user.akcRegistered == "yes") {
             akcSwitch.isOn = true
         } else {
@@ -136,11 +137,11 @@ class PetProfileViewController: BaseViewController
     /// Scroll colllecttionview to last index while add image
     func scrollToBottom() {
         DispatchQueue.main.async {
-            if self.imageArray.count == 5 {
-                let indexPath = IndexPath(row: self.imageArray.count - 1, section: 0)
+            if (self.imageArray.count + self.medias.count) == 5 {
+                let indexPath = IndexPath(row: (self.imageArray.count + self.medias.count) - 1, section: 0)
                 self.clctnView.scrollToItem(at: indexPath, at: .right, animated: false)
             } else {
-                let indexPath = IndexPath(row: self.imageArray.count, section: 0)
+                let indexPath = IndexPath(row: (self.imageArray.count + self.medias.count), section: 0)
                 self.clctnView.scrollToItem(at: indexPath, at: .right, animated: false)
             }
         }
@@ -159,7 +160,6 @@ class PetProfileViewController: BaseViewController
     
     @IBAction func btnSaveAction(_ sender: Any) {
         updatePetProfile()
-        saveProfile()
      }
 
      @IBAction func btnCancelAction(_ sender: Any) {
@@ -216,6 +216,11 @@ class PetProfileViewController: BaseViewController
             return
         }
         
+        if(descTextView.text.count < 10) {
+            self.showSimpleAlert(message: "Please enter min 150 char description for your pet")
+            return
+        }
+        
         let request = UpdatePetProfile.Request(petId: petId, petName: petNameTextField.text!, breed: breedTextField.text!, petAge: petAgeTextField.text!, akcRegistered: akc, description: descTextView.text)
         interactor?.updatePetProfile(request: request)
     }
@@ -223,7 +228,18 @@ class PetProfileViewController: BaseViewController
     
   func saveProfile()
   {
-    if(imageArray.count == 0) {
+    if(imageArray.count == 0 && medias.count == 0) {
+        if(onboarding) {
+             UserDefaultsManager.profileSetUpDone = "Yes"
+            if let aboutMeVC = AboutMeViewController.instance() {
+                aboutMeVC.onboarding = true
+                aboutMeVC.aboutDescription = ""
+                self.navigationController?.pushViewController(aboutMeVC, animated: true)
+            }
+        }
+        else {
+            self.navigationController?.popViewController(animated: true)
+        }
         return
     }
     self.addAnayltics(analyticsParameterItemID: "id-imageupload", analyticsParameterItemName: "click_imageupload", analyticsParameterContentType: "click_imageupload")
@@ -256,8 +272,8 @@ extension PetProfileViewController:  UICollectionViewDelegate, UICollectionViewD
     ///   - section: Section
     /// - Returns: Return number of rows
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if imageArray.count == 5 {
-            return imageArray.count
+        if ((imageArray.count + medias.count) == 5) {
+            return imageArray.count + medias.count
         } else {
             return imageArray.count + medias.count + 1
         }
@@ -320,6 +336,18 @@ extension PetProfileViewController: UITextFieldDelegate {
             }
         }
     }
+}
+
+extension PetProfileViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        //self.lblDescriptionCharacterCount.isHidden = false
+        if textView.text.count > 500 {
+            var str = textView.text ?? ""
+            str = String(str.prefix(500))
+            self.descTextView.text = str
+        }
+    }
     
     /// Method is called when textview text changes
     ///
@@ -328,12 +356,12 @@ extension PetProfileViewController: UITextFieldDelegate {
         textView.layer.borderColor = UIColor.lightGray.cgColor
         textView.layer.borderWidth = 1.0
         textView.layer.cornerRadius = 16.0
-        if textView.text.count > 1000 {
+        if textView.text.count > 500 {
             var str = textView.text ?? ""
-            str = String(str.prefix(1000))
+            str = String(str.prefix(500))
             self.descTextView.text = str
         }
-        self.lblDescriptionCharacterCount.text = "(\(textView.text.count)/1000)"
+        self.lblDescriptionCharacterCount.text = "(\(textView.text.count)/500)"
     }
 }
 
@@ -341,16 +369,8 @@ extension PetProfileViewController: PetProfileDisplayLogic {
     
     func didReceiveUploadMediaResponse(message: String, success: String) {
         if success == "1" {
-           // self.showTopMessage(message: "Media added successfully", type: .Success)
+            self.showTopMessage(message: "Pet Media added successfully", type: .Success)
             //self.navigationController?.popViewController(animated: true)
-        } else {
-            self.showTopMessage(message: message, type: .Error)
-        }
-    }
-    
-    func didReceiveUpdatePetProfileResponse(message: String, success: String) {
-        if success == "1" {
-            self.showTopMessage(message: "Profile updated successfully", type: .Success)
             if(onboarding) {
                  UserDefaultsManager.profileSetUpDone = "Yes"
                 if let aboutMeVC = AboutMeViewController.instance() {
@@ -362,6 +382,15 @@ extension PetProfileViewController: PetProfileDisplayLogic {
             else {
                 self.navigationController?.popViewController(animated: true)
             }
+        } else {
+            self.showTopMessage(message: message, type: .Error)
+        }
+    }
+    
+    func didReceiveUpdatePetProfileResponse(message: String, success: String) {
+        if success == "1" {
+            self.showTopMessage(message: "Profile updated successfully", type: .Success)
+            saveProfile()
         } else {
             self.showTopMessage(message: message, type: .Error)
         }
