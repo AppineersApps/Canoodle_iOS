@@ -204,7 +204,6 @@ class UserProfileViewController: BaseViewControllerWithAd
             let recognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
             slideshow.addGestureRecognizer(recognizer)
         }
-        slideshow.bringSubviewToFront(statusView)
     }
     
     @objc func didTap() {
@@ -366,7 +365,7 @@ extension UserProfileViewController: UserProfileDisplayLogic {
     
     func didReceiveReportUserResponse(message: String, successCode: String) {
         if successCode == "1" {
-            self.showTopMessage(message: message, type: .Success)
+            self.showTopMessage(message: "User reported successfully", type: .Success)
         } else {
             self.showTopMessage(message: message, type: .Error)
         }

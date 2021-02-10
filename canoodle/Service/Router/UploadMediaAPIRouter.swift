@@ -71,7 +71,7 @@ enum UploadMediaAPIRouter: RouterProtocol {
                 for count in 0...request.imageArray.count-1 {
                    // let media: Media.ViewModel = request.mediaArray[count]
                     let image = request.imageArray[count]
-                    let data = image.pngData()
+                    let data = image.jpegData(compressionQuality: 0.5)
                     index += 1
                     arrMultiPart.append(MultiPartData(fileName: "media_\(index).png", data: data, paramKey: "media_file_\(index)", mimeType: "image/png", fileKey: "media_file_\(index)"))
                 }

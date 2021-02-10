@@ -258,8 +258,6 @@
 		AE55B8ED253DE60F0056C64C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55B8EC253DE60F0056C64C /* Date+Extension.swift */; };
 		AE55CA1D254811C700CC32B5 /* DeleteMediaAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE55CA1C254811C700CC32B5 /* DeleteMediaAPIRouter.swift */; };
 		AE56514C255C08CF0043DFD8 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE56514B255C08CF0043DFD8 /* UIBarButtonItem+Extension.swift */; };
-		AE5A352E25AC52470000939C /* TALogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A352A25AC4E010000939C /* TALogger.framework */; };
-		AE5A352F25AC52470000939C /* TALogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A352A25AC4E010000939C /* TALogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE60601A25592EAE003AAD96 /* Pods_canoodle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787FCF655A5FE8AEA0259917 /* Pods_canoodle.framework */; };
 		AE69E07A25398B38008185A0 /* UserAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E07925398B38008185A0 /* UserAPIRouter.swift */; };
 		AE69E08025398D64008185A0 /* GetRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E07F25398D64008185A0 /* GetRouterProtocol.swift */; };
@@ -281,9 +279,18 @@
 		AE69E1C22539F21A008185A0 /* SubscriptionAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69E1C12539F21A008185A0 /* SubscriptionAPIRouter.swift */; };
 		AE6A3B932542C55B003C9547 /* MessageAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A3B922542C55B003C9547 /* MessageAPIRouter.swift */; };
 		AE6A3B9A2542E130003C9547 /* UpdateProfileAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A3B992542E130003C9547 /* UpdateProfileAPIRouter.swift */; };
+		AE7632C625C92E2100D07FAD /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE7632C025C92E2100D07FAD /* SF-Pro-Text-Heavy.otf */; };
+		AE7632C725C92E2100D07FAD /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE7632C125C92E2100D07FAD /* SF-Pro-Text-Light.otf */; };
+		AE7632C825C92E2100D07FAD /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE7632C225C92E2100D07FAD /* SF-Pro-Text-Regular.otf */; };
+		AE7632C925C92E2100D07FAD /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE7632C325C92E2100D07FAD /* SF-Pro-Text-Bold.otf */; };
+		AE7632CA25C92E2100D07FAD /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE7632C425C92E2100D07FAD /* SF-Pro-Text-Semibold.otf */; };
+		AE7632CB25C92E2100D07FAD /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE7632C525C92E2100D07FAD /* SF-Pro-Text-Medium.otf */; };
+		AE76337325C98DEF00D07FAD /* paw.json in Resources */ = {isa = PBXBuildFile; fileRef = AE76337225C98DEF00D07FAD /* paw.json */; };
 		AE7A41752552910000A1A984 /* LikeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A41732552910000A1A984 /* LikeCollectionViewCell.swift */; };
 		AE7A41762552910000A1A984 /* LikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE7A41742552910000A1A984 /* LikeCollectionViewCell.xib */; };
 		AE7CCD3F252D825B001D9C88 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AE7CCD3E252D825B001D9C88 /* .swiftlint.yml */; };
+		AE7DE3E725CED416000B0F41 /* TALogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7DE3E525CED40B000B0F41 /* TALogger.framework */; };
+		AE7DE3E825CED416000B0F41 /* TALogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE7DE3E525CED40B000B0F41 /* TALogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE838A6524C839C000F60EE6 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE838A6424C839C000F60EE6 /* GradientView.swift */; };
 		AE8467DB24DED3440042E0FE /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8467DA24DED3440042E0FE /* Array+Extension.swift */; };
 		AE8815222534A31D00B4B34C /* LikePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88151C2534A31D00B4B34C /* LikePresenter.swift */; };
@@ -367,7 +374,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AE5A352F25AC52470000939C /* TALogger.framework in Embed Frameworks */,
+				AE7DE3E825CED416000B0F41 /* TALogger.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,7 +643,6 @@
 		AE55B8EC253DE60F0056C64C /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		AE55CA1C254811C700CC32B5 /* DeleteMediaAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMediaAPIRouter.swift; sourceTree = "<group>"; };
 		AE56514B255C08CF0043DFD8 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
-		AE5A352A25AC4E010000939C /* TALogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TALogger.framework; sourceTree = "<group>"; };
 		AE69E07925398B38008185A0 /* UserAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIRouter.swift; sourceTree = "<group>"; };
 		AE69E07F25398D64008185A0 /* GetRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRouterProtocol.swift; sourceTree = "<group>"; };
 		AE69E08325398D6F008185A0 /* GetNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNetworkService.swift; sourceTree = "<group>"; };
@@ -658,9 +664,17 @@
 		AE6A3B922542C55B003C9547 /* MessageAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAPIRouter.swift; sourceTree = "<group>"; };
 		AE6A3B962542DE7D003C9547 /* CanoodleRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CanoodleRelease.entitlements; sourceTree = "<group>"; };
 		AE6A3B992542E130003C9547 /* UpdateProfileAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileAPIRouter.swift; sourceTree = "<group>"; };
+		AE7632C025C92E2100D07FAD /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
+		AE7632C125C92E2100D07FAD /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
+		AE7632C225C92E2100D07FAD /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		AE7632C325C92E2100D07FAD /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		AE7632C425C92E2100D07FAD /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		AE7632C525C92E2100D07FAD /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		AE76337225C98DEF00D07FAD /* paw.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = paw.json; sourceTree = "<group>"; };
 		AE7A41732552910000A1A984 /* LikeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCollectionViewCell.swift; sourceTree = "<group>"; };
 		AE7A41742552910000A1A984 /* LikeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeCollectionViewCell.xib; sourceTree = "<group>"; };
 		AE7CCD3E252D825B001D9C88 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		AE7DE3E525CED40B000B0F41 /* TALogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TALogger.framework; sourceTree = "<group>"; };
 		AE838A6424C839C000F60EE6 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		AE8467DA24DED3440042E0FE /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		AE88151C2534A31D00B4B34C /* LikePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikePresenter.swift; sourceTree = "<group>"; };
@@ -727,7 +741,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE60601A25592EAE003AAD96 /* Pods_canoodle.framework in Frameworks */,
-				AE5A352E25AC52470000939C /* TALogger.framework in Frameworks */,
+				AE7DE3E725CED416000B0F41 /* TALogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -948,7 +962,7 @@
 		2709AC52232F6090000708FF /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				AE5A352A25AC4E010000939C /* TALogger.framework */,
+				AE7DE3E525CED40B000B0F41 /* TALogger.framework */,
 				277D7811233E38FD00A496FD /* Loader */,
 				2709AC79232F6091000708FF /* CustomFiles */,
 				2709ACE2232F709D000708FF /* Validators.swift */,
@@ -1094,6 +1108,7 @@
 				AEA21E1E25B97C6500D8BCE0 /* ScrollUp.json */,
 				AEA21E1D25B97C6500D8BCE0 /* VerticalSwipe.json */,
 				2709AC83232F6091000708FF /* loading.json */,
+				AE76337225C98DEF00D07FAD /* paw.json */,
 			);
 			path = LottieFiles;
 			sourceTree = "<group>";
@@ -1101,6 +1116,7 @@
 		2709AC84232F6091000708FF /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				AE7632BF25C92E2100D07FAD /* SFProText */,
 				2709AC85232F6091000708FF /* Montserrat-Medium.ttf */,
 				2709AC86232F6091000708FF /* Montserrat-Light.ttf */,
 				2709AC87232F6091000708FF /* Montserrat-Bold.ttf */,
@@ -1465,6 +1481,19 @@
 			path = HomeFilter;
 			sourceTree = "<group>";
 		};
+		AE7632BF25C92E2100D07FAD /* SFProText */ = {
+			isa = PBXGroup;
+			children = (
+				AE7632C025C92E2100D07FAD /* SF-Pro-Text-Heavy.otf */,
+				AE7632C125C92E2100D07FAD /* SF-Pro-Text-Light.otf */,
+				AE7632C225C92E2100D07FAD /* SF-Pro-Text-Regular.otf */,
+				AE7632C325C92E2100D07FAD /* SF-Pro-Text-Bold.otf */,
+				AE7632C425C92E2100D07FAD /* SF-Pro-Text-Semibold.otf */,
+				AE7632C525C92E2100D07FAD /* SF-Pro-Text-Medium.otf */,
+			);
+			path = SFProText;
+			sourceTree = "<group>";
+		};
 		AE88151B2534A30200B4B34C /* Like */ = {
 			isa = PBXGroup;
 			children = (
@@ -1686,9 +1715,14 @@
 				278CC12D232FB31100F2CE32 /* LoginPhoneAndSocial.storyboard in Resources */,
 				27E604ED2338BC5800704130 /* Setting.storyboard in Resources */,
 				AE53DD3D25384B4500824C8E /* CanoodleViewCell.xib in Resources */,
+				AE7632C725C92E2100D07FAD /* SF-Pro-Text-Light.otf in Resources */,
+				AE76337325C98DEF00D07FAD /* paw.json in Resources */,
+				AE7632C925C92E2100D07FAD /* SF-Pro-Text-Bold.otf in Resources */,
+				AE7632C625C92E2100D07FAD /* SF-Pro-Text-Heavy.otf in Resources */,
 				276EF5CA2333D3B200D359A3 /* ResetPassword.storyboard in Resources */,
 				278CC13B232FB33000F2CE32 /* LoginEmailAndSocial.storyboard in Resources */,
 				AEA21E2225B97C6600D8BCE0 /* HorizontalSwipe.json in Resources */,
+				AE7632CB25C92E2100D07FAD /* SF-Pro-Text-Medium.otf in Resources */,
 				27F34832233B35B30036558B /* MyProfile.storyboard in Resources */,
 				27F3482C233B35830036558B /* Canoodle.storyboard in Resources */,
 				27AA9056233CE11A00A85134 /* ImageDetails.storyboard in Resources */,
@@ -1703,6 +1737,7 @@
 				27F30B57233C904C008503EB /* SendFeedback.storyboard in Resources */,
 				AE53DD9925386CC900824C8E /* LikeViewCell.xib in Resources */,
 				27F3482F233B359B0036558B /* Messages.storyboard in Resources */,
+				AE7632C825C92E2100D07FAD /* SF-Pro-Text-Regular.otf in Resources */,
 				AE88A171253EC8E000EF981D /* BlockedUserViewCell.xib in Resources */,
 				273D74C1233387BB003FBEF9 /* ForgotPasswordEmail.storyboard in Resources */,
 				AE53DDAC25387A9000824C8E /* UserProfile.storyboard in Resources */,
@@ -1727,6 +1762,7 @@
 				27F3488F233B853A0036558B /* ChangeMobileNumber.storyboard in Resources */,
 				AE88A143253EA2A600EF981D /* Notifications.storyboard in Resources */,
 				AEA21E2025B97C6600D8BCE0 /* VerticalSwipe.json in Resources */,
+				AE7632CA25C92E2100D07FAD /* SF-Pro-Text-Semibold.otf in Resources */,
 				AE537EE22535378B0084A780 /* HomeCardView.xib in Resources */,
 				2709ACDD232F6092000708FF /* Montserrat-Medium.ttf in Resources */,
 				AEED53BC24C446EA004B9AAE /* Onboarding.storyboard in Resources */,
@@ -2288,7 +2324,7 @@
 				CODE_SIGN_ENTITLEMENTS = canoodle/canoodle.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9YN33FMVMJ;
 				ENABLE_BITCODE = YES;
@@ -2298,6 +2334,7 @@
 					"$(PROJECT_DIR)/canoodle/Helper",
 					"$(PROJECT_DIR)/canoodle/Extension",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities\"",
+					"$(PROJECT_DIR)/canoodle/Helper/Views/Loader",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2353,7 +2390,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.canoodle;
 				PRODUCT_NAME = Canoodle;
@@ -2372,7 +2409,7 @@
 				CODE_SIGN_ENTITLEMENTS = canoodle/CanoodleRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YN33FMVMJ;
 				ENABLE_BITCODE = YES;
 				EXCLUDED_ARCHS = "";
@@ -2380,6 +2417,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/canoodle/Helper",
 					"$(PROJECT_DIR)/canoodle/Extension",
+					"$(PROJECT_DIR)/canoodle/Helper/Views/Loader",
 				);
 				INFOPLIST_FILE = canoodle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2387,7 +2425,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.canoodle;
 				PRODUCT_NAME = Canoodle;

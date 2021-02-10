@@ -142,11 +142,11 @@ class EditProfileViewController: BaseViewController {
         self.txtFieldGender.inputView = genderPicker
         self.txtFieldGender.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(genderSelectionDone))
        // btnUpdate.addLoginButtonShadowAndCornerRadius()
-        if textFieldVisibleStatus[8] && !(WhiteLabelSessionHandler.shared.stateListDate.count > 0) {
+        /*if textFieldVisibleStatus[8] && !(WhiteLabelSessionHandler.shared.stateListDate.count > 0) {
             interactor?.callStateAPI()
         } else if textFieldVisibleStatus[8] && (WhiteLabelSessionHandler.shared.stateListDate.count > 0) {
             self.stateListData = WhiteLabelSessionHandler.shared.stateListDate
-        }
+        }*/
     }
     
     /// Set UserData prefilled

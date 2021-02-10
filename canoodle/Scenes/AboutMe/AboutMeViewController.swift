@@ -89,7 +89,7 @@ class AboutMeViewController: UIViewController
     descTextView.layer.cornerRadius = 16.0
     descTextView.text = aboutDescription
     lblPlaceHolder.isHidden = !descTextView.text.isEmpty
-    self.lblDescriptionCharacterCount.text = "(\(descTextView.text.count)/1000)"
+    self.lblDescriptionCharacterCount.text = "(\(descTextView.text.count)/500)"
     if(onboarding) {
         self.navigationItem.leftBarButtonItem = nil
     }
@@ -127,9 +127,9 @@ extension AboutMeViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         //self.lblDescriptionCharacterCount.isHidden = false
         lblPlaceHolder.isHidden = !textView.text.isEmpty
-        if textView.text.count > 1000 {
+        if textView.text.count > 500 {
             var str = textView.text ?? ""
-            str = String(str.prefix(1000))
+            str = String(str.prefix(500))
             self.descTextView.text = str
         }
     }
@@ -142,12 +142,12 @@ extension AboutMeViewController: UITextViewDelegate {
         textView.layer.borderColor = UIColor.lightGray.cgColor
         textView.layer.borderWidth = 1.0
         textView.layer.cornerRadius = 16.0
-        if textView.text.count > 1000 {
+        if textView.text.count > 500 {
             var str = textView.text ?? ""
-            str = String(str.prefix(1000))
+            str = String(str.prefix(500))
             self.descTextView.text = str
         }
-        self.lblDescriptionCharacterCount.text = "(\(textView.text.count)/1000)"
+        self.lblDescriptionCharacterCount.text = "(\(textView.text.count)/500)"
     }
 }
 
