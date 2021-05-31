@@ -69,6 +69,9 @@ target 'canoodle' do
    pod 'MessageKit'
    pod 'Firebase/Firestore'
    pod 'SDWebImage'
+   
+   pod 'mopub-ios-sdk'
+
 
 end
 

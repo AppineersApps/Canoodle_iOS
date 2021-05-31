@@ -216,8 +216,8 @@ class PetProfileViewController: BaseViewController
             return
         }
         
-        if(descTextView.text.count < 10) {
-            self.showSimpleAlert(message: "Please enter min 150 char description for your pet")
+        if(descTextView.text.count < 150) {
+            self.showSimpleAlert(message: "Please enter min 150 characters description for your pet")
             return
         }
         
@@ -302,18 +302,17 @@ extension PetProfileViewController:  UICollectionViewDelegate, UICollectionViewD
                 cell?.imgPicked.setImage(with: media.mediaImages, placeHolder: UIImage.init(named: "placeholder"))
             }
             cell?.btnRemoveTappedClouser = {
-                self.displayAlert(msg: AlertMessage.deleteMessage, ok: "Yes", cancel: "No", okAction: {
-                    if(indexPath.row >= self.medias.count) {
-                        self.imageArray.remove(at: (indexPath.row - self.medias.count))
-                        self.clctnView.reloadData()
-                    } else {
+                if(indexPath.row >= self.medias.count) {
+                    self.imageArray.remove(at: (indexPath.row - self.medias.count))
+                    self.clctnView.reloadData()
+                } else {
+                    self.displayAlert(msg: AlertMessage.deleteMessage, ok: "Yes", cancel: "No", okAction: {
                         let media = self.medias[indexPath.row]
                         self.deleteMedia(mediaId: media.mediaId!)
                         self.medias.remove(at: indexPath.row)
                         self.clctnView.reloadData()
-                    }
-                }, cancelAction: nil)
-                
+                    }, cancelAction: nil)
+                }
             }
             return cell!
         }

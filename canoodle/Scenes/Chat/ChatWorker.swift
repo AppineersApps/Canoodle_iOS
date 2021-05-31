@@ -29,7 +29,7 @@ class ChatWorker
     }
     
     func deleteMessage(request: DeleteMessage.Request, completionHandler: @escaping ( _ message: String?, _ successCode: String?) -> Void) {
-      GetNetworkService.updateDataRequest(with: GetMessageAPIRouter.deleteMessage(request: request)) { (responce: WSResponse<DeleteMessage.Response>?, error: NetworkError?) in
+      NetworkService.dataRequest(with: GetMessageAPIRouter.deleteMessage(request: request)) { (responce: WSResponse<DeleteMessage.Response>?, error: NetworkError?) in
           if let detail = responce {
               if  detail.arrayData != nil, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
                   completionHandler( msg, detail.setting?.success)

@@ -25,7 +25,7 @@ struct AppConstants {
     static let screenHeight = UIScreen.main.bounds.size.height
     
     /// Base URL for API
-    static let baseUrl = ApiServer.prodcution
+    static let baseUrl = getBaseURL()
     /// Enable encryption for the api
     static var enableEncryption = false
     /// Enable checksum for the api
@@ -94,15 +94,25 @@ struct AppConstants {
      }
 }
 
+func getBaseURL()-> String {
+    #if DEVELOPMENT
+    return ApiServer.staging
+    #elseif STAGING
+    return ApiServer.staging
+    #else
+    return ApiServer.production
+    #endif
+}
+
 /// Struct for the api
 struct ApiServer {
     /// Local url
-    static let local = ""
+    static let development = "http://18.211.58.235/canoodle/WS"
     /// URL for staging
 //    static let staging = "http://18.211.58.235/AppineersApp_V2/WS"
-    static let staging = "http://18.211.58.235/canoodle/WS"
+    static let staging = "http://3.225.83.133/canoodle/WS"
     /// URL for production
-    static let prodcution = "https://mobile.canoodleapp.com/WS"
+    static let production = "https://mobile.canoodleapp.com/WS"
 }
 
 /// Ad Mob Test details
@@ -130,6 +140,24 @@ struct ADMobDetail {
     static let adUnitID = "ca-app-pub-3940256099942544/4411468910"
     /// AD Mob ID
     static let admodId = "ca-app-pub-3940256099942544/2934735716"
+}
+
+/// MoPubTest details
+struct MoPubTest {
+    // Mark : Live Ids
+    /// Banner AD Unit id
+    static var bannerAdUnitID = "0ac59b0996d947309c33f59d6676399f"
+    /// Interstitial AD Mob ID
+    static var interstitialAdUnitId = "4f117153f5c24fa6a3a92b818a5eb630"
+}
+
+/// MoPubLive details
+struct MoPubLive {
+    // Mark : Live Ids
+    /// Banner AD Unit id
+    static var bannerAdUnitID = "866e3fd2af2f46dcab784d8c33f20969"
+    /// Interstitial AD Mob ID
+    static var interstitialAdUnitId = "c14097acc1c24e2ba26fa59311d8df55"
 }
 
 /// App Info
@@ -162,10 +190,11 @@ struct ServiceApiKey {
     struct Google {
         /// Client ID for google login
        // static let kClientID = "699060553821-8gcrb4mrrdqkfj91e32b4poepi4foq6g.apps.googleusercontent.com"
-        static let kClientID = "271806339695-95pr4fjqmenbl6ilduj7tsfv5o7lgkgt.apps.googleusercontent.com"
+        static let kClientID = "292328770347-0q3vldbotuqvqoof38hj90k7ri7e56c8.apps.googleusercontent.com"
 
         ///Key for google places search
-        static let kGMSServicesAPIKey = "AIzaSyA0wwldrxqyK6HsLKSSOU0-w5Iz7ECkhZc"
+       // static let kGMSServicesAPIKey = "AIzaSyA0wwldrxqyK6HsLKSSOU0-w5Iz7ECkhZc"
+        static let kGMSServicesAPIKey = "AIzaSyCGzj6upzB1VLMLG7cZwPt-FMgZA0-4XV8"
     }
     
 }

@@ -108,7 +108,8 @@ class UserProfileViewController: BaseViewControllerWithAd
     profileImageView.layer.cornerRadius = profileImageView.frame.width / 2
     profileImageView.layer.borderColor = AppConstants.appColor2!.cgColor
     profileImageView.layer.borderWidth = 2.0
-    scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 1200)
+    scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 1000)
+    GlobalUtility.addClickEvent()
   }
     
     /// Method is called when view will appears
@@ -166,6 +167,7 @@ class UserProfileViewController: BaseViewControllerWithAd
         adjustUITextViewHeight(arg: petAboutTextView)
         aboutPetView.frame = CGRect(x: aboutPetView.frame.origin.x, y: aboutTextView.frame.origin.y + aboutTextView.frame.height + 30, width: aboutPetView.frame.width, height: petAboutTextView.frame.height + 200)
         setUpSlideshow()
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 800 + aboutTextView.frame.height + petAboutTextView.frame.height)
     }
     
     func adjustUITextViewHeight(arg : UITextView)
@@ -213,10 +215,10 @@ class UserProfileViewController: BaseViewControllerWithAd
     }
     
     @IBAction func btnImagedetailsAction(_ sender: Any) {
-            if let customPopUp = ImageDetailsViewController.instance() {
-                customPopUp.imgStr = self.user.userImage ?? ""
-                self.present(customPopUp, animated: true, completion: nil)
-            }
+        if let customPopUp = ImageDetailsViewController.instance() {
+            customPopUp.imgStr = self.user.userImage ?? ""
+            self.present(customPopUp, animated: true, completion: nil)
+        }
     }
     
     func filterMedia() {

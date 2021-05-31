@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-enum NotificationsAPIRouter: GetRouterProtocol {
+enum NotificationsAPIRouter: RouterProtocol {
     
     /// Base URL String
     var baseUrlString: String {
@@ -49,7 +49,7 @@ enum NotificationsAPIRouter: GetRouterProtocol {
                  return nil
             case .deleteNotification(let request):
                 params = [
-                    "notification_id" : request.notificationId
+                    "notification_id" : request.notificationId!
                 ]
                 return params
         }
@@ -58,7 +58,13 @@ enum NotificationsAPIRouter: GetRouterProtocol {
     
     /// Parameter Encoding required
     var parameterEncoding: ParameterEncoding {
-        return URLEncoding.httpBody
+        switch self {
+            case .getNotifications:
+                return URLEncoding.queryString
+            case .deleteNotification(let request):
+                return JSONEncoding.default
+        }
+        return URLEncoding.queryString
     }
     
     /// Headers for the url request
@@ -75,6 +81,11 @@ enum NotificationsAPIRouter: GetRouterProtocol {
     /// Get Device Info
     var deviceInfo: [String : Any]? {
         return APIDeviceInfo.deviceInfo
+    }
+    
+    /// Files if required to attach
+    var files: [MultiPartData]? {
+        return nil
     }
 }
 

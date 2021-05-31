@@ -402,6 +402,14 @@ PODS:
   - lottie-ios (3.1.9)
   - MessageKit (3.3.0):
     - InputBarAccessoryView (~> 5.1.0)
+  - mopub-ios-sdk (5.17.0):
+    - mopub-ios-sdk/MoPubSDK (= 5.17.0)
+  - mopub-ios-sdk/Core (5.17.0)
+  - mopub-ios-sdk/MoPubSDK (5.17.0):
+    - mopub-ios-sdk/Core
+    - mopub-ios-sdk/NativeAds
+  - mopub-ios-sdk/NativeAds (5.17.0):
+    - mopub-ios-sdk/Core
   - MultiSlider (1.10.13):
     - AvailableHapticFeedback
     - SweeterSwift
@@ -444,6 +452,7 @@ DEPENDENCIES:
   - Kingfisher
   - lottie-ios
   - MessageKit
+  - mopub-ios-sdk
   - MultiSlider
   - SDWebImage
   - SVPinView
@@ -492,6 +501,7 @@ SPEC REPOS:
     - leveldb-library
     - lottie-ios
     - MessageKit
+    - mopub-ios-sdk
     - MultiSlider
     - nanopb
     - PromisesObjC
@@ -542,6 +552,7 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
   MessageKit: 1f07618183be6d92b648ba7a384aafa097362a00
+  mopub-ios-sdk: 36d322902674b79b0560a1cb8d15af0548d364ea
   MultiSlider: 6e711a3338090fcd9847a120771b957597414449
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
@@ -552,6 +563,6 @@ SPEC CHECKSUMS:
   SwiftMessages: 063ec9ffea3ffa7d17ba595157a9ec78e4fe045f
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: e46d449cc6be4320e597a719b43f92877cb42d3a
+PODFILE CHECKSUM: 3a83b67564087cd43d2973d0315cb9d232d87fc2
 
 COCOAPODS: 1.10.0

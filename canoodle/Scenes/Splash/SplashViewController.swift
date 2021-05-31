@@ -144,10 +144,14 @@ class SplashViewController: BaseViewController {
             }
         } else {
             if (UserDefaultsManager.getLoggedUserDetails() != nil) {
-                // MARK: - Home screen setup autologin
-                let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
-                if let tab = storyboard.instantiateInitialViewController(), tab is TabbarController {
-                    AppConstants.appDelegate.window?.rootViewController = tab
+                if UserDefaultsManager.profileSetUpDone != "Yes" {
+                    GlobalUtility.redirectToLogin()
+                } else {
+                    // MARK: - Home screen setup autologin
+                    let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
+                    if let tab = storyboard.instantiateInitialViewController(), tab is TabbarController {
+                        AppConstants.appDelegate.window?.rootViewController = tab
+                    }
                 }
             } else {
                 GlobalUtility.redirectToLogin()
@@ -176,8 +180,8 @@ extension SplashViewController: SplashDisplayLogic {
         if successCode == "1" {
             if let data = viewModel {
                 self.configModel = data
-                AdMobLive.bannerAdUnitID = (self.configModel?.bannerAdUnitId)!
-                AdMobLive.interstitialAdUnitId = (self.configModel?.interstitialAdUnitId)!
+                MoPubLive.bannerAdUnitID = (self.configModel?.bannerAdUnitId)!
+                MoPubLive.interstitialAdUnitId = (self.configModel?.interstitialAdUnitId)!
                 if(self.configModel?.projectDebugLevel == "development") {
                     AppConstants.isDebug = true
                 } else {
@@ -188,6 +192,7 @@ extension SplashViewController: SplashDisplayLogic {
                 if (UserDefaultsManager.getLoggedUserDetails() != nil) {
                     let loginData = UserDefaultsManager.getLoggedUserDetails()
                     loginData?.logStatus = configModel?.logStatusUpdated
+                    loginData?.premiumStatus = configModel?.premiumStatus
                     UserDefaultsManager.setLoggedUserDetails(userDetail: loginData!)
                 }
                 if data.versionUpdateCheck == "1" {

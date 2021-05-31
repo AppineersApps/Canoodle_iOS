@@ -14,6 +14,7 @@ import FirebaseFirestore
 import SDWebImage
 import Foundation
 import IQKeyboardManagerSwift
+import FirebaseAuth
 
 
 protocol ChatDisplayLogic: class
@@ -175,7 +176,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
         messageInputBar.sendButton.contentEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
         messageInputBar.sendButton.setSize(CGSize(width: 36, height: 36), animated: false)
         messageInputBar.sendButton.contentMode = .scaleToFill
-        messageInputBar.sendButton.image = UIImage.init(named: "icon_arrow")
+        messageInputBar.sendButton.image = UIImage.init(named: "messageArrow")
         //messageInputBar.sendButton.setBackgroundImage(UIImage.init(named: "icon_arrow"), for: UIControl.State.normal)
         messageInputBar.sendButton.title = nil
         messageInputBar.sendButton.imageView?.layer.cornerRadius = 16
@@ -473,7 +474,9 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesDi
         })
         if((lastSeenDate == nil)) {
             self.sendMessage(msg: message.content)
-        } else {
+        } else if (messages.count == 0) {
+            self.sendMessage(msg: message.content)
+        }  else {
             let interval = Date().timeIntervalSince(self.lastSeenDate)
             let diffComponents = Calendar.current.dateComponents([.second], from: self.lastSeenDate, to: Date())
             let secs = diffComponents.second
@@ -749,8 +752,10 @@ extension ChatViewController: MessageCellDelegate {
             let lastMessage = self.messages[self.messages.count - 1]
             let lastMsgId = lastMessage.messageId
             if(lastMsgId == message.messageId) {
-                let prevMsg = self.messages[self.messages.count - 2]
-                self.sendMessage(msg: prevMsg.content)
+                if(self.messages.count > 1) {
+                    let prevMsg = self.messages[self.messages.count - 2]
+                    self.sendMessage(msg: prevMsg.content)
+                }
             }
             self.deletePost(msgId: message.messageId)
          }, cancelAction: nil)

@@ -22,6 +22,8 @@ import FirebaseMessaging
 import FirebaseCore
 import UserNotifications
 import UserNotificationsUI
+import MoPubSDK
+
 
 @UIApplicationMain
 
@@ -45,10 +47,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         if let userInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [AnyHashable : Any] {
             print("Notification Info :: ", userInfo)
             NSLog("Notification userinfo: \(userInfo)")
-            self.handlePushNotification(userInfo: userInfo)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) {
+                self.handlePushNotification(userInfo: userInfo)
+            }
         }
         
-        FirebaseApp.configure()
+      //  FirebaseApp.configure()
         
         #if canImport(TALogger)
         TALogger.shared.enable()
@@ -58,7 +62,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         setupAppRating()
         Messaging.messaging().delegate = self
         self.registerRemoteNotification()
+        
+       // let sdkConfig = MPMoPubConfiguration(adUnitIdForAppInitialization: "866e3fd2af2f46dcab784d8c33f20969")
+        //        sdkConfig.loggingLevel = .info
+       //         MoPub.sharedInstance().initializeSdk(with: sdkConfig, completion: nil)
+        
+        let sdkConfig = MPMoPubConfiguration(adUnitIdForAppInitialization: "866e3fd2af2f46dcab784d8c33f20969")
+        // 05f66e352fbe4f2d9e543bd00c034994
+        sdkConfig.loggingLevel = MPBLogLevel.debug
+        sdkConfig.allowLegitimateInterest = false
+        MoPub.sharedInstance().initializeSdk(with: sdkConfig) {
+            // SDK initialization complete. You may now request ads.
+         //   NSLog("SDK initialization complete");
+        }
 
+        #if DEVELOPMENT
+        let filePath = Bundle.main.path(forResource: "GoogleService-Dev-Info", ofType: "plist")
+        guard let path = filePath, let fileopts = FirebaseOptions(contentsOfFile: path)
+        else {
+            assert(false, "Couldn't load config file")
+            return true
+        }
+        FirebaseApp.configure(options: fileopts)
+        #else
+        let filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")
+        guard let path = filePath, let fileopts = FirebaseOptions(contentsOfFile: path)
+          else { assert(false, "Couldn't load config file")
+            return true
+        }
+        FirebaseApp.configure(options: fileopts)
+        #endif
         return true
     }
     
@@ -101,7 +134,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     /// - Parameter application:  Application object
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-        
+        self.registerRemoteNotification()
     }
     
     /// Method is called when app did become active

@@ -89,9 +89,9 @@ class HomeViewController: BaseViewControllerWithAd {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Home"
-        self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false)
+        self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.premiumStatus?.booleanStatus() ?? false)
         self.addAnayltics(analyticsParameterItemID: "id-homescreen", analyticsParameterItemName: "view_homescreen", analyticsParameterContentType: "view_homescreen")
-        //addForceCrashButton()
+       // addForceCrashButton()
     }
     
     func setUpSwipeAnimation() {

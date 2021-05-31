@@ -97,7 +97,7 @@ class MessagesListViewController: BaseViewControllerWithAd {
         self.navigationItem.title = "Messages"
        // UserDefaultsManager.msgCount = 0
         NotificationCenter.default.post(name: NSNotification.Name("ChatNotification"), object: nil, userInfo: nil)
-        self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.premiumStatus?.booleanStatus() ?? false)
+        self.viewAd.isHidden = (UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false)
         self.addAnayltics(analyticsParameterItemID: "id-messagelistscreen", analyticsParameterItemName: "view_messagelistscreen", analyticsParameterContentType: "view_messagelistscreen")
     }
     

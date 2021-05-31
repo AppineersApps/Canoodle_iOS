@@ -31,7 +31,7 @@ final class NetworkService {
         } else {
             // Fallback on earlier versions
         }
-        configuration.timeoutIntervalForRequest = 30
+        configuration.timeoutIntervalForRequest = 60
         let sessionManager = SessionManager(configuration: configuration)
         return sessionManager
     }()
@@ -216,6 +216,7 @@ extension NetworkService: NetworkProtocol {
                                 GlobalUtility.hideHud()
                                 UserDefaultsManager.logoutUser()
                                 GlobalUtility.redirectToLogin()
+                              
                             }
                             
                             /*if decodedValue.setting?.isValidToken ?? false {
@@ -321,6 +322,334 @@ extension NetworkService: NetworkProtocol {
             }
         }
     }
+    
+    ////////
+    
+    static func dataRequestOtherMethods<Model: WSResponseData>(with inputRequest: RouterProtocol, showHud:Bool = true, completionHandler: @escaping (WSResponse<Model>?, NetworkError?) -> Void) {
+        
+        let aRequestDate = Date()
+        let finalParams = [String:Any]()
+        print("ROUTER BASE", inputRequest.baseUrlString)
+        print("ROUTER PATH", inputRequest.path)
+        print("ROUTER VERB", inputRequest.method)
+        print("ROUTER PATH", inputRequest.parameters as Any)
+        print("ROUTER HEADER", inputRequest.headers as Any)
+        
+        
+        //Test123@123
+        
+        //print(parameters)
+        // Serialize to JSON
+        
+        if inputRequest.method == .put  || inputRequest.method == .get{
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: inputRequest.parameters)
+                if let JSONString = String(data: jsonData, encoding: String.Encoding.utf8) {
+                    print(JSONString)
+                }
+            } catch {
+                
+            }
+        }
+        
+        if !(NetworkReachabilityManager()!.isReachable) {
+            let aVC = AppConstants.appDelegate.window?.rootViewController
+            aVC?.showTopMessage(message: AlertMessage.InternetError, type: .Error)
+            return
+        }
+        
+        if showHud {
+            GlobalUtility.showHud()
+        }
+        
+         do {
+             _ = try inputRequest.asGetURLRequest()
+         } catch {
+             //ProgressHUD.sharedInstance.stopAnimating(randomString)
+             completionHandler(nil, .requestError(errorMessage: AlertMessage.NetworkError))
+             return
+         }
+        manager.request(inputRequest.path, method: inputRequest.method, parameters: inputRequest.parameters, encoding: URLEncoding.queryString, headers: inputRequest.headers).responseJSON{
+//        manager.request(inputRequest.path, method: inputRequest.method,headers: inputRequest.headers).responseJSON {
+        
+            response in
+            
+            print(response)
+            switch (response.result) {
+            case .success :
+                        
+                let request = response.request
+                let resp = response.response
+                //print(response.response)
+                let result = response.result
+                let responseString = String(data: response.data!, encoding: .utf8)
+                let error = result.error as NSError?
+                Debug.printRequest(request, response: resp, responseString: responseString, error: error)
+                GlobalUtility.hideHud()
+                let finalResponseData: Data? = response.data
+            
+                if let data = finalResponseData {
+                    // let aCode  : String = "\(resp?.statusCode ?? 200)"
+                    let pathString = inputRequest.path.replacingOccurrences(of: AppConstants.baseUrl, with: "")
+
+                    #if canImport(TALogger)
+                    if responseString?.count ?? 0 > 0 {
+                        if resp?.statusCode ?? 0 >= 200 && resp?.statusCode ?? 0 <= 299 {
+                            TALogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: responseString, requestDate: aRequestDate, responseDate: Date())
+                        } else {
+                            let aDict = ["Error":NetworkService.errorMessageBasedOnStatusCode(resp?.statusCode ?? error?.code ?? 0)]
+                            let aJson = GlobalUtility.shared.json(from: aDict)
+                            TALogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: aJson, requestDate: aRequestDate, responseDate: Date())
+                        }
+                    } else {
+                        let aDict = ["Error":NetworkService.errorMessageBasedOnStatusCode(resp?.statusCode ?? error?.code ?? 0)]
+                        let aJson = GlobalUtility.shared.json(from: aDict)
+                        TALogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: aJson, requestDate: aRequestDate, responseDate: Date())
+                    }
+                    #endif
+                    
+                    do {
+                        let decoder = JSONDecoder()
+                        //decoder.dateDecodingStrategy = .formatted(DateFormatter.customFormat)
+                        let decodedValue = try decoder.decode(WSResponse<Model>.self, from: data)
+                        
+                        // Logout user automatically if He/She has activated session on another device
+                        
+                        if decodedValue.setting?.success == "-3" {
+                            GlobalUtility.hideHud()
+                        }
+                        
+                        if decodedValue.setting?.success == "401" {
+                            GlobalUtility.hideHud()
+                            UserDefaultsManager.logoutUser()
+                            GlobalUtility.redirectToLogin()
+                        }
+                        
+                        if decodedValue.setting?.success == "0" {
+                            //GlobalUtility.hideHud()
+                            //UserDefaultsManager.logoutUser()
+                            //GlobalUtility.redirectToLogin()
+                        }
+
+                        
+                        completionHandler(decodedValue, nil)
+                    } catch _ {
+                        completionHandler(nil, .requestError(errorMessage: NetworkService.errorMessageBasedOnStatusCode(resp?.statusCode ?? error?.code ?? 0)))
+                    }
+                } else {
+                    completionHandler(nil, .requestError(errorMessage: AlertMessage.NetworkTimeOutError))
+                }
+                
+                case .failure(let error):
+                    GlobalUtility.hideHud()
+                    if error._code == NSURLErrorTimedOut || error._code == NSURLErrorNetworkConnectionLost {
+                        print("Time Out/Connection Lost Error")
+                        //self.dataRequest(with: inputRequest, completionHandler: completionHandler)
+                        completionHandler(nil, .requestError(errorMessage: AlertMessage.NetworkTimeOutError))
+                    } else {
+                        completionHandler(nil, .requestError(errorMessage: AlertMessage.NetworkError))
+                    }
+                    let pathString = inputRequest.path.replacingOccurrences(of: AppConstants.baseUrl, with: "")
+                }
+        }
+    
+    }
+    
+    static func updateDataRequest<Model: WSResponseData>(with inputRequest: RouterProtocol, showHud:Bool = true, completionHandler: @escaping (WSResponse<Model>?, NetworkError?) -> Void) {
+        
+        let aRequestDate = Date()
+        let finalParams = [String:Any]()
+        print("ROUTER BASE", inputRequest.baseUrlString)
+        print("ROUTER PATH", inputRequest.path)
+        print("ROUTER VERB", inputRequest.method)
+        print("ROUTER PARAMS", inputRequest.parameters as Any)
+        print("ROUTER HEADER", inputRequest.headers as Any)
+        
+        
+        //print(parameters)
+        // Serialize to JSON
+        if(inputRequest.parameters != nil) {
+            if inputRequest.method == .put || inputRequest.method == .delete || inputRequest.method == .get{
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: inputRequest.parameters as Any)
+                if let JSONString = String(data: jsonData, encoding: String.Encoding.utf8) {
+                    print(JSONString)
+                }
+            } catch {
+            }
+        }
+        }
+        
+        if !(NetworkReachabilityManager()!.isReachable) {
+            let aVC = AppConstants.appDelegate.window?.rootViewController
+            aVC?.showTopMessage(message: AlertMessage.InternetError, type: .Error)
+            return
+        }
+        
+        if showHud {
+            GlobalUtility.showHud()
+        }
+        
+         do {
+             _ = try inputRequest.asGetURLRequest()
+         } catch {
+             //ProgressHUD.sharedInstance.stopAnimating(randomString)
+             completionHandler(nil, .requestError(errorMessage: AlertMessage.NetworkError))
+             return
+         }
+        
+        manager.request(inputRequest.path, method: inputRequest.method, parameters: inputRequest.parameters, encoding: inputRequest.parameterEncoding, headers: inputRequest.headers).responseJSON {
+        
+          // manager.request(inputRequest.path, method: inputRequest.method,headers: inputRequest.headers).validate().responseJSON {
+            response in
+            switch (response.result) {
+            case .success :
+                        
+                let request = response.request
+                let resp = response.response
+                //print(response.response)
+                let result = response.result
+                let responseString = String(data: response.data!, encoding: .utf8)
+                let error = result.error as NSError?
+                Debug.printRequest(request, response: resp, responseString: responseString, error: error)
+                GlobalUtility.hideHud()
+                let finalResponseData: Data? = response.data
+            
+                if let data = finalResponseData {
+                    // let aCode  : String = "\(resp?.statusCode ?? 200)"
+                    #if canImport(TALogger)
+                    if responseString?.count ?? 0 > 0 {
+                        if resp?.statusCode ?? 0 >= 200 && resp?.statusCode ?? 0 <= 299 {
+                            TALogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: responseString, requestDate: aRequestDate, responseDate: Date())
+                        } else {
+                            let aDict = ["Error":NetworkService.errorMessageBasedOnStatusCode(resp?.statusCode ?? error?.code ?? 0)]
+                            let aJson = GlobalUtility.shared.json(from: aDict)
+                            TALogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: aJson, requestDate: aRequestDate, responseDate: Date())
+                        }
+                    } else {
+                        let aDict = ["Error":NetworkService.errorMessageBasedOnStatusCode(resp?.statusCode ?? error?.code ?? 0)]
+                        let aJson = GlobalUtility.shared.json(from: aDict)
+                        TALogger.shared.LogNetwork(url: request?.url?.absoluteString, method: inputRequest.method.rawValue, headers: inputRequest.headers, parameters: finalParams, status:resp?.statusCode ?? error?.code ?? 0, responseBody: aJson, requestDate: aRequestDate, responseDate: Date())
+                    }
+                    #endif
+                    
+                    do {
+                        let decoder = JSONDecoder()
+                        //decoder.dateDecodingStrategy = .formatted(DateFormatter.customFormat)
+                        let decodedValue = try decoder.decode(WSResponse<Model>.self, from: data)
+                        
+                        // Logout user automatically if He/She has activated session on another device
+                        
+                        if decodedValue.setting?.success == "-3" {
+                            GlobalUtility.hideHud()
+                        }
+                        
+                        if decodedValue.setting?.success == "401" {
+                            GlobalUtility.hideHud()
+                            UserDefaultsManager.logoutUser()
+                            GlobalUtility.redirectToLogin()
+                        }
+                        
+                        if decodedValue.setting?.success == "0" {
+                            //GlobalUtility.hideHud()
+                            //UserDefaultsManager.logoutUser()
+                            //GlobalUtility.redirectToLogin()
+                        }
+
+                        
+                        completionHandler(decodedValue, nil)
+                    } catch _ {
+                        completionHandler(nil, .requestError(errorMessage: NetworkService.errorMessageBasedOnStatusCode(resp?.statusCode ?? error?.code ?? 0)))
+                    }
+                } else {
+                    completionHandler(nil, .requestError(errorMessage: AlertMessage.NetworkTimeOutError))
+                }
+                
+                case .failure(let error):
+                    GlobalUtility.hideHud()
+                    if error._code == NSURLErrorTimedOut || error._code == NSURLErrorNetworkConnectionLost {
+                        print("Time Out/Connection Lost Error")
+                        //self.dataRequest(with: inputRequest, completionHandler: completionHandler)
+                        completionHandler(nil, .requestError(errorMessage: AlertMessage.NetworkTimeOutError))
+                    } else {
+                        completionHandler(nil, .requestError(errorMessage: AlertMessage.NetworkError))
+                    }
+                    let pathString = inputRequest.path.replacingOccurrences(of: AppConstants.baseUrl, with: "")
+                }
+        }
+    
+    }
+    
+    
+    static func generalSettingRequestForOthers<Model: WSResponseData>(with inputRequest: RouterProtocol, completionHandler: @escaping (WSResponse<Model>?, NetworkError?) -> Void) {
+        
+        print("ROUTER BASE", inputRequest.baseUrlString)
+        //print("ROUTER PARAMETERS", inputRequest.parameters ?? [:])
+        print("ROUTER PATH", inputRequest.path)
+        print("ROUTER VERB", inputRequest.method)
+        
+        //ProgressHUD.sharedInstance.startAnimating(randomString)
+        do {
+            _ = try inputRequest.asGetURLRequest()
+        } catch {
+            //ProgressHUD.sharedInstance.stopAnimating(randomString)
+            completionHandler(nil, .requestError(errorMessage: AlertMessage.NetworkError))
+            return
+        }
+        
+        
+        manager.request(inputRequest.path, method: inputRequest.method).validate().responseJSON {
+           response in
+           switch (response.result) {
+           case .success :
+                       let request = response.request
+                       let resp = response.response
+                       print(response.response)
+                       let result = response.result
+                       let responseString = String(data: response.data!, encoding: .utf8)
+                       let error = result.error as NSError?
+                       Debug.printRequest(request, response: resp, responseString: responseString, error: error)
+                       GlobalUtility.hideHud()
+                        let finalResponseData: Data? = response.data
+                       
+                       
+                       
+                       if let data = finalResponseData {
+                           // print("Description")
+                           //  print(inputRequest.parameters?.description)
+                           
+                           do {
+                               let decoder = JSONDecoder()
+                               //                            decoder.dateDecodingStrategy = .formatted(DateFormatter.customFormat)
+                               let decodedValue = try decoder.decode(WSResponse<Model>.self, from: data)
+                               
+                               // Logout user automatically if He/She has activated session on another device
+                               if decodedValue.setting?.success == "-3" {
+                                   GlobalUtility.hideHud()
+                               }
+                               if decodedValue.setting?.success == "401" {
+                                   
+                                   GlobalUtility.hideHud()
+                                   UserDefaultsManager.logoutUser()
+                                   GlobalUtility.redirectToLogin()
+                                 
+                               }
+                               completionHandler(decodedValue, nil)
+                           } catch _ {
+                               completionHandler(nil, .requestError(errorMessage: NetworkService.errorMessageBasedOnStatusCode(resp?.statusCode ?? error?.code ?? 0)))
+                           }
+                       } else {
+                           completionHandler(nil, .requestError(errorMessage: AlertMessage.NetworkTimeOutError))
+                       }
+                       
+               case .failure:
+                   completionHandler(nil, .requestError(errorMessage: AlertMessage.NetworkError))
+               }
+        
+       }
+
+    }
+    ///////
     
     static func tokenCreationDataRequest(with request: RouterProtocol, completionHandler: @escaping (Data?, Error?) -> Void) {
         print("ROUTER BASE", request.baseUrlString)

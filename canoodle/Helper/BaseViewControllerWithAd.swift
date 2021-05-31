@@ -12,13 +12,14 @@ import Alamofire
 #if canImport(TALogger)
 import TALogger
 #endif
+import MoPubSDK
 
 /// Base View controller with ads
 class BaseViewControllerWithAd: UIViewController {
     /// Interstitial ads
-    var interstitialView: GADInterstitial!
+    var interstitialView: MPInterstitialAdController!
     /// Banner view for ads
-    var bannerView: GADBannerView!
+    var bannerView: MPAdView!
     
     /// Method is called when view loads
     override func viewDidLoad() {
@@ -36,6 +37,15 @@ class BaseViewControllerWithAd: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.logScreenEvent("\(#function)")
+        if bannerView != nil {
+            self.bannerView.startAutomaticallyRefreshingContents()
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        if bannerView != nil {
+            self.bannerView.stopAutomaticallyRefreshingContents()
+        }
     }
     
     func logScreenEvent(_ functionName:String) {
@@ -85,32 +95,29 @@ class BaseViewControllerWithAd: UIViewController {
             if !checkIFBannerIsAdded(viewAdd)
             {
                 if bannerView == nil {
-                    let adSize = GADAdSizeFromCGSize(CGSize(width: viewAdd.frame.width, height: 50))
-                    bannerView = GADBannerView(adSize: adSize)
+                    var adUnitID = MoPubLive.bannerAdUnitID
                     if(AppConstants.isDebug) {
-                        bannerView.adUnitID = AdMobTest.bannerAdUnitID
-                    } else {
-                        bannerView.adUnitID = AdMobLive.bannerAdUnitID
+                        adUnitID = MoPubTest.bannerAdUnitID
                     }
-                    bannerView.delegate = self
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) {
-                        self.bannerView.load(GADRequest())
-                    }
+                    self.bannerView = MPAdView(adUnitId: adUnitID)
+                    self.bannerView.delegate = self
+                    self.bannerView.frame = viewAdd.frame
+                    viewAdd.addSubview(bannerView)
+                    self.bannerView.loadAd()
                 }
-                addBannerViewToView(bannerView, viewAdd: viewAdd)
-                bannerView.center = viewAdd.center
-                bannerView.frame = viewAdd.frame
-                bannerView.rootViewController = self
+               // addBannerViewToView(bannerView, viewAdd: viewAdd)
+               // bannerView.frame = viewAdd.frame
+               // bannerView.rootViewController = self
             }
         }
-        else
+        /*else
         {
             for vw in viewAdd.subviews {
                 if vw is GADBannerView {
                     vw.removeFromSuperview()
                 }
             }
-        }
+        }*/
     }
     
     func checkIFBannerIsAdded(_ bannerView:UIView) -> Bool
@@ -138,7 +145,7 @@ class BaseViewControllerWithAd: UIViewController {
     /// Reload Interstitial ad
     ///
     /// - Returns: Return Interstitial ad
-    func reloadInterstitialAd() -> GADInterstitial {
+  /*  func reloadInterstitialAd() -> GADInterstitial {
         if(AppConstants.isDebug) {
             interstitialView = GADInterstitial(adUnitID: AdMobTest.interstitialAdUnitId)
         } else {
@@ -148,23 +155,19 @@ class BaseViewControllerWithAd: UIViewController {
         let request = GADRequest()
         interstitialView.load(request)
         return interstitialView
-    }
+    }*/
+
     
     /// Show Full ad
     func showFullAdd() {
         if !(UserDefaultsManager.getLoggedUserDetails()?.purchaseStatus?.booleanStatus() ?? false) {
-            if interstitialView != nil {
-                if (interstitialView.isReady == true){
-                    interstitialView.present(fromRootViewController:self)
-                } else {
-                    // print("ad wasn't ready")
-                    interstitialView = reloadInterstitialAd()
-                }
-            } else {
-                // print("ad wasn't ready")
-                interstitialView = reloadInterstitialAd()
+            var adUnitID = MoPubLive.interstitialAdUnitId
+            if(AppConstants.isDebug) {
+                adUnitID = MoPubTest.interstitialAdUnitId
             }
-            
+            interstitialView = MPInterstitialAdController(forAdUnitId: adUnitID)
+            interstitialView.delegate = self
+            interstitialView.loadAd()
         }
     }
     
@@ -177,20 +180,6 @@ class BaseViewControllerWithAd: UIViewController {
             return false
         }else {
             return true
-        }
-    }
-}
-
-// MARK: - Interstitial ads
-extension BaseViewControllerWithAd: GADInterstitialDelegate {
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        print("")
-    }
-    
-    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-        print("")
-        if ad.isReady {
-            interstitialView.present(fromRootViewController: self)
         }
     }
 }
@@ -235,3 +224,40 @@ extension BaseViewControllerWithAd: GADBannerViewDelegate {
         self.logAdEvent("\(#function)")
     }
 }
+
+extension BaseViewControllerWithAd: MPAdViewDelegate {
+    
+    func adViewDidLoadAd(_ view: MPAdView!, adSize: CGSize) {
+        print("MoPubAd loaded with width: " + adSize.width.description)
+        self.bannerView?.startAutomaticallyRefreshingContents()
+    }
+    
+    func adView(_ view: MPAdView!, didFailToLoadAdWithError error: Error!) {
+        print("MoPubAd load failed: " + error.debugDescription)
+    }
+    
+    func viewControllerForPresentingModalView() -> UIViewController? {
+        return self
+    }
+}
+
+extension BaseViewControllerWithAd: MPInterstitialAdControllerDelegate {
+    
+    func interstitialDidLoadAd(_ interstitial: MPInterstitialAdController!) {
+        guard interstitial.ready else {
+            self.logScreenEvent("Attempted to show an interstitial ad when it is not ready \(#function)")
+            print("Attempted to show an interstitial ad when it is not ready")
+            return
+        }
+        print("Loaded interstitial ad successfully \(#function)")
+        interstitial.show(from: self)
+    }
+    
+    func interstitialDidFail(toLoadAd interstitial: MPInterstitialAdController!, withError error: Error!) {
+        print("Failed to load interstitial Ad")
+        self.logScreenEvent("Failed to load interstitial Ad : \(#function)")
+    }
+    
+}
+
+

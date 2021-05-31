@@ -34,7 +34,7 @@ class GoogleSearch: BaseViewController {
         //AIzaSyBD7jL0m7-m1T0xhR00teozg7YQDI6fXm0
         GMSPlacesClient.provideAPIKey(ServiceApiKey.Google.kGMSServicesAPIKey)
         let filter = GMSAutocompleteFilter()
-        filter.type = .city
+        //filter.type = .city
         //filter.country = "US"
         fetcher = GMSAutocompleteFetcher()
         fetcher?.autocompleteFilter = filter

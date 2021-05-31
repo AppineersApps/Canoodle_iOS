@@ -15,7 +15,7 @@ import UIKit
 class BlockedUserWorker
 {
   func blockedUsers(request: Connection.Request, completionHandler: @escaping ([Connection.ViewModel]?, _ message: String?, _ successCode: String?) -> Void) {
-    GetNetworkService.dataRequest(with: GetConnectionAPIRouter.getConnections(request: request), showHud: true) { (responce: WSResponse<Connection.ViewModel>?, error: NetworkError?) in
+    NetworkService.updateDataRequest(with: GetConnectionAPIRouter.getConnections(request: request), showHud: true) { (responce: WSResponse<Connection.ViewModel>?, error: NetworkError?) in
         if let detail = responce {
             if let data = detail.arrayData, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
                 completionHandler(data, msg, detail.setting?.success)

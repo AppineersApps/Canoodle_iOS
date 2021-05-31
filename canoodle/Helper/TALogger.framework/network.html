@@ -60,6 +60,20 @@
 
 				document.getElementById('container').innerHTML = html;
 			}
+        
+            function fillJsonRequest(parameters) {
+                document.getElementById('container').innerHTML = '';
+                var obj = parameters;
+                var strJSON = JSON.stringify(obj, undefined, 4);
+                var html = createHeader('Json Parameters');
+                if (strJSON) {
+                    html += '<p><pre>' + strJSON + '</pre></p>';
+                } else {
+                    html += '<p><pre>' + obj + '</pre></p>';
+                }
+                document.getElementById('container').innerHTML = html;
+            }
+        
 			function fillResponse(response) {
                 document.getElementById('container').innerHTML = '';
                 var obj = response;

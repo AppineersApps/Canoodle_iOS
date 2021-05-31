@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>271806339695-95pr4fjqmenbl6ilduj7tsfv5o7lgkgt.apps.googleusercontent.com</string>
+	<string>292328770347-0q3vldbotuqvqoof38hj90k7ri7e56c8.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.271806339695-95pr4fjqmenbl6ilduj7tsfv5o7lgkgt</string>
+	<string>com.googleusercontent.apps.292328770347-0q3vldbotuqvqoof38hj90k7ri7e56c8</string>
 	<key>API_KEY</key>
-	<string>AIzaSyA0wwldrxqyK6HsLKSSOU0-w5Iz7ECkhZc</string>
+	<string>AIzaSyCGzj6upzB1VLMLG7cZwPt-FMgZA0-4XV8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>271806339695</string>
+	<string>292328770347</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.app.canoodle</string>
 	<key>PROJECT_ID</key>
-	<string>canoodle</string>
+	<string>canoodle-4e520</string>
 	<key>STORAGE_BUCKET</key>
-	<string>canoodle.appspot.com</string>
+	<string>canoodle-4e520.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:271806339695:ios:0cf9f2bf48d674e09f0b9a</string>
-	<key>DATABASE_URL</key>
-	<string>https://canoodle.firebaseio.com</string>
+	<string>1:292328770347:ios:15f56979053ce9ea7e936e</string>
 </dict>
 </plist>

@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-enum GetMessageAPIRouter: GetRouterProtocol {
+enum GetMessageAPIRouter: RouterProtocol {
     
     /// Base URL String
     var baseUrlString: String {
@@ -76,6 +76,11 @@ enum GetMessageAPIRouter: GetRouterProtocol {
     /// Get Device Info
     var deviceInfo: [String : Any]? {
         return APIDeviceInfo.deviceInfo
+    }
+    
+    /// Files if required to attach
+    var files: [MultiPartData]? {
+        return nil
     }
 }
 

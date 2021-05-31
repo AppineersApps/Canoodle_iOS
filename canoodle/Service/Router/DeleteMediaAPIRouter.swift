@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-enum DeleteMediaAPIRouter: GetRouterProtocol {
+enum DeleteMediaAPIRouter: RouterProtocol {
     
     /// Base URL String
     var baseUrlString: String {
@@ -52,7 +52,7 @@ enum DeleteMediaAPIRouter: GetRouterProtocol {
     
     /// Parameter Encoding required
     var parameterEncoding: ParameterEncoding {
-        return URLEncoding.httpBody
+        return JSONEncoding.default
     }
     
     /// Headers for the url request
@@ -63,5 +63,11 @@ enum DeleteMediaAPIRouter: GetRouterProtocol {
     /// Get Device Info
     var deviceInfo: [String : Any]? {
         return APIDeviceInfo.deviceInfo
+    }
+    
+    
+    /// Files if required to attach
+    var files: [MultiPartData]? {
+        return nil
     }
 }

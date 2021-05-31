@@ -15,7 +15,7 @@ import UIKit
 /// Class for My profile info
 class MyProfileWorker {
     func getUserProfile(request: UserProfile.Request, completionHandler: @escaping ([User.ViewModel]?, _ message: String?, _ successCode: String?) -> Void) {
-        GetNetworkService.dataRequest(with: UserAPIRouter.getUserProfile(request: request), showHud: true) { (responce: WSResponse<User.ViewModel>?, error: NetworkError?) in
+        NetworkService.updateDataRequest(with: UserAPIRouter.getUserProfile(request: request), showHud: true) { (responce: WSResponse<User.ViewModel>?, error: NetworkError?) in
             if let detail = responce {
                 if let data = detail.arrayData, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
                     completionHandler(data, msg, detail.setting?.success)

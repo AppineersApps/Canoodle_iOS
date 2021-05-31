@@ -100,6 +100,7 @@ extension SignUpViewController: SignUpDisplayLogic {
                 self.showTopMessage(message: message, type: .Success)
                 //router?.redirectToHome()
                 UserDefaultsManager.resetFilter()
+                UserDefaultsManager.profileSetUpDone = "No"
                 if let petProfileVC = PetProfileViewController.instance() {
                     petProfileVC.onboarding = true
                     self.navigationController?.pushViewController(petProfileVC, animated: true)

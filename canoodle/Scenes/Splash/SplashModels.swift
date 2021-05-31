@@ -24,6 +24,7 @@ struct Splash {
         var bannerAdUnitId: String?
         var interstitialAdUnitId: String?
         var projectDebugLevel: String?
+        var premiumStatus: String?
         
         /// Enum for response
         ///
@@ -55,6 +56,7 @@ struct Splash {
             case ios_interstitial_id
             /// - project_debug_level
             case project_debug_level
+            case premium_status
         }
         
         /// Init default method
@@ -75,6 +77,8 @@ struct Splash {
             bannerAdUnitId = try values.decodeIfPresent(String.self, forKey: .ios_banner_id)
             interstitialAdUnitId = try values.decodeIfPresent(String.self, forKey: .ios_interstitial_id)
             projectDebugLevel = try values.decodeIfPresent(String.self, forKey: .project_debug_level)
+            premiumStatus = try values.decodeIfPresent(String.self, forKey: .premium_status)
+
         }
         
         /// Default encode method
@@ -95,6 +99,8 @@ struct Splash {
             try container.encode(bannerAdUnitId, forKey: .ios_banner_id)
             try container.encode(interstitialAdUnitId, forKey: .ios_interstitial_id)
             try container.encode(projectDebugLevel, forKey: .project_debug_level)
+            try container.encode(premiumStatus, forKey: .premium_status)
+
         }
     }
 }

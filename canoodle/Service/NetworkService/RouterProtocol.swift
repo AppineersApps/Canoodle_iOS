@@ -48,7 +48,7 @@ public extension RouterProtocol {
         var request = URLRequest(url: (path.contains("http://") || path.contains("https://")) ? URL(string: path)! : url.appendingPathComponent(path))
         request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = self.headers
-        request.timeoutInterval = 60.0 * 0.5
+        request.timeoutInterval = 60.0
 //        let contentType = "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW"
 //        request.setValue(contentType, forHTTPHeaderField: "Content-Type")
         do {
@@ -90,6 +90,21 @@ public extension RouterProtocol {
 //        }
 //        return request
 //    }
+    
+    /// get URL Request
+    ///
+    /// - Returns: return urls request object
+    /// - Throws: throws exception if any error
+    func asGetURLRequest() throws -> URLRequest {
+        guard let url = URL(string: self.baseUrlString) else {
+            throw(NetworkError.requestError(errorMessage: "Unable to create url"))
+        }
+        var request = URLRequest(url: (path.contains("http://") || path.contains("https://")) ? URL(string: path)! : url.appendingPathComponent(path))
+        request.httpMethod = method.rawValue
+        request.allHTTPHeaderFields = self.headers
+        request.timeoutInterval = 60.0 * 0.5
+        return request
+    }
     
     /// Array of parameters
     var arrayParameters: [Any]? {

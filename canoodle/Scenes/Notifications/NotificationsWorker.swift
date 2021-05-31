@@ -16,7 +16,7 @@ class NotificationsWorker
 {
     
     func getNotifications(completionHandler: @escaping ([Notifications.ViewModel]?, _ message: String?, _ successCode: String?) -> Void) {
-      GetNetworkService.dataRequest(with: NotificationsAPIRouter.getNotifications, showHud: true) { (responce: WSResponse<Notifications.ViewModel>?, error: NetworkError?) in
+      NetworkService.updateDataRequest(with: NotificationsAPIRouter.getNotifications, showHud: true) { (responce: WSResponse<Notifications.ViewModel>?, error: NetworkError?) in
           if let detail = responce {
               if let data = detail.arrayData, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
                   completionHandler(data, msg, detail.setting?.success)
@@ -30,7 +30,7 @@ class NotificationsWorker
     }
     
     func deleteNotification(request: Notifications.Request, completionHandler: @escaping ( _ message: String?, _ successCode: String?) -> Void) {
-      GetNetworkService.updateDataRequest(with: NotificationsAPIRouter.deleteNotification(request: request)) { (responce: WSResponse<SetConnection.Response>?, error: NetworkError?) in
+      NetworkService.updateDataRequest(with: NotificationsAPIRouter.deleteNotification(request: request)) { (responce: WSResponse<SetConnection.Response>?, error: NetworkError?) in
           if let detail = responce {
               if  detail.arrayData != nil, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
                   completionHandler( msg, detail.setting?.success)

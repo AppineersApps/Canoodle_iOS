@@ -92,7 +92,6 @@ class MyProfileViewController: BaseViewControllerWithAd {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayout()
-        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 850)
     }
 
     /// Method is called when view will appears
@@ -149,6 +148,19 @@ class MyProfileViewController: BaseViewControllerWithAd {
         adjustUITextViewHeight(arg: petAboutTextView)
         aboutPetView.frame = CGRect(x: aboutPetView.frame.origin.x, y: aboutTextView.frame.origin.y + aboutTextView.frame.height + 30, width: aboutPetView.frame.width, height: aboutTextView.frame.height + 50)
         setUpSlideshow()
+        if(aboutTextView.text.count < 150) {
+            self.displayAlert(msg: "Please enter min 150 characters description for About Me",ok: "Okay", cancel: "Cancel", okAction: { [self] in
+                if let aboutMeVC = AboutMeViewController.instance() {
+                    aboutMeVC.onboarding = false
+                    aboutMeVC.aboutDescription = aboutTextView.text
+                    self.navigationController?.pushViewController(aboutMeVC, animated: true)
+                }
+            }, cancelAction: nil)
+        }
+        if(petAboutTextView.text.count < 150) {
+            self.showSimpleAlert(message: "Please enter min 150 characters description for About Pet")
+        }
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 800 + aboutTextView.frame.height + petAboutTextView.frame.height)
     }
     
     func adjustUITextViewHeight(arg : UITextView)

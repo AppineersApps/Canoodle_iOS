@@ -16,7 +16,7 @@ import UIKit
 class HomeWorker {
   /// Make API Calls
     func getUsers(request: User.Request, completionHandler: @escaping ([User.ViewModel]?, _ message: String?, _ successCode: String?) -> Void) {
-        GetNetworkService.dataRequest(with: UserAPIRouter.getUsers(request: request), showHud: true) { (responce: WSResponse<User.ViewModel>?, error: NetworkError?) in
+        NetworkService.updateDataRequest(with: UserAPIRouter.getUsers(request: request), showHud: true) { (responce: WSResponse<User.ViewModel>?, error: NetworkError?) in
             if let detail = responce {
                 if let data = detail.arrayData, let success = detail.setting?.isSuccess, let msg = detail.setting?.message, success {
                     completionHandler(data, msg, detail.setting?.success)

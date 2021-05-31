@@ -120,7 +120,7 @@ class NotificationsViewController: UIViewController
     
     func clearAllNotifications() {
         notificationsList.forEach { notification in
-            let request = Notifications.Request(notificationId: notification.notificationId)
+            let request = Notifications.Request(notificationId: notification.notificationId!)
             interactor?.deleteNotification(request: request)
         }
     }
@@ -169,7 +169,7 @@ class NotificationsViewController: UIViewController
     
     func deleteNotification(notification: Notifications.ViewModel)
     {
-        let request = Notifications.Request(notificationId: notification.notificationId)
+        let request = Notifications.Request(notificationId: notification.notificationId!)
         interactor?.deleteNotification(request: request)
     }
 
@@ -225,7 +225,7 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let notification: Notifications.ViewModel = notificationsList[indexPath.row]
+        let notification: Notifications.ViewModel = filteredList[indexPath.row]
         switch notification.notificationType {
         case "Like", "Match":
             if let userProfileVC = UserProfileViewController.instance() {

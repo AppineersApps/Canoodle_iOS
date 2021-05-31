@@ -72,12 +72,6 @@ class HomeCardView: UIView {
         card.center = CGPoint(x: centerOfParentContainer.x + point.x, y: centerOfParentContainer.y + point.y)
         let xFromCenter = card.center.x - centerOfParentContainer.x
         card.layer.cornerRadius = 10
- //       if card.center.x > 100 && card.center.x < 250 && velocity.y < 0 {
-//            likeDisLlkeView.alpha = 0
-//            superLikeImageView.alpha = 1
-//            gradientView.alpha = 0.4
-//            likeDislikeProfile.text = ""
-//        }
          if xFromCenter > 0 {
             self.showLikeAnimation()
             self.alpha = 0.7

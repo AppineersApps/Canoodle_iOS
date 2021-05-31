@@ -116,6 +116,10 @@ class AboutMeViewController: UIViewController
     
     func updateProfile()
     {
+        if(descTextView.text.count < 150) {
+            self.showSimpleAlert(message: "Please enter min 150 characters description for About Me")
+            return
+        }
         let request = UpdateProfile.Request(description: descTextView.text)
       interactor?.updateProfile(request: request)
     }
