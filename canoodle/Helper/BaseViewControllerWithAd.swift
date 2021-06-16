@@ -101,7 +101,9 @@ class BaseViewControllerWithAd: UIViewController {
                     }
                     self.bannerView = MPAdView(adUnitId: adUnitID)
                     self.bannerView.delegate = self
-                    self.bannerView.frame = viewAdd.frame
+                    //self.bannerView.frame = viewAdd.frame
+                    self.bannerView.frame = CGRect(x: viewAdd.frame.width/2 - 160, y: 0, width: viewAdd.frame.width, height: viewAdd.frame.size.height)
+
                     viewAdd.addSubview(bannerView)
                     self.bannerView.loadAd()
                 }
@@ -230,10 +232,12 @@ extension BaseViewControllerWithAd: MPAdViewDelegate {
     func adViewDidLoadAd(_ view: MPAdView!, adSize: CGSize) {
         print("MoPubAd loaded with width: " + adSize.width.description)
         self.bannerView?.startAutomaticallyRefreshingContents()
+        self.logAdEvent("\(#function)")
     }
     
     func adView(_ view: MPAdView!, didFailToLoadAdWithError error: Error!) {
         print("MoPubAd load failed: " + error.debugDescription)
+        self.logAdEvent("\(#function)")
     }
     
     func viewControllerForPresentingModalView() -> UIViewController? {
@@ -251,11 +255,13 @@ extension BaseViewControllerWithAd: MPInterstitialAdControllerDelegate {
         }
         print("Loaded interstitial ad successfully \(#function)")
         interstitial.show(from: self)
+        self.logAdEvent("\(#function)")
     }
     
     func interstitialDidFail(toLoadAd interstitial: MPInterstitialAdController!, withError error: Error!) {
         print("Failed to load interstitial Ad")
         self.logScreenEvent("Failed to load interstitial Ad : \(#function)")
+        self.logAdEvent("\(#function)")
     }
     
 }
